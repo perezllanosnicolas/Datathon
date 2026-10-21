@@ -67,7 +67,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 
 ## Reglas de trabajo
 - Responder en español; nombres de código y commits en inglés.
-- **Privacidad:** no usar datos personales reales ni informes clínicos reales; usar datos sintéticos. Aviso explícito de que la herramienta no sustituye asesoramiento legal.
+- **Privacidad:** no usar datos personales reales ni informes clínicos reales; usar datos sintéticos. La app no recoge documentación clínica ni diagnósticos. Aviso explícito de que la herramienta no sustituye asesoramiento legal.
 - No afirmar contenido legal sin citar la norma; marcar como "a validar por Leyre/Carlos" lo dudoso.
 - No tomar decisiones de alcance por el equipo: proponer opciones con pros y contras y registrar lo acordado abajo.
 - Cambios pequeños y commits claros; trabajar en ramas por funcionalidad y no tocar `main` sin acuerdo.
@@ -76,11 +76,13 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 ## Decisiones
 - 2026-10-21 — Equipo y repositorio definidos. Fase 0, solución pendiente de elegir.
 - 2026-10-21 — Solución definida (detalle en `docs/`): web usada **antes** de ir al juzgado; el juzgado se escanea con vídeo y la API de KIRI Engine genera el 3D; el encargado anota funciones/procesos por sala y estímulos estridentes; el usuario se registra con cuestionario de adaptación (idioma, tamaño de letra, filtros por neurodivergencia), elige trámite y juzgado, y ve un diagrama de flujo interactivo granular (documentos de entrada/salida) con vista inmersiva por paso si el juzgado está escaneado.
+- 2026-10-21 — Ajuste de alcance: el **núcleo** es registro + adaptaciones + diagrama de flujo interactivo. El escaneo 3D (KIRI Engine) y la experiencia inmersiva pasan a **anexo/futuro extra**. Sin QR. Formato: **web mobile-first**. **Sin documentación clínica** (solo preferencias de adaptación elegidas por la persona). Los pasos de llegada incluyen **Street View de Google Maps** de la entrada (sentido de la vía, acceso) con alternativa en texto.
+- 2026-10-21 — La selección de trámite y juzgado se hace por **buscador con filtros** o **subiendo la citación**, de la que una **IA** identifica el trámite y sus pasos. (Propuesto, pendiente de validar con Derecho: la IA clasifica dentro de un catálogo revisado, la persona confirma, y el documento no se guarda.)
 - 2026-10-21 — Documentación en 6 documentos: PRD, TRD, AppFlow, UI/UX, Backend Schema, Implementation Plan.
 - 2026-10-21 — Instaladas en el proyecto las skills de desarrollo web: taste-skill, web-design-guidelines y playwright-cli (ver "Skills recomendadas").
 
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.
 - `.claude/` — enlaces de Claude Code a esas skills.
-- `docs/` — `01-PRD.md`, `02-TRD.md`, `03-AppFlow.md`, `04-UI-UX-Design.md`, `05-Backend-Schema.md`, `06-Implementation-Plan.md`. Marcas: [D] decidido, [P] propuesta, [?] abierto, [V] a validar por Leyre/Carlos.
+- `docs/` — `01-PRD.md`, `02-TRD.md`, `03-AppFlow.md`, `04-UI-UX-Design.md`, `05-Backend-Schema.md`, `06-Implementation-Plan.md`, `Anexo-3D-Escaneo.md` (futuro). Marcas: [D] decidido, [P] propuesta, [?] abierto, [V] a validar por Leyre/Carlos.
 - _(resto por completar cuando haya código)_

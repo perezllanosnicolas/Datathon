@@ -3,52 +3,76 @@
 > Leyenda: **[D]** decidido · **[P]** propuesta · **[?]** abierto.
 
 ## 1. Decisiones técnicas tomadas
-- **[D]** Generación del modelo 3D con la **API de KIRI Engine**: se envía un vídeo del juzgado y se obtiene un objeto 3D.
-- **[D]** Aplicación web (responsive), usada antes de acudir al juzgado.
+- **[D]** Aplicación **web mobile-first**.
+- **[D]** Vista de la entrada del juzgado con **Street View de Google Maps**.
+- **[D]** Sin documentación clínica ni QR.
+- **[D]** El 3D / KIRI Engine pasa a anexo (ver [Anexo-3D-Escaneo.md](Anexo-3D-Escaneo.md)).
 
 ## 2. Arquitectura propuesta [P]
 ```
-Navegador (web responsive, accesible)
-   ├─ App de usuario: registro, trámites, flujo, visor 3D
-   └─ App de escaneo (encargado): subida de vídeo, anotación de salas
+Navegador móvil (PWA / web responsive, accesible)
+   ├─ Registro + cuestionario + ajustes
+   ├─ Selector trámite / juzgado
+   └─ Flujo interactivo de pasos (+ Street View de la entrada)
           │
-      API backend ── Base de datos + almacenamiento de archivos
+      API backend ── Base de datos
           │
-      Cola de trabajos ── KIRI Engine API (vídeo → 3D)
+      Google Maps (Street View) ── solo cliente o llamada controlada
 ```
-- **Frontend [P]:** React/Next.js + TypeScript, HTML semántico. Visor 3D con three.js (formato glTF/GLB).
-- **Backend [P]:** servicio con API REST; base de datos relacional (PostgreSQL); almacenamiento de objetos para vídeos y modelos.
-- **Procesado asíncrono [P]:** el modelado tarda; el backend sube el vídeo a KIRI, consulta el estado y guarda el resultado. El encargado ve el estado "procesando / listo / error".
-- Las opciones concretas (framework, hosting) se acuerdan en equipo; no están decididas.
+- **Frontend [P]:** React/Next.js + TypeScript, HTML semántico, diseño mobile-first.
+- **Backend [P]:** API REST + base de datos relacional (PostgreSQL). Contenido de trámites y juzgados como datos (no incrustado en código).
+- **Diagrama de flujo [P]:** componente propio accesible (lista ordenada de pasos con navegación), no un lienzo de arrastrar: funciona con teclado y lector de pantalla. Representación visual como mapa de progreso encima de esa lista.
+- Framework y hosting: por acordar [?].
 
-## 3. Integración con KIRI Engine
-- Pendiente de comprobar en su documentación oficial: endpoints, formatos de salida, límites de vídeo (duración, tamaño), precio y créditos, tiempos de procesado, licencia de uso de los modelos [?].
-- La clave de API **nunca** va en el cliente: solo en el servidor (variables de entorno).
-- Plan B si falla o es lento: modelo de ejemplo precargado para el demo [P].
+## 2b. Selección de trámite: buscador y citación con IA [D la funcionalidad, P el diseño]
 
-## 4. Visor 3D accesible
-- Modelo en GLB, optimizado (peso) para móvil [P].
-- Navegación por teclado y botones además de gestos; ritmo propio; opción de "volver a la entrada".
-- Alternativa **sin 3D** para cada paso: imágenes, texto y descripción para lector de pantalla (necesario para Juan) [P].
-- Respetar `prefers-reduced-motion`; sin movimiento automático por defecto.
-- Marcadores de **estímulos estridentes** sobre el modelo, con aviso previo.
+### Buscador
+- Búsqueda con filtros (tipo de proceso, trámite, juzgado) sobre el catálogo de la base de datos. Texto tolerante a errores y sinónimos (ej.: "juicio", "declarar", "testigo") [P].
+- Válido sin IA: es la vía de respaldo siempre disponible.
 
-## 5. Chatbot RAG (opcional) [P]
-- Base documental: fichas de trámites revisadas por Derecho; sin datos reales.
-- Qué puede leer la IA se define por rol y consentimiento [?].
-- Debe citar la norma y marcar lo dudoso; aviso de no sustituir asesoramiento legal.
+### Subida de la citación + IA
+```
+Subir citación (PDF / foto) ─► extraer texto (OCR si es imagen)
+   ─► IA extrae campos: órgano, tipo de proceso, fecha/hora, condición de la persona
+   ─► IA clasifica la citación en el catálogo de trámites
+   ─► Se muestra el resultado y la persona lo CONFIRMA o lo corrige
+   ─► Se carga el flujo del trámite y juzgado
+```
+- **La IA no genera los pasos desde cero** [P]: relaciona la citación con trámites del catálogo, escritos y revisados por Derecho. Los pasos que ve la persona son siempre contenido revisado. Evita alucinaciones en un contexto legal.
+- Salida estructurada (JSON con campos y nivel de confianza); si la confianza es baja o falta algún dato, se pide confirmar o se ofrece el buscador.
+- Modelo: capaz de leer documentos y con salida estructurada [?]. Opciones y coste por decidir.
+- El documento **se procesa y se descarta**; no se guarda salvo consentimiento [P].
+- **Datos personales:** el documento puede contener nombre y número de procedimiento. Antes de enviarlo a un proveedor externo: acuerdo de tratamiento de datos, región de la UE, sin entrenamiento con los datos, o enmascarar los datos personales antes del envío [V].
+- Límites del archivo: tipos permitidos (PDF, JPG, PNG), tamaño máximo, antivirus/validación; calidad de foto móvil (aviso si está borrosa) [P].
+- Prototipo: citaciones sintéticas únicamente.
+- Aviso visible: la IA puede equivocarse; no sustituye asesoramiento legal.
 
-## 6. Seguridad y privacidad
-- Datos sintéticos únicamente en el prototipo.
-- Autenticación y roles (ver 05-Backend-Schema). El perfil de neurodivergencia es dato sensible (RGPD, categoría especial): minimizar, pedir consentimiento, permitir borrado [V].
-- Subida de vídeo del encargado: validar tipo y tamaño; no exponer datos de personas que salgan en el vídeo (pedir grabar sin público) [V].
+## 3. Street View de Google Maps
+- Opciones [P]: (a) Maps Embed API en modo Street View (iframe), (b) Street View Static API (imagen), (c) Maps JavaScript API (panorama interactivo). **Comprobar en la documentación de Google:** claves de API, cuotas, precio y términos de uso antes de elegir [?].
+- La clave de API se restringe por dominio y por API; nunca se sube al repositorio.
+- Por juzgado se guarda: coordenadas, orientación (heading), zoom y una **descripción en texto** de la entrada (sentido de la vía, dónde parar, puerta de acceso). Esa información la redacta una persona; Street View no la da.
+- **Accesibilidad:** Street View es visual. Cada vista debe tener una alternativa de texto equivalente (necesario para Juan) y no ser el único modo de obtener la información.
+- Imagen de Street View puede estar desactualizada: mostrar fecha de captura si está disponible y avisarlo [P].
+- Alternativa si no hay cobertura o falla: foto aportada por el juzgado o solo texto [P].
 
-## 7. Calidad
-- Auditoría de accesibilidad con `web-design-guidelines` y pruebas end-to-end con `playwright-cli`.
-- Objetivo WCAG AA mínimo.
+## 4. Móvil
+- Mobile-first, objetivos táctiles amplios, sin hover como único acceso.
+- PWA (instalable, carga rápida, algo de uso sin conexión de pasos ya vistos) [P]; decidir si compensa [?].
+- Probar en pantallas pequeñas y en lector de pantalla del móvil (TalkBack, VoiceOver).
 
-## 8. Preguntas abiertas
-- [?] Stack final y hosting.
-- [?] Límites y coste de KIRI Engine para el demo.
-- [?] Idioma(s) soportados y herramienta de traducción.
-- [?] Escalabilidad y diagrama de arquitectura (pendiente en el Doc).
+## 5. Seguridad y privacidad
+- Datos sintéticos en el prototipo.
+- **No se recoge documentación clínica.** El perfil guarda solo preferencias de adaptación. Aun así es dato sensible (RGPD): minimizar, consentimiento explícito, derecho de borrado [V].
+- Autenticación y roles (ver 05-Backend-Schema).
+- Chatbot RAG opcional: solo con contenido público de trámites, sin datos personales [P].
+
+## 6. Calidad
+- Auditoría con `web-design-guidelines`; pruebas end-to-end con `playwright-cli`; WCAG AA mínimo.
+
+## 7. Preguntas abiertas
+- [ ] Stack final y hosting.
+- [ ] Proveedor de IA, modelo, coste y tratamiento de datos de la citación.
+- [ ] OCR: del propio modelo o servicio aparte.
+- [ ] Modalidad de Street View y coste.
+- [ ] Idioma(s) soportados y traducción del contenido.
+- [ ] ¿Cuenta obligatoria o se puede probar sin registro?

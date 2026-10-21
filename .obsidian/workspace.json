@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "docs/01-PRD.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "322d847230ff026b",
@@ -190,5 +189,13 @@
     }
   },
   "active": "8a8f7876b2f866a1",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "docs/06-Implementation-Plan.md.tmp.30236.bc8f1dfcd31b",
+    "docs/04-UI-UX-Design.md.tmp.30236.32013ee6d5d4",
+    "docs/01-PRD.md.tmp.30236.910a24b1c475",
+    "docs/01-PRD.md",
+    "CLAUDE.md.tmp.30236.059a6d1aa67a",
+    "CLAUDE.md.tmp.30236.b12475deb83d",
+    "docs/Anexo-3D-Escaneo.md"
+  ]
 }
