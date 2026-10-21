@@ -3,7 +3,7 @@
 ## Contexto
 - Datathon *Brecha Judicial* (DATAfórum JUSTICIA 2026), **Reto 3** (responsable: Ana Tudela, INECO).
 - Objetivo: reducir la brecha judicial de las personas neurodivergentes (TEA, TDAH, dislexia, discalculia, disgrafía): preparar a la persona para el proceso judicial y capacitar a los profesionales de la justicia para adaptarse. Enfoque **no capacitista**.
-- Casos de uso del reto: **Luis** (TEA nivel 1, testigo en un procedimiento penal) y **Juan** (TDAH + ceguera, acusado de estafa leve, art. 249 CP).
+- Los casos de ejemplo del reto (Luis y Juan) se han retirado del proyecto. **El demo es del ámbito civil.**
 - Marco legal: art. 24 CE, Ley 15/2022, RDL 1/2013 (accesibilidad universal y ajustes razonables).
 - **Fase actual: 0** — alcance definido a alto nivel (ver "Decisiones"); detalles en `docs/`. No asumir como decidido nada marcado [P] o [?] en esos documentos.
 
@@ -39,6 +39,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 | `design-taste-frontend` | `Leonxlnx/taste-skill` | Criterio de diseño de frontend. Snyk marca "Med Risk" (1 alerta): revisar el código antes de fiarse |
 | `web-design-guidelines` | `vercel-labs/agent-skills` | Revisión de UI y accesibilidad (0 alertas) |
 | `playwright-cli` y `dev` | `microsoft/playwright-cli` | Automatizar el navegador y probar la web del prototipo |
+| `/sincronizar` | Propia (`.claude/skills/sincronizar/`) | Actualizar documentación, commit y push a GitHub. Solo la invoca una persona; nunca fuerza ni sube a `main` sin que se indique |
 
 `VoltAgent/awesome-design-md` **no es una skill** (no tiene `SKILL.md`): es una colección de `DESIGN.md` de marcas, útil solo como referencia de diseño; no instalada.
 
@@ -60,10 +61,10 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - **Accesibilidad cognitiva primero:** lenguaje claro y literal, frases cortas, sin ambigüedad ni metáforas; ofrecer lectura fácil.
 - **Poca carga sensorial:** sin animaciones intrusivas, sin parpadeos, contraste suficiente (WCAG AA mínimo), modo reducido de movimiento y de color.
 - **Anticipación:** mostrar siempre qué va a pasar, cuánto dura y qué se espera de la persona.
-- **Compatibilidad con lectores de pantalla** (caso de Juan): HTML semántico, etiquetas, texto alternativo, navegación por teclado.
+- **Compatibilidad con lectores de pantalla** (personas con ceguera o baja visión): HTML semántico, etiquetas, texto alternativo, navegación por teclado.
 - **Control para la persona:** ritmo propio, posibilidad de pausar, repetir y saltar.
 - **Tipografía legible** (apta para dislexia): sans-serif, buen interlineado, alineación a la izquierda, bloques cortos.
-- **Presentación del equipo:** un mensaje por diapositiva, pocas palabras, narrativa problema → persona (Luis/Juan) → solución → demo → impacto → siguientes pasos.
+- **Presentación del equipo:** un mensaje por diapositiva, pocas palabras, narrativa problema → persona (caso civil inventado) → solución → demo → impacto → siguientes pasos.
 
 ## Reglas de trabajo
 - Responder en español; nombres de código y commits en inglés.
@@ -77,7 +78,18 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - 2026-10-21 — Equipo y repositorio definidos. Fase 0, solución pendiente de elegir.
 - 2026-10-21 — Solución definida (detalle en `docs/`): web usada **antes** de ir al juzgado; el juzgado se escanea con vídeo y la API de KIRI Engine genera el 3D; el encargado anota funciones/procesos por sala y estímulos estridentes; el usuario se registra con cuestionario de adaptación (idioma, tamaño de letra, filtros por neurodivergencia), elige trámite y juzgado, y ve un diagrama de flujo interactivo granular (documentos de entrada/salida) con vista inmersiva por paso si el juzgado está escaneado.
 - 2026-10-21 — Ajuste de alcance: el **núcleo** es registro + adaptaciones + diagrama de flujo interactivo. El escaneo 3D (KIRI Engine) y la experiencia inmersiva pasan a **anexo/futuro extra**. Sin QR. Formato: **web mobile-first**. **Sin documentación clínica** (solo preferencias de adaptación elegidas por la persona). Los pasos de llegada incluyen **Street View de Google Maps** de la entrada (sentido de la vía, acceso) con alternativa en texto.
-- 2026-10-21 — La selección de trámite y juzgado se hace por **buscador con filtros** o **subiendo la citación**, de la que una **IA** identifica el trámite y sus pasos. (Propuesto, pendiente de validar con Derecho: la IA clasifica dentro de un catálogo revisado, la persona confirma, y el documento no se guarda.)
+- 2026-10-21 — La selección de trámite y juzgado se hace por **buscador con filtros** o, si no se quiere buscar, **subiendo documento/foto de la citación**: se pasa a texto y de ese texto se extrae el tipo de trámite y el juzgado (sustituye la idea anterior de IA que identificaba los pasos). (Propuesto, pendiente de validar: se empareja con un catálogo revisado por Derecho, la persona confirma, y ni el documento ni el texto se guardan.)
+- 2026-10-21 — **Enlace de vinculación para el abogado/a:** la persona lo envía y el abogado indica qué documentación hay que llevar; aparece en la app en los pasos. El abogado se identifica con **nombre y número de colegiado**. (Propuesto: solo texto, sin ver el perfil de adaptaciones, enlace con caducidad y revocable.)
+- 2026-10-21 — El **OCR de la citación se ejecuta en el servidor propio** donde se aloja el servicio (sin terceros).
+- 2026-10-21 — **Alcance del demo: ámbito civil.** Se retiran los casos Luis y Juan.
+- 2026-10-21 — **Barra de progreso** en el flujo: indica cuántos pasos has hecho y cuántos quedan. **Uso sin registro** (perfil y progreso en el dispositivo). **Sin notificaciones por correo.** **Hosting local para la demo.** **Stack libre** (propuesto: Next.js + TypeScript + SQLite + Tesseract; ver `docs/02-TRD.md`). **Análisis RGPD aplazado**: ahora se prioriza la implementación.
+- 2026-10-21 — **Street View solo de la fachada** (imagen fija con la Street View Static API de Google Maps; sí es viable). **IA en español, catalán, gallego y euskera: ALIA-40B** como apoyo opcional (asistente con contenido revisado); necesita un equipo con mucha memoria, a comprobar antes de comprometerse (`docs/02-TRD.md` §2f). Plan de implementación reescrito por fases con corte mínimo del demo.
+- 2026-10-21 — Creada la skill de proyecto **`/sincronizar`** (`.claude/skills/sincronizar/`): actualiza la documentación, hace commit y sube a GitHub.
+- 2026-10-21 — **Idiomas: español, catalán, euskera y gallego.**
+- 2026-10-21 — **Enlace del abogado:** vigente **48 horas**; el número de colegiado queda como **dato declarado (sin verificar)**; la persona **no comparte nada directamente** con el abogado (este solo escribe la lista de documentos).
+- 2026-10-21 — Dato de contexto: estimación del equipo de 150.000–300.000 personas neurodivergentes que acuden a un juzgado al año en España (estimación, no dato oficial).
+- 2026-10-21 — Referencia externa: **Plena inclusión** (lectura fácil y accesibilidad cognitiva) https://www.plenainclusion.org/
+- 2026-10-21 — **Lenguaje lo más simple posible** en toda la app (frases cortas, palabras de uso diario, términos legales explicados); reglas en `docs/04-UI-UX-Design.md` §8.
 - 2026-10-21 — Documentación en 6 documentos: PRD, TRD, AppFlow, UI/UX, Backend Schema, Implementation Plan.
 - 2026-10-21 — Instaladas en el proyecto las skills de desarrollo web: taste-skill, web-design-guidelines y playwright-cli (ver "Skills recomendadas").
 
