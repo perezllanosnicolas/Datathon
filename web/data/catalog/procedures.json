@@ -1,0 +1,460 @@
+{
+  "_note": "Contenido SINTÉTICO de ejemplo para el demo. Pendiente de revisión legal (Leyre/Carlos) y de revisión por hablantes de ca/eu/gl. reviewStatus: draft | reviewed.",
+  "procedures": [
+    {
+      "id": "juicio-verbal-vista",
+      "processType": "civil",
+      "reviewStatus": "draft",
+      "name": {
+        "es": "Ir a la vista de un juicio verbal",
+        "ca": "Anar a la vista d'un judici verbal",
+        "gl": "Ir á vista dun xuízo verbal",
+        "eu": "Hitzezko judizio baten ikustaldira joatea"
+      },
+      "summary": {
+        "es": "Tienes un juicio civil. Vas a la sala con tu abogado o abogada. El juez escucha a las dos partes.",
+        "ca": "Tens un judici civil. Vas a la sala amb el teu advocat o advocada. El jutge escolta les dues parts.",
+        "gl": "Tes un xuízo civil. Vas á sala co teu avogado ou avogada. O xuíz escoita as dúas partes.",
+        "eu": "Judizio zibil bat duzu. Aretora zure abokatuarekin joango zara. Epaileak bi aldeak entzungo ditu."
+      },
+      "legalBasis": {
+        "es": "Ley 1/2000, de Enjuiciamiento Civil: juicio verbal (arts. 437 a 447) y ajustes para personas con discapacidad (art. 7 bis). A validar por Leyre/Carlos.",
+        "ca": "Llei 1/2000, d'enjudiciament civil: judici verbal (arts. 437 a 447) i ajustos per a persones amb discapacitat (art. 7 bis). Per validar.",
+        "gl": "Lei 1/2000, de axuizamento civil: xuízo verbal (arts. 437 a 447) e axustes para persoas con discapacidade (art. 7 bis). Pendente de validar.",
+        "eu": "1/2000 Legea, Prozedura Zibilarena: hitzezko judizioa (437-447 art.) eta desgaitasuna duten pertsonentzako egokitzapenak (7 bis art.). Balioztatzeko."
+      },
+      "searchTerms": {
+        "es": ["juicio verbal", "juicio", "vista", "demanda", "demandado", "demandante", "civil", "reclamación", "deuda", "alquiler", "declarar"],
+        "ca": ["judici verbal", "judici", "vista", "demanda", "demandat", "demandant", "civil", "reclamació", "deute", "lloguer", "declarar"],
+        "gl": ["xuízo verbal", "xuízo", "vista", "demanda", "demandado", "demandante", "civil", "reclamación", "débeda", "aluguer", "declarar"],
+        "eu": ["hitzezko judizioa", "judizioa", "epaiketa", "ikustaldia", "demanda", "demandatua", "demandatzailea", "zibila", "erreklamazioa", "zorra", "alokairua", "deklaratu"]
+      },
+      "steps": [
+        {
+          "id": "jv-1",
+          "slot": "prepare",
+          "kind": "prepare",
+          "durationMin": [10, 20],
+          "title": {
+            "es": "Prepara lo que tienes que llevar",
+            "ca": "Prepara el que has de portar",
+            "gl": "Prepara o que tes que levar",
+            "eu": "Prestatu eraman behar duzuna"
+          },
+          "expected": {
+            "es": "Antes de salir, reúne tus documentos.",
+            "ca": "Abans de sortir, reuneix els teus documents.",
+            "gl": "Antes de saír, reúne os teus documentos.",
+            "eu": "Irten aurretik, bildu zure agiriak."
+          },
+          "instructions": {
+            "es": ["Busca tu citación.", "Mira la fecha, la hora y la dirección.", "Coge tu DNI, NIE o pasaporte.", "Coge los papeles que te ha pedido tu abogado o abogada.", "Sal con tiempo. Intenta llegar 30 minutos antes."],
+            "ca": ["Busca la teva citació.", "Mira la data, l'hora i l'adreça.", "Agafa el DNI, el NIE o el passaport.", "Agafa els papers que t'ha demanat el teu advocat o advocada.", "Surt amb temps. Intenta arribar 30 minuts abans."],
+            "gl": ["Busca a túa citación.", "Mira a data, a hora e o enderezo.", "Colle o teu DNI, NIE ou pasaporte.", "Colle os papeis que che pediu o teu avogado ou avogada.", "Sae con tempo. Tenta chegar 30 minutos antes."],
+            "eu": ["Bilatu zure zitazioa.", "Begiratu data, ordua eta helbidea.", "Hartu NAN, AIZ edo pasaportea.", "Hartu zure abokatuak eskatu dizkizun paperak.", "Irten denborarekin. Saiatu 30 minutu lehenago iristen."]
+          },
+          "calmTip": {
+            "es": "Puedes preparar la bolsa el día antes.",
+            "ca": "Pots preparar la bossa el dia abans.",
+            "gl": "Podes preparar a bolsa o día antes.",
+            "eu": "Poltsa aurreko egunean prestatu dezakezu."
+          },
+          "documents": [
+            { "id": "jv-1-d1", "kind": "bring", "name": { "es": "Citación", "ca": "Citació", "gl": "Citación", "eu": "Zitazioa" }, "notes": { "es": "El aviso que dice cuándo y dónde tienes que ir.", "ca": "L'avís que diu quan i on has d'anar.", "gl": "O aviso que di cando e onde tes que ir.", "eu": "Noiz eta non joan behar duzun esaten duen abisua." } },
+            { "id": "jv-1-d2", "kind": "bring", "name": { "es": "DNI, NIE o pasaporte", "ca": "DNI, NIE o passaport", "gl": "DNI, NIE ou pasaporte", "eu": "NAN, AIZ edo pasaportea" }, "notes": { "es": "Tiene que estar en vigor.", "ca": "Ha d'estar vigent.", "gl": "Ten que estar en vigor.", "eu": "Indarrean egon behar du." } },
+            { "id": "jv-1-d3", "kind": "bring", "name": { "es": "Papeles del caso", "ca": "Papers del cas", "gl": "Papeis do caso", "eu": "Kasuaren paperak" }, "notes": { "es": "Tu abogado o abogada te dice cuáles.", "ca": "El teu advocat o advocada et diu quins.", "gl": "O teu avogado ou avogada dicirache cales.", "eu": "Zure abokatuak esango dizu zeintzuk." } },
+            { "id": "jv-1-d4", "kind": "bring", "name": { "es": "Cosas que te ayudan a esperar", "ca": "Coses que t'ajuden a esperar", "gl": "Cousas que che axudan a agardar", "eu": "Itxaroten laguntzen dizuten gauzak" }, "notes": { "es": "Por ejemplo: agua, cascos o un libro.", "ca": "Per exemple: aigua, auriculars o un llibre.", "gl": "Por exemplo: auga, auriculares ou un libro.", "eu": "Adibidez: ura, entzungailuak edo liburu bat." } }
+          ]
+        },
+        {
+          "id": "jv-2",
+          "slot": "arrival",
+          "kind": "arrival",
+          "showsEntrance": true,
+          "durationMin": [5, 10],
+          "title": {
+            "es": "Llega al edificio",
+            "ca": "Arriba a l'edifici",
+            "gl": "Chega ao edificio",
+            "eu": "Iritsi eraikinera"
+          },
+          "expected": {
+            "es": "Busca la puerta principal del edificio.",
+            "ca": "Busca la porta principal de l'edifici.",
+            "gl": "Busca a porta principal do edificio.",
+            "eu": "Bilatu eraikinaren ate nagusia."
+          },
+          "instructions": {
+            "es": ["Mira la foto de la fachada. Así sabes qué edificio es.", "Lee cómo es la entrada: la calle, la puerta y si hay escalones.", "Si vas en coche, lee dónde puedes parar."],
+            "ca": ["Mira la foto de la façana. Així saps quin edifici és.", "Llegeix com és l'entrada: el carrer, la porta i si hi ha esglaons.", "Si hi vas en cotxe, llegeix on pots parar."],
+            "gl": ["Mira a foto da fachada. Así sabes que edificio é.", "Le como é a entrada: a rúa, a porta e se hai chanzos.", "Se vas en coche, le onde podes parar."],
+            "eu": ["Begiratu fatxadaren argazkia. Horrela jakingo duzu zein eraikin den.", "Irakurri nolakoa den sarrera: kalea, atea eta eskailerarik dagoen.", "Autoz bazoaz, irakurri non gelditu zaitezkeen."]
+          },
+          "sensory": {
+            "es": "En la calle puede haber tráfico y gente esperando.",
+            "ca": "Al carrer hi pot haver trànsit i gent esperant.",
+            "gl": "Na rúa pode haber tráfico e xente agardando.",
+            "eu": "Kalean trafikoa eta zain dagoen jendea egon daiteke."
+          },
+          "documents": []
+        },
+        {
+          "id": "jv-3",
+          "slot": "security",
+          "kind": "access",
+          "durationMin": [2, 10],
+          "title": {
+            "es": "Pasa el control de seguridad",
+            "ca": "Passa el control de seguretat",
+            "gl": "Pasa o control de seguridade",
+            "eu": "Igaro segurtasun-kontrola"
+          },
+          "expected": {
+            "es": "Deja tus cosas en la bandeja y pasa por el arco.",
+            "ca": "Deixa les teves coses a la safata i passa per l'arc.",
+            "gl": "Deixa as túas cousas na bandexa e pasa polo arco.",
+            "eu": "Utzi zure gauzak erretilu batean eta pasa arkutik."
+          },
+          "instructions": {
+            "es": ["En la entrada hay personal de seguridad.", "Pon la bolsa, el móvil y las cosas de metal en una bandeja.", "Pasa por el arco detector.", "Si el arco suena, no pasa nada. Te dirán qué hacer.", "Recoge tus cosas al otro lado."],
+            "ca": ["A l'entrada hi ha personal de seguretat.", "Posa la bossa, el mòbil i les coses de metall en una safata.", "Passa per l'arc detector.", "Si l'arc sona, no passa res. Et diran què has de fer.", "Recull les teves coses a l'altre costat."],
+            "gl": ["Na entrada hai persoal de seguridade.", "Pon a bolsa, o móbil e as cousas de metal nunha bandexa.", "Pasa polo arco detector.", "Se o arco soa, non pasa nada. Diranche que facer.", "Recolle as túas cousas ao outro lado."],
+            "eu": ["Sarreran segurtasuneko langileak daude.", "Jarri poltsa, mugikorra eta metalezko gauzak erretilu batean.", "Pasa arku detektagailutik.", "Arkuak soinua egiten badu, ez da ezer gertatzen. Zer egin esango dizute.", "Jaso zure gauzak beste aldean."]
+          },
+          "sensory": {
+            "es": "El arco puede pitar. Puede haber cola y ruido.",
+            "ca": "L'arc pot xiular. Hi pot haver cua i soroll.",
+            "gl": "O arco pode pitar. Pode haber cola e ruído.",
+            "eu": "Arkuak txistu egin dezake. Ilara eta zarata egon daitezke."
+          },
+          "protocolPhrase": {
+            "es": "Hola. Tengo una citación para hoy. ¿Me puede ayudar?",
+            "ca": "Hola. Tinc una citació per avui. Em pot ajudar?",
+            "gl": "Ola. Teño unha citación para hoxe. Pode axudarme?",
+            "eu": "Kaixo. Gaurko zitazio bat daukat. Lagun diezadakezu?"
+          },
+          "documents": []
+        },
+        {
+          "id": "jv-4",
+          "slot": "find-room",
+          "kind": "access",
+          "durationMin": [5, 15],
+          "title": {
+            "es": "Busca tu sala",
+            "ca": "Busca la teva sala",
+            "gl": "Busca a túa sala",
+            "eu": "Bilatu zure aretoa"
+          },
+          "expected": {
+            "es": "Encuentra el juzgado y la sala que pone en tu citación.",
+            "ca": "Troba el jutjat i la sala que posa a la teva citació.",
+            "gl": "Atopa o xulgado e a sala que pon na túa citación.",
+            "eu": "Aurkitu zure zitazioan agertzen diren epaitegia eta aretoa."
+          },
+          "instructions": {
+            "es": ["Mira en tu citación el nombre del juzgado y la sala.", "Busca las pantallas o los carteles con los nombres de los juzgados.", "Si no lo encuentras, pregunta en el mostrador de información.", "Ve a la planta que te digan."],
+            "ca": ["Mira a la citació el nom del jutjat i la sala.", "Busca les pantalles o els cartells amb els noms dels jutjats.", "Si no el trobes, pregunta al taulell d'informació.", "Ves a la planta que et diguin."],
+            "gl": ["Mira na túa citación o nome do xulgado e a sala.", "Busca as pantallas ou os carteis cos nomes dos xulgados.", "Se non o atopas, pregunta no mostrador de información.", "Vai á planta que che digan."],
+            "eu": ["Begiratu zitazioan epaitegiaren izena eta aretoa.", "Bilatu epaitegien izenak dituzten pantailak edo kartelak.", "Aurkitzen ez baduzu, galdetu informazio-mahaian.", "Joan esaten dizuten solairura."]
+          },
+          "whoToAsk": {
+            "es": "El personal del mostrador de información o de seguridad.",
+            "ca": "El personal del taulell d'informació o de seguretat.",
+            "gl": "O persoal do mostrador de información ou de seguridade.",
+            "eu": "Informazio-mahaiko edo segurtasuneko langileak."
+          },
+          "protocolPhrase": {
+            "es": "Tengo un juicio en este juzgado. ¿Dónde está la sala?",
+            "ca": "Tinc un judici en aquest jutjat. On és la sala?",
+            "gl": "Teño un xuízo neste xulgado. Onde está a sala?",
+            "eu": "Judizio bat daukat epaitegi honetan. Non dago aretoa?"
+          },
+          "documents": []
+        },
+        {
+          "id": "jv-5",
+          "slot": "wait",
+          "kind": "wait",
+          "durationMin": [15, 60],
+          "title": {
+            "es": "Espera a que te llamen",
+            "ca": "Espera que et cridin",
+            "gl": "Agarda a que te chamen",
+            "eu": "Itxaron deitu arte"
+          },
+          "expected": {
+            "es": "Espera cerca de la puerta de la sala hasta que digan tu nombre.",
+            "ca": "Espera prop de la porta de la sala fins que diguin el teu nom.",
+            "gl": "Agarda preto da porta da sala ata que digan o teu nome.",
+            "eu": "Itxaron aretoko atearen ondoan zure izena esan arte."
+          },
+          "instructions": {
+            "es": ["Busca a tu abogado o abogada. Suele esperar cerca de la sala.", "Siéntate en el pasillo, cerca de la puerta.", "Te llamarán por tu nombre o por el número del caso.", "A veces los juicios empiezan tarde. Es normal."],
+            "ca": ["Busca el teu advocat o advocada. Sol esperar prop de la sala.", "Seu al passadís, a prop de la porta.", "Et cridaran pel teu nom o pel número del cas.", "De vegades els judicis comencen tard. És normal."],
+            "gl": ["Busca o teu avogado ou avogada. Adoita agardar preto da sala.", "Séntate no corredor, preto da porta.", "Chamarante polo teu nome ou polo número do caso.", "Ás veces os xuízos empezan tarde. É normal."],
+            "eu": ["Bilatu zure abokatua. Aretotik gertu egon ohi da zain.", "Eseri korridorean, atetik gertu.", "Zure izenarekin edo kasuaren zenbakiarekin deituko dizute.", "Batzuetan judizioak berandu hasten dira. Normala da."]
+          },
+          "sensory": {
+            "es": "En los pasillos hay gente hablando. Puede haber avisos por altavoz.",
+            "ca": "Als passadissos hi ha gent parlant. Hi pot haver avisos per altaveu.",
+            "gl": "Nos corredores hai xente falando. Pode haber avisos por altofalante.",
+            "eu": "Korridoreetan jendea hizketan dago. Bozgorailutik abisuak egon daitezke."
+          },
+          "calmTip": {
+            "es": "Puedes usar cascos mientras esperas. Quítatelos al entrar en la sala.",
+            "ca": "Pots fer servir auriculars mentre esperes. Treu-te'ls en entrar a la sala.",
+            "gl": "Podes usar auriculares mentres agardas. Quítaos ao entrar na sala.",
+            "eu": "Itxaroten duzun bitartean entzungailuak erabil ditzakezu. Kendu aretoan sartzean."
+          },
+          "whoToAsk": {
+            "es": "Tu abogado o abogada.",
+            "ca": "El teu advocat o advocada.",
+            "gl": "O teu avogado ou avogada.",
+            "eu": "Zure abokatua."
+          },
+          "documents": []
+        },
+        {
+          "id": "jv-6",
+          "slot": "enter-room",
+          "kind": "procedure",
+          "durationMin": [1, 5],
+          "title": {
+            "es": "Entra en la sala",
+            "ca": "Entra a la sala",
+            "gl": "Entra na sala",
+            "eu": "Sartu aretoan"
+          },
+          "expected": {
+            "es": "Entra cuando te llamen y siéntate donde te digan.",
+            "ca": "Entra quan et cridin i seu on et diguin.",
+            "gl": "Entra cando te chamen e séntate onde che digan.",
+            "eu": "Sartu deitzen dizutenean eta eseri esaten dizuten lekuan."
+          },
+          "instructions": {
+            "es": ["Entra con tu abogado o abogada.", "Dentro está el juez o la jueza. Es la persona que decide.", "También hay otras personas: el letrado o letrada de la Administración de Justicia y los abogados.", "Siéntate donde te diga tu abogado.", "Pon el móvil en silencio."],
+            "ca": ["Entra amb el teu advocat o advocada.", "A dins hi ha el jutge o la jutgessa. És la persona que decideix.", "També hi ha altres persones: el lletrat o lletrada de l'Administració de Justícia i els advocats.", "Seu on et digui el teu advocat.", "Posa el mòbil en silenci."],
+            "gl": ["Entra co teu avogado ou avogada.", "Dentro está o xuíz ou a xuíza. É a persoa que decide.", "Tamén hai outras persoas: o letrado ou letrada da Administración de Xustiza e os avogados.", "Séntate onde che diga o teu avogado.", "Pon o móbil en silencio."],
+            "eu": ["Sartu zure abokatuarekin.", "Barruan epailea dago. Bera da erabakitzen duen pertsona.", "Beste pertsona batzuk ere badaude: Justizia Administrazioko letratua eta abokatuak.", "Eseri zure abokatuak esaten dizun lekuan.", "Jarri mugikorra isilean."]
+          },
+          "sensory": {
+            "es": "La sala suele estar en silencio. Hay micrófonos y una cámara que graba.",
+            "ca": "La sala sol estar en silenci. Hi ha micròfons i una càmera que grava.",
+            "gl": "A sala adoita estar en silencio. Hai micrófonos e unha cámara que grava.",
+            "eu": "Aretoa isilik egon ohi da. Mikrofonoak eta grabatzen duen kamera bat daude."
+          },
+          "documents": []
+        },
+        {
+          "id": "jv-7",
+          "slot": "hearing",
+          "kind": "procedure",
+          "durationMin": [20, 60],
+          "title": {
+            "es": "La vista: escucha y responde",
+            "ca": "La vista: escolta i respon",
+            "gl": "A vista: escoita e responde",
+            "eu": "Ikustaldia: entzun eta erantzun"
+          },
+          "expected": {
+            "es": "Escucha. Habla cuando te pregunten.",
+            "ca": "Escolta. Parla quan et preguntin.",
+            "gl": "Escoita. Fala cando che pregunten.",
+            "eu": "Entzun. Hitz egin galdetzen dizutenean."
+          },
+          "instructions": {
+            "es": ["La vista es la reunión en la sala donde se habla del caso.", "Primero hablan los abogados.", "Puede que te hagan preguntas. Responde con calma y di la verdad.", "Si no entiendes una pregunta, dilo. Pueden repetirla con otras palabras.", "Puedes pedir una pausa si la necesitas."],
+            "ca": ["La vista és la reunió a la sala on es parla del cas.", "Primer parlen els advocats.", "Potser et fan preguntes. Respon amb calma i digues la veritat.", "Si no entens una pregunta, digues-ho. La poden repetir amb altres paraules.", "Pots demanar una pausa si la necessites."],
+            "gl": ["A vista é a reunión na sala onde se fala do caso.", "Primeiro falan os avogados.", "Pode que che fagan preguntas. Responde con calma e di a verdade.", "Se non entendes unha pregunta, dio. Poden repetila con outras palabras.", "Podes pedir unha pausa se a necesitas."],
+            "eu": ["Ikustaldia aretoko bilera da, non kasuaz hitz egiten den.", "Lehenik abokatuek hitz egiten dute.", "Baliteke galderak egitea. Erantzun lasai eta esan egia.", "Galdera bat ulertzen ez baduzu, esan. Beste hitz batzuekin errepika dezakete.", "Atsedenaldi bat eska dezakezu behar baduzu."]
+          },
+          "legalNote": {
+            "es": "Las personas con discapacidad tienen derecho a ajustes para entender y ser entendidas en el proceso (art. 7 bis de la Ley de Enjuiciamiento Civil). A validar por Leyre/Carlos.",
+            "ca": "Les persones amb discapacitat tenen dret a ajustos per entendre i ser enteses en el procés (art. 7 bis de la Llei d'enjudiciament civil). Per validar.",
+            "gl": "As persoas con discapacidade teñen dereito a axustes para entender e ser entendidas no proceso (art. 7 bis da Lei de axuizamento civil). Pendente de validar.",
+            "eu": "Desgaitasuna duten pertsonek egokitzapenak izateko eskubidea dute, prozesuan ulertzeko eta ulertuak izateko (Prozedura Zibilaren Legearen 7 bis art.). Balioztatzeko."
+          },
+          "protocolPhrase": {
+            "es": "No he entendido la pregunta. ¿Puede repetirla con otras palabras?",
+            "ca": "No he entès la pregunta. La pot repetir amb altres paraules?",
+            "gl": "Non entendín a pregunta. Pode repetila con outras palabras?",
+            "eu": "Ez dut galdera ulertu. Beste hitz batzuekin errepika dezakezu?"
+          },
+          "calmTip": {
+            "es": "Respira despacio: cuenta hasta 4 al coger aire y hasta 4 al soltarlo.",
+            "ca": "Respira a poc a poc: compta fins a 4 en agafar aire i fins a 4 en deixar-lo anar.",
+            "gl": "Respira amodo: conta ata 4 ao coller aire e ata 4 ao soltalo.",
+            "eu": "Arnasa hartu poliki: kontatu 4ra arte airea hartzean eta 4ra arte botatzean."
+          },
+          "documents": []
+        },
+        {
+          "id": "jv-8",
+          "slot": "end-hearing",
+          "kind": "exit",
+          "durationMin": [1, 5],
+          "title": {
+            "es": "Sal de la sala",
+            "ca": "Surt de la sala",
+            "gl": "Sae da sala",
+            "eu": "Irten aretotik"
+          },
+          "expected": {
+            "es": "Cuando el juez termine, sal con tu abogado o abogada.",
+            "ca": "Quan el jutge acabi, surt amb el teu advocat o advocada.",
+            "gl": "Cando o xuíz remate, sae co teu avogado ou avogada.",
+            "eu": "Epaileak amaitzen duenean, irten zure abokatuarekin."
+          },
+          "instructions": {
+            "es": ["Al final, el juez puede decir: «Visto para sentencia».", "Quiere decir que la vista ha terminado. La decisión llega después, por escrito.", "No tienes que firmar nada, salvo que te lo pidan.", "Sal de la sala sin prisa."],
+            "ca": ["Al final, el jutge pot dir: «Vist per a sentència».", "Vol dir que la vista ha acabat. La decisió arriba després, per escrit.", "No has de signar res, tret que t'ho demanin.", "Surt de la sala sense pressa."],
+            "gl": ["Ao final, o xuíz pode dicir: «Visto para sentenza».", "Quere dicir que a vista rematou. A decisión chega despois, por escrito.", "Non tes que asinar nada, agás que cho pidan.", "Sae da sala sen présa."],
+            "eu": ["Amaieran, epaileak esan dezake: «Epaitzeko ikusita».", "Ikustaldia amaitu dela esan nahi du. Erabakia geroago iritsiko da, idatziz.", "Ez duzu ezer sinatu behar, eskatzen ez badizute.", "Irten aretotik presarik gabe."]
+          },
+          "documents": []
+        },
+        {
+          "id": "jv-9",
+          "slot": "after",
+          "kind": "exit",
+          "durationMin": [5, 15],
+          "title": {
+            "es": "Habla con tu abogado y vuelve a casa",
+            "ca": "Parla amb el teu advocat i torna a casa",
+            "gl": "Fala co teu avogado e volve á casa",
+            "eu": "Hitz egin zure abokatuarekin eta itzuli etxera"
+          },
+          "expected": {
+            "es": "Pregunta a tu abogado o abogada qué pasa ahora.",
+            "ca": "Pregunta al teu advocat o advocada què passa ara.",
+            "gl": "Pregunta ao teu avogado ou avogada que pasa agora.",
+            "eu": "Galdetu zure abokatuari zer gertatuko den orain."
+          },
+          "instructions": {
+            "es": ["Pregunta cuándo llega la sentencia. La sentencia es el papel con la decisión del juez.", "Pregunta si tienes que hacer algo más.", "Sal del edificio por la misma puerta."],
+            "ca": ["Pregunta quan arriba la sentència. La sentència és el paper amb la decisió del jutge.", "Pregunta si has de fer alguna cosa més.", "Surt de l'edifici per la mateixa porta."],
+            "gl": ["Pregunta cando chega a sentenza. A sentenza é o papel coa decisión do xuíz.", "Pregunta se tes que facer algo máis.", "Sae do edificio pola mesma porta."],
+            "eu": ["Galdetu noiz iritsiko den epaia. Epaia epailearen erabakia duen papera da.", "Galdetu beste zerbait egin behar duzun.", "Irten eraikinetik ate beretik."]
+          },
+          "protocolPhrase": {
+            "es": "¿Qué tengo que hacer ahora?",
+            "ca": "Què he de fer ara?",
+            "gl": "Que teño que facer agora?",
+            "eu": "Zer egin behar dut orain?"
+          },
+          "documents": [
+            { "id": "jv-9-d1", "kind": "receive", "name": { "es": "Sentencia (llega más tarde)", "ca": "Sentència (arriba més tard)", "gl": "Sentenza (chega máis tarde)", "eu": "Epaia (geroago iristen da)" }, "notes": { "es": "Normalmente la recibe tu abogado o abogada. La ley da 10 días al juez para dictarla (art. 447 LEC); a veces tarda más. A validar.", "ca": "Normalment la rep el teu advocat o advocada. La llei dona 10 dies al jutge per dictar-la (art. 447 LEC); de vegades tarda més. Per validar.", "gl": "Normalmente recíbea o teu avogado ou avogada. A lei dálle 10 días ao xuíz para ditala (art. 447 LAC); ás veces tarda máis. Pendente de validar.", "eu": "Normalean zure abokatuak jasotzen du. Legeak 10 egun ematen dizkio epaileari emateko (PZL 447. art.); batzuetan gehiago behar du. Balioztatzeko." } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testigo-juicio-civil",
+      "processType": "civil",
+      "reviewStatus": "draft",
+      "name": {
+        "es": "Declarar como testigo en un juicio civil"
+      },
+      "summary": {
+        "es": "Te han llamado como testigo. Vas a contar lo que sabes. No eres parte del juicio."
+      },
+      "legalBasis": {
+        "es": "Ley 1/2000, de Enjuiciamiento Civil: interrogatorio de testigos (arts. 360 a 381). A validar por Leyre/Carlos."
+      },
+      "searchTerms": {
+        "es": ["testigo", "declarar", "testimonio", "declaración", "civil"],
+        "ca": ["testimoni", "declarar", "declaració", "civil"],
+        "gl": ["testemuña", "declarar", "declaración", "civil"],
+        "eu": ["lekukoa", "deklaratu", "deklarazioa", "zibila"]
+      },
+      "steps": [
+        {
+          "id": "tc-1",
+          "slot": "prepare",
+          "kind": "prepare",
+          "durationMin": [5, 15],
+          "title": { "es": "Prepara lo que tienes que llevar" },
+          "expected": { "es": "Antes de salir, coge tu citación y tu DNI." },
+          "instructions": { "es": ["Busca tu citación de testigo.", "Mira la fecha, la hora y la dirección.", "Coge tu DNI, NIE o pasaporte.", "Si trabajas, avisa en tu trabajo de que tienes que ir."] },
+          "documents": [
+            { "id": "tc-1-d1", "kind": "bring", "name": { "es": "Citación de testigo" }, "notes": { "es": "El aviso que dice cuándo y dónde tienes que ir." } },
+            { "id": "tc-1-d2", "kind": "bring", "name": { "es": "DNI, NIE o pasaporte" } }
+          ]
+        },
+        {
+          "id": "tc-2",
+          "slot": "arrival",
+          "kind": "arrival",
+          "showsEntrance": true,
+          "durationMin": [5, 10],
+          "title": { "es": "Llega al edificio" },
+          "expected": { "es": "Busca la puerta principal del edificio." },
+          "instructions": { "es": ["Mira la foto de la fachada. Así sabes qué edificio es.", "Lee cómo es la entrada: la calle, la puerta y si hay escalones."] },
+          "sensory": { "es": "En la calle puede haber tráfico y gente esperando." },
+          "documents": []
+        },
+        {
+          "id": "tc-3",
+          "slot": "security",
+          "kind": "access",
+          "durationMin": [2, 10],
+          "title": { "es": "Pasa el control de seguridad" },
+          "expected": { "es": "Deja tus cosas en la bandeja y pasa por el arco." },
+          "instructions": { "es": ["Pon la bolsa, el móvil y las cosas de metal en una bandeja.", "Pasa por el arco detector.", "Si el arco suena, no pasa nada. Te dirán qué hacer."] },
+          "sensory": { "es": "El arco puede pitar. Puede haber cola y ruido." },
+          "documents": []
+        },
+        {
+          "id": "tc-4",
+          "slot": "find-room",
+          "kind": "access",
+          "durationMin": [5, 15],
+          "title": { "es": "Busca tu sala" },
+          "expected": { "es": "Encuentra el juzgado y la sala que pone en tu citación." },
+          "instructions": { "es": ["Mira en tu citación el nombre del juzgado y la sala.", "Si no lo encuentras, pregunta en el mostrador de información."] },
+          "protocolPhrase": { "es": "Soy testigo en un juicio de hoy. ¿Dónde tengo que esperar?" },
+          "documents": []
+        },
+        {
+          "id": "tc-5",
+          "slot": "wait",
+          "kind": "wait",
+          "durationMin": [15, 90],
+          "title": { "es": "Espera fuera de la sala" },
+          "expected": { "es": "Espera fuera hasta que te llamen. No entres antes." },
+          "instructions": { "es": ["Los testigos esperan fuera de la sala.", "No hables del caso con otros testigos.", "Te llamarán por tu nombre.", "A veces hay que esperar mucho. Es normal."] },
+          "sensory": { "es": "En los pasillos hay gente hablando. Puede haber avisos por altavoz." },
+          "calmTip": { "es": "Puedes usar cascos mientras esperas. Quítatelos al entrar en la sala." },
+          "documents": []
+        },
+        {
+          "id": "tc-6",
+          "slot": "testify",
+          "kind": "procedure",
+          "durationMin": [10, 30],
+          "title": { "es": "Declara" },
+          "expected": { "es": "Responde a las preguntas y di la verdad." },
+          "instructions": { "es": ["Primero te preguntan tu nombre y otros datos.", "Después juras o prometes decir la verdad.", "Los abogados te hacen preguntas. A veces también el juez.", "Si no sabes o no recuerdas algo, dilo.", "Si no entiendes una pregunta, pide que la repitan."] },
+          "legalNote": { "es": "El testigo jura o promete decir verdad (art. 365 LEC). A validar por Leyre/Carlos." },
+          "protocolPhrase": { "es": "No lo recuerdo bien. ¿Puede repetir la pregunta?" },
+          "calmTip": { "es": "Respira despacio: cuenta hasta 4 al coger aire y hasta 4 al soltarlo." },
+          "documents": []
+        },
+        {
+          "id": "tc-7",
+          "slot": "after",
+          "kind": "exit",
+          "durationMin": [5, 15],
+          "title": { "es": "Pide tu justificante y sal" },
+          "expected": { "es": "Pide un papel que diga que has venido." },
+          "instructions": { "es": ["Cuando termines, puedes salir de la sala.", "Pide un justificante de asistencia en la oficina del juzgado.", "Sal del edificio por la misma puerta."] },
+          "protocolPhrase": { "es": "¿Me pueden dar un justificante de que he venido?" },
+          "documents": [
+            { "id": "tc-7-d1", "kind": "receive", "name": { "es": "Justificante de asistencia" }, "notes": { "es": "Sirve para tu trabajo. Puedes pedir que te paguen los gastos (art. 375 LEC). A validar." } }
+          ]
+        }
+      ]
+    }
+  ]
+}

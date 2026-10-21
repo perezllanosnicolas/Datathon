@@ -1,0 +1,45 @@
+{
+  "_note": "Glosario de ejemplo en lenguaje simple. Pendiente de revisión legal y lingüística.",
+  "terms": [
+    {
+      "id": "citacion",
+      "term": { "es": "Citación", "ca": "Citació", "gl": "Citación", "eu": "Zitazioa" },
+      "definition": { "es": "Aviso que dice cuándo y dónde tienes que ir.", "ca": "Avís que diu quan i on has d'anar.", "gl": "Aviso que di cando e onde tes que ir.", "eu": "Noiz eta non joan behar duzun esaten duen abisua." }
+    },
+    {
+      "id": "juez",
+      "term": { "es": "Juez o jueza", "ca": "Jutge o jutgessa", "gl": "Xuíz ou xuíza", "eu": "Epailea" },
+      "definition": { "es": "La persona que escucha a todos y decide.", "ca": "La persona que escolta tothom i decideix.", "gl": "A persoa que escoita a todos e decide.", "eu": "Guztiak entzun eta erabakitzen duen pertsona." }
+    },
+    {
+      "id": "vista",
+      "term": { "es": "Vista", "ca": "Vista", "gl": "Vista", "eu": "Ikustaldia" },
+      "definition": { "es": "La reunión en la sala donde se habla del caso.", "ca": "La reunió a la sala on es parla del cas.", "gl": "A reunión na sala onde se fala do caso.", "eu": "Kasuaz hitz egiten den aretoko bilera." }
+    },
+    {
+      "id": "sentencia",
+      "term": { "es": "Sentencia", "ca": "Sentència", "gl": "Sentenza", "eu": "Epaia" },
+      "definition": { "es": "El papel con la decisión del juez.", "ca": "El paper amb la decisió del jutge.", "gl": "O papel coa decisión do xuíz.", "eu": "Epailearen erabakia duen papera." }
+    },
+    {
+      "id": "laj",
+      "term": { "es": "Letrado o letrada de la Administración de Justicia", "ca": "Lletrat o lletrada de l'Administració de Justícia", "gl": "Letrado ou letrada da Administración de Xustiza", "eu": "Justizia Administrazioko letratua" },
+      "definition": { "es": "Persona que trabaja en el juzgado. Da fe de lo que pasa en la sala.", "ca": "Persona que treballa al jutjat. Dona fe del que passa a la sala.", "gl": "Persoa que traballa no xulgado. Dá fe do que pasa na sala.", "eu": "Epaitegian lan egiten duen pertsona. Aretoan gertatzen denaren fede ematen du." }
+    },
+    {
+      "id": "abogado",
+      "term": { "es": "Abogado o abogada", "ca": "Advocat o advocada", "gl": "Avogado ou avogada", "eu": "Abokatua" },
+      "definition": { "es": "La persona que te defiende y te explica el caso.", "ca": "La persona que et defensa i t'explica el cas.", "gl": "A persoa que te defende e che explica o caso.", "eu": "Zu defendatzen zaituen eta kasua azaltzen dizun pertsona." }
+    },
+    {
+      "id": "testigo",
+      "term": { "es": "Testigo", "ca": "Testimoni", "gl": "Testemuña", "eu": "Lekukoa" },
+      "definition": { "es": "Persona que cuenta lo que vio o sabe.", "ca": "Persona que explica el que va veure o sap.", "gl": "Persoa que conta o que viu ou sabe.", "eu": "Ikusi edo dakiena kontatzen duen pertsona." }
+    },
+    {
+      "id": "juicio-verbal",
+      "term": { "es": "Juicio verbal", "ca": "Judici verbal", "gl": "Xuízo verbal", "eu": "Hitzezko judizioa" },
+      "definition": { "es": "Un tipo de juicio civil más corto. Casi todo se dice hablando en la sala.", "ca": "Un tipus de judici civil més curt. Gairebé tot es diu parlant a la sala.", "gl": "Un tipo de xuízo civil máis curto. Case todo se di falando na sala.", "eu": "Judizio zibil laburrago bat. Ia dena aretoan hitz eginez esaten da." }
+    }
+  ]
+}

@@ -4,6 +4,15 @@
 > Núcleo: adaptaciones y diagrama de flujo con barra de progreso, **sin registro**. El 3D es un anexo futuro.
 > Prioridad actual: **implementar**. El análisis RGPD queda aplazado [D]. Demo con **hosting local** [D].
 
+## Estado (2026-10-21)
+Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README.md`). Está probado con `npm run smoke` (API, enlace del abogado y 5 citaciones sintéticas en 4 idiomas) y con un recorrido en navegador móvil (cuestionario → buscador → flujo → resumen; OCR de una foto; abogado desde un segundo dispositivo).
+**Pendiente:**
+- Fase 0: el equipo elige el trámite y el juzgado. Los de ahora son de ejemplo.
+- Fase 1: revisión legal del contenido y revisión de las traducciones ca/gl/eu.
+- Fase 5: clave de Google y elegir la orientación (`heading`) de cada fachada.
+- Fase 6: probar con fotos reales de móvil y con PDF escaneados (hoy un PDF sin texto no se lee).
+- Fases 8–10.
+
 ## 1. Visión general
 
 ### Qué se construye, en orden

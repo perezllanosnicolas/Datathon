@@ -1,0 +1,82 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { LOCALE, usePrefs } from "./PrefsProvider";
+
+const PATHS = {
+  sound: "M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z",
+  doc: "M6 2h8l4 4v16H6V2zm8 0v4h4M9 12h6M9 16h6",
+  info: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 8v7m0-10v.01",
+  person: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 0 1 14 0",
+  speech: "M4 4h16v11H8l-4 4V4z",
+  calm: "M12 21c-4-3-8-6.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4.5-4 8-8 11z",
+  scale: "M12 3v18M5 7h14M5 7l-3 7h6L5 7zm14 0l-3 7h6l-3-7zM8 21h8",
+  clock: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 5v5l3 3",
+  place: "M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12zm0-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+} as const;
+
+export type IconName = keyof typeof PATHS;
+
+/** Decorative icon: always paired with visible text (docs/04 §4). */
+export function Icon({ name }: { name: IconName }) {
+  return (
+    <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <path d={PATHS[name]} />
+    </svg>
+  );
+}
+
+export function Note({ icon, title, tone, children }: { icon?: IconName; title?: string; tone?: "warn" | "ok" | "lawyer"; children: React.ReactNode }) {
+  return (
+    <div className={`note${tone ? ` note-${tone}` : ""}`}>
+      {title && (
+        <p className="note-title">
+          {icon && <Icon name={icon} />}
+          {title}
+        </p>
+      )}
+      {children}
+    </div>
+  );
+}
+
+/** Text-to-speech in the chosen language. Shown only if the person enabled it. */
+export function ReadAloud({ text }: { text: string }) {
+  const { prefs, t } = usePrefs();
+  const [speaking, setSpeaking] = useState(false);
+  const supported = typeof window !== "undefined" && "speechSynthesis" in window;
+
+  useEffect(() => () => {
+    if (supported) window.speechSynthesis.cancel();
+  }, [supported]);
+
+  if (!prefs.readAloud || !supported) return null;
+
+  function toggle() {
+    const synth = window.speechSynthesis;
+    if (speaking) {
+      synth.cancel();
+      setSpeaking(false);
+      return;
+    }
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = LOCALE[prefs.lang];
+    u.rate = 0.9;
+    u.onend = () => setSpeaking(false);
+    u.onerror = () => setSpeaking(false);
+    synth.cancel();
+    synth.speak(u);
+    setSpeaking(true);
+  }
+
+  return (
+    <button type="button" className="btn btn-quiet" onClick={toggle} aria-pressed={speaking}>
+      <Icon name="sound" />
+      {speaking ? t.flow.stop : t.flow.readAloud}
+    </button>
+  );
+}
+
+export function formatDateTime(iso: string, lang: keyof typeof LOCALE): string {
+  return new Date(iso).toLocaleString(LOCALE[lang], { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+}

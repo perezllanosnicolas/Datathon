@@ -1,0 +1,99 @@
+{
+  "_note": "Juzgados de EJEMPLO para el demo. Las direcciones son públicas, pero las descripciones de la entrada son SINTÉTICAS y hay que comprobarlas en el lugar. La vista de Street View se pide por dirección; heading/pitch/fov se ajustan con la vista previa.",
+  "courts": [
+    {
+      "id": "madrid-primera-instancia",
+      "reviewStatus": "draft",
+      "processTypes": ["civil"],
+      "city": "Madrid",
+      "name": {
+        "es": "Juzgados de Primera Instancia de Madrid",
+        "ca": "Jutjats de Primera Instància de Madrid",
+        "gl": "Xulgados de Primeira Instancia de Madrid",
+        "eu": "Madrilgo Lehen Auzialdiko Epaitegiak"
+      },
+      "address": "Calle del Capitán Haya, 66, 28020 Madrid",
+      "searchTerms": ["madrid", "capitan haya", "primera instancia madrid", "primera instancia de madrid", "lehen auzialdiko", "primera instancia"],
+      "entrance": {
+        "streetView": { "location": "Calle del Capitán Haya 66, 28020 Madrid", "pitch": 5, "fov": 80 },
+        "roadDirection": "two_way",
+        "dropOff": {
+          "es": "Ejemplo: hay una parada de taxi cerca. No se puede aparcar delante de la puerta.",
+          "ca": "Exemple: hi ha una parada de taxi a prop. No es pot aparcar davant de la porta.",
+          "gl": "Exemplo: hai unha parada de taxi preto. Non se pode aparcar diante da porta.",
+          "eu": "Adibidea: taxi-geltoki bat dago gertu. Ezin da aparkatu atearen aurrean."
+        },
+        "access": {
+          "es": "Ejemplo: la puerta principal es de cristal. Hay unos escalones y una rampa a la derecha.",
+          "ca": "Exemple: la porta principal és de vidre. Hi ha uns esglaons i una rampa a la dreta.",
+          "gl": "Exemplo: a porta principal é de cristal. Hai uns chanzos e unha rampla á dereita.",
+          "eu": "Adibidea: ate nagusia beirazkoa da. Eskailera batzuk eta arrapala bat daude eskuinean."
+        },
+        "textDescription": {
+          "es": "Ejemplo: edificio grande de varias plantas, en una calle de doble sentido. La entrada principal da a la calle del Capitán Haya.",
+          "ca": "Exemple: edifici gran de diverses plantes, en un carrer de doble sentit. L'entrada principal dona al carrer del Capitán Haya.",
+          "gl": "Exemplo: edificio grande de varias plantas, nunha rúa de dobre sentido. A entrada principal dá á rúa do Capitán Haya.",
+          "eu": "Adibidea: hainbat solairuko eraikin handia, bi noranzkoko kale batean. Sarrera nagusia Capitán Haya kalera ematen du."
+        }
+      },
+      "stepNotes": {
+        "security": {
+          "es": "Ejemplo: el control está justo después de la puerta principal.",
+          "ca": "Exemple: el control és just després de la porta principal.",
+          "gl": "Exemplo: o control está xusto despois da porta principal.",
+          "eu": "Adibidea: kontrola ate nagusiaren ondoren dago."
+        },
+        "find-room": {
+          "es": "Ejemplo: el mostrador de información está a la izquierda, después del control.",
+          "ca": "Exemple: el taulell d'informació és a l'esquerra, després del control.",
+          "gl": "Exemplo: o mostrador de información está á esquerda, despois do control.",
+          "eu": "Adibidea: informazio-mahaia ezkerrean dago, kontrolaren ondoren."
+        }
+      }
+    },
+    {
+      "id": "bcn-ciutat-justicia",
+      "reviewStatus": "draft",
+      "processTypes": ["civil"],
+      "city": "L'Hospitalet de Llobregat",
+      "name": {
+        "es": "Ciudad de la Justicia de Barcelona y L'Hospitalet",
+        "ca": "Ciutat de la Justícia de Barcelona i L'Hospitalet",
+        "gl": "Cidade da Xustiza de Barcelona e L'Hospitalet",
+        "eu": "Bartzelonako eta L'Hospitaleteko Justizia Hiria"
+      },
+      "address": "Gran Via de les Corts Catalanes, 111, L'Hospitalet de Llobregat (Barcelona)",
+      "searchTerms": ["barcelona", "hospitalet", "ciutat de la justicia", "ciudad de la justicia", "gran via", "justizia hiria", "cidade da xustiza"],
+      "entrance": {
+        "streetView": { "location": "Gran Via de les Corts Catalanes 111, L'Hospitalet de Llobregat", "pitch": 5, "fov": 80 },
+        "roadDirection": "two_way",
+        "dropOff": {
+          "es": "Ejemplo: hay parada de metro y de autobús cerca.",
+          "ca": "Exemple: hi ha parada de metro i d'autobús a prop.",
+          "gl": "Exemplo: hai parada de metro e de autobús preto.",
+          "eu": "Adibidea: metro- eta autobus-geltokiak daude gertu."
+        },
+        "access": {
+          "es": "Ejemplo: entrada a pie de calle, sin escalones. Hay varios edificios: mira el letrero de cada uno.",
+          "ca": "Exemple: entrada a peu de carrer, sense esglaons. Hi ha diversos edificis: mira el rètol de cadascun.",
+          "gl": "Exemplo: entrada a pé de rúa, sen chanzos. Hai varios edificios: mira o letreiro de cada un.",
+          "eu": "Adibidea: kale-mailako sarrera, eskailerarik gabe. Hainbat eraikin daude: begiratu bakoitzaren errotulua."
+        },
+        "textDescription": {
+          "es": "Ejemplo: conjunto de edificios grandes de colores claros, junto a una avenida ancha de doble sentido.",
+          "ca": "Exemple: conjunt d'edificis grans de colors clars, al costat d'una avinguda ampla de doble sentit.",
+          "gl": "Exemplo: conxunto de edificios grandes de cores claras, xunto a unha avenida ancha de dobre sentido.",
+          "eu": "Adibidea: kolore argiko eraikin handien multzoa, bi noranzkoko etorbide zabal baten ondoan."
+        }
+      },
+      "stepNotes": {
+        "security": {
+          "es": "Ejemplo: cada edificio tiene su propio control de seguridad.",
+          "ca": "Exemple: cada edifici té el seu propi control de seguretat.",
+          "gl": "Exemplo: cada edificio ten o seu propio control de seguridade.",
+          "eu": "Adibidea: eraikin bakoitzak bere segurtasun-kontrola du."
+        }
+      }
+    }
+  ]
+}

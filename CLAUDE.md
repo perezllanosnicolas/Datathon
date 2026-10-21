@@ -5,7 +5,7 @@
 - Objetivo: reducir la brecha judicial de las personas neurodivergentes (TEA, TDAH, dislexia, discalculia, disgrafía): preparar a la persona para el proceso judicial y capacitar a los profesionales de la justicia para adaptarse. Enfoque **no capacitista**.
 - Los casos de ejemplo del reto (Luis y Juan) se han retirado del proyecto. **El demo es del ámbito civil.**
 - Marco legal: art. 24 CE, Ley 15/2022, RDL 1/2013 (accesibilidad universal y ajustes razonables).
-- **Fase actual: 0** — alcance definido a alto nivel (ver "Decisiones"); detalles en `docs/`. No asumir como decidido nada marcado [P] o [?] en esos documentos.
+- **Fase actual: 2–7 (prototipo del núcleo construido en la rama `feat/demo-core`)**; detalles en `docs/`. No asumir como decidido nada marcado [P] o [?] en esos documentos. Cómo arrancarlo: `README.md`.
 
 ## Equipo
 Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática + Criminología), Dani (Informática + ADE), Leyre y Carlos (Derecho).
@@ -92,9 +92,11 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - 2026-10-21 — **Lenguaje lo más simple posible** en toda la app (frases cortas, palabras de uso diario, términos legales explicados); reglas en `docs/04-UI-UX-Design.md` §8.
 - 2026-10-21 — Documentación en 6 documentos: PRD, TRD, AppFlow, UI/UX, Backend Schema, Implementation Plan.
 - 2026-10-21 — Instaladas en el proyecto las skills de desarrollo web: taste-skill, web-design-guidelines y playwright-cli (ver "Skills recomendadas").
+- 2026-10-21 — **Prototipo del núcleo** en `web/` (rama `feat/demo-core`): Next.js 16 + TypeScript, SQLite (`node:sqlite`) y OCR con tesseract.js en el servidor. Incluye cuestionario, ajustes, buscador, citación, flujo con barra de progreso, fachada y enlace del abogado. **Provisional, pendiente de que decida el equipo:** el trámite de ejemplo (juicio verbal; segundo trámite: testigo, solo en español) y los juzgados de ejemplo (Madrid, Capitán Haya 66, y Ciudad de la Justicia de Barcelona). Las descripciones de la entrada son sintéticas. Los textos legales están marcados "a validar por Leyre/Carlos" y las traducciones ca/gl/eu son borradores. El catálogo es JSON en `web/data/catalog/` (no una tabla `translations` en la base de datos), para que lo pueda editar el equipo de Derecho [P]. Nombre provisional: "Paso a paso al juzgado" [?].
 
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.
 - `.claude/` — enlaces de Claude Code a esas skills.
 - `docs/` — `01-PRD.md`, `02-TRD.md`, `03-AppFlow.md`, `04-UI-UX-Design.md`, `05-Backend-Schema.md`, `06-Implementation-Plan.md`, `Anexo-3D-Escaneo.md` (futuro). Marcas: [D] decidido, [P] propuesta, [?] abierto, [V] a validar por Leyre/Carlos.
-- _(resto por completar cuando haya código)_
+- `README.md` — cómo arrancar el prototipo y qué incluye.
+- `web/` — prototipo Next.js: `data/catalog/` (trámites, juzgados y glosario en 4 idiomas), `data/citaciones-sinteticas/`, `scripts/smoke-test.mjs` (prueba de la API), `src/app/` (pantallas y API), `src/components/`, `src/i18n/` (textos de la interfaz), `src/lib/` (catálogo, extracción, almacenamiento en el dispositivo), `src/server/` (SQLite, tokens, OCR). Next.js 16 tiene cambios: leer `web/node_modules/next/dist/docs/` antes de tocar APIs de Next (ver `web/AGENTS.md`).
