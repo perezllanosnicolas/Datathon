@@ -41,6 +41,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 | `playwright-cli` y `dev` | `microsoft/playwright-cli` | Automatizar el navegador y probar la web del prototipo |
 | `baoyu-image-gen` | `.claude/skills/baoyu-image-gen/` (carpeta real) | Generar imágenes con IA (`npm run images:real`). Necesita claves de API propias: no subirlas |
 | `/sincronizar` | Propia (`.claude/skills/sincronizar/`) | Actualizar documentación, commit y push a GitHub. Solo la invoca una persona; nunca fuerza ni sube a `main` sin que se indique |
+| `/actualizar-servidor-levantado` | Propia (`.claude/skills/actualizar-servidor-levantado/`) | Levanta el servidor del prototipo si no está, o lo para, recompila y relanza si ya lo está (con QR). Solo la invoca una persona |
 
 `VoltAgent/awesome-design-md` **no es una skill** (no tiene `SKILL.md`): es una colección de `DESIGN.md` de marcas, útil solo como referencia de diseño; no instalada.
 
@@ -106,6 +107,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - 2026-10-22 — **Siglas con significado (rama `feat/acronyms`), provisional:** cuando aparece una sigla (TDAH, DNI, NIE, art. de la LEC) se escribe su significado entre paréntesis, en los 4 idiomas. No se amplían PDF/JPG/PNG/MB ni la atribución de ARASAAC. Las expansiones ca/gl/eu son borradores.
 
 - 2026-10-22 — **Pulido (rama `feat/ui-polish-official`), provisional:** barra fija «Guardar y volver al inicio» en Ajustes; buscador con filtro en «Palabras difíciles» (ordenadas, 39 términos; ca/gl/eu son borradores); opción «No quiero ninguna adaptación» en el cuestionario y Ajustes; pie de página reordenado (nombre de la app, logotipos del Gobierno de España y del Ministerio de Justicia en `web/public/images/official/`, tomados de Wikimedia Commons, y aviso de que **no es una web oficial**); tamaños de imagen unificados. **Pendiente de validar con el equipo/organización:** permiso de uso de los logotipos oficiales.
+- 2026-10-22 — Creada la skill de proyecto **`/actualizar-servidor-levantado`**: levanta o reinicia el servidor del prototipo (producción por defecto, `dev` opcional) para ver los últimos cambios.
 
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.
