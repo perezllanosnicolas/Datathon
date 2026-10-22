@@ -2,6 +2,7 @@
 
 > Leyenda: **[D]** decidido por el equipo · **[P]** propuesta (pendiente de acuerdo) · **[?]** pregunta abierta.
 > Fuentes: descripción del equipo (2026-10-21, actualizada) y Google Doc de ideas.
+> **Estado (2026-10-22):** el núcleo está construido en el prototipo **SimuLex** («Visita virtual accesible al juzgado»; nombre provisional) en `web/`. Cómo arrancarlo: `README.md`. Detalle técnico: [TRD](02-TRD.md).
 
 ## 1. Problema
 Las personas neurodivergentes (TEA, TDAH, dislexia, discalculia, disgrafía) encuentran barreras al acudir a un juzgado: entorno desconocido, estímulos sensoriales, pasos poco claros, lenguaje difícil. La brecha se reduce preparando a la persona y capacitando al personal. Enfoque **no capacitista**: la adaptación es una responsabilidad de la institución, no de la persona. [D]
@@ -24,21 +25,21 @@ El producto se apoya en tres pilares:
 ## 5. Alcance
 
 ### Dentro (decidido) [D]
-1. **Uso sin registro** [D] y **cuestionario de adaptación:** idioma y tamaño de letra; después, filtros extra buscables por neurodivergencia. Sin cuenta, las preferencias y el progreso se guardan en el dispositivo. Un registro opcional podría añadirse en el futuro [?].
+1. **Uso sin registro** [D] y **cuestionario de adaptación:** idioma; después, las adaptaciones (tamaño y tipo de letra, movimiento, color y contraste, leer en voz alta, dictado, tipo de imagen por paso) y, al final, «Más filtros» por neurodivergencia. Sin cuenta, las preferencias y el progreso se guardan en el dispositivo. Un registro opcional podría añadirse en el futuro [?].
 2. **Selección de trámite y de juzgado, por dos vías:**
    - **Buscador** que filtra entre los casos posibles (trámite, tipo de proceso, juzgado).
    - **Subir la citación** (documento o foto), si no se quiere buscar: el documento se **pasa a texto** y de ese texto se **extrae el tipo de trámite y el juzgado**. La persona confirma lo detectado.
 3. **Diagrama de flujo interactivo**, paso a paso, con: documentación y recursos necesarios al inicio; documentación y recursos que se obtienen al salir; pasos lo más granulares posible (ir a recepción, registrarse, esperar turno…).
-4. **Imagen de la fachada** (en el prototipo, foto fija de Wikimedia Commons; Street View queda como opción futura, ver TRD §3) — antes: **con Street View de Google Maps** [D: solo fachada] dentro de los pasos de llegada, junto a un texto que dice cómo es la entrada al edificio, si la vía es de doble sentido, etc. Es una imagen fija, no un recorrido.
+4. **Imagen de la fachada** [D] dentro de los pasos de llegada: una **foto fija** de la sede judicial (Wikimedia Commons, con autoría y licencia), junto a un texto que dice cómo es la entrada al edificio, si la vía es de doble sentido, etc. Street View de Google Maps queda como opción futura (ver [TRD §3](02-TRD.md)).
    - **Barra de progreso** [D]: en cada paso indica cuántos pasos has hecho y cuántos te quedan ("Paso 3 de 12 · Te quedan 9").
 5. **Enlace de vinculación con el abogado:** la persona envía un enlace a su abogado/a, que indica qué **documentación hay que llevar**; esa lista aparece en la app dentro del trámite.
 6. **Formato:** web para dispositivos móviles (mobile-first).
 
 ### Restricciones [D]
 - **Sin documentación clínica:** la herramienta no pide, almacena ni procesa informes clínicos ni diagnósticos. La persona solo indica sus adaptaciones.
-- **Sin QR.**
+- **Sin QR** en el producto (el QR de `npm run share` solo sirve para abrir el demo en el móvil).
 - **Sin notificaciones por correo** [D]: los avisos son solo dentro de la app.
-- **Hosting local para el demo** [D]: todo se ejecuta en un equipo del equipo, sin servidor externo. El stack es libre (decisión técnica en el [TRD](02-TRD.md)).
+- **Hosting del demo** [D]: local (un portátil en la misma Wi-Fi) o, para la presentación, **Vercel** (provisional). Stack: Next.js 16 + TypeScript + SQLite (`node:sqlite`) + tesseract.js (ver [TRD](02-TRD.md)).
 - **RGPD aplazado** [D]: la base legal y el aviso de privacidad se definen más adelante; la prioridad ahora es la implementación. Mientras tanto: sin cuentas, sin guardar la citación ni el perfil en el servidor, y solo datos sintéticos.
 - **La citación no es documentación clínica**, pero sí contiene datos personales (nombre, número de procedimiento, hechos). Reglas propuestas [P]:
   - Se lee para identificar el trámite y juzgado; **ni el documento ni el texto extraído se guardan**.
@@ -56,15 +57,19 @@ El producto se apoya en tres pilares:
 ### Anexo: futuro extra [D]
 Escaneo 3D del juzgado y experiencia inmersiva realista (KIRI Engine, rol de escaneo, estímulos en el modelo). Ver [Anexo-3D-Escaneo.md](Anexo-3D-Escaneo.md). No forma parte del núcleo.
 
-### Candidatas del Google Doc (sin decidir) [P]
+### Candidatas del Google Doc ya incluidas en el prototipo [P, provisional]
 - Frases de protocolo para hablar con el personal.
-- Estimación de tiempos.
+- Estimación de tiempos («¿Cuánto dura?»).
 - Técnicas de calma (respiración).
-- Qué puede ocurrir y qué se te pedirá.
-- Avisos de estímulos sensoriales por zona, escritos como texto en el paso (ej.: altavoz de avisos en la entrada).
-- Pictogramas / lectura fácil.
-- Control de acceso: qué esperar.
-- A quién preguntar ante dudas; qué puede pedir la persona (ajustes razonables).
+- Qué se espera de la persona en cada paso.
+- Avisos de estímulos sensoriales por zona, escritos como texto en el paso.
+- Pictogramas de ARASAAC y fotos por paso; glosario de «Palabras difíciles» (39 términos).
+- Control de acceso: qué esperar (pasos de tipo «entrar»).
+- A quién preguntar ante dudas; nota legal con la norma citada.
+- Leer en voz alta y dictado por voz.
+
+### Candidatas del Google Doc (sin decidir) [P]
+- Qué puede pedir la persona (ajustes razonables), explicado con la norma.
 - Guía en forma de muñeco.
 - Asistente con ALIA-40B que responde con el catálogo (sin datos clínicos ni personales); ver arriba.
 - Módulo de formación para profesionales de la justicia (el reto pide capacitarlos).
@@ -98,8 +103,8 @@ Art. 24 CE, Ley 15/2022, RDL 1/2013. El Google Doc cita la Ley 8/2021: confirmar
 Familiaridad percibida antes/después, tiempo hasta completar el trámite sin ayuda, número de ajustes usados. Dato de contexto [D]: estimación del equipo de **entre 150.000 y 300.000 personas neurodivergentes que acuden a un juzgado al año en España**. Es una estimación, no un dato oficial: en la presentación decirlo así y explicar cómo se calcula [V].
 
 ## 9. Preguntas abiertas
-- [ ] El demo es civil [D]: ¿qué trámite civil concreto (y qué juzgado de ejemplo) se carga primero?
-- [ ] ¿Qué se extrae de la citación además de trámite y juzgado (fecha y hora, papel de la persona)?
+- [ ] El demo es civil [D]: falta que el equipo confirme el trámite y la sede. Provisional: el caso de la casa heredada (división de la cosa común; la persona, con TEA, es la demandada; juicio verbal), más un juicio verbal y un trámite de testigo de ejemplo; sedes de Madrid (Capitán Haya 66) y Ciudad de la Justicia de Barcelona. Pendiente de revisión por Derecho.
+- [ ] ¿Qué se extrae de la citación además de trámite, juzgado, fecha y hora (que ya se extraen)? Por ejemplo, el papel de la persona.
 - [ ] **Aplazado:** base legal y aviso de privacidad (RGPD) para leer la citación y para el enlace del abogado. Retomar tras la implementación.
 - [ ] ¿Qué catálogo de trámites y juzgados cubre el demo? Solo se reconoce lo que está en el catálogo.
 - [ ] ¿Qué hace exactamente ALIA-40B en el demo y en qué equipo se ejecuta? (necesita mucha memoria)

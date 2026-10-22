@@ -1,91 +1,103 @@
 # 05 · Backend Schema — Datos y autenticación
 
-> Todo el esquema es una **propuesta [P]** derivada del flujo decidido. Revisar en equipo.
+> Leyenda: **[D]** decidido · **[P]** propuesta · **[?]** abierto.
+> **Estado (2026-10-22):** este documento describe lo que hay en el prototipo (`web/`). Lo que no está implementado aparece en §5 «Previsto».
 > Datos sintéticos únicamente. **No se almacena documentación clínica ni diagnósticos** [D].
-> El perfil de adaptaciones es dato sensible. El análisis RGPD queda **aplazado** [D]; mientras tanto el diseño minimiza datos (ver §1).
+> El perfil de adaptaciones es dato sensible. El análisis RGPD queda **aplazado** [D]; mientras tanto el diseño minimiza datos.
 
-## 1. Uso sin registro y roles
-- **La herramienta se usa sin registro** [D]. No hay cuentas de usuario en el demo.
-- **El perfil de adaptaciones y el progreso se guardan en el propio dispositivo** (almacenamiento del navegador), no en el servidor [P]. Así el servidor no guarda nada sobre la neurodivergencia de la persona.
-- **Caso anónimo:** el caso (trámite + juzgado + documentos del abogado) se guarda en el servidor con un identificador aleatorio y un secreto de propietario que solo conoce el dispositivo de la persona (se guarda el hash). Sirve para que lleguen los documentos del abogado sin cuenta [P].
-- Si se borran los datos del navegador, la persona pierde su perfil y el acceso a ese caso. Avisarlo en la app [P].
-- Un registro con cuenta, si se añade más adelante, sería **opcional** (por ejemplo, para usar varios dispositivos) [?]. Las tablas `users` y `user_profiles` quedan como previstas, no necesarias para el demo.
-- Roles: `editor` (contenido, con acceso protegido), usuario anónimo y abogado/a **sin cuenta**, con acceso solo mediante un enlace con token limitado a un caso. Cada rol ve solo lo necesario.
-- Endpoints del enlace: solo permiten leer trámite/juzgado y crear o editar `case_documents` de ese caso; validan caducidad y revocación en cada llamada; límite de peticiones [P].
-- Sesiones con token seguro. Claves de servicios externos solo en el servidor.
+## 1. Dónde vive cada dato [D]
+| Dónde | Qué | Archivo |
+|---|---|---|
+| **Dispositivo** (localStorage del navegador) | Perfil de adaptaciones, casos de la persona (id + secreto), progreso, documentos ya vistos | `web/src/lib/storage.ts` |
+| **Cookie** `bj_lang` | Solo el idioma, para que el servidor ponga `<html lang>` | `web/src/lib/storage.ts` |
+| **Catálogo JSON** (solo lectura) | Trámites, pasos, documentos, sedes judiciales, glosario, pictogramas | `web/data/catalog/` |
+| **SQLite** (`node:sqlite`) | Casos anónimos, enlaces del abogado/a y documentos del caso | `web/src/server/db.ts` |
+| **En ningún sitio** | La citación y su texto, nombre de la persona, correo, diagnósticos | — |
 
-## 2. Entidades
+La base de datos está en `web/data/app.db` en local y en `/tmp/app.db` en Vercel (no permanente; ver [TRD §2e](02-TRD.md)). Se puede cambiar con la variable `DB_PATH`. Las tablas se crean solas al arrancar.
 
-### users (opcional, no usada en el demo)
-`id`, `email`, `password_hash`, `role`, `created_at`, `consent_at`.
+## 2. Uso sin registro y roles [D]
+- **Sin cuentas.** No hay tablas de usuarios.
+- **Caso anónimo:** al confirmar trámite y sede se crea un caso en el servidor con un id aleatorio y un **secreto de propietario** que solo guarda el dispositivo. El servidor guarda el **hash SHA-256** del secreto, nunca el secreto. Las rutas del caso piden ese secreto.
+- Si se borran los datos del navegador, la persona pierde su perfil, su progreso y el acceso a sus casos.
+- **Abogado/a sin cuenta:** accede solo con un token del enlace, limitado a un caso. Solo puede leer el trámite y la sede y crear o editar documentos de ese caso. El token se comprueba en cada llamada (caducidad y revocación).
+- **Editor de contenido:** no hay panel ni rol en el prototipo. El equipo edita los JSON del catálogo [P].
+- **Límites de peticiones** (en memoria, por cliente y minuto): citación 6, crear caso 20, crear enlace 10, abogado 60 lecturas y 20 escrituras.
 
-### user_profiles (cuestionario de adaptación) — se guarda en el dispositivo en el demo
-`user_id` (solo si hay cuenta), `language` (`es | ca | eu | gl`), `font_size`, `reduced_motion`, `reduced_color`, `text_to_speech`, `screen_reader`, `adaptation_filters[]` (TEA, TDAH, dislexia, discalculia, disgrafía, ceguera/baja visión, otros).
-Son **preferencias elegidas por la persona**, no un diagnóstico. Editable y borrable.
+## 3. En el dispositivo (localStorage) [D]
+| Clave | Contenido |
+|---|---|
+| `bj.prefs` | `lang` (`es · ca · gl · eu`), `fontSize` (6 niveles, `s`…`xxxl`, 16–36 px), `typeface` (`app · readable · opendyslexic`), `needs[]` (`tea · tdah · dislexia · discalculia · disgrafia · vision · otras`), `reducedMotion`, `calmColors`, `highContrast`, `readAloud` (activado por defecto), `dictation`, `imageMode` (`picto · real · none`), `onboarded` |
+| `bj.cases` | Lista de casos: `id`, `secret`, `procedureId`, `courtId`, `source` (`search · citation`), `createdAt` |
+| `bj.progress.<caseId>` | `current`, `done[]`, `skipped[]`, `checked[]` (documentos marcados como listos), `updatedAt` |
+| `bj.seenDocs.<caseId>` | Ids de documentos del abogado/a ya vistos, para avisar de los nuevos |
 
-### courts (juzgado)
-`id`, `name`, `address`, `process_types[]`, `published`.
+`needs` son **preferencias elegidas por la persona**, no un diagnóstico. «Borrar todo» en Ajustes elimina todas las claves `bj.*` y la cookie.
 
-### court_entrances (entrada del edificio, para Street View)
-`court_id`, `lat`, `lng`, `heading`, `pitch`, `fov` (ángulo de visión), `street_view_pano_id` (opcional), solo se guardan los parámetros de la vista de fachada, **no la imagen**; `capture_date` (si disponible), `road_direction` (`one_way | two_way | pedestrian | other`), `drop_off_notes`, `access_notes` (escalones, rampa, puerta), `text_description` (alternativa en texto completa), `fallback_photo` (opcional).
-
-### procedures (trámites)
-`id`, `name`, `process_type` (civil, penal, mercantil…), `legal_basis` (norma citada), `review_status`.
-
-### procedure_search_terms (para el buscador)
-`procedure_id`, `term`, `kind` (`name | synonym | keyword | role`). Permite encontrar trámites por palabras habituales ("declarar", "testigo", "denuncia").
-
-### Citación (no se guarda)
-- **Ni el archivo ni el texto extraído se guardan** [P]. Se procesan en memoria y se descartan.
-- Solo se conserva el resultado confirmado por la persona: el `procedure_id` y el `court_id` elegidos (en `user_cases`).
-- El OCR se hace en nuestro servidor; el archivo temporal se borra al terminar, incluso si hay error.
-- Opcional [?]: métrica anónima de aciertos (¿lo detectado coincidió con lo confirmado?), sin texto ni datos personales.
+## 4. En el servidor (SQLite) [D]
 
 ### user_cases (caso de la persona)
-`id`, `owner_token_hash` (secreto del dispositivo de la persona), `user_id` (opcional, solo si hay cuenta), `procedure_id`, `court_id`, `source` (`search | citation`), `created_at`.
+`id`, `owner_token_hash`, `procedure_id`, `court_id`, `source` (`search | citation`), `created_at`.
 No guarda nombre, perfil ni adaptaciones.
 
 ### lawyer_links (enlace de vinculación)
-`id`, `user_case_id`, `token_hash` (el token real solo se envía una vez), `created_at`, `expires_at`, `revoked_at`, `last_used_at`, `lawyer_name` y `lawyer_bar_number` (número de colegiado), rellenados por el abogado al abrir el enlace y **obligatorios** antes de poder añadir documentos [D]. Son **datos declarados, sin verificar** [D].
-`expires_at` = `created_at` + 48 horas [D]. El enlace admite varios usos mientras esté vigente. `language` del enlace (`es | ca | eu | gl`).
-Permite solo añadir/editar documentos de ese caso. No da acceso a `user_profiles` ni a otros casos.
+`id`, `user_case_id`, `token_hash` (el token real solo se entrega una vez), `language` (`es | ca | eu | gl`), `created_at`, `expires_at` (= `created_at` + 48 h), `revoked_at`, `last_used_at`, `lawyer_name`, `lawyer_bar_number`.
+El nombre y el número de colegiado son **obligatorios** antes de añadir documentos y son **datos declarados, sin verificar**. Varios usos mientras esté vigente.
 
 ### case_documents (documentos de un caso)
-`id`, `user_case_id`, `name`, `kind` (`bring | receive`), `notes`, `added_by` (`catalog | lawyer | user`), `lawyer_link_id` (si lo añadió el abogado), `status` (`pending | accepted | edited | rejected`), `created_at`.
-Son solo texto (nombre y nota); no se suben archivos. En la app se combinan con los `step_documents` del catálogo y se muestran separados.
+`id`, `user_case_id`, `name`, `kind` (`bring | receive`), `notes`, `added_by` (`catalog | lawyer | user`), `lawyer_link_id`, `status` (`pending | accepted | edited | rejected`), `created_at`, `updated_at`.
+Solo texto: no se suben archivos. En la app se muestran separados de los documentos del catálogo.
 
-### procedure_steps
-`id`, `procedure_id`, `order`, `title`, `instructions`, `duration_min`, `expected_action`, `step_kind` (`arrival | access | wait | procedure | exit | other`), `shows_entrance` (bool: muestra Street View), `protocol_phrase`, `calm_tip`, `sensory_notes`.
-
-### step_documents
-`id`, `step_id`, `name`, `kind` (`bring | receive`), `notes`. Cubre "documentación y recursos iniciales" y "los que tendrás al salir".
-
-### court_steps (particularización por juzgado)
-`court_id`, `step_id`, `where_text` (dónde se hace en ese juzgado), `sensory_notes` (ej.: altavoz de avisos en la entrada), `override_instructions`.
-
-### progreso del recorrido (en el dispositivo) [D]
-La barra de progreso y el paso actual se guardan en el dispositivo, por caso (`user_case_id`, `current_step`, `completed_steps[]`, `updated_at`). No se guardan en el servidor salvo que haya cuenta.
-Referencia de campos si se guardase en servidor (con cuenta): `user_id`, `procedure_id`, `court_id`, `current_step`, `updated_at`.
-
-### translations (textos en cuatro idiomas) [P]
-`entity` (`procedure | procedure_step | step_document | court | court_entrance | search_term`), `entity_id`, `field`, `language` (`es | ca | eu | gl`), `text`, `review_status` (`draft | reviewed`), `reviewed_by`.
-Los campos de texto de las tablas anteriores (nombres, instrucciones, notas, descripciones) se guardan aquí por idioma. Si falta una traducción, la app muestra el español con aviso. Los términos de búsqueda y nombres de juzgado también van en los cuatro idiomas para reconocer citaciones en cualquier lengua.
-
-## 3. Relaciones principales
+### Relaciones
 ```
-courts 1─1 court_entrances
-procedures 1─n procedure_steps 1─n step_documents
-procedures 1─n procedure_search_terms
-users 1─n user_cases n─1 procedures, courts
-user_cases 1─n lawyer_links
-user_cases 1─n case_documents
-courts n─n procedure_steps   (court_steps)
-users 1─1 user_profiles
+user_cases 1─n lawyer_links     (ON DELETE CASCADE)
+user_cases 1─n case_documents   (ON DELETE CASCADE)
+lawyer_links 1─n case_documents (ON DELETE SET NULL)
 ```
+`procedure_id` y `court_id` apuntan a ids del catálogo JSON (no hay clave foránea).
 
-## 4. Preguntas abiertas
+### Citación (no se guarda) [D]
+El archivo y el texto se procesan en memoria y se descartan; el búfer se borra al terminar, también si falla. Solo se conserva el resultado que la persona confirma: `procedure_id` y `court_id` en `user_cases`.
+
+## 5. Catálogo JSON [D, provisional]
+Cada texto visible es un objeto por idioma: `{ "es": "…", "ca": "…", "gl": "…", "eu": "…" }`. El español es obligatorio y es el respaldo. Se elige JSON en vez de tablas para que el equipo de Derecho pueda editarlo.
+
+### procedures.json → `procedures[]`
+`id`, `processType` (`civil`), `reviewStatus` (`draft | reviewed`), `name`, `summary`, `legalBasis`, `searchTerms` (por idioma), `steps[]`.
+Cada paso: `id`, `slot`, `kind` (`prepare | arrival | access | wait | procedure | exit`), `showsEntrance`, `durationMin` (`[mín, máx]`), `title`, `expected`, `instructions[]`, `sensory`, `calmTip`, `protocolPhrase`, `whoToAsk`, `legalNote`, `documents[]` (`id`, `kind` `bring | receive`, `name`, `notes`).
+Las fases de la barra de progreso salen de `kind`: llegada (`prepare`, `arrival`, `access`) · espera · trámite · salida.
+
+Trámites de ejemplo (todos en `draft`, provisionales):
+| id | Pasos | Nota |
+|---|---|---|
+| `division-cosa-comun-demandado` | 10 | Caso del demo (casa heredada; la persona es la demandada). Pendiente de revisión por Derecho |
+| `juicio-verbal-vista` | 9 | Juicio verbal de ejemplo |
+| `testigo-juicio-civil` | 7 | Declarar como testigo |
+
+### courts.json → `courts[]`
+`id`, `reviewStatus`, `processTypes[]`, `city`, `name`, `address`, `searchTerms[]`, `entrance` y `stepNotes`.
+- `entrance`: `photo` (`src`, `credit`, `source`: foto de Wikimedia Commons), `roadDirection` (`one_way | two_way | pedestrian | other`), `dropOff`, `access`, `textDescription` (alternativa en texto completa).
+- `stepNotes`: notas propias de la sede por `slot` de paso (dónde se hace, avisos sensoriales). Sustituye a la tabla `court_steps` prevista.
+
+Sedes de ejemplo: `madrid-primera-instancia` (Capitán Haya 66) y `bcn-ciutat-justicia` (Ciudad de la Justicia, L'Hospitalet de Llobregat).
+
+### glossary.json → `terms[]`
+`id`, `term`, `definition`. 39 términos.
+
+### pictograms.json
+Pictograma de ARASAAC para cada `slot` de paso y cada documento, y el texto de atribución en los 4 idiomas. Se descargan con `npm run pictos` a `web/public/pictos/arasaac/` (CC BY-NC-SA 4.0: uso no comercial y con atribución).
+
+## 6. Previsto, no implementado [P]
+- **Cuentas opcionales** (`users`, `user_profiles`) para usar varios dispositivos [?].
+- **Panel de editor** con rol `editor` para dar de alta trámites y sedes [?].
+- **Tabla `translations`** con `review_status` por texto: hoy el estado de revisión es por trámite o sede (`reviewStatus`).
+- **Street View** (`heading`, `pitch`, `fov`, `capture_date` por sede): hoy hay foto fija.
+- Métrica anónima de aciertos de la citación (sin texto ni datos personales) [?].
+
+## 7. Preguntas abiertas
 - [ ] ¿Qué datos del acompañante se guardan, si los hay?
-- [ ] Cómo recuperar el caso si se borran los datos del navegador (exportar / copiar un código) [?].
-- [ ] Retención y borrado de datos del perfil.
+- [ ] Cómo recuperar el caso si se borran los datos del navegador (exportar o copiar un código) [?].
+- [ ] Retención y borrado de casos y enlaces caducados en el servidor.
+- [ ] Base de datos externa para Vercel si el enlace del abogado tiene que ser fiable.
 
 > Modelo para el escaneo 3D (rooms, scans, stimuli en 3D): ver [Anexo-3D-Escaneo.md](Anexo-3D-Escaneo.md).

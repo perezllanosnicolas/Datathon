@@ -63,7 +63,9 @@ npm run smoke                   # en otra: prueba la API de punta a punta (33 co
 ## Qué incluye (núcleo del demo, Fases 2–7 del plan)
 | Función | Dónde |
 |---|---|
-| Cuestionario de adaptación sin registro: idioma, tamaño de letra, filtros por neurodivergencia, movimiento, color, contraste, letra legible, lectura en voz alta | `/cuestionario`, `/ajustes` |
+| Cuestionario de adaptación sin registro: idioma, tamaño de letra (6 niveles), tipo de letra (Atkinson Hyperlegible u OpenDyslexic), movimiento, colores tranquilos, contraste, leer en voz alta, dictado, tipo de imagen por paso y filtros por neurodivergencia | `/cuestionario`, `/ajustes` |
+| Imagen por paso: pictogramas de ARASAAC o fotos | `web/public/pictos/`, `web/public/images/realistic/` |
+| Glosario «Palabras difíciles» con buscador (39 términos) | `/glosario` |
 | Cuatro idiomas (es, ca, gl, eu), con aviso si un texto aún no está traducido | `web/src/i18n/`, contenido en `web/data/catalog/` |
 | Buscador con filtros, tolerante a tildes, que busca en los cuatro idiomas | `/buscar` |
 | Subir citación: foto/PDF → texto (OCR en el servidor) → trámite y juzgado del catálogo → la persona lo confirma | `/citacion`, `/api/citation` |

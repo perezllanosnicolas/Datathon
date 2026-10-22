@@ -2,16 +2,31 @@
 
 > Plan **propuesto [P]**. Trabajar en ramas por funcionalidad; no tocar `main` sin acuerdo. Usar `/sincronizar` para guardar, hacer commit, subir a GitHub y actualizar la documentación.
 > Núcleo: adaptaciones y diagrama de flujo con barra de progreso, **sin registro**. El 3D es un anexo futuro.
-> Prioridad actual: **implementar**. El análisis RGPD queda aplazado [D]. Demo con **hosting local** [D].
+> Prioridad actual: **implementar**. El análisis RGPD queda aplazado [D]. Demo en **local** o en **Vercel** (provisional) [D].
 
-## Estado (2026-10-21)
-Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README.md`). Está probado con `npm run smoke` (API, enlace del abogado y 5 citaciones sintéticas en 4 idiomas) y con un recorrido en navegador móvil (cuestionario → buscador → flujo → resumen; OCR de una foto; abogado desde un segundo dispositivo).
+## Estado (2026-10-22)
+El prototipo **SimuLex** (Fases 2–7 y parte de la 9) está en `main` (ver `README.md`). Se ha probado con `npm run lint`, `npm run typecheck`, `npm run smoke` (33 comprobaciones: API, enlace del abogado y citaciones sintéticas en 4 idiomas) y con un recorrido en el navegador del móvil.
+
+| Fase | Estado |
+|---|---|
+| 0 · Acuerdos | Parcial: trámites y sedes de ejemplo provisionales; ALIA-40B sin probar |
+| 1 · Contenido | Parcial: 3 trámites (casa heredada, juicio verbal, testigo) y 2 sedes en borrador; glosario de 39 términos; 6 citaciones sintéticas; ca/gl/eu en borrador |
+| 2 · Esqueleto | Hecha (Next.js 16, SQLite, catálogo JSON, 4 idiomas) |
+| 3 · Adaptaciones | Hecha |
+| 4 · Buscador, flujo y progreso | Hecha |
+| 5 · Fachada | Hecha con **foto fija** (Street View pasa a futuro) |
+| 6 · Citación | Hecha para PDF con texto y fotos; falta PDF escaneado y fotos reales de móvil |
+| 7 · Enlace del abogado | Hecha (frágil en Vercel: base de datos en `/tmp`) |
+| 8 · ALIA-40B | No empezada |
+| 9 · Apoyos | Hecha en parte: frases, calma, duración, pictogramas ARASAAC, fotos, glosario, voz |
+| 10 · Calidad y entrega | Pendiente: auditoría de accesibilidad, pruebas e2e, ensayo, vídeo y presentación |
+
 **Pendiente:**
-- Fase 0: el equipo elige el trámite y el juzgado. Los de ahora son de ejemplo.
-- Fase 1: revisión legal del contenido y revisión de las traducciones ca/gl/eu.
-- Fase 5: clave de Google y elegir la orientación (`heading`) de cada fachada.
+- Fase 0: el equipo confirma el trámite y las sedes del demo.
+- Fase 1: revisión legal (artículos de la LEC citados; el trámite «testigo» y el juicio verbal de ejemplo aún citan el art. 7 bis LEC) y revisión de las traducciones ca/gl/eu.
 - Fase 6: probar con fotos reales de móvil y con PDF escaneados (hoy un PDF sin texto no se lee).
-- Fases 8–10.
+- Permisos: logotipos oficiales y de las universidades, fotos de `Assets/`, foto de la sede de Madrid.
+- Fases 8 y 10.
 
 ## 1. Visión general
 
@@ -23,7 +38,7 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 | 2 | Esqueleto del proyecto, datos y arranque local | 0 | Sí |
 | 3 | Adaptaciones (cuestionario y ajustes) | 2 | Sí |
 | 4 | Buscador + flujo de pasos + barra de progreso | 1, 2, 3 | Sí |
-| 5 | Fachada con Street View | 2, 4 | Sí |
+| 5 | Fachada (foto fija; Street View en el futuro) | 2, 4 | Sí |
 | 6 | Citación: imagen → texto → trámite y juzgado | 1, 2, 4 | Sí |
 | 7 | Enlace del abogado | 2, 4 | Sí |
 | 8 | Asistente con ALIA-40B | 1, 2, 4 | **Extra** |
@@ -51,7 +66,7 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 | Contenido jurídico de trámites y revisión legal | Leyre, Carlos |
 | Criterios de adaptación y criminología; comprensión de los textos | Cristina |
 | IA (ALIA-40B), OCR y extracción de la citación | Marianela |
-| Integración, despliegue local y Street View | Nicolás |
+| Integración y despliegue (local y Vercel) | Nicolás |
 | Frontend, producto y costes | Dani, Cristina |
 | Traducciones ca / eu / gl | Por decidir [?] |
 
@@ -59,7 +74,7 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 - Alcance del demo [D]: ámbito **civil**. Falta elegir el trámite civil concreto y un juzgado de ejemplo [?].
 - Stack y hosting: decididos (ver TRD).
 - **Probar ALIA-40B:** qué equipo tiene memoria suficiente (ver [TRD §2f](02-TRD.md)), probar con una consulta real y decidir si se ejecuta en el mismo equipo o en otro de la red [?].
-- **Street View (fachada):** crear la clave de API de Google, comprobar si exige cuenta de facturación y leer los términos de uso y de atribución [?].
+- ~~Street View (fachada): clave de API de Google~~ — ya no hace falta: el prototipo usa foto fija.
 - Revisar el material de Plena inclusión (lectura fácil, Observatorio de jurisprudencia) y contactar con ellos si procede [?].
 - Decidir quién traduce y revisa el catalán, euskera y gallego.
 - **Hecho cuando:** las decisiones están en CLAUDE.md y se sabe si ALIA-40B puede ejecutarse en el demo.
@@ -75,8 +90,8 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 
 > **Transversal, lenguaje simple [D]:** todos los textos de cada fase siguen las reglas de [UI/UX §8](04-UI-UX-Design.md#8-lenguaje-simple-d) y los revisa Cristina (comprensión).
 
-## Fase 2 — Esqueleto y datos (hosting local)
-- Proyecto base mobile-first con el stack del TRD (Next.js + TypeScript + SQLite), base de datos con datos de ejemplo (semilla), i18n con los cuatro idiomas.
+## Fase 2 — Esqueleto y datos (hosting local) — hecha
+- Proyecto base mobile-first con el stack del TRD (Next.js 16 + TypeScript + SQLite con `node:sqlite`), catálogo en JSON, textos de la interfaz en los cuatro idiomas.
 - Arranque con un comando en una sola máquina; acceso desde el móvil por la red local ([TRD §2e](02-TRD.md)).
 - Caso anónimo con secreto del dispositivo (sin cuentas).
 - README con cómo arrancar.
@@ -139,25 +154,27 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 - Presentación: un mensaje por diapositiva; problema → persona (un caso civil inventado, con datos sintéticos) → solución → demo → impacto → siguientes pasos (incluye el anexo 3D como visión).
 - **Hecho cuando:** demo estable y presentación ensayada.
 
-## 3. Primeros pasos inmediatos
-1. Elegir el trámite civil y el juzgado de ejemplo (decisión del equipo).
-2. Nicolás: comprobar qué equipo puede ejecutar ALIA-40B y crear la clave de Google Maps.
-3. Leyre y Carlos: empezar a redactar el trámite (Fase 1).
-4. Dani y Nicolás: crear el esqueleto del proyecto (Fase 2) en una rama `feat/skeleton`.
-5. Decidir quién traduce y revisa el catalán, euskera y gallego.
+## 3. Siguientes pasos (2026-10-22)
+1. Equipo: confirmar el trámite y las sedes del demo (hoy, el caso de la casa heredada como principal).
+2. Leyre y Carlos: revisar los artículos citados en los tres trámites y corregir el trámite «testigo» y el juicio verbal de ejemplo.
+3. Decidir quién traduce y revisa el catalán, euskera y gallego.
+4. Nicolás: elegir Vercel o local para la presentación y ensayar el demo completo en esa opción; tener la otra como plan B.
+5. Marianela: probar el OCR con fotos reales de móvil y decidir si ALIA-40B entra en el demo o queda como línea futura.
+6. Pedir o confirmar los permisos de logotipos y fotos.
+7. Fase 10: auditoría de accesibilidad, guion, vídeo de respaldo (por ejemplo, grabado con Recordly) y presentación.
 
 ## 4. Riesgos [P]
 | Riesgo | Mitigación |
 |---|---|
 | ALIA-40B no cabe en el equipo del demo (necesita decenas de GB de memoria) | Probar pronto; usar un segundo equipo potente en la misma red; modelo más pequeño de la familia como plan B; el asistente es un extra y el núcleo no depende de él |
 | ALIA-40B lento o con respuestas incorrectas en idioma o en derecho | Responder solo con el catálogo revisado; aviso de que puede equivocarse; contenido escrito de respaldo; vídeo grabado |
-| Cuotas, coste o términos de Street View | Imagen fija de fachada (Static API); el uso del demo queda muy por debajo del tope gratuito; plan B con foto o texto |
-| Street View desactualizado o sin cobertura | Comprobar metadatos, mostrar fecha y descripción en texto |
+| Fotos de fachada o de pasos sin permiso o de otro edificio | Crédito y licencia en el catálogo; confirmar autoría; foto de Madrid pendiente de comprobar |
+| En Vercel se pierde la base de datos (`/tmp`) y el enlace del abogado deja de funcionar | Recorrido completo justo antes de presentar, sin reiniciar el despliegue; hosting local como plan B; base de datos externa si hace falta |
 | Contenido legal incorrecto | Revisión de Leyre/Carlos y cita de norma |
 | OCR falla con fotos de móvil o la extracción se equivoca | Solo se empareja con el catálogo; la persona confirma; el buscador es respaldo |
 | OCR peor en catalán, euskera o gallego | Probar los modelos de cada idioma con citaciones sintéticas; respaldo al buscador |
 | Datos personales de la citación | OCR en nuestro servidor, sin terceros; borrar el archivo al terminar; sin logs con el texto; prototipo con citaciones sintéticas; RGPD aplazado |
-| El demo local falla (red, equipo, internet) | Red propia, semilla de datos, ensayo desde cero en otro equipo, plan B con foto y texto de la entrada, vídeo grabado del demo |
+| El demo falla (red, equipo, internet) | Red propia, ensayo desde cero en otro equipo, Vercel o local como alternativa, vídeo grabado del demo |
 | El abogado no puede abrir el enlace (servidor local) | Simularlo con un segundo dispositivo en la misma red |
 | Se pierden los datos del navegador (sin cuenta) | Avisar y volver a hacer el cuestionario |
 | Servidor sobrecargado por el OCR | Límite de tamaño y de peticiones; cola de trabajos; probar con fotos reales de móvil |
