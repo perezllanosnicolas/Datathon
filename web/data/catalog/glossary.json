@@ -3,43 +3,588 @@
   "terms": [
     {
       "id": "citacion",
-      "term": { "es": "Citación", "ca": "Citació", "gl": "Citación", "eu": "Zitazioa" },
-      "definition": { "es": "Aviso que dice cuándo y dónde tienes que ir.", "ca": "Avís que diu quan i on has d'anar.", "gl": "Aviso que di cando e onde tes que ir.", "eu": "Noiz eta non joan behar duzun esaten duen abisua." }
+      "term": {
+        "es": "Citación",
+        "ca": "Citació",
+        "gl": "Citación",
+        "eu": "Zitazioa"
+      },
+      "definition": {
+        "es": "Aviso que dice cuándo y dónde tienes que ir.",
+        "ca": "Avís que diu quan i on has d'anar.",
+        "gl": "Aviso que di cando e onde tes que ir.",
+        "eu": "Noiz eta non joan behar duzun esaten duen abisua."
+      }
     },
     {
       "id": "juez",
-      "term": { "es": "Juez o jueza", "ca": "Jutge o jutgessa", "gl": "Xuíz ou xuíza", "eu": "Epailea" },
-      "definition": { "es": "La persona que escucha a todos y decide.", "ca": "La persona que escolta tothom i decideix.", "gl": "A persoa que escoita a todos e decide.", "eu": "Guztiak entzun eta erabakitzen duen pertsona." }
+      "term": {
+        "es": "Juez o jueza",
+        "ca": "Jutge o jutgessa",
+        "gl": "Xuíz ou xuíza",
+        "eu": "Epailea"
+      },
+      "definition": {
+        "es": "La persona que escucha a todos y decide.",
+        "ca": "La persona que escolta tothom i decideix.",
+        "gl": "A persoa que escoita a todos e decide.",
+        "eu": "Guztiak entzun eta erabakitzen duen pertsona."
+      }
     },
     {
       "id": "vista",
-      "term": { "es": "Vista", "ca": "Vista", "gl": "Vista", "eu": "Ikustaldia" },
-      "definition": { "es": "La reunión en la sala donde se habla del caso.", "ca": "La reunió a la sala on es parla del cas.", "gl": "A reunión na sala onde se fala do caso.", "eu": "Kasuaz hitz egiten den aretoko bilera." }
+      "term": {
+        "es": "Vista",
+        "ca": "Vista",
+        "gl": "Vista",
+        "eu": "Ikustaldia"
+      },
+      "definition": {
+        "es": "La reunión en la sala donde se habla del caso.",
+        "ca": "La reunió a la sala on es parla del cas.",
+        "gl": "A reunión na sala onde se fala do caso.",
+        "eu": "Kasuaz hitz egiten den aretoko bilera."
+      }
     },
     {
       "id": "sentencia",
-      "term": { "es": "Sentencia", "ca": "Sentència", "gl": "Sentenza", "eu": "Epaia" },
-      "definition": { "es": "El papel con la decisión del juez.", "ca": "El paper amb la decisió del jutge.", "gl": "O papel coa decisión do xuíz.", "eu": "Epailearen erabakia duen papera." }
+      "term": {
+        "es": "Sentencia",
+        "ca": "Sentència",
+        "gl": "Sentenza",
+        "eu": "Epaia"
+      },
+      "definition": {
+        "es": "El papel con la decisión del juez.",
+        "ca": "El paper amb la decisió del jutge.",
+        "gl": "O papel coa decisión do xuíz.",
+        "eu": "Epailearen erabakia duen papera."
+      }
     },
     {
       "id": "laj",
-      "term": { "es": "Letrado o letrada de la Administración de Justicia", "ca": "Lletrat o lletrada de l'Administració de Justícia", "gl": "Letrado ou letrada da Administración de Xustiza", "eu": "Justizia Administrazioko letratua" },
-      "definition": { "es": "Persona que trabaja en el juzgado. Da fe de lo que pasa en la sala.", "ca": "Persona que treballa al jutjat. Dona fe del que passa a la sala.", "gl": "Persoa que traballa no xulgado. Dá fe do que pasa na sala.", "eu": "Epaitegian lan egiten duen pertsona. Aretoan gertatzen denaren fede ematen du." }
+      "term": {
+        "es": "Letrado o letrada de la Administración de Justicia",
+        "ca": "Lletrat o lletrada de l'Administració de Justícia",
+        "gl": "Letrado ou letrada da Administración de Xustiza",
+        "eu": "Justizia Administrazioko letratua"
+      },
+      "definition": {
+        "es": "Persona que trabaja en el juzgado. Da fe de lo que pasa en la sala.",
+        "ca": "Persona que treballa al jutjat. Dona fe del que passa a la sala.",
+        "gl": "Persoa que traballa no xulgado. Dá fe do que pasa na sala.",
+        "eu": "Epaitegian lan egiten duen pertsona. Aretoan gertatzen denaren fede ematen du."
+      }
     },
     {
       "id": "abogado",
-      "term": { "es": "Abogado o abogada", "ca": "Advocat o advocada", "gl": "Avogado ou avogada", "eu": "Abokatua" },
-      "definition": { "es": "La persona que te defiende y te explica el caso.", "ca": "La persona que et defensa i t'explica el cas.", "gl": "A persoa que te defende e che explica o caso.", "eu": "Zu defendatzen zaituen eta kasua azaltzen dizun pertsona." }
+      "term": {
+        "es": "Abogado o abogada",
+        "ca": "Advocat o advocada",
+        "gl": "Avogado ou avogada",
+        "eu": "Abokatua"
+      },
+      "definition": {
+        "es": "La persona que te defiende y te explica el caso.",
+        "ca": "La persona que et defensa i t'explica el cas.",
+        "gl": "A persoa que te defende e che explica o caso.",
+        "eu": "Zu defendatzen zaituen eta kasua azaltzen dizun pertsona."
+      }
     },
     {
       "id": "testigo",
-      "term": { "es": "Testigo", "ca": "Testimoni", "gl": "Testemuña", "eu": "Lekukoa" },
-      "definition": { "es": "Persona que cuenta lo que vio o sabe.", "ca": "Persona que explica el que va veure o sap.", "gl": "Persoa que conta o que viu ou sabe.", "eu": "Ikusi edo dakiena kontatzen duen pertsona." }
+      "term": {
+        "es": "Testigo",
+        "ca": "Testimoni",
+        "gl": "Testemuña",
+        "eu": "Lekukoa"
+      },
+      "definition": {
+        "es": "Persona que cuenta lo que vio o sabe.",
+        "ca": "Persona que explica el que va veure o sap.",
+        "gl": "Persoa que conta o que viu ou sabe.",
+        "eu": "Ikusi edo dakiena kontatzen duen pertsona."
+      }
     },
     {
       "id": "juicio-verbal",
-      "term": { "es": "Juicio verbal", "ca": "Judici verbal", "gl": "Xuízo verbal", "eu": "Hitzezko judizioa" },
-      "definition": { "es": "Un tipo de juicio civil más corto. Casi todo se dice hablando en la sala.", "ca": "Un tipus de judici civil més curt. Gairebé tot es diu parlant a la sala.", "gl": "Un tipo de xuízo civil máis curto. Case todo se di falando na sala.", "eu": "Judizio zibil laburrago bat. Ia dena aretoan hitz eginez esaten da." }
+      "term": {
+        "es": "Juicio verbal",
+        "ca": "Judici verbal",
+        "gl": "Xuízo verbal",
+        "eu": "Hitzezko judizioa"
+      },
+      "definition": {
+        "es": "Un tipo de juicio civil más corto. Casi todo se dice hablando en la sala.",
+        "ca": "Un tipus de judici civil més curt. Gairebé tot es diu parlant a la sala.",
+        "gl": "Un tipo de xuízo civil máis curto. Case todo se di falando na sala.",
+        "eu": "Judizio zibil laburrago bat. Ia dena aretoan hitz eginez esaten da."
+      }
+    },
+    {
+      "id": "demanda",
+      "term": {
+        "es": "Demanda",
+        "ca": "Demanda",
+        "gl": "Demanda",
+        "eu": "Demanda"
+      },
+      "definition": {
+        "es": "El escrito con el que una persona pide algo a un juez.",
+        "ca": "L'escrit amb què una persona demana alguna cosa a un jutge.",
+        "gl": "O escrito co que unha persoa lle pide algo a un xuíz.",
+        "eu": "Pertsona batek epaileari zerbait eskatzeko idazten duen idazkia."
+      }
+    },
+    {
+      "id": "demandante",
+      "term": {
+        "es": "Demandante",
+        "ca": "Demandant",
+        "gl": "Demandante",
+        "eu": "Demandatzailea"
+      },
+      "definition": {
+        "es": "La persona que empieza el juicio porque pide algo.",
+        "ca": "La persona que comença el judici perquè demana alguna cosa.",
+        "gl": "A persoa que comeza o xuízo porque pide algo.",
+        "eu": "Zerbait eskatzen duelako judizioa hasten duen pertsona."
+      }
+    },
+    {
+      "id": "demandado",
+      "term": {
+        "es": "Demandado o demandada",
+        "ca": "Demandat o demandada",
+        "gl": "Demandado ou demandada",
+        "eu": "Demandatua"
+      },
+      "definition": {
+        "es": "La persona a la que otra le pide algo en el juicio.",
+        "ca": "La persona a qui una altra demana alguna cosa en el judici.",
+        "gl": "A persoa á que outra lle pide algo no xuízo.",
+        "eu": "Judizioan beste batek zerbait eskatzen dion pertsona."
+      }
+    },
+    {
+      "id": "procurador",
+      "term": {
+        "es": "Procurador o procuradora",
+        "ca": "Procurador o procuradora",
+        "gl": "Procurador ou procuradora",
+        "eu": "Prokuradorea"
+      },
+      "definition": {
+        "es": "Profesional que lleva tus papeles al juzgado y recibe los avisos por ti.",
+        "ca": "Professional que porta els teus papers al jutjat i rep els avisos per tu.",
+        "gl": "Profesional que leva os teus papeis ao xulgado e recibe os avisos por ti.",
+        "eu": "Zure paperak epaitegira eramaten dituen eta zuregatik abisuak jasotzen dituen profesionala."
+      }
+    },
+    {
+      "id": "notificacion",
+      "term": {
+        "es": "Notificación",
+        "ca": "Notificació",
+        "gl": "Notificación",
+        "eu": "Jakinarazpena"
+      },
+      "definition": {
+        "es": "Aviso oficial del juzgado. Puede llegar en papel o por internet.",
+        "ca": "Avís oficial del jutjat. Pot arribar en paper o per internet.",
+        "gl": "Aviso oficial do xulgado. Pode chegar en papel ou por internet.",
+        "eu": "Epaitegiaren abisu ofiziala. Paperean edo internet bidez heldu daiteke."
+      }
+    },
+    {
+      "id": "plazo",
+      "term": {
+        "es": "Plazo",
+        "ca": "Termini",
+        "gl": "Prazo",
+        "eu": "Epea"
+      },
+      "definition": {
+        "es": "El tiempo máximo que tienes para hacer algo.",
+        "ca": "El temps màxim que tens per fer alguna cosa.",
+        "gl": "O tempo máximo que tes para facer algo.",
+        "eu": "Zerbait egiteko duzun gehieneko denbora."
+      }
+    },
+    {
+      "id": "comparecer",
+      "term": {
+        "es": "Comparecer",
+        "ca": "Comparèixer",
+        "gl": "Comparecer",
+        "eu": "Agertu"
+      },
+      "definition": {
+        "es": "Ir al juzgado cuando te lo piden.",
+        "ca": "Anar al jutjat quan t'ho demanen.",
+        "gl": "Ir ao xulgado cando cho piden.",
+        "eu": "Epaitegira joatea eskatzen dizutenean."
+      }
+    },
+    {
+      "id": "sala-de-vistas",
+      "term": {
+        "es": "Sala de vistas",
+        "ca": "Sala de vistes",
+        "gl": "Sala de vistas",
+        "eu": "Ikustaldi-aretoa"
+      },
+      "definition": {
+        "es": "La sala del juzgado donde se hace la vista.",
+        "ca": "La sala del jutjat on es fa la vista.",
+        "gl": "A sala do xulgado onde se fai a vista.",
+        "eu": "Ikustaldia egiten den epaitegiko gela."
+      }
+    },
+    {
+      "id": "juzgado",
+      "term": {
+        "es": "Juzgado",
+        "ca": "Jutjat",
+        "gl": "Xulgado",
+        "eu": "Epaitegia"
+      },
+      "definition": {
+        "es": "El lugar donde trabaja un juez y donde se resuelven los casos.",
+        "ca": "El lloc on treballa un jutge i on es resolen els casos.",
+        "gl": "O lugar onde traballa un xuíz e onde se resolven os casos.",
+        "eu": "Epaile batek lan egiten duen eta kasuak ebazten diren lekua."
+      }
+    },
+    {
+      "id": "fiscal",
+      "term": {
+        "es": "Fiscal",
+        "ca": "Fiscal",
+        "gl": "Fiscal",
+        "eu": "Fiskala"
+      },
+      "definition": {
+        "es": "Profesional que vigila que se cumpla la ley y defiende a ciertas personas.",
+        "ca": "Professional que vigila que es compleixi la llei i defensa certes persones.",
+        "gl": "Profesional que vixía que se cumpra a lei e defende a certas persoas.",
+        "eu": "Legea betetzen dela zaintzen duen eta pertsona batzuk defendatzen dituen profesionala."
+      }
+    },
+    {
+      "id": "prueba",
+      "term": {
+        "es": "Prueba",
+        "ca": "Prova",
+        "gl": "Proba",
+        "eu": "Froga"
+      },
+      "definition": {
+        "es": "Algo que ayuda a demostrar lo que dices: un papel, una foto o una persona que lo vio.",
+        "ca": "Alguna cosa que ajuda a demostrar el que dius: un paper, una foto o una persona que ho va veure.",
+        "gl": "Algo que axuda a demostrar o que dis: un papel, unha foto ou unha persoa que o viu.",
+        "eu": "Esaten duzuna frogatzen laguntzen duen zerbait: paper bat, argazki bat edo ikusi zuen pertsona bat."
+      }
+    },
+    {
+      "id": "declaracion",
+      "term": {
+        "es": "Declaración",
+        "ca": "Declaració",
+        "gl": "Declaración",
+        "eu": "Adierazpena"
+      },
+      "definition": {
+        "es": "Contar al juez lo que sabes o lo que viste.",
+        "ca": "Explicar al jutge el que saps o el que has vist.",
+        "gl": "Contarlle ao xuíz o que sabes ou o que viches.",
+        "eu": "Epaileari dakizuna edo ikusi duzuna kontatzea."
+      }
+    },
+    {
+      "id": "jurar",
+      "term": {
+        "es": "Jurar o prometer",
+        "ca": "Jurar o prometre",
+        "gl": "Xurar ou prometer",
+        "eu": "Zinatu edo hitz eman"
+      },
+      "definition": {
+        "es": "Decir que vas a contar la verdad antes de hablar.",
+        "ca": "Dir que explicaràs la veritat abans de parlar.",
+        "gl": "Dicir que vas contar a verdade antes de falar.",
+        "eu": "Hitz egin aurretik egia esango duzula esatea."
+      }
+    },
+    {
+      "id": "perito",
+      "term": {
+        "es": "Perito o perita",
+        "ca": "Perit o perita",
+        "gl": "Perito ou perita",
+        "eu": "Perituak"
+      },
+      "definition": {
+        "es": "Persona experta que explica un tema técnico al juez.",
+        "ca": "Persona experta que explica un tema tècnic al jutge.",
+        "gl": "Persoa experta que lle explica un tema técnico ao xuíz.",
+        "eu": "Gai tekniko bat epaileari azaltzen dion pertsona aditua."
+      }
+    },
+    {
+      "id": "informe-pericial",
+      "term": {
+        "es": "Informe pericial",
+        "ca": "Informe pericial",
+        "gl": "Informe pericial",
+        "eu": "Peritu-txostena"
+      },
+      "definition": {
+        "es": "El documento donde una persona experta explica su opinión.",
+        "ca": "El document on una persona experta explica la seva opinió.",
+        "gl": "O documento onde unha persoa experta explica a súa opinión.",
+        "eu": "Pertsona aditu batek bere iritzia azaltzen duen agiria."
+      }
+    },
+    {
+      "id": "interprete",
+      "term": {
+        "es": "Intérprete",
+        "ca": "Intèrpret",
+        "gl": "Intérprete",
+        "eu": "Interpretea"
+      },
+      "definition": {
+        "es": "Persona que traduce lo que se dice si no entiendes el idioma.",
+        "ca": "Persona que tradueix el que es diu si no entens l'idioma.",
+        "gl": "Persoa que traduce o que se di se non entendes o idioma.",
+        "eu": "Hizkuntza ulertzen ez baduzu esaten dena itzultzen duen pertsona."
+      }
+    },
+    {
+      "id": "ajustes-razonables",
+      "term": {
+        "es": "Ajustes razonables",
+        "ca": "Ajustos raonables",
+        "gl": "Axustes razoables",
+        "eu": "Doikuntza arrazoizkoak"
+      },
+      "definition": {
+        "es": "Cambios que ayudan a que puedas participar en igualdad: más tiempo, pausas o un espacio más tranquilo.",
+        "ca": "Canvis que t'ajuden a participar en igualtat: més temps, pauses o un espai més tranquil.",
+        "gl": "Cambios que che axudan a participar en igualdade: máis tempo, pausas ou un espazo máis tranquilo.",
+        "eu": "Berdintasunean parte hartzen laguntzen dizuten aldaketak: denbora gehiago, etenaldiak edo toki lasaiago bat."
+      }
+    },
+    {
+      "id": "justicia-gratuita",
+      "term": {
+        "es": "Justicia gratuita",
+        "ca": "Justícia gratuïta",
+        "gl": "Xustiza gratuíta",
+        "eu": "Doako justizia"
+      },
+      "definition": {
+        "es": "Ayuda del Estado para pagar abogado y procurador si tienes pocos ingresos.",
+        "ca": "Ajuda de l'Estat per pagar advocat i procurador si tens pocs ingressos.",
+        "gl": "Axuda do Estado para pagar avogado e procurador se tes poucos ingresos.",
+        "eu": "Diru-sarrera gutxi badituzu, abokatua eta prokuradorea ordaintzeko Estatuaren laguntza."
+      }
+    },
+    {
+      "id": "recurso",
+      "term": {
+        "es": "Recurso",
+        "ca": "Recurs",
+        "gl": "Recurso",
+        "eu": "Helegitea"
+      },
+      "definition": {
+        "es": "Pedir que otro juez o jueza revise una decisión.",
+        "ca": "Demanar que un altre jutge o jutgessa revisi una decisió.",
+        "gl": "Pedir que outro xuíz ou xuíza revise unha decisión.",
+        "eu": "Beste epaile batek erabaki bat berrikus dezala eskatzea."
+      }
+    },
+    {
+      "id": "apelacion",
+      "term": {
+        "es": "Apelación",
+        "ca": "Apel·lació",
+        "gl": "Apelación",
+        "eu": "Apelazioa"
+      },
+      "definition": {
+        "es": "Un recurso para que un tribunal superior revise la sentencia.",
+        "ca": "Un recurs perquè un tribunal superior revisi la sentència.",
+        "gl": "Un recurso para que un tribunal superior revise a sentenza.",
+        "eu": "Epaiketa-auzitegi goreago batek epaia berrikus dezan egiten den helegitea."
+      }
+    },
+    {
+      "id": "costas",
+      "term": {
+        "es": "Costas",
+        "ca": "Costes",
+        "gl": "Custas",
+        "eu": "Kostuak"
+      },
+      "definition": {
+        "es": "Los gastos del juicio. A veces los paga quien pierde.",
+        "ca": "Les despeses del judici. De vegades les paga qui perd.",
+        "gl": "Os gastos do xuízo. Ás veces págaos quen perde.",
+        "eu": "Judizioaren gastuak. Batzuetan galtzen duenak ordaintzen ditu."
+      }
+    },
+    {
+      "id": "mediacion",
+      "term": {
+        "es": "Mediación",
+        "ca": "Mediació",
+        "gl": "Mediación",
+        "eu": "Bitartekaritza"
+      },
+      "definition": {
+        "es": "Hablar con una persona neutral para llegar a un acuerdo sin juicio.",
+        "ca": "Parlar amb una persona neutral per arribar a un acord sense judici.",
+        "gl": "Falar cunha persoa neutral para chegar a un acordo sen xuízo.",
+        "eu": "Judiziorik gabe akordio batera iristeko pertsona neutral batekin hitz egitea."
+      }
+    },
+    {
+      "id": "acuerdo",
+      "term": {
+        "es": "Acuerdo",
+        "ca": "Acord",
+        "gl": "Acordo",
+        "eu": "Akordioa"
+      },
+      "definition": {
+        "es": "Cuando las dos partes se ponen de acuerdo y no hace falta que decida el juez.",
+        "ca": "Quan les dues parts es posen d'acord i no cal que decideixi el jutge.",
+        "gl": "Cando as dúas partes se poñen de acordo e non fai falta que decida o xuíz.",
+        "eu": "Bi aldeak ados jartzen direnean eta epaileak erabaki beharrik ez dagoenean."
+      }
+    },
+    {
+      "id": "acta",
+      "term": {
+        "es": "Acta",
+        "ca": "Acta",
+        "gl": "Acta",
+        "eu": "Akta"
+      },
+      "definition": {
+        "es": "El papel donde se escribe lo que ha pasado en la vista.",
+        "ca": "El paper on s'escriu el que ha passat a la vista.",
+        "gl": "O papel onde se escribe o que pasou na vista.",
+        "eu": "Ikustaldian gertatutakoa idazten den papera."
+      }
+    },
+    {
+      "id": "expediente",
+      "term": {
+        "es": "Expediente",
+        "ca": "Expedient",
+        "gl": "Expediente",
+        "eu": "Espedientea"
+      },
+      "definition": {
+        "es": "La carpeta con todos los papeles de tu caso.",
+        "ca": "La carpeta amb tots els papers del teu cas.",
+        "gl": "A carpeta con todos os papeis do teu caso.",
+        "eu": "Zure kasuaren paper guztiak dituen karpeta."
+      }
+    },
+    {
+      "id": "rebeldia",
+      "term": {
+        "es": "Rebeldía",
+        "ca": "Rebel·lia",
+        "gl": "Rebeldía",
+        "eu": "Errebeldia"
+      },
+      "definition": {
+        "es": "Cuando una persona citada no va ni responde. El juicio sigue sin ella.",
+        "ca": "Quan una persona citada no hi va ni respon. El judici continua sense ella.",
+        "gl": "Cando unha persoa citada non vai nin responde. O xuízo continúa sen ela.",
+        "eu": "Zitatutako pertsona batek joaten edo erantzuten ez duenean. Judizioak berarik gabe jarraitzen du."
+      }
+    },
+    {
+      "id": "emplazamiento",
+      "term": {
+        "es": "Emplazamiento",
+        "ca": "Emplaçament",
+        "gl": "Emprazamento",
+        "eu": "Epemuga ematea"
+      },
+      "definition": {
+        "es": "Aviso que te da un tiempo para responder a una demanda.",
+        "ca": "Avís que et dona un temps per respondre a una demanda.",
+        "gl": "Aviso que che dá un tempo para responder a unha demanda.",
+        "eu": "Demanda bati erantzuteko denbora ematen dizun abisua."
+      }
+    },
+    {
+      "id": "sentencia-firme",
+      "term": {
+        "es": "Sentencia firme",
+        "ca": "Sentència ferma",
+        "gl": "Sentenza firme",
+        "eu": "Epai irmoa"
+      },
+      "definition": {
+        "es": "Una sentencia que ya no se puede recurrir.",
+        "ca": "Una sentència que ja no es pot recórrer.",
+        "gl": "Unha sentenza que xa non se pode recorrer.",
+        "eu": "Jada helegitea jar ezin daitekeen epaia."
+      }
+    },
+    {
+      "id": "senalamiento",
+      "term": {
+        "es": "Señalamiento",
+        "ca": "Assenyalament",
+        "gl": "Sinalamento",
+        "eu": "Egun-ordua ezartzea"
+      },
+      "definition": {
+        "es": "La fecha y la hora que el juzgado pone para la vista.",
+        "ca": "La data i l'hora que el jutjat posa per a la vista.",
+        "gl": "A data e a hora que o xulgado pon para a vista.",
+        "eu": "Epaitegiak ikustaldirako jartzen duen data eta ordua."
+      }
+    },
+    {
+      "id": "audiencia-previa",
+      "term": {
+        "es": "Audiencia previa",
+        "ca": "Audiència prèvia",
+        "gl": "Audiencia previa",
+        "eu": "Aurretiazko entzunaldia"
+      },
+      "definition": {
+        "es": "Una reunión corta antes del juicio para aclarar de qué se va a hablar.",
+        "ca": "Una reunió curta abans del judici per aclarir de què es parlarà.",
+        "gl": "Unha reunión curta antes do xuízo para aclarar de que se vai falar.",
+        "eu": "Judizioaren aurretik egiten den bilera labur bat, zertaz hitz egingo den argitzeko."
+      }
+    },
+    {
+      "id": "tutela-judicial",
+      "term": {
+        "es": "Tutela judicial efectiva",
+        "ca": "Tutela judicial efectiva",
+        "gl": "Tutela xudicial efectiva",
+        "eu": "Babes judizial eraginkorra"
+      },
+      "definition": {
+        "es": "Tu derecho a pedir ayuda a un juez. Lo recoge el artículo 24 de la Constitución Española.",
+        "ca": "El teu dret a demanar ajuda a un jutge. Ho recull l'article 24 de la Constitució Espanyola.",
+        "gl": "O teu dereito a pedir axuda a un xuíz. Recóllao o artigo 24 da Constitución Española.",
+        "eu": "Epaile bati laguntza eskatzeko duzun eskubidea. Espainiako Konstituzioaren 24. artikuluak jasotzen du."
+      }
     }
   ]
 }

@@ -11,6 +11,10 @@ export const es = {
     disclaimer: "Esta herramienta no sustituye el consejo de un abogado o abogada.",
     demoNotice: "Prototipo con datos de ejemplo.",
     langName: "Español",
+    org: "Proyecto del Datathon Brecha Judicial (DATAfórum JUSTICIA 2026), Reto 3.",
+    notOfficial: "No es una web oficial. Los logotipos son de sus titulares.",
+    logoJustice: "Ministerio de Justicia",
+    logoGov: "Gobierno de España",
     myCase: "Mi trámite",
   },
   home: {
@@ -51,6 +55,8 @@ export const es = {
     next: "Siguiente",
     back: "Atrás",
     finish: "Guardar y seguir",
+    noAdaptation: "No quiero ninguna adaptación",
+    noAdaptationNote: "Se quitan todas las adaptaciones. Puedes cambiarlo después.",
     none: "Ninguno",
     imagesQuestion: "¿Cómo quieres ver las imágenes de cada paso?",
     imgPicto: "Pictogramas",
@@ -305,6 +311,9 @@ export const es = {
   glossary: {
     title: "Palabras difíciles",
     intro: "Aquí explicamos las palabras del juzgado con palabras sencillas.",
+    search: "Buscar una palabra",
+    count: "{n} palabras",
+    empty: "No hay ninguna palabra con eso. Prueba con otra.",
   },
 };
 

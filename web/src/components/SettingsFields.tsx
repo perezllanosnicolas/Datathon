@@ -158,10 +158,23 @@ export function ExtrasField({ legend }: { legend: string }) {
     { key: "calmColors", label: t.quiz.calmColors },
     { key: "reducedMotion", label: t.quiz.reducedMotion },
   ];
+  const noneChosen = toggles.every((x) => !prefs[x.key]);
+  function clearAll() {
+    setPrefs({ ...Object.fromEntries(toggles.map((x) => [x.key, false])), needs: [] });
+  }
   return (
     <fieldset>
       <legend>{legend}</legend>
       <ul className="choice-list">
+        <li>
+          <label className="choice">
+            <input type="checkbox" checked={noneChosen} onChange={(e) => e.target.checked && clearAll()} />
+            <span>
+              <strong>{t.quiz.noAdaptation}</strong>
+              <span className="small muted">{t.quiz.noAdaptationNote}</span>
+            </span>
+          </label>
+        </li>
         {toggles.map((x) => (
           <li key={x.key}>
             <label className="choice">

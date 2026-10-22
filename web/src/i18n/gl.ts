@@ -12,6 +12,10 @@ export const gl: Messages = {
     disclaimer: "Esta ferramenta non substitúe o consello dun avogado ou avogada.",
     demoNotice: "Prototipo con datos de exemplo.",
     langName: "Galego",
+    org: "Proxecto do Datathon Brecha Judicial (DATAfórum JUSTICIA 2026), Reto 3.",
+    notOfficial: "Non é unha web oficial. Os logotipos son dos seus titulares.",
+    logoJustice: "Ministerio de Xustiza",
+    logoGov: "Goberno de España",
     myCase: "O meu trámite",
   },
   home: {
@@ -52,6 +56,8 @@ export const gl: Messages = {
     next: "Seguinte",
     back: "Atrás",
     finish: "Gardar e seguir",
+    noAdaptation: "Non quero ningunha adaptación",
+    noAdaptationNote: "Quítanse todas as adaptacións. Podes cambialo despois.",
     none: "Ningún",
     imagesQuestion: "Como queres ver as imaxes de cada paso?",
     imgPicto: "Pictogramas",
@@ -306,5 +312,8 @@ export const gl: Messages = {
   glossary: {
     title: "Palabras difíciles",
     intro: "Aquí explicamos as palabras do xulgado con palabras sinxelas.",
+    search: "Busca unha palabra",
+    count: "{n} palabras",
+    empty: "Non hai ningunha palabra con iso. Proba con outra.",
   },
 };

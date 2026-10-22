@@ -105,6 +105,8 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - 2026-10-22 — **Color y jerarquía (rama `feat/colors-ui`), provisional:** verde = bueno/siguiente/hecho (botón principal, pasos hechos, seleccionado); azul = información y acción destacada; ámbar = aviso; el color nunca va solo (siempre hay texto o icono). El mapa de trámites es un desplegable cerrado por defecto, abierto solo la primera vez (pantalla de confirmar). En «elegir», subir la citación va primero y en un cuadro azul llamativo.
 - 2026-10-22 — **Siglas con significado (rama `feat/acronyms`), provisional:** cuando aparece una sigla (TDAH, DNI, NIE, art. de la LEC) se escribe su significado entre paréntesis, en los 4 idiomas. No se amplían PDF/JPG/PNG/MB ni la atribución de ARASAAC. Las expansiones ca/gl/eu son borradores.
 
+- 2026-10-22 — **Pulido (rama `feat/ui-polish-official`), provisional:** barra fija «Guardar y volver al inicio» en Ajustes; buscador con filtro en «Palabras difíciles» (ordenadas, 39 términos; ca/gl/eu son borradores); opción «No quiero ninguna adaptación» en el cuestionario y Ajustes; pie de página reordenado (nombre de la app, logotipos del Gobierno de España y del Ministerio de Justicia en `web/public/images/official/`, tomados de Wikimedia Commons, y aviso de que **no es una web oficial**); tamaños de imagen unificados. **Pendiente de validar con el equipo/organización:** permiso de uso de los logotipos oficiales.
+
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.
 - `.claude/` — enlaces de Claude Code a esas skills.

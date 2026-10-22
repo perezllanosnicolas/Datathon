@@ -22,7 +22,7 @@ export default function Settings() {
         <ExtrasField legend={t.quiz.adaptQuestion} />
         <NeedsField legend={t.quiz.needsQuestion} />
       </form>
-      <div className="btn-stack">
+      <div className="btn-stack save-bar">
         <button type="button" className="btn btn-primary btn-block" onClick={() => router.push("/")}>
           {t.settings.save}
         </button>

@@ -73,7 +73,7 @@ Todo el texto de la app usa el lenguaje más sencillo posible. Se aplica a trám
 - **Qué se espera de la persona** al principio de cada paso, en una frase.
 - **Mensajes de error sin culpa:** qué ha pasado y qué hacer ahora.
 - **Orden:** primero lo más importante; listas cortas mejor que párrafos.
-- **Glosario** accesible desde cualquier pantalla con los términos legales explicados [P].
+- **Glosario** accesible desde cualquier pantalla con los términos legales explicados [P]. En el prototipo tiene buscador con filtro y orden alfabético [P].
 - **Comprobación:** revisar los textos con un índice de legibilidad para español (ej.: Fernández-Huerta o INFLESZ) y, sobre todo, con personas reales y asociaciones [?]. Seguir las pautas de lectura fácil (UNE 153101 EX) como referencia [V]. Tomar como referencia de estilo los materiales de **Plena inclusión** (https://www.plenainclusion.org/que-es-la-lectura-facil/) y del Centro Español de Accesibilidad Cognitiva (https://www.ceacog.es/) [P]. Las reglas valen en los cuatro idiomas de la app.
 - Los textos de la **citación** y las listas del **abogado** se muestran tal cual, pero la app añade al lado una explicación simple del término cuando es posible [P].
 - Si simplificar cambia el sentido legal, manda el sentido legal y se explica mejor.

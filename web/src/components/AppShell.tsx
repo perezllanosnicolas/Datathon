@@ -74,10 +74,30 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <footer className="site-footer">
-        <div className="wrap">
-          <p>{t.app.disclaimer}</p>
-          <p className="muted">{t.app.demoNotice}</p>
-          {prefs.imageMode !== "none" && <p className="muted small">{pictoAttribution(prefs.lang)}</p>}
+        <div className="wrap footer-grid">
+          <div className="footer-brand">
+            <p className="footer-name">
+              <Mark />
+              <strong>{t.app.name}</strong>
+            </p>
+            <p>{t.app.org}</p>
+            <p className="muted">{t.app.notOfficial}</p>
+          </div>
+          <ul className="footer-logos">
+            <li>
+              {/* eslint-disable-next-line @next/next/no-img-element -- static SVG */}
+              <img src="/images/official/gobierno.svg" alt={t.app.logoGov} height={48} />
+            </li>
+            <li>
+              {/* eslint-disable-next-line @next/next/no-img-element -- static SVG */}
+              <img src="/images/official/mjusticia.svg" alt={t.app.logoJustice} height={48} />
+            </li>
+          </ul>
+          <div className="footer-notes">
+            <p>{t.app.disclaimer}</p>
+            <p className="muted">{t.app.demoNotice}</p>
+            {prefs.imageMode !== "none" && <p className="muted small">{pictoAttribution(prefs.lang)}</p>}
+          </div>
         </div>
       </footer>
       {!isLawyer && (

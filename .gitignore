@@ -24,3 +24,7 @@ dist/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Registros locales del servidor
+.share.log
+.dev.log

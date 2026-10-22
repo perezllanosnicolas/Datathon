@@ -12,6 +12,10 @@ export const ca: Messages = {
     disclaimer: "Aquesta eina no substitueix el consell d'un advocat o advocada.",
     demoNotice: "Prototip amb dades d'exemple.",
     langName: "Català",
+    org: "Projecte del Datathon Brecha Judicial (DATAfórum JUSTICIA 2026), Repte 3.",
+    notOfficial: "No és un web oficial. Els logotips són dels seus titulars.",
+    logoJustice: "Ministeri de Justícia",
+    logoGov: "Govern d'Espanya",
     myCase: "El meu tràmit",
   },
   home: {
@@ -52,6 +56,8 @@ export const ca: Messages = {
     next: "Següent",
     back: "Enrere",
     finish: "Desar i continuar",
+    noAdaptation: "No vull cap adaptació",
+    noAdaptationNote: "Es treuen totes les adaptacions. Ho pots canviar després.",
     none: "Cap",
     imagesQuestion: "Com vols veure les imatges de cada pas?",
     imgPicto: "Pictogrames",
@@ -306,5 +312,8 @@ export const ca: Messages = {
   glossary: {
     title: "Paraules difícils",
     intro: "Aquí expliquem les paraules del jutjat amb paraules senzilles.",
+    search: "Cerca una paraula",
+    count: "{n} paraules",
+    empty: "No hi ha cap paraula amb això. Prova amb una altra.",
   },
 };

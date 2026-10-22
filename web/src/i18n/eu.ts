@@ -12,6 +12,10 @@ export const eu: Messages = {
     disclaimer: "Tresna honek ez du abokatu baten aholkua ordezten.",
     demoNotice: "Adibide-datuak dituen prototipoa.",
     langName: "Euskara",
+    org: "Brecha Judicial Datathonaren proiektua (DATAfórum JUSTICIA 2026), 3. erronka.",
+    notOfficial: "Ez da webgune ofiziala. Logotipoak beren titularrenak dira.",
+    logoJustice: "Justizia Ministerioa",
+    logoGov: "Espainiako Gobernua",
     myCase: "Nire izapidea",
   },
   home: {
@@ -52,6 +56,8 @@ export const eu: Messages = {
     next: "Hurrengoa",
     back: "Atzera",
     finish: "Gorde eta jarraitu",
+    noAdaptation: "Ez dut egokitzapenik nahi",
+    noAdaptationNote: "Egokitzapen guztiak kentzen dira. Gero alda dezakezu.",
     none: "Bat ere ez",
     imagesQuestion: "Nola ikusi nahi dituzu urrats bakoitzeko irudiak?",
     imgPicto: "Piktogramak",
@@ -306,5 +312,8 @@ export const eu: Messages = {
   glossary: {
     title: "Hitz zailak",
     intro: "Hemen epaitegiko hitzak hitz errazekin azaltzen ditugu.",
+    search: "Bilatu hitz bat",
+    count: "{n} hitz",
+    empty: "Ez dago horrekin hitzik. Saiatu beste batekin.",
   },
 };
