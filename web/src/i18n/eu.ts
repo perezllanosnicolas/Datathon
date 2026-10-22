@@ -98,7 +98,7 @@ export const eu: Messages = {
     title: "Ezarpenak",
     privacy: "Zure ezarpenak gailu honetan bakarrik gordetzen dira. Ez dira inora bidaltzen.",
     saved: "Ezarpenak gordeta.",
-    save: "Gorde eta hasierara itzuli",
+    save: "Gorde ezarpenak",
     reset: "Gailu honetako dena ezabatu",
     resetConfirm: "Zure ezarpenak eta izapideak ezabatuko dira. Jarraitu nahi duzu?",
     lossWarning: "Nabigatzaileko datuak ezabatzen badituzu, zure ezarpenak eta izapideak ere ezabatzen dira.",
