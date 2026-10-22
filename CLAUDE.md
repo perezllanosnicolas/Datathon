@@ -100,6 +100,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - 2026-10-22 — **Ajustes de lenguaje y UI:** se dice «idioma» (no «lengua») y nunca «discapacidad» (siempre «neurodivergencia»); se quitan las notas «a validar por Leyre/Carlos» del catálogo y de la interfaz; en el cuestionario y en Ajustes se filtra primero por **adaptaciones** y al final aparece «Más filtros» (neurodivergencias); el botón de copiar el enlace del abogado tiene alternativa si el portapapeles no está disponible (http).
 - 2026-10-22 — **Ajustes:** se quita guardar/cargar una copia de los ajustes (queda «Borrar todo»). Se escribe «TEA (Trastorno del Espectro Autista)», sin la palabra «autismo» sola.
 - 2026-10-22 — **Ajustes:** al quitar una neurodivergencia se desactivan las adaptaciones que había activado (salvo las que otra neurodivergencia marcada siga pidiendo); botón «Guardar y volver al inicio»; se quita el texto «no hace falta ningún diagnóstico».
+- 2026-10-22 — **Ajustes y flujo:** el tamaño de letra es un slider (A pequeña → A grande) en vez de botones; en cada paso del flujo, «Volver al principio del paso» y «Saltar este paso» pasan a la parte superior, bajo la barra de progreso.
 
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.

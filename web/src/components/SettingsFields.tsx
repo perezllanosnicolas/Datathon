@@ -45,24 +45,27 @@ export function LanguageField({ legend }: { legend: string }) {
 
 export function FontField({ legend }: { legend: string }) {
   const { prefs, setPrefs, t } = usePrefs();
-  const options: { v: FontSize; label: string; size: string }[] = [
-    { v: "m", label: t.quiz.fontNormal, size: "18px" },
-    { v: "l", label: t.quiz.fontLarge, size: "21px" },
-    { v: "xl", label: t.quiz.fontXL, size: "25px" },
-  ];
+  const sizes: FontSize[] = ["m", "l", "xl"];
+  const labels = [t.quiz.fontNormal, t.quiz.fontLarge, t.quiz.fontXL];
+  const idx = sizes.indexOf(prefs.fontSize);
   return (
     <fieldset>
       <legend>{legend}</legend>
-      <ul className="choice-list">
-        {options.map((o) => (
-          <li key={o.v}>
-            <label className="choice">
-              <input type="radio" name="font" value={o.v} checked={prefs.fontSize === o.v} onChange={() => setPrefs({ fontSize: o.v })} />
-              <span style={{ fontSize: o.size }}>{o.label}</span>
-            </label>
-          </li>
-        ))}
-      </ul>
+      <div className="font-slider">
+        <span aria-hidden="true" style={{ fontSize: "14px" }}>A</span>
+        <input
+          type="range"
+          min={0}
+          max={sizes.length - 1}
+          step={1}
+          value={idx}
+          aria-label={legend}
+          aria-valuetext={labels[idx]}
+          onChange={(e) => setPrefs({ fontSize: sizes[Number(e.target.value)] })}
+        />
+        <span aria-hidden="true" style={{ fontSize: "30px" }}>A</span>
+      </div>
+      <p className="small" aria-live="polite">{labels[idx]}</p>
       <p className="card">{t.quiz.sample}</p>
     </fieldset>
   );

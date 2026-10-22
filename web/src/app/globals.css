@@ -345,3 +345,7 @@ details[open] > summary > .icon:last-child { transform: rotate(90deg); }
   body { background: #fff; padding: 0; }
   details > :not(summary) { display: block !important; }
 }
+
+.font-slider { display: flex; align-items: center; gap: 0.75rem; }
+.font-slider input[type="range"] { flex: 1; min-height: 44px; }
+.font-slider span { font-weight: 700; line-height: 1; }

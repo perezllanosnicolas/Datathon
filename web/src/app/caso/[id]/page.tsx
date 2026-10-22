@@ -180,6 +180,22 @@ function Flow({ id }: { id: string }) {
     <>
       <ProgressBar steps={steps} current={current} statusOf={statusOf} />
 
+      <div className="btn-row">
+        <button
+          type="button"
+          className="btn btn-quiet"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            heading.current?.focus();
+          }}
+        >
+          {t.flow.repeat}
+        </button>
+        <button type="button" className="btn btn-quiet" onClick={skip}>
+          {t.flow.skip}
+        </button>
+      </div>
+
       <p className="sr-only" aria-live="polite">
         {fmt(t.flow.stepAnnounce, { n: current + 1, total: steps.length, title })}
       </p>
@@ -290,14 +306,6 @@ function Flow({ id }: { id: string }) {
           {current === steps.length - 1 ? t.flow.finish : t.flow.next}
         </button>
       </nav>
-      <div className="btn-row">
-        <button type="button" className="btn btn-quiet" onClick={() => heading.current?.focus()}>
-          {t.flow.repeat}
-        </button>
-        <button type="button" className="btn btn-quiet" onClick={skip}>
-          {t.flow.skip}
-        </button>
-      </div>
       <FlowMap steps={steps} court={court} current={current} statusOf={statusOf} onGoTo={goTo} />
       <p>
         <Link href={`/caso/${id}/resumen`}>{t.flow.summary}</Link>
