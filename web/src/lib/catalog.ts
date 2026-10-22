@@ -59,7 +59,7 @@ export interface Court {
   address: string;
   searchTerms: string[];
   entrance: {
-    streetView: { location: string; heading?: number; pitch?: number; fov?: number };
+    photo: { src: string; credit: string; source: string };
     roadDirection: "one_way" | "two_way" | "pedestrian" | "other";
     dropOff: LText;
     access: LText;

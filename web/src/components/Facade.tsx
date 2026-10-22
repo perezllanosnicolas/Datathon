@@ -1,34 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { tr, type Court } from "@/lib/catalog";
 import { usePrefs } from "./PrefsProvider";
 import { Icon } from "./ui";
 
-// Facade of the court (AppFlow §2.4, TRD §3): one still image + a full text alternative.
-// The text is always there; the image is optional and never the only source of information.
+// Facade of the court (AppFlow §2.4, TRD §3): one still photo + a full text alternative.
+// The text is always there; the photo is optional and never the only source of information.
 export function Facade({ court }: { court: Court }) {
   const { t, prefs } = usePrefs();
-  const [meta, setMeta] = useState<{ available: boolean; date: string | null } | null>(null);
   const [imgFailed, setImgFailed] = useState(false);
   const [textOnly, setTextOnly] = useState(false);
-
-  useEffect(() => {
-    let alive = true;
-    fetch(`/api/facade/${court.id}?meta=1`)
-      .then((r) => r.json())
-      .then((m) => alive && setMeta({ available: Boolean(m.available), date: m.date ?? null }))
-      .catch(() => alive && setMeta({ available: false, date: null }));
-    return () => {
-      alive = false;
-    };
-  }, [court.id]);
 
   const e = court.entrance;
   const desc = tr(e.textDescription, prefs.lang);
   const access = tr(e.access, prefs.lang);
   const dropOff = tr(e.dropOff, prefs.lang);
-  const showImage = meta?.available && !imgFailed && !textOnly;
+  const showImage = !imgFailed && !textOnly;
 
   return (
     <section className="card" aria-labelledby="facade-title">
@@ -38,22 +26,22 @@ export function Facade({ court }: { court: Court }) {
 
       {showImage && (
         <figure style={{ margin: "0 0 1rem" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element -- proxied Street View image, not optimisable */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- static photo, already sized */}
           <img
             className="facade-img"
-            src={`/api/facade/${court.id}`}
+            src={e.photo.src}
             alt={`${t.facade.altPrefix} ${desc.text} ${access.text}`}
-            width={640}
-            height={400}
+            width={960}
+            height={640}
+            decoding="async"
             onError={() => setImgFailed(true)}
           />
           <figcaption className="facade-meta">
-            {t.facade.attribution}
-            {meta?.date ? ` · ${meta.date}` : ""}
+            {t.facade.attribution}: <a href={e.photo.source}>{e.photo.credit}</a>
           </figcaption>
         </figure>
       )}
-      {meta && !meta.available && <p className="muted">{t.facade.noImage}</p>}
+      {imgFailed && <p className="muted">{t.facade.noImage}</p>}
 
       <dl className="facts" style={{ gridTemplateColumns: "1fr" }}>
         <dt>{t.facade.description}</dt>
@@ -68,7 +56,7 @@ export function Facade({ court }: { court: Court }) {
       <p className="muted small">{court.address}</p>
       {court.reviewStatus === "draft" && <p className="muted small">{t.facade.synthetic}</p>}
 
-      {meta?.available && !imgFailed && (
+      {!imgFailed && (
         <button type="button" className="btn btn-quiet" onClick={() => setTextOnly(!textOnly)} aria-pressed={textOnly}>
           {textOnly ? t.facade.showImage : t.facade.showText}
         </button>

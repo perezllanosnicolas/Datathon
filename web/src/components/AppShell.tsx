@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
+import credits from "../../data/realistic/credits.json";
 import { pictoAttribution } from "@/lib/images";
 import { loadCases } from "@/lib/storage";
 import { usePrefs } from "./PrefsProvider";
@@ -80,23 +81,40 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <Mark />
               <strong>{t.app.name}</strong>
             </p>
+            <p>{t.app.subtitle}</p>
             <p>{t.app.org}</p>
             <p className="muted">{t.app.notOfficial}</p>
           </div>
           <ul className="footer-logos">
             <li>
               {/* eslint-disable-next-line @next/next/no-img-element -- static SVG */}
-              <img src="/images/official/gobierno.svg" alt={t.app.logoGov} height={48} />
+              <img src="/images/official/ministerio.jpg" alt={`${t.app.logoGov}. ${t.app.logoJustice}`} height={48} />
             </li>
             <li>
               {/* eslint-disable-next-line @next/next/no-img-element -- static SVG */}
-              <img src="/images/official/mjusticia.svg" alt={t.app.logoJustice} height={48} />
+              <img src="/images/official/urjc.svg" alt={t.app.logoUrjc} height={48} />
+            </li>
+            <li>
+              {/* eslint-disable-next-line @next/next/no-img-element -- static image */}
+              <img src="/images/official/udc.png" alt={t.app.logoUdc} height={48} />
             </li>
           </ul>
           <div className="footer-notes">
             <p>{t.app.disclaimer}</p>
             <p className="muted">{t.app.demoNotice}</p>
             {prefs.imageMode !== "none" && <p className="muted small">{pictoAttribution(prefs.lang)}</p>}
+            {prefs.imageMode === "real" && (
+              <details className="credits small muted">
+                <summary>{t.app.photoCredits}</summary>
+                <ul>
+                  {credits.map((c) => (
+                    <li key={c.slot}>
+                      <a href={c.source}>{c.title}</a> · {c.creator} · {c.license} · Wikimedia Commons
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
           </div>
         </div>
       </footer>

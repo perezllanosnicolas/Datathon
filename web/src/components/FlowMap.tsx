@@ -146,7 +146,7 @@ export function FlowMap({
                                   <p className="expected">{expected}</p>
                                 )}
                                 <p className="small">
-                                  <strong>{t.flow.duration}:</strong>{" "}
+                                  <strong>{t.flow.duration}</strong>{" "}
                                   {fmt(t.flow.durationRange, {
                                     a: s.durationMin[0],
                                     b: s.durationMin[1],

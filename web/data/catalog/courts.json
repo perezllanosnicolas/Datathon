@@ -1,5 +1,5 @@
 {
-  "_note": "Juzgados de EJEMPLO para el demo. Las direcciones son públicas, pero las descripciones de la entrada son SINTÉTICAS y hay que comprobarlas en el lugar. La vista de Street View se pide por dirección; heading/pitch/fov se ajustan con la vista previa.",
+  "_note": "Sedes judiciales de EJEMPLO para el demo. Las direcciones son públicas, pero las descripciones de la entrada son SINTÉTICAS y hay que comprobarlas en el lugar. Las fotos de la fachada son de Wikimedia Commons (licencias y autoría en cada campo photo); hay que comprobar que son del edificio exacto.",
   "courts": [
     {
       "id": "madrid-primera-instancia",
@@ -7,15 +7,15 @@
       "processTypes": ["civil"],
       "city": "Madrid",
       "name": {
-        "es": "Juzgados de Primera Instancia de Madrid",
-        "ca": "Jutjats de Primera Instància de Madrid",
-        "gl": "Xulgados de Primeira Instancia de Madrid",
-        "eu": "Madrilgo Lehen Auzialdiko Epaitegiak"
+        "es": "Sede judicial de Madrid (Primera Instancia)",
+        "ca": "Seu judicial de Madrid (Primera Instància)",
+        "gl": "Sede xudicial de Madrid (Primeira Instancia)",
+        "eu": "Madrilgo epaitegi-egoitza (Lehen Auzialdia)"
       },
       "address": "Calle del Capitán Haya, 66, 28020 Madrid",
       "searchTerms": ["madrid", "capitan haya", "primera instancia madrid", "primera instancia de madrid", "lehen auzialdiko", "primera instancia"],
       "entrance": {
-        "streetView": { "location": "Calle del Capitán Haya 66, 28020 Madrid", "pitch": 5, "fov": 80 },
+        "photo": { "src": "/images/facades/madrid-primera-instancia.webp", "credit": "Juandev · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Madrid,_juzgados_(002).jpg" },
         "roadDirection": "two_way",
         "dropOff": {
           "es": "Ejemplo: hay una parada de taxi cerca. No se puede aparcar delante de la puerta.",
@@ -65,7 +65,7 @@
       "address": "Gran Via de les Corts Catalanes, 111, L'Hospitalet de Llobregat (Barcelona)",
       "searchTerms": ["barcelona", "hospitalet", "ciutat de la justicia", "ciudad de la justicia", "gran via", "justizia hiria", "cidade da xustiza"],
       "entrance": {
-        "streetView": { "location": "Gran Via de les Corts Catalanes 111, L'Hospitalet de Llobregat", "pitch": 5, "fov": 80 },
+        "photo": { "src": "/images/facades/bcn-ciutat-justicia.webp", "credit": "Canaan · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Ciutat_de_la_Just%C3%ADcia_BCN_i_Hosp_(1).jpg" },
         "roadDirection": "two_way",
         "dropOff": {
           "es": "Ejemplo: hay parada de metro y de autobús cerca.",

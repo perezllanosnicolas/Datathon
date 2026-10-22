@@ -3,6 +3,9 @@
 import type { Lang } from "./catalog";
 
 export type FontSize = "s" | "m" | "l" | "xl" | "xxl" | "xxxl";
+/** The app's own face, the easier-to-read face (Atkinson Hyperlegible) or OpenDyslexic. */
+export type Typeface = "app" | "readable" | "opendyslexic";
+export const TYPEFACES: Typeface[] = ["app", "readable", "opendyslexic"];
 /** How each step is illustrated: ARASAAC pictograms, generated realistic images, or text only. */
 export type ImageMode = "picto" | "real" | "none";
 export type Need = "tea" | "tdah" | "dislexia" | "discalculia" | "disgrafia" | "vision" | "otras";
@@ -16,7 +19,7 @@ export interface Prefs {
   calmColors: boolean;
   highContrast: boolean;
   readAloud: boolean;
-  dyslexiaFont: boolean;
+  typeface: Typeface;
   imageMode: ImageMode;
   dictation: boolean;
   onboarded: boolean;
@@ -31,8 +34,8 @@ export const DEFAULT_PREFS: Prefs = {
   reducedMotion: false,
   calmColors: false,
   highContrast: false,
-  readAloud: false,
-  dyslexiaFont: false,
+  readAloud: true,
+  typeface: "app",
   onboarded: false,
 };
 
@@ -77,7 +80,11 @@ function write(key: string, value: unknown) {
 }
 
 export function loadPrefs(): Prefs {
-  return { ...DEFAULT_PREFS, ...(read<Partial<Prefs>>(PREFS_KEY) ?? {}) };
+  const stored = read<Partial<Prefs> & { dyslexiaFont?: boolean }>(PREFS_KEY) ?? {};
+  const { dyslexiaFont, ...rest } = stored;
+  // Older saves had a yes/no switch for the easier-to-read face.
+  const typeface = TYPEFACES.includes(rest.typeface as Typeface) ? (rest.typeface as Typeface) : dyslexiaFont ? "readable" : "app";
+  return { ...DEFAULT_PREFS, ...rest, typeface };
 }
 
 // Prefs as an external store for useSyncExternalStore: the snapshot is cached by its raw
@@ -182,4 +189,4 @@ export function clearAll() {
 }
 
 /** Script run before first paint so font size and colour modes never flash. */
-export const PREFS_BOOT_SCRIPT = `(function(){try{var p=JSON.parse(localStorage.getItem("${PREFS_KEY}")||"{}");var d=document.documentElement;d.dataset.font=p.fontSize||"m";if(p.reducedMotion)d.dataset.motion="reduce";if(p.calmColors)d.dataset.calm="1";if(p.highContrast)d.dataset.contrast="high";if(p.dyslexiaFont)d.dataset.readable="1";if(p.lang)d.lang=p.lang}catch(e){}})()`;
+export const PREFS_BOOT_SCRIPT = `(function(){try{var p=JSON.parse(localStorage.getItem("${PREFS_KEY}")||"{}");var d=document.documentElement;d.dataset.font=p.fontSize||"m";if(p.reducedMotion)d.dataset.motion="reduce";if(p.calmColors)d.dataset.calm="1";if(p.highContrast)d.dataset.contrast="high";var tf=p.typeface||(p.dyslexiaFont?"readable":"app");if(tf==="readable"||tf==="opendyslexic")d.dataset.typeface=tf;if(p.lang)d.lang=p.lang}catch(e){}})()`;

@@ -16,7 +16,11 @@
     "hearing": 34479,
     "testify": 37669,
     "end-hearing": 6606,
-    "after": 2636
+    "after": 2636,
+    "read-demand": 8166,
+    "find-lawyer": 2636,
+    "gather-papers": 37340,
+    "answer-demand": 2636
   },
   "documents": {
     "jv-1-d1": 21802,

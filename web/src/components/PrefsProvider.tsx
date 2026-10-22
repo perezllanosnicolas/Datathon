@@ -31,7 +31,7 @@ function applyToDocument(p: Prefs) {
   toggle("motion", p.reducedMotion, "reduce");
   toggle("calm", p.calmColors);
   toggle("contrast", p.highContrast, "high");
-  toggle("readable", p.dyslexiaFont);
+  toggle("typeface", p.typeface !== "app", p.typeface);
 }
 
 const noopSubscribe = () => () => {};

@@ -1,0 +1,23 @@
+[
+  {
+    "slot": "read-demand",
+    "creator": "Gobierno de la Ciudad de Buenos Aires",
+    "license": "CC BY 2.0",
+    "title": "Bibliotecas Públicas de la Ciudad",
+    "source": "https://commons.wikimedia.org/wiki/File:Bibliotecas_P%C3%BAblicas_de_la_Ciudad_(7900955536).jpg"
+  },
+  {
+    "slot": "gather-papers",
+    "creator": "Dvdgmz",
+    "license": "CC BY-SA 3.0",
+    "title": "Archivador can sanpere",
+    "source": "https://commons.wikimedia.org/wiki/File:Archivador_can_sanpere.JPG"
+  },
+  {
+    "slot": "arrival",
+    "creator": "Juandev",
+    "license": "CC BY-SA 4.0",
+    "title": "Madrid, juzgados (003)",
+    "source": "https://commons.wikimedia.org/wiki/File:Madrid,_juzgados_(003).jpg"
+  }
+]

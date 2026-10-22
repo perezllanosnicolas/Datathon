@@ -19,6 +19,7 @@ const PATHS = {
   book: "M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6M20 4v14h-6",
   sliders: "M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0M14 4v4M8 10v4M16 16v4",
   chevron: "M9 6l6 6-6 6",
+  stop: "M7 7h10v10H7z",
 } as const;
 
 export type IconName = keyof typeof PATHS;
@@ -46,15 +47,22 @@ export function Note({ icon, title, tone, children }: { icon?: IconName; title?:
   );
 }
 
-/** Text-to-speech in the chosen language. Shown only if the person enabled it. */
+/**
+ * Text-to-speech in the chosen language, as an icon-only round button: press to listen,
+ * press again to stop. Shown unless the person switched it off in the settings.
+ */
 export function ReadAloud({ text }: { text: string }) {
   const { prefs, t } = usePrefs();
   const [speaking, setSpeaking] = useState(false);
   const supported = typeof window !== "undefined" && "speechSynthesis" in window;
 
-  useEffect(() => () => {
-    if (supported) window.speechSynthesis.cancel();
-  }, [supported]);
+  // New text (next step) or leaving the page: stop talking.
+  useEffect(() => {
+    return () => {
+      if (supported) window.speechSynthesis.cancel();
+      setSpeaking(false);
+    };
+  }, [supported, text]);
 
   if (!prefs.readAloud || !supported) return null;
 
@@ -76,9 +84,8 @@ export function ReadAloud({ text }: { text: string }) {
   }
 
   return (
-    <button type="button" className="btn btn-quiet" onClick={toggle} aria-pressed={speaking}>
-      <Icon name="sound" />
-      {speaking ? t.flow.stop : t.flow.readAloud}
+    <button type="button" className="btn-read" onClick={toggle} aria-pressed={speaking} aria-label={speaking ? t.flow.stop : t.flow.readAloud} title={speaking ? t.flow.stop : t.flow.readAloud}>
+      <Icon name={speaking ? "stop" : "sound"} />
     </button>
   );
 }

@@ -178,7 +178,7 @@ function Flow({ id }: { id: string }) {
 
   return (
     <>
-      <ProgressBar steps={steps} current={current} statusOf={statusOf} />
+      <ProgressBar steps={steps} current={current} statusOf={statusOf} action={<ReadAloud text={speakText} />} />
 
       <div className="btn-row">
         <button
@@ -219,7 +219,7 @@ function Flow({ id }: { id: string }) {
             </div>
           )}
           <p className="duration">
-            <Icon name="clock" /> <strong>{t.flow.duration}:</strong> {fmt(t.flow.durationRange, { a: dMin, b: dMax })}
+            <Icon name="clock" /> <strong>{t.flow.duration}</strong> {fmt(t.flow.durationRange, { a: dMin, b: dMax })}
           </p>
           {needs.includes("discalculia") && (
             <>
@@ -229,7 +229,6 @@ function Flow({ id }: { id: string }) {
               </div>
             </>
           )}
-          <ReadAloud text={speakText} />
         </header>
 
         {needs.includes("tea") && sensoryNote}

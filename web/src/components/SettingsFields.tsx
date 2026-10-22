@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { LANGUAGES, normalize, type Lang } from "@/lib/catalog";
-import { DEFAULT_PREFS, NEEDS, type FontSize, type ImageMode, type Need, type Prefs } from "@/lib/storage";
+import { DEFAULT_PREFS, NEEDS, TYPEFACES, type FontSize, type ImageMode, type Need, type Prefs, type Typeface } from "@/lib/storage";
 import { usePrefs } from "./PrefsProvider";
 import { StepImage } from "./StepImage";
 import { TextField } from "./TextField";
@@ -17,7 +17,7 @@ const NATIVE: Record<Lang, string> = { es: es.app.langName, ca: ca.app.langName,
 const NEED_DEFAULTS: Record<Need, Partial<Prefs>> = {
   tea: { reducedMotion: true, calmColors: true },
   tdah: { reducedMotion: true },
-  dislexia: { dyslexiaFont: true, readAloud: true },
+  dislexia: { typeface: "readable", readAloud: true },
   discalculia: {},
   disgrafia: { dictation: true },
   vision: { fontSize: "xl", highContrast: true, readAloud: true },
@@ -48,6 +48,7 @@ export function FontField({ legend }: { legend: string }) {
   const sizes: FontSize[] = ["s", "m", "l", "xl", "xxl", "xxxl"];
   const labels = [t.quiz.fontSmall, t.quiz.fontNormal, t.quiz.fontLarge, t.quiz.fontXL, t.quiz.fontXXL, t.quiz.fontXXXL];
   const idx = sizes.indexOf(prefs.fontSize);
+  const faceLabels: Record<Typeface, string> = { app: t.quiz.typefaceApp, readable: t.quiz.typefaceReadable, opendyslexic: t.quiz.typefaceOpen };
   return (
     <fieldset>
       <legend>{legend}</legend>
@@ -67,6 +68,19 @@ export function FontField({ legend }: { legend: string }) {
       </div>
       <p className="small" aria-live="polite">{labels[idx]}</p>
       <p className="card">{t.quiz.sample}</p>
+      <fieldset className="typeface-field">
+        <legend>{t.quiz.typefaceQuestion}</legend>
+        <ul className="choice-list">
+          {TYPEFACES.map((f) => (
+            <li key={f}>
+              <label className="choice">
+                <input type="radio" name="typeface" value={f} checked={prefs.typeface === f} onChange={() => setPrefs({ typeface: f })} />
+                <strong className={`face-${f}`}>{faceLabels[f]}</strong>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </fieldset>
     </fieldset>
   );
 }
@@ -150,8 +164,7 @@ export function NeedsField({ legend }: { legend: string }) {
 
 export function ExtrasField({ legend }: { legend: string }) {
   const { prefs, setPrefs, t } = usePrefs();
-  const toggles: { key: "reducedMotion" | "calmColors" | "highContrast" | "readAloud" | "dyslexiaFont" | "dictation"; label: string; note?: string }[] = [
-    { key: "dyslexiaFont", label: t.quiz.dyslexiaFont },
+  const toggles: { key: "reducedMotion" | "calmColors" | "highContrast" | "readAloud" | "dictation"; label: string; note?: string }[] = [
     { key: "readAloud", label: t.quiz.readAloud },
     { key: "dictation", label: t.quiz.dictation, note: t.dictation.privacy },
     { key: "highContrast", label: t.quiz.highContrast },

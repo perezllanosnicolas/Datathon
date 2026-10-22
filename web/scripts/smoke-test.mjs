@@ -64,6 +64,7 @@ const expected = {
   "03-gl-xuizo-verbal-madrid.txt": ["juicio-verbal-vista", "madrid-primera-instancia", "2026-11-20", "12:00"],
   "04-eu-lekukoa-barcelona.txt": ["testigo-juicio-civil", "bcn-ciutat-justicia", "2026-12-10", "11:15"],
   "05-es-fuera-de-catalogo.txt": [undefined, undefined, "2027-02-01", "09:00"],
+  "06-es-demanda-division-cosa-comun.txt": ["division-cosa-comun-demandado", "madrid-primera-instancia", null, null],
 };
 const dir = path.join(import.meta.dirname, "..", "data", "citaciones-sinteticas");
 for (const f of await readdir(dir)) {
@@ -75,13 +76,17 @@ for (const f of await readdir(dir)) {
   const exp = expected[f];
   check(`citation ${f}`, exp && got.every((v, i) => v === exp[i]), JSON.stringify(got));
 }
+// The citation route allows 6 requests per minute and there are now 6 sample citations: wait for the window to reset.
+await new Promise((r) => setTimeout(r, 61_000));
 const bad = new FormData();
 bad.append("file", new Blob([new Uint8Array([1, 2, 3, 4])], { type: "application/octet-stream" }), "x.bin");
 check("citation rejects unknown type", (await fetch(BASE + "/api/citation", { method: "POST", body: bad })).status === 415);
 
-// Facade metadata answers even without an API key
-const meta = await call("/api/facade/madrid-primera-instancia?meta=1");
-check("facade meta", meta.status === 200 && typeof meta.data.available === "boolean", JSON.stringify(meta.data));
+// Facade photos are static files
+for (const f of ["madrid-primera-instancia", "bcn-ciutat-justicia"]) {
+  const img = await fetch(BASE + `/images/facades/${f}.webp`);
+  check(`facade photo ${f}`, img.status === 200 && img.headers.get("content-type") === "image/webp");
+}
 
 console.log(failures ? `\n${failures} check(s) failed` : "\nAll checks passed");
 process.exit(failures ? 1 : 0);

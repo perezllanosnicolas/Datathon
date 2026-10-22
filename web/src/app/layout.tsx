@@ -5,6 +5,8 @@ import { LANGUAGES, type Lang } from "@/lib/catalog";
 import { PREFS_BOOT_SCRIPT } from "@/lib/storage";
 import { PrefsProvider } from "@/components/PrefsProvider";
 import { AppShell } from "@/components/AppShell";
+import "@fontsource/opendyslexic/latin-400.css";
+import "@fontsource/opendyslexic/latin-700.css";
 import "./globals.css";
 
 // Readable font offered as an adaptation (dyslexia, low vision). Self-hosted by next/font.
@@ -19,14 +21,14 @@ const readable = Atkinson_Hyperlegible({
 const geist = Geist({ variable: "--font-geist", subsets: ["latin", "latin-ext"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Paso a paso al juzgado",
+  title: "SimuLex: visita virtual accesible a la sede judicial",
   description: "Prepara tu visita al juzgado, paso a paso. Prototipo del Reto 3 del Datathon Brecha Judicial.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f4f3f1",
+  themeColor: "#faf6ee",
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

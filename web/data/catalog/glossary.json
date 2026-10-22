@@ -70,10 +70,10 @@
         "eu": "Justizia Administrazioko letratua"
       },
       "definition": {
-        "es": "Persona que trabaja en el juzgado. Da fe de lo que pasa en la sala.",
-        "ca": "Persona que treballa al jutjat. Dona fe del que passa a la sala.",
-        "gl": "Persoa que traballa no xulgado. Dá fe do que pasa na sala.",
-        "eu": "Epaitegian lan egiten duen pertsona. Aretoan gertatzen denaren fede ematen du."
+        "es": "Persona que trabaja en la sede judicial. Da fe de lo que pasa en la sala.",
+        "ca": "Persona que treballa a la seu judicial. Dona fe del que passa a la sala.",
+        "gl": "Persoa que traballa na sede xudicial. Dá fe do que pasa na sala.",
+        "eu": "Epaitegi-egoitzan lan egiten duen pertsona. Aretoan gertatzen denaren fede ematen du."
       }
     },
     {
@@ -175,10 +175,10 @@
         "eu": "Prokuradorea"
       },
       "definition": {
-        "es": "Profesional que lleva tus papeles al juzgado y recibe los avisos por ti.",
-        "ca": "Professional que porta els teus papers al jutjat i rep els avisos per tu.",
-        "gl": "Profesional que leva os teus papeis ao xulgado e recibe os avisos por ti.",
-        "eu": "Zure paperak epaitegira eramaten dituen eta zuregatik abisuak jasotzen dituen profesionala."
+        "es": "Profesional que lleva tus papeles a la sede judicial y recibe los avisos por ti.",
+        "ca": "Professional que porta els teus papers a la seu judicial i rep els avisos per tu.",
+        "gl": "Profesional que leva os teus papeis á sede xudicial e recibe os avisos por ti.",
+        "eu": "Zure paperak epaitegi-egoitzara eramaten dituen eta zuregatik abisuak jasotzen dituen profesionala."
       }
     },
     {
@@ -190,10 +190,10 @@
         "eu": "Jakinarazpena"
       },
       "definition": {
-        "es": "Aviso oficial del juzgado. Puede llegar en papel o por internet.",
-        "ca": "Avís oficial del jutjat. Pot arribar en paper o per internet.",
-        "gl": "Aviso oficial do xulgado. Pode chegar en papel ou por internet.",
-        "eu": "Epaitegiaren abisu ofiziala. Paperean edo internet bidez heldu daiteke."
+        "es": "Aviso oficial de la sede judicial. Puede llegar en papel o por internet.",
+        "ca": "Avís oficial de la seu judicial. Pot arribar en paper o per internet.",
+        "gl": "Aviso oficial da sede xudicial. Pode chegar en papel ou por internet.",
+        "eu": "Epaitegi-egoitzaren abisu ofiziala. Paperean edo internet bidez heldu daiteke."
       }
     },
     {
@@ -220,10 +220,10 @@
         "eu": "Agertu"
       },
       "definition": {
-        "es": "Ir al juzgado cuando te lo piden.",
-        "ca": "Anar al jutjat quan t'ho demanen.",
-        "gl": "Ir ao xulgado cando cho piden.",
-        "eu": "Epaitegira joatea eskatzen dizutenean."
+        "es": "Ir a la sede judicial cuando te lo piden.",
+        "ca": "Anar a la seu judicial quan t'ho demanen.",
+        "gl": "Ir á sede xudicial cando cho piden.",
+        "eu": "Epaitegi-egoitzara joatea eskatzen dizutenean."
       }
     },
     {
@@ -235,19 +235,19 @@
         "eu": "Ikustaldi-aretoa"
       },
       "definition": {
-        "es": "La sala del juzgado donde se hace la vista.",
-        "ca": "La sala del jutjat on es fa la vista.",
-        "gl": "A sala do xulgado onde se fai a vista.",
-        "eu": "Ikustaldia egiten den epaitegiko gela."
+        "es": "La sala de la sede judicial donde se hace la vista.",
+        "ca": "La sala de la seu judicial on es fa la vista.",
+        "gl": "A sala da sede xudicial onde se fai a vista.",
+        "eu": "Ikustaldia egiten den epaitegi-egoitzako gela."
       }
     },
     {
       "id": "juzgado",
       "term": {
-        "es": "Juzgado",
-        "ca": "Jutjat",
-        "gl": "Xulgado",
-        "eu": "Epaitegia"
+        "es": "Sede judicial",
+        "ca": "Seu judicial",
+        "gl": "Sede xudicial",
+        "eu": "Epaitegi-egoitza"
       },
       "definition": {
         "es": "El lugar donde trabaja un juez y donde se resuelven los casos.",
@@ -550,10 +550,10 @@
         "eu": "Egun-ordua ezartzea"
       },
       "definition": {
-        "es": "La fecha y la hora que el juzgado pone para la vista.",
-        "ca": "La data i l'hora que el jutjat posa per a la vista.",
-        "gl": "A data e a hora que o xulgado pon para a vista.",
-        "eu": "Epaitegiak ikustaldirako jartzen duen data eta ordua."
+        "es": "La fecha y la hora que la sede judicial pone para la vista.",
+        "ca": "La data i l'hora que la seu judicial posa per a la vista.",
+        "gl": "A data e a hora que a sede xudicial pon para a vista.",
+        "eu": "Epaitegi-egoitzak ikustaldirako jartzen duen data eta ordua."
       }
     },
     {
