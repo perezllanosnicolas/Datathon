@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { courts, getProcedure, LANGUAGES, normalize, procedures, t1, type Court, type Procedure } from "@/lib/catalog";
 import { fmt, usePrefs } from "@/components/PrefsProvider";
+import { TextField } from "@/components/TextField";
 
 // Search with filters (TRD §2b). Searches every language, tolerant to accents.
 function matchProcedure(p: Procedure, q: string): boolean {
@@ -43,19 +44,13 @@ function SearchInner() {
   if (procedure) {
     return (
       <>
-        <p className="step-eyebrow">
-          {t.search.selectedProcedure}: <strong>{t1(procedure.name, prefs.lang)}</strong>
-        </p>
         <h1 ref={courtHeading} tabIndex={-1}>
           {t.search.courtTitle}
         </h1>
-        <div className="field">
-          <label htmlFor="court-q">{t.search.courtLabel}</label>
-          <p className="hint" id="court-hint">
-            {t.search.courtHint}
-          </p>
-          <input id="court-q" type="search" value={courtQ} onChange={(e) => setCourtQ(e.target.value)} aria-describedby="court-hint" autoComplete="off" />
-        </div>
+        <p className="lead">
+          {t.search.selectedProcedure}: <strong>{t1(procedure.name, prefs.lang)}</strong>
+        </p>
+        <TextField id="court-q" type="search" label={t.search.courtLabel} hint={t.search.courtHint} value={courtQ} onChange={setCourtQ} />
         <p role="status" aria-live="polite" className="muted">
           {courtResults.length ? fmt(t.search.results, { n: courtResults.length }) : t.search.noResults}
         </p>
@@ -84,13 +79,7 @@ function SearchInner() {
     <>
       <h1>{t.search.title}</h1>
       <form role="search" onSubmit={(e) => e.preventDefault()}>
-        <div className="field">
-          <label htmlFor="q">{t.search.label}</label>
-          <p className="hint" id="q-hint">
-            {t.search.hint}
-          </p>
-          <input id="q" type="search" value={q} onChange={(e) => setQ(e.target.value)} aria-describedby="q-hint" autoComplete="off" />
-        </div>
+        <TextField id="q" type="search" label={t.search.label} hint={t.search.hint} value={q} onChange={setQ} />
         <p className="label" id="type-label">
           {t.search.filterType}
         </p>

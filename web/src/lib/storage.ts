@@ -3,6 +3,8 @@
 import type { Lang } from "./catalog";
 
 export type FontSize = "m" | "l" | "xl";
+/** How each step is illustrated: ARASAAC pictograms, generated realistic images, or text only. */
+export type ImageMode = "picto" | "real" | "none";
 export type Need = "tea" | "tdah" | "dislexia" | "discalculia" | "disgrafia" | "vision" | "otras";
 export const NEEDS: Need[] = ["tea", "tdah", "dislexia", "discalculia", "disgrafia", "vision", "otras"];
 
@@ -15,12 +17,16 @@ export interface Prefs {
   highContrast: boolean;
   readAloud: boolean;
   dyslexiaFont: boolean;
+  imageMode: ImageMode;
+  dictation: boolean;
   onboarded: boolean;
 }
 
 export const DEFAULT_PREFS: Prefs = {
   lang: "es",
   fontSize: "m",
+  imageMode: "picto",
+  dictation: true,
   needs: [],
   reducedMotion: false,
   calmColors: false,

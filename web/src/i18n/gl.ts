@@ -12,6 +12,7 @@ export const gl: Messages = {
     disclaimer: "Esta ferramenta non substitúe o consello dun avogado ou avogada.",
     demoNotice: "Prototipo con datos de exemplo.",
     langName: "Galego",
+    myCase: "O meu trámite",
   },
   home: {
     title: "Prepara a túa visita ao xulgado",
@@ -23,6 +24,10 @@ export const gl: Messages = {
     myCases: "Os teus trámites",
     open: "Abrir",
     adjust: "Cambiar os meus axustes",
+    how: "Así funciona",
+    how1: "Escolles como queres ver a app.",
+    how2: "Buscas o teu trámite ou subes a túa citación.",
+    how3: "Segues os pasos, un a un, ao teu ritmo.",
   },
   quiz: {
     title: "Os teus axustes",
@@ -47,6 +52,14 @@ export const gl: Messages = {
     back: "Atrás",
     finish: "Gardar e seguir",
     none: "Ningún",
+    imagesQuestion: "Como queres ver as imaxes de cada paso?",
+    imgPicto: "Pictogramas",
+    imgPictoDesc: "Debuxos sinxelos e claros, como sinais.",
+    imgReal: "Imaxes realistas",
+    imgRealDesc: "Imaxes parecidas a fotos de como pode ser o lugar.",
+    imgNone: "Sen imaxes",
+    imgNoneDesc: "Só texto.",
+    dictation: "Botón para ditar coa voz",
   },
   needs: {
     tea: "TEA (autismo)",
@@ -127,6 +140,7 @@ export const gl: Messages = {
     errorType: "Ese tipo de ficheiro non vale. Usa PDF, JPG ou PNG.",
     errorSize: "O ficheiro é demasiado grande. O máximo é 8 MB.",
     alsoFound: "Tamén lin",
+    pick: "Escolle unha opción",
   },
   flow: {
     progress: "Paso {n} de {total}",
@@ -216,6 +230,7 @@ export const gl: Messages = {
     back: "Volver aos pasos",
     restart: "Comezar os pasos outra vez",
     print: "Imprimir",
+    ready: "téñoo",
   },
   invite: {
     title: "Invitar ao meu avogado/a",
@@ -261,6 +276,28 @@ export const gl: Messages = {
     tooMany: "Demasiados intentos. Agarda un minuto.",
     required: "Enche este campo.",
     badFormat: "Usa só números e letras.",
+  },
+  images: {
+    realMissing: "Aínda non hai imaxe realista deste paso. Ves o pictograma.",
+    realNote: "Imaxe creada por ordenador. O lugar real pode ser distinto.",
+    change: "Cambiar o tipo de imaxe",
+  },
+  map: {
+    title: "Mapa do trámite",
+    intro: "Toca unha fase para ver os seus pasos. Toca un paso para ver os detalles.",
+    steps: "{n} pasos",
+    step: "1 paso",
+    goTo: "Ir a este paso",
+    now: "Estás aquí",
+    doneOf: "{done} de {n} feitos",
+  },
+  dictation: {
+    start: "Ditar",
+    stop: "Parar",
+    listening: "Escoitote. Fala agora.",
+    error: "Non puiden oírte. Proba outra vez ou escribe.",
+    privacy: "O ditado usa o servizo de voz do teu navegador. A túa voz pode enviarse a Google ou a Apple.",
+    label: "Ditar coa voz: {field}",
   },
   errors: {
     generic: "Algo fallou. Proba outra vez.",

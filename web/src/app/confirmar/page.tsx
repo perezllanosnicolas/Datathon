@@ -6,6 +6,7 @@ import { Suspense, useState } from "react";
 import { getCourt, getProcedure, t1 } from "@/lib/catalog";
 import { createCase } from "@/lib/cases";
 import { usePrefs } from "@/components/PrefsProvider";
+import { FlowMap } from "@/components/FlowMap";
 
 function ConfirmInner() {
   const { t, prefs } = usePrefs();
@@ -58,13 +59,14 @@ function ConfirmInner() {
         {busy ? t.confirm.creating : error}
       </p>
       <div className="btn-row">
-        <Link className="btn" href={`/buscar?p=${procedure.id}`}>
+        <Link className="btn btn-secondary" href={`/buscar?p=${procedure.id}`}>
           {t.confirm.change}
         </Link>
         <button type="button" className="btn btn-primary" onClick={ok} disabled={busy}>
           {t.confirm.ok}
         </button>
       </div>
+      <FlowMap steps={procedure.steps} court={court} />
     </>
   );
 }

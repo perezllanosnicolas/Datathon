@@ -9,6 +9,7 @@ import { gl } from "@/i18n/gl";
 import { eu } from "@/i18n/eu";
 import { fmt, usePrefs } from "@/components/PrefsProvider";
 import { formatDateTime, Note } from "@/components/ui";
+import { TextField } from "@/components/TextField";
 
 const MESSAGES: Record<Lang, Messages> = { es, ca, gl, eu };
 
@@ -130,27 +131,16 @@ export default function LawyerPage({ params }: { params: Promise<{ token: string
       </Note>
       <dl className="card facts">
         <dt>{t.lawyer.procedure}</dt>
-        <dd>{procedure ? t1(procedure.name, lang) : "—"}</dd>
+        <dd>{procedure ? t1(procedure.name, lang) : "-"}</dd>
         <dt>{t.lawyer.court}</dt>
-        <dd>{court ? t1(court.name, lang) : "—"}</dd>
+        <dd>{court ? t1(court.name, lang) : "-"}</dd>
       </dl>
       <p className="muted small">{fmt(t.lawyer.expires, { date: formatDateTime(data.expiresAt, lang) })}</p>
 
       {!data.lawyer ? (
         <form onSubmit={identify} noValidate>
-          <div className="field">
-            <label htmlFor="l-name">{t.lawyer.name}</label>
-            <input id="l-name" type="text" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} aria-invalid={!!errors.name} aria-describedby={errors.name ? "l-name-err" : undefined} maxLength={120} />
-            {errors.name && <p id="l-name-err" className="field-error">{errors.name}</p>}
-          </div>
-          <div className="field">
-            <label htmlFor="l-bar">{t.lawyer.bar}</label>
-            <p className="hint" id="l-bar-hint">
-              {t.lawyer.barHint}
-            </p>
-            <input id="l-bar" type="text" value={bar} onChange={(e) => setBar(e.target.value)} aria-invalid={!!errors.bar} aria-describedby={`l-bar-hint${errors.bar ? " l-bar-err" : ""}`} maxLength={20} />
-            {errors.bar && <p id="l-bar-err" className="field-error">{errors.bar}</p>}
-          </div>
+          <TextField id="l-name" label={t.lawyer.name} value={name} onChange={setName} error={errors.name} maxLength={120} autoComplete="name" />
+          <TextField id="l-bar" label={t.lawyer.bar} hint={t.lawyer.barHint} value={bar} onChange={setBar} error={errors.bar} maxLength={20} />
           <p className="muted small">{t.lawyer.notVerified}</p>
           <button type="submit" className="btn btn-primary btn-block">
             {t.lawyer.continue}
@@ -163,15 +153,8 @@ export default function LawyerPage({ params }: { params: Promise<{ token: string
           </p>
           <form onSubmit={add} noValidate className="card">
             <h2 style={{ marginTop: 0 }}>{t.lawyer.addTitle}</h2>
-            <div className="field">
-              <label htmlFor="d-name">{t.lawyer.docName}</label>
-              <input id="d-name" type="text" value={docName} onChange={(e) => setDocName(e.target.value)} aria-invalid={!!errors.docName} maxLength={120} />
-              {errors.docName && <p className="field-error">{errors.docName}</p>}
-            </div>
-            <div className="field">
-              <label htmlFor="d-notes">{t.lawyer.docNotes}</label>
-              <textarea id="d-notes" value={docNotes} onChange={(e) => setDocNotes(e.target.value)} maxLength={500} />
-            </div>
+            <TextField id="d-name" label={t.lawyer.docName} value={docName} onChange={setDocName} error={errors.docName} maxLength={120} />
+            <TextField id="d-notes" label={t.lawyer.docNotes} value={docNotes} onChange={setDocNotes} maxLength={500} multiline />
             <fieldset>
               <legend>{t.lawyer.kind}</legend>
               <ul className="choice-list">

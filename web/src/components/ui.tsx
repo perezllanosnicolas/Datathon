@@ -13,6 +13,12 @@ const PATHS = {
   scale: "M12 3v18M5 7h14M5 7l-3 7h6L5 7zm14 0l-3 7h6l-3-7zM8 21h8",
   clock: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 5v5l3 3",
   place: "M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12zm0-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+  mic: "M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zm-7 9a7 7 0 0 0 14 0M12 19v3",
+  home: "M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10",
+  steps: "M4 20h4v-4h4v-4h4V8h4M4 20V4",
+  book: "M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6M20 4v14h-6",
+  sliders: "M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0M14 4v4M8 10v4M16 16v4",
+  chevron: "M9 6l6 6-6 6",
 } as const;
 
 export type IconName = keyof typeof PATHS;

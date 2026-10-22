@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { use, useEffect, useRef, useState } from "react";
-import { phaseOf, tr, type Lang, type Step } from "@/lib/catalog";
+import { tr, type Lang, type Step } from "@/lib/catalog";
 import { loadProgress, loadSeenDocs, saveProgress, saveSeenDocs, type Progress } from "@/lib/storage";
 import type { Messages } from "@/i18n/es";
 import { ClientOnly, fmt, usePrefs } from "@/components/PrefsProvider";
 import { ProgressBar, type StepStatus } from "@/components/ProgressBar";
 import { Facade } from "@/components/Facade";
+import { FlowMap } from "@/components/FlowMap";
+import { StepImage } from "@/components/StepImage";
 import { Documents } from "@/components/Documents";
 import { Icon, Note, ReadAloud, type IconName } from "@/components/ui";
 import { useCase } from "@/components/useCase";
@@ -40,7 +42,6 @@ function Flow({ id }: { id: string }) {
   const router = useRouter();
   const { stored, procedure, court, data, reload } = useCase(id);
   const [progress, setProgress] = useState<Progress>(() => loadProgress(id));
-  const [listOpen, setListOpen] = useState(false);
   const [seenAtOpen] = useState(() => loadSeenDocs(id));
   const heading = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
@@ -96,7 +97,6 @@ function Flow({ id }: { id: string }) {
   }
 
   function goTo(i: number) {
-    setListOpen(false);
     update({ current: i });
     window.scrollTo(0, 0);
   }
@@ -178,7 +178,7 @@ function Flow({ id }: { id: string }) {
 
   return (
     <>
-      <ProgressBar steps={steps} current={current} statusOf={statusOf} listOpen={listOpen} onToggleList={() => setListOpen(!listOpen)} onGoTo={goTo} />
+      <ProgressBar steps={steps} current={current} statusOf={statusOf} />
 
       <p className="sr-only" aria-live="polite">
         {fmt(t.flow.stepAnnounce, { n: current + 1, total: steps.length, title })}
@@ -194,21 +194,17 @@ function Flow({ id }: { id: string }) {
 
       <article aria-labelledby="step-title" lang={fallback ? undefined : lang}>
         <header className="step-head">
-          <p className="step-eyebrow">{t.flow[`phase_${phaseOf(step.kind)}`]}</p>
           <h1 id="step-title" ref={heading} tabIndex={-1}>
             {title}
           </h1>
+          <StepImage slot={step.slot} />
           {expected && (
-            <div className="card" style={{ borderColor: "var(--primary)" }}>
-              <p className="muted small" style={{ margin: 0 }}>
-                {t.flow.expected}
-              </p>
-              <p className="expected" style={{ margin: 0 }}>
-                {expected}
-              </p>
+            <div className="expected-box">
+              <p className="expected-label">{t.flow.expected}</p>
+              <p className="expected">{expected}</p>
             </div>
           )}
-          <p>
+          <p className="duration">
             <Icon name="clock" /> <strong>{t.flow.duration}:</strong> {fmt(t.flow.durationRange, { a: dMin, b: dMax })}
           </p>
           {needs.includes("discalculia") && (
@@ -272,9 +268,12 @@ function Flow({ id }: { id: string }) {
 
         {extras.length > 0 &&
           (needs.includes("tdah") ? (
-            <details className="card">
-              <summary style={{ cursor: "pointer", minHeight: 44, display: "flex", alignItems: "center", fontWeight: 600 }}>{t.flow.more}</summary>
-              <div style={{ marginTop: "0.75rem" }}>{extrasBlock}</div>
+            <details className="disclosure">
+              <summary>
+                {t.flow.more}
+                <Icon name="chevron" />
+              </summary>
+              <div className="disclosure-body">{extrasBlock}</div>
             </details>
           ) : (
             extrasBlock
@@ -299,6 +298,7 @@ function Flow({ id }: { id: string }) {
           {t.flow.skip}
         </button>
       </div>
+      <FlowMap steps={steps} court={court} current={current} statusOf={statusOf} onGoTo={goTo} />
       <p>
         <Link href={`/caso/${id}/resumen`}>{t.flow.summary}</Link>
       </p>

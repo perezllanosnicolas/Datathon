@@ -1,0 +1,95 @@
+{
+    "jobs":  2,
+    "tasks":  [
+                  {
+                      "id":  "prepare",
+                      "promptFiles":  [
+                                          "prompts/prepare.md"
+                                      ],
+                      "image":  "../../public/images/realistic/prepare.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "arrival",
+                      "promptFiles":  [
+                                          "prompts/arrival.md"
+                                      ],
+                      "image":  "../../public/images/realistic/arrival.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "security",
+                      "promptFiles":  [
+                                          "prompts/security.md"
+                                      ],
+                      "image":  "../../public/images/realistic/security.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "find-room",
+                      "promptFiles":  [
+                                          "prompts/find-room.md"
+                                      ],
+                      "image":  "../../public/images/realistic/find-room.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "wait",
+                      "promptFiles":  [
+                                          "prompts/wait.md"
+                                      ],
+                      "image":  "../../public/images/realistic/wait.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "enter-room",
+                      "promptFiles":  [
+                                          "prompts/enter-room.md"
+                                      ],
+                      "image":  "../../public/images/realistic/enter-room.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "hearing",
+                      "promptFiles":  [
+                                          "prompts/hearing.md"
+                                      ],
+                      "image":  "../../public/images/realistic/hearing.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "testify",
+                      "promptFiles":  [
+                                          "prompts/testify.md"
+                                      ],
+                      "image":  "../../public/images/realistic/testify.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "end-hearing",
+                      "promptFiles":  [
+                                          "prompts/end-hearing.md"
+                                      ],
+                      "image":  "../../public/images/realistic/end-hearing.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  },
+                  {
+                      "id":  "after",
+                      "promptFiles":  [
+                                          "prompts/after.md"
+                                      ],
+                      "image":  "../../public/images/realistic/after.png",
+                      "ar":  "3:2",
+                      "quality":  "normal"
+                  }
+              ]
+}

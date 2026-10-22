@@ -11,6 +11,7 @@ export const es = {
     disclaimer: "Esta herramienta no sustituye el consejo de un abogado o abogada.",
     demoNotice: "Prototipo con datos de ejemplo.",
     langName: "Español",
+    myCase: "Mi trámite",
   },
   home: {
     title: "Prepara tu visita al juzgado",
@@ -22,6 +23,10 @@ export const es = {
     myCases: "Tus trámites",
     open: "Abrir",
     adjust: "Cambiar mis ajustes",
+    how: "Así funciona",
+    how1: "Eliges cómo quieres ver la app.",
+    how2: "Buscas tu trámite o subes tu citación.",
+    how3: "Sigues los pasos, uno a uno, a tu ritmo.",
   },
   quiz: {
     title: "Tus ajustes",
@@ -46,6 +51,14 @@ export const es = {
     back: "Atrás",
     finish: "Guardar y seguir",
     none: "Ninguno",
+    imagesQuestion: "¿Cómo quieres ver las imágenes de cada paso?",
+    imgPicto: "Pictogramas",
+    imgPictoDesc: "Dibujos sencillos y claros, como señales.",
+    imgReal: "Imágenes realistas",
+    imgRealDesc: "Imágenes parecidas a fotos de cómo puede ser el lugar.",
+    imgNone: "Sin imágenes",
+    imgNoneDesc: "Solo texto.",
+    dictation: "Botón para dictar con la voz",
   },
   needs: {
     tea: "TEA (autismo)",
@@ -126,6 +139,7 @@ export const es = {
     errorType: "Ese tipo de archivo no vale. Usa PDF, JPG o PNG.",
     errorSize: "El archivo es demasiado grande. El máximo es 8 MB.",
     alsoFound: "También he leído",
+    pick: "Elige una opción",
   },
   flow: {
     progress: "Paso {n} de {total}",
@@ -215,6 +229,7 @@ export const es = {
     back: "Volver a los pasos",
     restart: "Empezar los pasos otra vez",
     print: "Imprimir",
+    ready: "lo tengo",
   },
   invite: {
     title: "Invitar a mi abogado/a",
@@ -260,6 +275,28 @@ export const es = {
     tooMany: "Demasiados intentos. Espera un minuto.",
     required: "Rellena este campo.",
     badFormat: "Usa solo números y letras.",
+  },
+  images: {
+    realMissing: "Aún no hay imagen realista de este paso. Ves el pictograma.",
+    realNote: "Imagen creada por ordenador. El lugar real puede ser distinto.",
+    change: "Cambiar el tipo de imagen",
+  },
+  map: {
+    title: "Mapa del trámite",
+    intro: "Toca una fase para ver sus pasos. Toca un paso para ver los detalles.",
+    steps: "{n} pasos",
+    step: "1 paso",
+    goTo: "Ir a este paso",
+    now: "Estás aquí",
+    doneOf: "{done} de {n} hechos",
+  },
+  dictation: {
+    start: "Dictar",
+    stop: "Parar",
+    listening: "Te escucho. Habla ahora.",
+    error: "No he podido oírte. Prueba otra vez o escribe.",
+    privacy: "El dictado usa el servicio de voz de tu navegador. Tu voz puede enviarse a Google o a Apple.",
+    label: "Dictar con la voz: {field}",
   },
   errors: {
     generic: "Algo ha fallado. Prueba otra vez.",

@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "baoyu-image-gen": {
+      "source": "jimliu/baoyu-skills",
+      "sourceType": "github",
+      "skillPath": "skills/baoyu-image-gen/SKILL.md",
+      "computedHash": "f93651ad9a736afdee73fbffcf9519b7886cd29aa8fff1cdedb35c16dd574eb4"
+    },
     "design-taste-frontend": {
       "source": "Leonxlnx/taste-skill",
       "sourceType": "github",

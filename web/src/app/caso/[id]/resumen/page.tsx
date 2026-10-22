@@ -7,6 +7,7 @@ import { t1, type DocKind } from "@/lib/catalog";
 import { loadProgress, saveProgress } from "@/lib/storage";
 import { ClientOnly, fmt, usePrefs } from "@/components/PrefsProvider";
 import { Note } from "@/components/ui";
+import { FlowMap } from "@/components/FlowMap";
 import { useCase } from "@/components/useCase";
 
 export default function SummaryPage({ params }: { params: Promise<{ id: string }> }) {
@@ -49,8 +50,8 @@ function Summary({ id }: { id: string }) {
         {items.map((d) => (
           <li key={d.id}>
             {d.name}
-            {d.lawyer && <span className="small"> — {t.docs.addedByLawyer}</span>}
-            {progress.checked?.includes(d.id) && <span className="small"> ✓</span>}
+            {d.lawyer && <span className="small">. {t.docs.addedByLawyer}</span>}
+            {progress.checked?.includes(d.id) && <span className="tag tag-ok">{t.summary.ready}</span>}
           </li>
         ))}
       </ul>
@@ -81,17 +82,15 @@ function Summary({ id }: { id: string }) {
       <h2>{t.summary.receiveList}</h2>
       {list("receive")}
 
-      <h2>{t.flow.listTitle}</h2>
-      <ol>
-        {procedure.steps.map((s) => (
-          <li key={s.id}>
-            {t1(s.title, lang)}{" "}
-            <span className="muted small">
-              ({progress.done.includes(s.id) ? t.flow.status_done : progress.skipped.includes(s.id) ? t.flow.status_skipped : t.flow.status_pending})
-            </span>
-          </li>
-        ))}
-      </ol>
+      <FlowMap
+        steps={procedure.steps}
+        court={court}
+        openAll
+        statusOf={(i) => {
+          const s = procedure.steps[i].id;
+          return progress.done.includes(s) ? "done" : progress.skipped.includes(s) ? "skipped" : "pending";
+        }}
+      />
 
       <p className="muted small">{t1(procedure.legalBasis, lang)}</p>
 
@@ -99,10 +98,10 @@ function Summary({ id }: { id: string }) {
         <Link className="btn btn-primary btn-block" href={`/caso/${id}`}>
           {t.summary.back}
         </Link>
-        <Link className="btn btn-block" href={`/caso/${id}/abogado`}>
+        <Link className="btn btn-secondary btn-block" href={`/caso/${id}/abogado`}>
           {t.invite.open}
         </Link>
-        <button type="button" className="btn btn-block" onClick={() => window.print()}>
+        <button type="button" className="btn btn-secondary btn-block" onClick={() => window.print()}>
           {t.summary.print}
         </button>
         <button

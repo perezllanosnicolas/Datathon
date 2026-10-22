@@ -1,6 +1,6 @@
 "use client";
 
-import { PHASES, phaseOf, t1, type Step } from "@/lib/catalog";
+import { PHASES, phaseOf, type Step } from "@/lib/catalog";
 import { fmt, usePrefs } from "./PrefsProvider";
 
 export type StepStatus = "done" | "current" | "pending" | "skipped";
@@ -9,15 +9,12 @@ interface Props {
   steps: Step[];
   current: number;
   statusOf: (i: number) => StepStatus;
-  listOpen: boolean;
-  onToggleList: () => void;
-  onGoTo: (i: number) => void;
 }
 
 // Progress bar (AppFlow §2.3b, UI/UX §6): text first, the bar only supports it.
-// Text and bar stay fixed while scrolling; phases and the step list scroll with the page.
-export function ProgressBar({ steps, current, statusOf, listOpen, onToggleList, onGoTo }: Props) {
-  const { t, prefs } = usePrefs();
+// Text and bar stay fixed while scrolling; the phases and the link to the map scroll away.
+export function ProgressBar({ steps, current, statusOf }: Props) {
+  const { t } = usePrefs();
   const total = steps.length;
   const done = steps.filter((_, i) => statusOf(i) === "done").length;
   const skipped = steps.filter((_, i) => statusOf(i) === "skipped").length;
@@ -38,36 +35,16 @@ export function ProgressBar({ steps, current, statusOf, listOpen, onToggleList, 
         </div>
       </div>
       <div className="progress">
-        <ol className="phases" aria-label={t.flow.listTitle}>
-          {PHASES.filter((ph) => steps.some((s) => phaseOf(s.kind) === ph)).map((ph) => {
-            const inPhase = steps.filter((s) => phaseOf(s.kind) === ph).length;
-            return (
-              <li key={ph} className="phase" aria-current={ph === currentPhase ? "step" : undefined}>
-                {t.flow[`phase_${ph}`]} ({inPhase})
-              </li>
-            );
-          })}
+        <ol className="phases" aria-label={t.map.title}>
+          {PHASES.filter((ph) => steps.some((s) => phaseOf(s.kind) === ph)).map((ph) => (
+            <li key={ph} className="phase" aria-current={ph === currentPhase ? "step" : undefined}>
+              {t.flow[`phase_${ph}`]}
+            </li>
+          ))}
         </ol>
-        <button type="button" className="btn btn-quiet btn-block" aria-expanded={listOpen} aria-controls="step-list" onClick={onToggleList}>
-          {listOpen ? t.flow.closeList : t.flow.openList}
-        </button>
-        {listOpen && (
-          <ol id="step-list" className="step-list" style={{ marginTop: "0.5rem" }}>
-            {steps.map((s, i) => {
-              const st = statusOf(i);
-              return (
-                <li key={s.id}>
-                  <button type="button" className="btn btn-quiet step-link" aria-current={i === current ? "step" : undefined} onClick={() => onGoTo(i)}>
-                    <span>
-                      {i + 1}. {t1(s.title, prefs.lang)}
-                    </span>
-                    <span className="step-status">{t.flow[`status_${st}`]}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ol>
-        )}
+        <a className="map-link" href="#mapa">
+          {t.flow.openList}
+        </a>
       </div>
     </>
   );

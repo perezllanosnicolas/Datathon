@@ -12,6 +12,7 @@ export const ca: Messages = {
     disclaimer: "Aquesta eina no substitueix el consell d'un advocat o advocada.",
     demoNotice: "Prototip amb dades d'exemple.",
     langName: "Català",
+    myCase: "El meu tràmit",
   },
   home: {
     title: "Prepara la teva visita al jutjat",
@@ -23,6 +24,10 @@ export const ca: Messages = {
     myCases: "Els teus tràmits",
     open: "Obrir",
     adjust: "Canviar els meus ajustos",
+    how: "Així funciona",
+    how1: "Tries com vols veure l'app.",
+    how2: "Busques el teu tràmit o puges la teva citació.",
+    how3: "Segueixes els passos, un per un, al teu ritme.",
   },
   quiz: {
     title: "Els teus ajustos",
@@ -47,6 +52,14 @@ export const ca: Messages = {
     back: "Enrere",
     finish: "Desar i continuar",
     none: "Cap",
+    imagesQuestion: "Com vols veure les imatges de cada pas?",
+    imgPicto: "Pictogrames",
+    imgPictoDesc: "Dibuixos senzills i clars, com senyals.",
+    imgReal: "Imatges realistes",
+    imgRealDesc: "Imatges semblants a fotos de com pot ser el lloc.",
+    imgNone: "Sense imatges",
+    imgNoneDesc: "Només text.",
+    dictation: "Botó per dictar amb la veu",
   },
   needs: {
     tea: "TEA (autisme)",
@@ -127,6 +140,7 @@ export const ca: Messages = {
     errorType: "Aquest tipus de fitxer no serveix. Fes servir PDF, JPG o PNG.",
     errorSize: "El fitxer és massa gran. El màxim és 8 MB.",
     alsoFound: "També he llegit",
+    pick: "Tria una opció",
   },
   flow: {
     progress: "Pas {n} de {total}",
@@ -216,6 +230,7 @@ export const ca: Messages = {
     back: "Tornar als passos",
     restart: "Començar els passos de nou",
     print: "Imprimir",
+    ready: "el tinc",
   },
   invite: {
     title: "Convidar el meu advocat/da",
@@ -261,6 +276,28 @@ export const ca: Messages = {
     tooMany: "Massa intents. Espera un minut.",
     required: "Omple aquest camp.",
     badFormat: "Fes servir només números i lletres.",
+  },
+  images: {
+    realMissing: "Encara no hi ha imatge realista d'aquest pas. Veus el pictograma.",
+    realNote: "Imatge creada per ordinador. El lloc real pot ser diferent.",
+    change: "Canviar el tipus d'imatge",
+  },
+  map: {
+    title: "Mapa del tràmit",
+    intro: "Toca una fase per veure'n els passos. Toca un pas per veure'n els detalls.",
+    steps: "{n} passos",
+    step: "1 pas",
+    goTo: "Anar a aquest pas",
+    now: "Ets aquí",
+    doneOf: "{done} de {n} fets",
+  },
+  dictation: {
+    start: "Dictar",
+    stop: "Aturar",
+    listening: "T'escolto. Parla ara.",
+    error: "No t'he pogut sentir. Torna-ho a provar o escriu.",
+    privacy: "El dictat fa servir el servei de veu del navegador. La teva veu es pot enviar a Google o a Apple.",
+    label: "Dictar amb la veu: {field}",
   },
   errors: {
     generic: "Alguna cosa ha fallat. Torna-ho a provar.",

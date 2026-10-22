@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible } from "next/font/google";
+import { Atkinson_Hyperlegible, Geist } from "next/font/google";
 import { cookies } from "next/headers";
 import { LANGUAGES, type Lang } from "@/lib/catalog";
 import { PREFS_BOOT_SCRIPT } from "@/lib/storage";
@@ -15,6 +15,9 @@ const readable = Atkinson_Hyperlegible({
   display: "swap",
 });
 
+// The app's face (design sheet "achromatic ledger"): one grotesk, self-hosted by next/font.
+const geist = Geist({ variable: "--font-geist", subsets: ["latin", "latin-ext"], display: "swap" });
+
 export const metadata: Metadata = {
   title: "Paso a paso al juzgado",
   description: "Prepara tu visita al juzgado, paso a paso. Prototipo del Reto 3 del Datathon Brecha Judicial.",
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f7f6f2",
+  themeColor: "#f4f3f1",
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
@@ -31,7 +34,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   const lang: Lang = LANGUAGES.includes(cookieLang as Lang) ? (cookieLang as Lang) : "es";
 
   return (
-    <html lang={lang} data-font="m" className={readable.variable} suppressHydrationWarning>
+    <html lang={lang} data-font="m" className={`${geist.variable} ${readable.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: PREFS_BOOT_SCRIPT }} />
       </head>

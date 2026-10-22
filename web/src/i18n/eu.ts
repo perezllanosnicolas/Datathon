@@ -12,6 +12,7 @@ export const eu: Messages = {
     disclaimer: "Tresna honek ez du abokatu baten aholkua ordezten.",
     demoNotice: "Adibide-datuak dituen prototipoa.",
     langName: "Euskara",
+    myCase: "Nire izapidea",
   },
   home: {
     title: "Prestatu epaitegirako bisita",
@@ -23,6 +24,10 @@ export const eu: Messages = {
     myCases: "Zure izapideak",
     open: "Ireki",
     adjust: "Nire ezarpenak aldatu",
+    how: "Honela dabil",
+    how1: "Aplikazioa nola ikusi nahi duzun aukeratzen duzu.",
+    how2: "Zure izapidea bilatzen duzu edo zitazioa igotzen duzu.",
+    how3: "Urratsak banan-banan egiten dituzu, zure erritmoan.",
   },
   quiz: {
     title: "Zure ezarpenak",
@@ -47,6 +52,14 @@ export const eu: Messages = {
     back: "Atzera",
     finish: "Gorde eta jarraitu",
     none: "Bat ere ez",
+    imagesQuestion: "Nola ikusi nahi dituzu urrats bakoitzeko irudiak?",
+    imgPicto: "Piktogramak",
+    imgPictoDesc: "Marrazki sinple eta argiak, seinaleak bezala.",
+    imgReal: "Irudi errealistak",
+    imgRealDesc: "Lekua nolakoa izan daitekeen erakusten duten argazkien antzeko irudiak.",
+    imgNone: "Irudirik gabe",
+    imgNoneDesc: "Testua bakarrik.",
+    dictation: "Ahotsez diktatzeko botoia",
   },
   needs: {
     tea: "AEN (autismoa)",
@@ -127,6 +140,7 @@ export const eu: Messages = {
     errorType: "Fitxategi mota hori ez da baliozkoa. Erabili PDF, JPG edo PNG.",
     errorSize: "Fitxategia handiegia da. Gehienez 8 MB.",
     alsoFound: "Hau ere irakurri dut",
+    pick: "Aukeratu bat",
   },
   flow: {
     progress: "{total} urratsetik {n}.a",
@@ -216,6 +230,7 @@ export const eu: Messages = {
     back: "Urratsetara itzuli",
     restart: "Urratsak berriro hasi",
     print: "Inprimatu",
+    ready: "badaukat",
   },
   invite: {
     title: "Nire abokatua gonbidatu",
@@ -261,6 +276,28 @@ export const eu: Messages = {
     tooMany: "Saiakera gehiegi. Itxaron minutu bat.",
     required: "Bete eremu hau.",
     badFormat: "Erabili zenbakiak eta letrak bakarrik.",
+  },
+  images: {
+    realMissing: "Oraindik ez dago urrats honen irudi errealistarik. Piktograma ikusten duzu.",
+    realNote: "Ordenagailuz sortutako irudia. Benetako lekua desberdina izan daiteke.",
+    change: "Irudi mota aldatu",
+  },
+  map: {
+    title: "Izapidearen mapa",
+    intro: "Ukitu fase bat bere urratsak ikusteko. Ukitu urrats bat xehetasunak ikusteko.",
+    steps: "{n} urrats",
+    step: "Urrats 1",
+    goTo: "Joan urrats honetara",
+    now: "Hemen zaude",
+    doneOf: "{n}tik {done} eginda",
+  },
+  dictation: {
+    start: "Diktatu",
+    stop: "Gelditu",
+    listening: "Entzuten ari naiz. Hitz egin orain.",
+    error: "Ezin izan zaitut entzun. Saiatu berriro edo idatzi.",
+    privacy: "Diktaketak nabigatzailearen ahots-zerbitzua erabiltzen du. Zure ahotsa Googlera edo Applera bidal daiteke.",
+    label: "Ahotsez diktatu: {field}",
   },
   errors: {
     generic: "Zerbait gaizki atera da. Saiatu berriro.",

@@ -121,7 +121,7 @@ export default function CitationPage() {
             <label htmlFor="det-proc">{t.confirm.procedure}</label>
             {!state.data.procedures.length && <p className="field-error">{t.citation.notFoundProcedure}</p>}
             <select id="det-proc" value={procedureId} onChange={(e) => setProcedureId(e.target.value)}>
-              <option value="">—</option>
+              <option value="">{t.citation.pick}</option>
               {procedures.map((p) => (
                 <option key={p.id} value={p.id}>
                   {t1(p.name, prefs.lang)}
@@ -134,7 +134,7 @@ export default function CitationPage() {
             <label htmlFor="det-court">{t.confirm.court}</label>
             {!state.data.courts.length && <p className="field-error">{t.citation.notFoundCourt}</p>}
             <select id="det-court" value={courtId} onChange={(e) => setCourtId(e.target.value)}>
-              <option value="">—</option>
+              <option value="">{t.citation.pick}</option>
               {courts.map((c) => (
                 <option key={c.id} value={c.id}>
                   {t1(c.name, prefs.lang)}

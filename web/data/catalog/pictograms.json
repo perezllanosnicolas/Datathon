@@ -1,0 +1,35 @@
+{
+  "_note": "Pictogramas de ARASAAC elegidos para cada paso (por 'slot') y documento. Se descargan con `npm run pictos` a public/pictos/arasaac/. Licencia CC BY-NC-SA 4.0: solo uso no comercial y con atribución.",
+  "attribution": {
+    "es": "Pictogramas: Sergio Palao. Origen: ARASAAC (https://arasaac.org). Licencia: CC BY-NC-SA. Propiedad: Gobierno de Aragón (España).",
+    "ca": "Pictogrames: Sergio Palao. Origen: ARASAAC (https://arasaac.org). Llicència: CC BY-NC-SA. Propietat: Govern d'Aragó (Espanya).",
+    "gl": "Pictogramas: Sergio Palao. Orixe: ARASAAC (https://arasaac.org). Licenza: CC BY-NC-SA. Propiedade: Goberno de Aragón (España).",
+    "eu": "Piktogramak: Sergio Palao. Jatorria: ARASAAC (https://arasaac.org). Lizentzia: CC BY-NC-SA. Jabea: Aragoiko Gobernua (Espainia)."
+  },
+  "steps": {
+    "prepare": 8166,
+    "arrival": 8147,
+    "security": 31076,
+    "find-room": 21468,
+    "wait": 16697,
+    "enter-room": 6491,
+    "hearing": 34479,
+    "testify": 37669,
+    "end-hearing": 6606,
+    "after": 2636
+  },
+  "documents": {
+    "jv-1-d1": 21802,
+    "jv-1-d2": 5987,
+    "jv-1-d3": 37340,
+    "jv-1-d4": 2475,
+    "jv-9-d1": 21802,
+    "tc-1-d1": 21802,
+    "tc-1-d2": 5987,
+    "tc-7-d1": 21802
+  },
+  "extras": {
+    "calm": 34377,
+    "lawyer": 2636
+  }
+}

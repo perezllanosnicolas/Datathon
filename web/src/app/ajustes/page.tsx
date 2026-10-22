@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { usePrefs } from "@/components/PrefsProvider";
-import { ExtrasField, FontField, LanguageField, NeedsField } from "@/components/SettingsFields";
+import { ExtrasField, FontField, ImagesField, LanguageField, NeedsField } from "@/components/SettingsFields";
 import { Note } from "@/components/ui";
 import { clearAll, exportAll, importAll } from "@/lib/storage";
 
@@ -35,6 +35,7 @@ export default function Settings() {
       <form onSubmit={(e) => e.preventDefault()}>
         <LanguageField legend={t.quiz.langQuestion} />
         <FontField legend={t.quiz.fontQuestion} />
+        <ImagesField legend={t.quiz.imagesQuestion} />
         <NeedsField legend={t.quiz.needsQuestion} />
         <ExtrasField legend={t.quiz.otherOptions} />
       </form>

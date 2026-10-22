@@ -7,12 +7,15 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/list-realistic.mjs",
     "build": "next build",
     "start": "next start",
     "demo": "next build && next start -H 0.0.0.0 -p 3000",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
-    "smoke": "node scripts/smoke-test.mjs"
+    "smoke": "node scripts/smoke-test.mjs",
+    "pictos": "node scripts/fetch-pictograms.mjs",
+    "images:real": "npx -y bun ../.claude/skills/baoyu-image-gen/scripts/main.ts --batchfile data/realistic/batch.json && node scripts/list-realistic.mjs"
   },
   "dependencies": {
     "next": "16.4.2",

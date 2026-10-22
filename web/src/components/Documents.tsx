@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { tr, type DocKind, type StepDocument } from "@/lib/catalog";
 import { api, type CaseDocument } from "@/lib/api";
+import { pictoForDoc } from "@/lib/images";
+import { TextField } from "./TextField";
 import { fmt, usePrefs } from "./PrefsProvider";
 import { Icon } from "./ui";
 
@@ -38,6 +40,10 @@ export function Documents({ kind, catalogDocs, lawyerDocs, checked, onToggle, ca
             <li key={d.id}>
               <label className="doc" htmlFor={id}>
                 <input id={id} type="checkbox" checked={checked.includes(d.id)} onChange={() => onToggle(d.id)} />
+                {prefs.imageMode !== "none" && pictoForDoc(d.id) && (
+                  // eslint-disable-next-line @next/next/no-img-element -- decorative pictogram, the name is beside it
+                  <img className="doc-picto" src={pictoForDoc(d.id)!} alt="" width={48} height={48} />
+                )}
                 <span>
                   <strong lang={name.fallback ? "es" : undefined}>{name.text}</strong>
                   {notes.text && (
@@ -88,14 +94,8 @@ function LawyerDoc({ doc, checked, onToggle, caseId, secret, onChanged }: { doc:
           }}
           style={{ width: "100%" }}
         >
-          <div className="field">
-            <label htmlFor={`${id}-name`}>{t.docs.name}</label>
-            <input id={`${id}-name`} type="text" value={name} onChange={(e) => setName(e.target.value)} required maxLength={120} />
-          </div>
-          <div className="field">
-            <label htmlFor={`${id}-notes`}>{t.docs.notes}</label>
-            <textarea id={`${id}-notes`} value={notes} onChange={(e) => setNotes(e.target.value)} maxLength={500} />
-          </div>
+          <TextField id={`${id}-name`} label={t.docs.name} value={name} onChange={setName} maxLength={120} />
+          <TextField id={`${id}-notes`} label={t.docs.notes} value={notes} onChange={setNotes} maxLength={500} multiline />
           <div className="btn-row">
             <button type="button" className="btn btn-quiet" onClick={() => setEditing(false)}>
               {t.docs.cancel}
