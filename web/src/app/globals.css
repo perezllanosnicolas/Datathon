@@ -141,7 +141,7 @@ a { color: var(--text); text-decoration-thickness: 2px; text-decoration-color: v
 .site-header { background: var(--ground); padding-top: 0.25rem; }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 0.65rem; font-weight: 700; letter-spacing: -0.02em; font-size: 1.05rem; text-decoration: none; color: var(--text); padding: 0.4rem 0; }
-.mark { width: 36px; height: 36px; color: var(--go); flex: none; }
+.mark { width: 36px; height: 36px; flex: none; }
 .top-nav ul { display: flex; gap: 0.25rem; list-style: none; margin: 0; padding: 0; }
 .top-nav li + li { margin-top: 0; }
 .top-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border-radius: var(--radius-control); text-decoration: none; font-size: 0.9rem; font-weight: 500; }

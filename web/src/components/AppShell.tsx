@@ -2,19 +2,34 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSyncExternalStore } from "react";
+import { useId, useSyncExternalStore } from "react";
 import credits from "../../data/realistic/credits.json";
 import { pictoAttribution } from "@/lib/images";
 import { loadCases } from "@/lib/storage";
+import { MARK_COLOR, MARK_CUT, MARK_PIECE, MARK_VIEWBOX } from "./mark-paths";
 import { usePrefs } from "./PrefsProvider";
 import { Icon, type IconName } from "./ui";
 
-/** The product's mark: three steps going up to a door, drawn in ink. */
+/** The product mark: the SimuLex puzzle piece. The cut-out is a mask, so it shows the page background. */
 function Mark() {
+  const id = useId();
   return (
-    <svg className="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-      <rect x="1" y="1" width="30" height="30" rx="7" fill="currentColor" />
-      <path d="M7 24h5v-4h5v-4h5V8h3" fill="none" stroke="var(--surface)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    <svg className="mark" viewBox={MARK_VIEWBOX} aria-hidden="true" focusable="false">
+      <mask id={id} maskUnits="userSpaceOnUse" x="92" y="173" width="300" height="300">
+        <rect x="92" y="173" width="300" height="300" fill="#fff" />
+        <g transform="matrix(3.1021 0 0 3.1021 243.3654 324.0289)">
+          <g transform="matrix(1.0327 0 0 1.0327 -1.0649 0)">
+            <path transform="translate(-108.4621 -115.35)" d={MARK_CUT} />
+          </g>
+        </g>
+      </mask>
+      <g mask={`url(#${id})`} fill={MARK_COLOR}>
+        <g transform="matrix(3.1021 0 0 3.1021 243.3654 324.0289)">
+          <g transform="matrix(1.0327 0 0 1.0327 0 0.0061)">
+            <path transform="translate(-109.4936 -115.3559)" d={MARK_PIECE} />
+          </g>
+        </g>
+      </g>
     </svg>
   );
 }
