@@ -420,6 +420,32 @@ details[open] > summary > .icon:last-child { transform: rotate(90deg); }
 .font-slider input[type="range"] { flex: 1; min-height: 44px; }
 .font-slider span { font-weight: 700; line-height: 1; }
 
+/* ---------- Large text sizes ----------
+   Body text keeps growing; fixed bars, headings and the sticky step header stop
+   growing at a cap so they never take over a phone screen. */
+body { overflow-wrap: break-word; }
+fieldset { min-inline-size: 0; }
+.choice-list, .doc-list, .result-list { grid-template-columns: minmax(0, 1fr); }
+.result-list > li, .choice > *, .doc > *, .note > * { min-width: 0; }
+h1 { font-size: min(1.75rem, 44px); }
+h2 { font-size: min(1.3rem, 34px); }
+.home-hero h1 { font-size: min(2.1rem, 48px); }
+.step-head h1 { font-size: min(2rem, 46px); }
+.tab-bar a { font-size: clamp(12px, 0.68rem, 14px) !important; }
+.progress-sticky { font-size: min(1rem, 20px); }
+.progress-sticky .phases, .progress-sticky .map-link { font-size: min(0.85rem, 16px); }
+.save-bar .btn { font-size: min(1rem, 22px); }
+.font-slider input[type="range"] { min-width: 0; }
+.input-row > input, .input-row > textarea { flex-basis: min(12rem, 100%); }
+.fm-phase > details > summary, .fm-step > details > summary { flex-wrap: wrap; }
+.fm-phase-meta, .fm-step-title { min-width: 0; }
+dl.facts { grid-template-columns: minmax(0, max-content) minmax(0, 1fr); }
+html:is([data-font="xl"], [data-font="xxl"], [data-font="xxxl"]) .btn { border-radius: 20px; }
+html:is([data-font="xxl"], [data-font="xxxl"]) dl.facts { grid-template-columns: 1fr; }
+html:is([data-font="xxl"], [data-font="xxxl"]) dl.facts dd { margin-bottom: 0.5rem; }
+html:is([data-font="xxl"], [data-font="xxxl"]) .card,
+html:is([data-font="xxl"], [data-font="xxxl"]) .card-attn { padding: 1rem; }
+
 /* ---------- Highlighted action (upload the summons first) ---------- */
 .card-attn { background: var(--accent); border-color: var(--accent); color: #fff; border-radius: 24px; padding: 1.5rem; }
 .card-attn h2, .card-attn p { color: #fff; }
