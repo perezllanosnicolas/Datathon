@@ -1,7 +1,7 @@
 ---
 name: sincronizar
 description: Sincroniza el trabajo del proyecto Datathon. Actualiza la documentación (docs/ y CLAUDE.md), guarda los cambios, hace el commit en el repositorio y lo sube a GitHub. Usar solo cuando el usuario escriba /sincronizar o pida guardar, comitear y subir los cambios.
-argument-hint: "[mensaje del commit opcional | main]"
+argument-hint: "[mensaje del commit opcional | nomerge]"
 disable-model-invocation: true
 ---
 
@@ -12,11 +12,12 @@ Deja el repositorio al día en un solo paso: **documentación → comprobaciones
 Argumentos (`$ARGUMENTS`):
 - Vacío: deduce un mensaje de commit a partir de los cambios.
 - Texto libre: úsalo como asunto del commit (en inglés; si viene en español, tradúcelo).
-- La palabra `main`: el usuario autoriza explícitamente comitear y subir a `main` en esta ejecución.
+- La palabra `nomerge`: sube la rama pero no la mergea a `main`.
 
 ## Reglas que no se saltan
 - **Nunca** `git push --force`, `git reset --hard`, `git commit --amend`, `--no-verify` ni `--no-gpg-sign`.
-- **No subir a `main` sin acuerdo** (regla del proyecto). Si la rama actual es `main` o `master` y el usuario no ha escrito `main`, crea una rama de funcionalidad y trabaja ahí.
+- **Flujo con rama + merge a `main`** (acordado el 2026-10-22): nunca se comitea directamente en `main`. Se trabaja en una rama de funcionalidad, se sube, y al final se **mergea a `main`** (paso 7). Si la rama actual es `main` o `master`, crea primero una rama de funcionalidad.
+- El merge a `main` es siempre **fast-forward** (`--ff-only`). Si no es posible, o hay conflicto, para y pregunta. Si el usuario escribe `nomerge` en los argumentos, salta el paso 7.
 - **No inventar decisiones** en la documentación. Solo se registra lo que el equipo acordó en la conversación o lo que muestran los cambios. Lo propuesto se marca [P], lo abierto [?], lo que debe revisar Derecho [V] (leyenda de `docs/`).
 - Si algo falla (comprobaciones, conflicto, push rechazado), **para y cuenta qué pasó**. No fuerces.
 
@@ -30,7 +31,7 @@ Ejecuta en paralelo: `git status --short`, `git branch --show-current`, `git rem
 
 ### 2. Elegir la rama
 - Si ya estás en una rama que no es `main`/`master`: úsala.
-- Si estás en `main`/`master` y no se escribió `main` en los argumentos: crea una rama con `git switch -c <tipo>/<tema-corto>` (por ejemplo `docs/update-trd`, `feat/skeleton`). El tipo sale de lo que cambia (`docs`, `feat`, `fix`, `chore`). Avisa al usuario de la rama elegida.
+- Si estás en `main`/`master`: crea una rama con `git switch -c <tipo>/<tema-corto>` (por ejemplo `docs/update-trd`, `feat/skeleton`). El tipo sale de lo que cambia (`docs`, `feat`, `fix`, `chore`). Avisa al usuario de la rama elegida.
 
 ### 3. Actualizar la documentación (antes del commit)
 Lee los cambios (`git diff`, archivos nuevos) y revisa si la documentación los refleja:
@@ -67,11 +68,18 @@ Si no hace falta cambiar nada, no toques los archivos.
 2. Si la rama remota existe y la local va detrás: `git pull --rebase origin <rama>`. Si hay conflicto, **para**, lista los archivos en conflicto y pregunta al usuario.
 3. `git push -u origin <rama>`.
 4. Si se rechaza, no fuerces: explica el motivo.
-5. No abras pull request salvo que el usuario lo pida. Ofrécelo en una frase y da la URL de comparación: `https://github.com/perezllanosnicolas/Datathon/compare/<rama>`.
+5. No abras pull request salvo que el usuario lo pida.
 
-### 7. Informe final (en español, breve)
+### 7. Merge a `main`
+Salvo que se escribiera `nomerge`:
+1. `git switch main` y `git pull --ff-only origin main`.
+2. `git merge --ff-only <rama>`. Si no es fast-forward, vuelve a la rama, haz `git rebase main`, y reintenta; si hay conflicto, **para** y pregunta.
+3. `git push origin main`.
+4. Deja el repositorio en `main`. No borres la rama.
+
+### 8. Informe final (en español, breve)
 Indica:
-- Rama usada (y si se creó).
+- Rama usada (y si se creó) y si se mergeó a `main`.
 - Commits creados (hash corto y asunto).
 - Archivos de documentación actualizados y qué decisiones se registraron.
 - Resultado del push y enlace a la rama.

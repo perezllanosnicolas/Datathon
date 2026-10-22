@@ -101,6 +101,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - 2026-10-22 — **Ajustes:** se quita guardar/cargar una copia de los ajustes (queda «Borrar todo»). Se escribe «TEA (Trastorno del Espectro Autista)», sin la palabra «autismo» sola.
 - 2026-10-22 — **Ajustes:** al quitar una neurodivergencia se desactivan las adaptaciones que había activado (salvo las que otra neurodivergencia marcada siga pidiendo); botón «Guardar y volver al inicio»; se quita el texto «no hace falta ningún diagnóstico».
 - 2026-10-22 — **Ajustes y flujo:** el tamaño de letra es un slider (A pequeña → A grande) en vez de botones; en cada paso del flujo, «Volver al principio del paso» y «Saltar este paso» pasan a la parte superior, bajo la barra de progreso.
+- 2026-10-22 — **`/sincronizar` ahora mergea a `main`:** trabaja en una rama de funcionalidad, la sube y la mergea a `main` con fast-forward (sin commits directos en `main`); `nomerge` lo evita.
 
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.
