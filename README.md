@@ -26,6 +26,16 @@ npm run demo         # compila y sirve en 0.0.0.0:3000
 3. En el móvil, abre `http://<IP-del-portátil>:3000`.
 4. El "abogado" se simula con un segundo dispositivo en la misma red, que abre el enlace de invitación.
 
+### QR para abrirlo en el móvil
+```bash
+cd web
+npm run share            # compila, arranca y muestra una URL + código QR en la terminal
+npm run share -- --dev   # igual, con el servidor de desarrollo
+```
+Escanea el QR con la cámara del móvil (misma Wi-Fi). Si hay varias redes, se recomienda la Wi-Fi y se listan las demás. Si no carga, permite Node.js en el cortafuegos de Windows (redes privadas).
+
+**Fuera de la Wi-Fi:** abre un túnel (p. ej. `cloudflared tunnel --url http://localhost:3000`) y ejecuta `PUBLIC_URL=<url del túnel> npm run share` para generar el QR de esa URL. Un túnel publica el prototipo en internet mientras esté abierto: solo con datos sintéticos.
+
 ### Imagen de la fachada (opcional)
 Copia `web/.env.example` a `web/.env.local` y rellena `GOOGLE_MAPS_API_KEY` con una clave de la Street View Static API. Sin clave o sin internet, la app muestra la descripción en texto de la entrada.
 
