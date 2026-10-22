@@ -34,7 +34,7 @@ Navegador móvil (web responsive, accesible, sin registro)
 ### Para qué se usa [P, a decidir por el equipo]
 El núcleo (flujo, barra de progreso, adaptaciones, OCR y extracción por reglas) **no depende de la IA**. ALIA se añade como apoyo:
 1. **Asistente "Pregúntame"**: responde dudas sobre el trámite en el idioma de la persona, en lenguaje simple, usando **solo** contenido del catálogo revisado por Derecho (RAG, es decir, buscar en el catálogo y responder con eso).
-2. **Ayuda a redactar y simplificar** contenido y traducciones para el equipo. Todo texto que vea el usuario pasa antes por revisión humana (hablante de la lengua y Derecho) [V].
+2. **Ayuda a redactar y simplificar** contenido y traducciones para el equipo. Todo texto que vea el usuario pasa antes por revisión humana (hablante del idioma y Derecho).
 3. Opcional: apoyo a la extracción de la citación cuando las reglas no bastan [?].
 
 ### Reglas de uso [P]
@@ -118,8 +118,8 @@ Persona crea enlace ─► lo comparte ella misma (la app abre el menú de compa
 ## 2d. Idiomas: español, catalán, euskera y gallego [D]
 - **Interfaz:** biblioteca de internacionalización (i18n) con un archivo de textos por idioma (`es`, `ca`, `eu`, `gl`). El idioma se elige en la primera pantalla y se puede cambiar en Ajustes [P].
 - **Contenido** (trámites, pasos, documentos, descripción de entradas, avisos): cada texto se guarda en los cuatro idiomas (tabla de traducciones o campos por idioma). Si falta una traducción, mostrar el español con un aviso claro, nunca una página vacía [P].
-- **Revisión:** cada traducción la revisa una persona con dominio de la lengua y, para el contenido legal, el equipo de Derecho [V]. No usar traducción automática sin revisar para texto legal.
-- **Lectura simple en cada lengua:** las reglas de [UI/UX §8](04-UI-UX-Design.md#8-lenguaje-simple-d) se aplican en las cuatro, no solo en español.
+- **Revisión:** cada traducción la revisa una persona con dominio del idioma y, para el contenido legal, el equipo de Derecho. No usar traducción automática sin revisar para texto legal.
+- **Lectura simple en cada idioma:** las reglas de [UI/UX §8](04-UI-UX-Design.md#8-lenguaje-simple-d) se aplican en las cuatro, no solo en español.
 - **OCR:** el motor debe tener modelos para español, catalán, euskera y gallego (por ejemplo, Tesseract los tiene) y detectar el idioma de la citación; las citaciones pueden ser bilingües [P]. Probar con ejemplos reales sintéticos en cada lengua.
 - **Emparejado con el catálogo:** los términos de `procedure_search_terms` y los nombres de juzgado se guardan en los cuatro idiomas, para reconocer una citación aunque venga en catalán, euskera o gallego.
 - **Buscador:** busca en el idioma elegido y también en los demás [P].

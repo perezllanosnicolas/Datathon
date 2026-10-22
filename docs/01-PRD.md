@@ -1,6 +1,6 @@
 # 01 · PRD — Documento de requisitos de producto
 
-> Leyenda: **[D]** decidido por el equipo · **[P]** propuesta (pendiente de acuerdo) · **[?]** pregunta abierta · **[V]** a validar por Leyre/Carlos.
+> Leyenda: **[D]** decidido por el equipo · **[P]** propuesta (pendiente de acuerdo) · **[?]** pregunta abierta.
 > Fuentes: descripción del equipo (2026-10-21, actualizada) y Google Doc de ideas.
 
 ## 1. Problema
@@ -40,12 +40,12 @@ El producto se apoya en tres pilares:
 - **Sin notificaciones por correo** [D]: los avisos son solo dentro de la app.
 - **Hosting local para el demo** [D]: todo se ejecuta en un equipo del equipo, sin servidor externo. El stack es libre (decisión técnica en el [TRD](02-TRD.md)).
 - **RGPD aplazado** [D]: la base legal y el aviso de privacidad se definen más adelante; la prioridad ahora es la implementación. Mientras tanto: sin cuentas, sin guardar la citación ni el perfil en el servidor, y solo datos sintéticos.
-- **La citación no es documentación clínica**, pero sí contiene datos personales (nombre, número de procedimiento, hechos). Reglas propuestas [P, a validar por Leyre/Carlos]:
+- **La citación no es documentación clínica**, pero sí contiene datos personales (nombre, número de procedimiento, hechos). Reglas propuestas [P]:
   - Se lee para identificar el trámite y juzgado; **ni el documento ni el texto extraído se guardan**.
   - Lo detectado se empareja con el catálogo de trámites revisados por Derecho; **no se generan pasos nuevos** a partir de la citación, y la persona confirma el resultado.
   - Si no se reconoce algo, se dice y se ofrece el buscador.
   - Prototipo: solo citaciones sintéticas.
-- **Enlace del abogado** [P, a validar por Leyre/Carlos]:
+- **Enlace del abogado** [P]:
   - El abogado solo añade una **lista de documentos a llevar** (nombre y nota); no sube archivos y **no ve** el perfil de adaptaciones ni la cuenta.
   - El abogado se identifica con **nombre y número de colegiado**, que quedan como **dato declarado, sin verificar** [D]; se muestra a la persona quién añadió cada documento.
   - **La persona no comparte nada directamente con el abogado** [D]: el abogado no ve su perfil, sus adaptaciones ni su cuenta. Solo escribe la lista de documentos.

@@ -65,10 +65,25 @@ function Invite({ id }: { id: string }) {
     try {
       await navigator.clipboard.writeText(fresh.url);
       setMessage(t.invite.copied);
+      return;
     } catch {
-      // Clipboard API needs HTTPS on some phones; the link stays visible to copy by hand.
-      setMessage(fresh.url);
+      // The Clipboard API needs https; on http (demo on the local network) fall back to selecting the text.
     }
+    const box = document.getElementById("invite-link");
+    if (box) {
+      const range = document.createRange();
+      range.selectNodeContents(box);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+      try {
+        if (document.execCommand("copy")) {
+          setMessage(t.invite.copied);
+          return;
+        }
+      } catch {}
+    }
+    setMessage(t.invite.copyManual);
   }
 
   async function share() {
@@ -91,7 +106,7 @@ function Invite({ id }: { id: string }) {
           <h2 id="link-title" style={{ marginTop: 0 }}>
             {t.invite.link}
           </h2>
-          <p className="link-box">{fresh.url}</p>
+          <p className="link-box" id="invite-link">{fresh.url}</p>
           <p>{fmt(t.invite.validUntil, { date: formatDateTime(fresh.expiresAt, prefs.lang) })}</p>
           <p className="muted small">{t.invite.onlyOnce}</p>
           <div className="btn-row">

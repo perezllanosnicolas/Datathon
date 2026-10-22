@@ -36,8 +36,8 @@ export default function Settings() {
         <LanguageField legend={t.quiz.langQuestion} />
         <FontField legend={t.quiz.fontQuestion} />
         <ImagesField legend={t.quiz.imagesQuestion} />
+        <ExtrasField legend={t.quiz.adaptQuestion} />
         <NeedsField legend={t.quiz.needsQuestion} />
-        <ExtrasField legend={t.quiz.otherOptions} />
       </form>
       <p role="status" aria-live="polite">
         {message}

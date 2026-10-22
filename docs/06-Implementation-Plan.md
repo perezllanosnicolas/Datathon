@@ -65,7 +65,7 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 - **Hecho cuando:** las decisiones están en CLAUDE.md y se sabe si ALIA-40B puede ejecutarse en el demo.
 
 ## Fase 1 — Contenido y datos sintéticos
-- Redactar un trámite civil completo, paso a paso, con documentos (llevar/recibir) y avisos sensoriales; revisión de Leyre y Carlos.
+- Redactar un trámite civil completo, paso a paso, con documentos (llevar/recibir) y avisos sensoriales.
 - Un juzgado de ejemplo con su fachada: coordenadas, orientación, sentido de la vía, acceso y descripción en texto.
 - 3–5 citaciones sintéticas (en varios idiomas) para la Fase 6.
 - Traducir el trámite a los otros tres idiomas y revisarlo.
@@ -73,7 +73,7 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 
 > **Transversal, cuatro idiomas [D]:** cada pantalla y cada contenido se entrega en español, catalán, euskera y gallego (ver [TRD §2d](02-TRD.md)). Para el demo, mínimo: interfaz completa en los cuatro idiomas y un trámite traducido y revisado en cada uno.
 
-> **Transversal, lenguaje simple [D]:** todos los textos de cada fase siguen las reglas de [UI/UX §8](04-UI-UX-Design.md#8-lenguaje-simple-d) y los revisan Cristina (comprensión) y Leyre/Carlos (exactitud legal).
+> **Transversal, lenguaje simple [D]:** todos los textos de cada fase siguen las reglas de [UI/UX §8](04-UI-UX-Design.md#8-lenguaje-simple-d) y los revisa Cristina (comprensión).
 
 ## Fase 2 — Esqueleto y datos (hosting local)
 - Proyecto base mobile-first con el stack del TRD (Next.js + TypeScript + SQLite), base de datos con datos de ejemplo (semilla), i18n con los cuatro idiomas.
@@ -148,12 +148,12 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 | Riesgo | Mitigación |
 |---|---|
 | ALIA-40B no cabe en el equipo del demo (necesita decenas de GB de memoria) | Probar pronto; usar un segundo equipo potente en la misma red; modelo más pequeño de la familia como plan B; el asistente es un extra y el núcleo no depende de él |
-| ALIA-40B lento o con respuestas incorrectas en lengua o en derecho | Responder solo con el catálogo revisado; aviso de que puede equivocarse; contenido escrito de respaldo; vídeo grabado |
+| ALIA-40B lento o con respuestas incorrectas en idioma o en derecho | Responder solo con el catálogo revisado; aviso de que puede equivocarse; contenido escrito de respaldo; vídeo grabado |
 | Cuotas, coste o términos de Street View | Imagen fija de fachada (Static API); el uso del demo queda muy por debajo del tope gratuito; plan B con foto o texto |
 | Street View desactualizado o sin cobertura | Comprobar metadatos, mostrar fecha y descripción en texto |
 | Contenido legal incorrecto | Revisión de Leyre/Carlos y cita de norma |
 | OCR falla con fotos de móvil o la extracción se equivoca | Solo se empareja con el catálogo; la persona confirma; el buscador es respaldo |
-| OCR peor en catalán, euskera o gallego | Probar los modelos de cada lengua con citaciones sintéticas; respaldo al buscador |
+| OCR peor en catalán, euskera o gallego | Probar los modelos de cada idioma con citaciones sintéticas; respaldo al buscador |
 | Datos personales de la citación | OCR en nuestro servidor, sin terceros; borrar el archivo al terminar; sin logs con el texto; prototipo con citaciones sintéticas; RGPD aplazado |
 | El demo local falla (red, equipo, internet) | Red propia, semilla de datos, ensayo desde cero en otro equipo, plan B con foto y texto de la entrada, vídeo grabado del demo |
 | El abogado no puede abrir el enlace (servidor local) | Simularlo con un segundo dispositivo en la misma red |

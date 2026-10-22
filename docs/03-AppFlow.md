@@ -95,7 +95,7 @@ Los primeros pasos (llegar al edificio, encontrar la entrada) incluyen:
 ```
 Acceso ─► Crear/editar juzgado (dirección, coordenadas Street View, descripción de la entrada)
       ─► Crear/editar trámite y pasos (documentos de entrada y salida)
-      ─► Revisión legal (Leyre / Carlos) ─► Publicar
+      ─► Publicar
 ```
 
 ## 4. Estados y casos límite [P]

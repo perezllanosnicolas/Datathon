@@ -14,7 +14,7 @@ interface Recognition {
   start(): void;
   abort(): void;
   onresult: ((e: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null;
-  onerror: (() => void) | null;
+  onerror: ((e: { error?: string }) => void) | null;
   onend: (() => void) | null;
 }
 
@@ -60,11 +60,15 @@ export function DictateButton({ field, onText }: { field: string; onText: (text:
         .trim();
       if (text) onText(text);
     };
-    r.onerror = () => setState("error");
+    r.onerror = (e) => setState(e.error === "aborted" ? "idle" : "error");
     r.onend = () => setState((s) => (s === "listening" ? "idle" : s));
     rec.current = r;
     setState("listening");
-    r.start();
+    try {
+      r.start();
+    } catch {
+      setState("error");
+    }
   }
 
   return (

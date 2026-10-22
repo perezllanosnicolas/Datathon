@@ -2,7 +2,7 @@
 
 Web **mobile-first** que prepara a una persona neurodivergente antes de ir al juzgado. Muestra, paso a paso, qué va a pasar, cuánto dura cada parte, qué tiene que llevar y qué se espera de ella. Ámbito del demo: **civil**.
 
-> Prototipo con **datos sintéticos**. No sustituye el asesoramiento legal. El contenido jurídico está pendiente de revisión por Leyre y Carlos. Las traducciones al catalán, gallego y euskera están pendientes de revisión por hablantes nativos.
+> Prototipo con **datos sintéticos**. No sustituye el asesoramiento legal. Las traducciones al catalán, gallego y euskera están pendientes de revisión por hablantes nativos.
 
 Documentación del proyecto: [`docs/`](docs/) (PRD, TRD, AppFlow, UI/UX, Backend, Plan de implementación).
 

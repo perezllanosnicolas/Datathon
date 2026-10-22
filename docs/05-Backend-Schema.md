@@ -30,7 +30,7 @@ Son **preferencias elegidas por la persona**, no un diagnóstico. Editable y bor
 `court_id`, `lat`, `lng`, `heading`, `pitch`, `fov` (ángulo de visión), `street_view_pano_id` (opcional), solo se guardan los parámetros de la vista de fachada, **no la imagen**; `capture_date` (si disponible), `road_direction` (`one_way | two_way | pedestrian | other`), `drop_off_notes`, `access_notes` (escalones, rampa, puerta), `text_description` (alternativa en texto completa), `fallback_photo` (opcional).
 
 ### procedures (trámites)
-`id`, `name`, `process_type` (civil, penal, mercantil…), `legal_basis` (norma citada), `review_status` (a validar por Derecho).
+`id`, `name`, `process_type` (civil, penal, mercantil…), `legal_basis` (norma citada), `review_status`.
 
 ### procedure_search_terms (para el buscador)
 `procedure_id`, `term`, `kind` (`name | synonym | keyword | role`). Permite encontrar trámites por palabras habituales ("declarar", "testigo", "denuncia").

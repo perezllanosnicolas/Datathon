@@ -45,8 +45,8 @@ export default function Questionnaire() {
         {step === 2 && <ImagesField legend={t.quiz.imagesQuestion} />}
         {step === 3 && (
           <>
+            <ExtrasField legend={t.quiz.adaptQuestion} />
             <NeedsField legend={t.quiz.needsQuestion} />
-            <ExtrasField legend={t.quiz.otherOptions} />
           </>
         )}
         <div className="btn-row btn-row-end">

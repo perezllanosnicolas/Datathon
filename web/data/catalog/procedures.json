@@ -1,5 +1,5 @@
 {
-  "_note": "Contenido SINTÉTICO de ejemplo para el demo. Pendiente de revisión legal (Leyre/Carlos) y de revisión por hablantes de ca/eu/gl. reviewStatus: draft | reviewed.",
+  "_note": "Contenido SINTÉTICO de ejemplo para el demo. Pendiente de revisión por hablantes de ca/eu/gl. reviewStatus: draft | reviewed.",
   "procedures": [
     {
       "id": "juicio-verbal-vista",
@@ -18,10 +18,10 @@
         "eu": "Judizio zibil bat duzu. Aretora zure abokatuarekin joango zara. Epaileak bi aldeak entzungo ditu."
       },
       "legalBasis": {
-        "es": "Ley 1/2000, de Enjuiciamiento Civil: juicio verbal (arts. 437 a 447) y ajustes para personas con discapacidad (art. 7 bis). A validar por Leyre/Carlos.",
-        "ca": "Llei 1/2000, d'enjudiciament civil: judici verbal (arts. 437 a 447) i ajustos per a persones amb discapacitat (art. 7 bis). Per validar.",
-        "gl": "Lei 1/2000, de axuizamento civil: xuízo verbal (arts. 437 a 447) e axustes para persoas con discapacidade (art. 7 bis). Pendente de validar.",
-        "eu": "1/2000 Legea, Prozedura Zibilarena: hitzezko judizioa (437-447 art.) eta desgaitasuna duten pertsonentzako egokitzapenak (7 bis art.). Balioztatzeko."
+        "es": "Ley 1/2000, de Enjuiciamiento Civil: juicio verbal (arts. 437 a 447) y ajustes para personas neurodivergentes (art. 7 bis).",
+        "ca": "Llei 1/2000, d'enjudiciament civil: judici verbal (arts. 437 a 447) i ajustos per a persones neurodivergents (art. 7 bis).",
+        "gl": "Lei 1/2000, de axuizamento civil: xuízo verbal (arts. 437 a 447) e axustes para persoas neurodiverxentes (art. 7 bis).",
+        "eu": "1/2000 Legea, Prozedura Zibilarena: hitzezko judizioa (437-447 art.) eta desgaitasuna duten pertsonentzako egokitzapenak (7 bis art.)."
       },
       "searchTerms": {
         "es": ["juicio verbal", "juicio", "vista", "demanda", "demandado", "demandante", "civil", "reclamación", "deuda", "alquiler", "declarar"],
@@ -270,10 +270,10 @@
             "eu": ["Ikustaldia aretoko bilera da, non kasuaz hitz egiten den.", "Lehenik abokatuek hitz egiten dute.", "Baliteke galderak egitea. Erantzun lasai eta esan egia.", "Galdera bat ulertzen ez baduzu, esan. Beste hitz batzuekin errepika dezakete.", "Atsedenaldi bat eska dezakezu behar baduzu."]
           },
           "legalNote": {
-            "es": "Las personas con discapacidad tienen derecho a ajustes para entender y ser entendidas en el proceso (art. 7 bis de la Ley de Enjuiciamiento Civil). A validar por Leyre/Carlos.",
-            "ca": "Les persones amb discapacitat tenen dret a ajustos per entendre i ser enteses en el procés (art. 7 bis de la Llei d'enjudiciament civil). Per validar.",
-            "gl": "As persoas con discapacidade teñen dereito a axustes para entender e ser entendidas no proceso (art. 7 bis da Lei de axuizamento civil). Pendente de validar.",
-            "eu": "Desgaitasuna duten pertsonek egokitzapenak izateko eskubidea dute, prozesuan ulertzeko eta ulertuak izateko (Prozedura Zibilaren Legearen 7 bis art.). Balioztatzeko."
+            "es": "Las personas neurodivergentes tienen derecho a ajustes para entender y ser entendidas en el proceso (art. 7 bis de la Ley de Enjuiciamiento Civil).",
+            "ca": "Les persones neurodivergents tenen dret a ajustos per entendre i ser enteses en el procés (art. 7 bis de la Llei d'enjudiciament civil).",
+            "gl": "As persoas neurodiverxentes teñen dereito a axustes para entender e ser entendidas no proceso (art. 7 bis da Lei de axuizamento civil).",
+            "eu": "Desgaitasuna duten pertsonek egokitzapenak izateko eskubidea dute, prozesuan ulertzeko eta ulertuak izateko (Prozedura Zibilaren Legearen 7 bis art.)."
           },
           "protocolPhrase": {
             "es": "No he entendido la pregunta. ¿Puede repetirla con otras palabras?",
@@ -344,7 +344,7 @@
             "eu": "Zer egin behar dut orain?"
           },
           "documents": [
-            { "id": "jv-9-d1", "kind": "receive", "name": { "es": "Sentencia (llega más tarde)", "ca": "Sentència (arriba més tard)", "gl": "Sentenza (chega máis tarde)", "eu": "Epaia (geroago iristen da)" }, "notes": { "es": "Normalmente la recibe tu abogado o abogada. La ley da 10 días al juez para dictarla (art. 447 LEC); a veces tarda más. A validar.", "ca": "Normalment la rep el teu advocat o advocada. La llei dona 10 dies al jutge per dictar-la (art. 447 LEC); de vegades tarda més. Per validar.", "gl": "Normalmente recíbea o teu avogado ou avogada. A lei dálle 10 días ao xuíz para ditala (art. 447 LAC); ás veces tarda máis. Pendente de validar.", "eu": "Normalean zure abokatuak jasotzen du. Legeak 10 egun ematen dizkio epaileari emateko (PZL 447. art.); batzuetan gehiago behar du. Balioztatzeko." } }
+            { "id": "jv-9-d1", "kind": "receive", "name": { "es": "Sentencia (llega más tarde)", "ca": "Sentència (arriba més tard)", "gl": "Sentenza (chega máis tarde)", "eu": "Epaia (geroago iristen da)" }, "notes": { "es": "Normalmente la recibe tu abogado o abogada. La ley da 10 días al juez para dictarla (art. 447 LEC); a veces tarda más.", "ca": "Normalment la rep el teu advocat o advocada. La llei dona 10 dies al jutge per dictar-la (art. 447 LEC); de vegades tarda més.", "gl": "Normalmente recíbea o teu avogado ou avogada. A lei dálle 10 días ao xuíz para ditala (art. 447 LAC); ás veces tarda máis.", "eu": "Normalean zure abokatuak jasotzen du. Legeak 10 egun ematen dizkio epaileari emateko (PZL 447. art.); batzuetan gehiago behar du." } }
           ]
         }
       ]
@@ -360,7 +360,7 @@
         "es": "Te han llamado como testigo. Vas a contar lo que sabes. No eres parte del juicio."
       },
       "legalBasis": {
-        "es": "Ley 1/2000, de Enjuiciamiento Civil: interrogatorio de testigos (arts. 360 a 381). A validar por Leyre/Carlos."
+        "es": "Ley 1/2000, de Enjuiciamiento Civil: interrogatorio de testigos (arts. 360 a 381)."
       },
       "searchTerms": {
         "es": ["testigo", "declarar", "testimonio", "declaración", "civil"],
@@ -436,7 +436,7 @@
           "title": { "es": "Declara" },
           "expected": { "es": "Responde a las preguntas y di la verdad." },
           "instructions": { "es": ["Primero te preguntan tu nombre y otros datos.", "Después juras o prometes decir la verdad.", "Los abogados te hacen preguntas. A veces también el juez.", "Si no sabes o no recuerdas algo, dilo.", "Si no entiendes una pregunta, pide que la repitan."] },
-          "legalNote": { "es": "El testigo jura o promete decir verdad (art. 365 LEC). A validar por Leyre/Carlos." },
+          "legalNote": { "es": "El testigo jura o promete decir verdad (art. 365 LEC)." },
           "protocolPhrase": { "es": "No lo recuerdo bien. ¿Puede repetir la pregunta?" },
           "calmTip": { "es": "Respira despacio: cuenta hasta 4 al coger aire y hasta 4 al soltarlo." },
           "documents": []
@@ -451,7 +451,7 @@
           "instructions": { "es": ["Cuando termines, puedes salir de la sala.", "Pide un justificante de asistencia en la oficina del juzgado.", "Sal del edificio por la misma puerta."] },
           "protocolPhrase": { "es": "¿Me pueden dar un justificante de que he venido?" },
           "documents": [
-            { "id": "tc-7-d1", "kind": "receive", "name": { "es": "Justificante de asistencia" }, "notes": { "es": "Sirve para tu trabajo. Puedes pedir que te paguen los gastos (art. 375 LEC). A validar." } }
+            { "id": "tc-7-d1", "kind": "receive", "name": { "es": "Justificante de asistencia" }, "notes": { "es": "Sirve para tu trabajo. Puedes pedir que te paguen los gastos (art. 375 LEC)." } }
           ]
         }
       ]
