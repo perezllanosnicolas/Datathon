@@ -18,16 +18,16 @@
         "eu": "Zurekin etxe bat partekatzen duen senide batek epaitegi-egoitzari etxea zatitzeko eskatzen dio. Zuk demanda jasotzen duzu. Erantzuteko epe bat duzu, abokatu baten laguntzarekin."
       },
       "legalBasis": {
-        "es": "Código Civil: la comunidad de bienes y la división de la cosa común (arts. 392, 400 y 404). Ley 1/2000, de Enjuiciamiento Civil: contestación a la demanda (art. 404), audiencia previa (arts. 414 a 430), juicio (arts. 431 a 433), abogado y procurador (arts. 23 y 31) y ajustes para personas neurodivergentes (art. 7 bis).",
-        "ca": "Codi Civil: la comunitat de béns i la divisió de la cosa comuna (arts. 392, 400 i 404). Llei 1/2000, d'enjudiciament civil: contestació a la demanda (art. 404), audiència prèvia (arts. 414 a 430), judici (arts. 431 a 433), advocat i procurador (arts. 23 i 31) i ajustos per a persones neurodivergents (art. 7 bis).",
-        "gl": "Código Civil: a comunidade de bens e a división da cousa común (arts. 392, 400 e 404). Lei 1/2000, de axuizamento civil: contestación á demanda (art. 404), audiencia previa (arts. 414 a 430), xuízo (arts. 431 a 433), avogado e procurador (arts. 23 e 31) e axustes para persoas neurodiverxentes (art. 7 bis).",
-        "eu": "Kode Zibila: ondasun-erkidegoa eta gauza amankomunaren zatiketa (392, 400 eta 404 art.). 1/2000 Legea, Prozedura Zibilarena: demandari erantzutea (404 art.), aurretiazko entzunaldia (414-430 art.), judizioa (431-433 art.), abokatua eta prokuradorea (23 eta 31 art.) eta neurodibergentzia duten pertsonentzako egokitzapenak (7 bis art.)."
+        "es": "Código Civil: la comunidad de bienes y la división de la cosa común (arts. 392, 400 y 404). Ley 1/2000, de Enjuiciamiento Civil: juicio verbal para la división de la cosa común (art. 250.1.16º), contestación a la demanda (art. 438), vista y sentencia (arts. 440 a 447) y abogado y procurador (arts. 23 y 31). Ley Orgánica 5/2024, del Derecho de Defensa: medidas de apoyo (art. 9).",
+        "ca": "Codi Civil: la comunitat de béns i la divisió de la cosa comuna (arts. 392, 400 i 404). Llei 1/2000, d'enjudiciament civil: judici verbal per a la divisió de la cosa comuna (art. 250.1.16º), contestació a la demanda (art. 438), vista i sentència (arts. 440 a 447) i advocat i procurador (arts. 23 i 31). Llei orgànica 5/2024, del Dret de Defensa: mesures de suport (art. 9).",
+        "gl": "Código Civil: a comunidade de bens e a división da cousa común (arts. 392, 400 e 404). Lei 1/2000, de axuizamento civil: xuízo verbal para a división da cousa común (art. 250.1.16º), contestación á demanda (art. 438), vista e sentenza (arts. 440 a 447) e avogado e procurador (arts. 23 e 31). Lei orgánica 5/2024, do Dereito de Defensa: medidas de apoio (art. 9).",
+        "eu": "Kode Zibila: ondasun-erkidegoa eta gauza amankomunaren zatiketa (392, 400 eta 404 art.). 1/2000 Legea, Prozedura Zibilarena: gauza amankomunaren zatiketarako hitzezko judizioa (250.1.16º art.), demandari erantzutea (438 art.), ikustaldia eta epaia (440-447 art.) eta abokatua eta prokuradorea (23 eta 31 art.). 5/2024 Lege Organikoa, Defentsa Eskubidearena: laguntza-neurriak (9. art.)."
       },
       "searchTerms": {
-        "es": ["division de la cosa comun", "cosa comun", "division cosa comun", "copropiedad", "copropietario", "copropietarios", "comunidad de bienes", "herencia", "heredada", "vivienda", "casa", "hermano", "hermanos", "juicio ordinario", "demanda", "demandado", "civil"],
-        "ca": ["divisio de la cosa comuna", "cosa comuna", "copropietat", "copropietari", "comunitat de bens", "herencia", "habitatge", "casa", "germa", "judici ordinari", "demanda", "demandat", "civil"],
-        "gl": ["division da cousa comun", "cousa comun", "copropiedade", "copropietario", "comunidade de bens", "herdanza", "vivenda", "casa", "irman", "xuizo ordinario", "demanda", "demandado", "civil"],
-        "eu": ["ondasun amankomunaren zatiketa", "ondasun amankomuna", "jabetza partekatua", "ondasun-erkidegoa", "oinordetza", "etxebizitza", "etxea", "anaia", "judizio arrunta", "demanda", "demandatua", "zibila"]
+        "es": ["division de la cosa comun", "cosa comun", "division cosa comun", "copropiedad", "copropietario", "copropietarios", "comunidad de bienes", "herencia", "heredada", "vivienda", "casa", "hermano", "hermanos", "juicio verbal", "demanda", "demandado", "civil"],
+        "ca": ["divisio de la cosa comuna", "cosa comuna", "copropietat", "copropietari", "comunitat de bens", "herencia", "habitatge", "casa", "germa", "judici verbal", "demanda", "demandat", "civil"],
+        "gl": ["division da cousa comun", "cousa comun", "copropiedade", "copropietario", "comunidade de bens", "herdanza", "vivenda", "casa", "irman", "xuizo verbal", "demanda", "demandado", "civil"],
+        "eu": ["ondasun amankomunaren zatiketa", "ondasun amankomuna", "jabetza partekatua", "ondasun-erkidegoa", "oinordetza", "etxebizitza", "etxea", "anaia", "hitzezko judizioa", "demanda", "demandatua", "zibila"]
       },
       "steps": [
         {
@@ -54,10 +54,10 @@
             "eu": ["Demanda norbaitek epaitegi-egoitzari zerbait eskatzeko erabiltzen duen papera da. Hemen zure senideak bidaltzen dizu.", "Zure senideak eta zuk etxearen jabe zarete, erdi bana. Horri jabetza partekatua esaten zaio. Etxea zatitzeko eskatzen du.", "Inor ez dago behartuta etxe baten jabe erdi izaten jarraitzera. Edozein jabek eska dezake etxea zatitzea (Kode Zibilaren 400. art.).", "Etxe bat ezin da erditik zatitu. Horregatik, normalean bi gauzatatik bat gertatzen da: batek etxea gordetzen du eta besteari bere zatia ordaintzen dio, edo etxea saldu eta dirua banatzen da (Kode Zibilaren 404. art.).", "Bilatu demandan jaso zenuen data. Idatzi ezazu.", "Ez duzu gaur dena ulertu behar. Zure abokatuak azalduko dizu."]
           },
           "legalNote": {
-            "es": "Tienes 20 días hábiles para contestar a la demanda (art. 404 de la Ley de Enjuiciamiento Civil). Los días hábiles no incluyen sábados, domingos ni festivos. Si no contestas, el juicio sigue sin ti (art. 496 de la Ley de Enjuiciamiento Civil).",
-            "ca": "Tens 20 dies hàbils per contestar la demanda (art. 404 de la Llei d'enjudiciament civil). Els dies hàbils no inclouen dissabtes, diumenges ni festius. Si no contestes, el judici continua sense tu (art. 496 de la Llei d'enjudiciament civil).",
-            "gl": "Tes 20 días hábiles para contestar á demanda (art. 404 da Lei de axuizamento civil). Os días hábiles non inclúen sábados, domingos nin festivos. Se non contestas, o xuízo segue sen ti (art. 496 da Lei de axuizamento civil).",
-            "eu": "20 egun baliodun dituzu demandari erantzuteko (Prozedura Zibilaren Legearen 404. art.). Egun baliodunek ez dituzte barne hartzen larunbatak, igandeak eta jaiegunak. Erantzuten ez baduzu, judizioak zu gabe jarraitzen du (Prozedura Zibilaren Legearen 496. art.)."
+            "es": "Tienes 10 días hábiles para contestar a la demanda (art. 438 de la Ley de Enjuiciamiento Civil). Los días hábiles no incluyen sábados, domingos ni festivos. Si no contestas, el juicio sigue sin ti (art. 496 de la Ley de Enjuiciamiento Civil).",
+            "ca": "Tens 10 dies hàbils per contestar la demanda (art. 438 de la Llei d'enjudiciament civil). Els dies hàbils no inclouen dissabtes, diumenges ni festius. Si no contestes, el judici continua sense tu (art. 496 de la Llei d'enjudiciament civil).",
+            "gl": "Tes 10 días hábiles para contestar á demanda (art. 438 da Lei de axuizamento civil). Os días hábiles non inclúen sábados, domingos nin festivos. Se non contestas, o xuízo segue sen ti (art. 496 da Lei de axuizamento civil).",
+            "eu": "10 egun baliodun dituzu demandari erantzuteko (Prozedura Zibilaren Legearen 438. art.). Egun baliodunek ez dituzte barne hartzen larunbatak, igandeak eta jaiegunak. Erantzuten ez baduzu, judizioak zu gabe jarraitzen du (Prozedura Zibilaren Legearen 496. art.)."
           },
           "calmTip": {
             "es": "Recibir una demanda agobia. Respira, deja el papel a un lado un rato y vuelve a él. Hay tiempo, pero no lo dejes pasar.",
@@ -102,16 +102,16 @@
             "eu": "Kontratatu abokatu bat. Ahalik eta lasterren."
           },
           "instructions": {
-            "es": ["En este tipo de juicio necesitas abogado o abogada y también procurador o procuradora (arts. 23 y 31 de la Ley de Enjuiciamiento Civil). El procurador o procuradora presenta los escritos en la sede judicial. Normalmente lo busca tu abogado.", "Si no puedes pagarlo, puedes pedir justicia gratuita en el colegio de abogados de tu ciudad (Ley 1/1996, de Asistencia Jurídica Gratuita). Pídelo cuanto antes, porque el plazo corre.", "Lleva la demanda a la primera cita.", "Cuenta qué te ayuda en la comunicación. Por ejemplo: hablar despacio, recibir las cosas por escrito o hacer pausas. No hace falta que lleves informes médicos.", "Tu abogado o abogada puede pedir a la sede judicial ajustes para que entiendas y te entiendan en el juicio (art. 7 bis de la Ley de Enjuiciamiento Civil)."],
-            "ca": ["En aquest tipus de judici necessites advocat o advocada i també procurador o procuradora (arts. 23 i 31 de la Llei d'enjudiciament civil). El procurador o procuradora presenta els escrits a la seu judicial. Normalment el busca el teu advocat.", "Si no ho pots pagar, pots demanar justícia gratuïta al col·legi d'advocats de la teva ciutat (Llei 1/1996, d'Assistència Jurídica Gratuïta). Demana-ho com abans millor, perquè el termini corre.", "Porta la demanda a la primera cita.", "Explica què t'ajuda en la comunicació. Per exemple: parlar a poc a poc, rebre les coses per escrit o fer pauses. No cal que portis informes mèdics.", "El teu advocat o advocada pot demanar a la seu judicial ajustos perquè entenguis i t'entenguin en el judici (art. 7 bis de la Llei d'enjudiciament civil)."],
-            "gl": ["Neste tipo de xuízo necesitas avogado ou avogada e tamén procurador ou procuradora (arts. 23 e 31 da Lei de axuizamento civil). O procurador ou procuradora presenta os escritos na sede xudicial. Normalmente búscao o teu avogado.", "Se non o podes pagar, podes pedir xustiza gratuíta no colexio de avogados da túa cidade (Lei 1/1996, de Asistencia Xurídica Gratuíta). Pídeo canto antes, porque o prazo corre.", "Leva a demanda á primeira cita.", "Conta que che axuda na comunicación. Por exemplo: falar amodo, recibir as cousas por escrito ou facer pausas. Non fai falta que leves informes médicos.", "O teu avogado ou avogada pode pedirlle á sede xudicial axustes para que entendas e te entendan no xuízo (art. 7 bis da Lei de axuizamento civil)."],
-            "eu": ["Judizio mota honetan abokatua eta prokuradorea behar dituzu (Prozedura Zibilaren Legearen 23 eta 31 art.). Prokuradoreak idazkiak aurkezten ditu epaitegi-egoitzan. Normalean zure abokatuak bilatzen du.", "Ordaindu ezin baduzu, doako justizia eska dezakezu zure hiriko abokatuen elkargoan (1/1996 Legea, Doako Laguntza Juridikoarena). Eskatu ahalik eta lasterren, epea korritzen ari baita.", "Eraman demanda lehen hitzordura.", "Esan zerk laguntzen dizun komunikazioan. Adibidez: poliki hitz egitea, gauzak idatziz jasotzea edo atsedenaldiak egitea. Ez duzu txosten medikorik eraman behar.", "Zure abokatuak epaitegi-egoitzari egokitzapenak eska diezazkioke, judizioan ulertzeko eta ulertua izateko (Prozedura Zibilaren Legearen 7 bis art.)."]
+            "es": ["En este tipo de juicio necesitas abogado o abogada y también procurador o procuradora (arts. 23 y 31 de la Ley de Enjuiciamiento Civil). El procurador o procuradora presenta los escritos en la sede judicial. Normalmente lo busca tu abogado.", "Si no puedes pagarlo, puedes pedir justicia gratuita en el colegio de abogados de tu ciudad (Ley 1/1996, de Asistencia Jurídica Gratuita). Pídelo cuanto antes, porque el plazo corre.", "Lleva la demanda a la primera cita.", "Cuenta qué te ayuda en la comunicación. Por ejemplo: hablar despacio, recibir las cosas por escrito o hacer pausas. No hace falta que lleves informes médicos.", "Si necesitas medidas de apoyo para entender y que te entiendan en el juicio, díselo a tu abogado o abogada. Puede pedirlas a la sede judicial (art. 9 de la Ley Orgánica 5/2024, del Derecho de Defensa)."],
+            "ca": ["En aquest tipus de judici necessites advocat o advocada i també procurador o procuradora (arts. 23 i 31 de la Llei d'enjudiciament civil). El procurador o procuradora presenta els escrits a la seu judicial. Normalment el busca el teu advocat.", "Si no ho pots pagar, pots demanar justícia gratuïta al col·legi d'advocats de la teva ciutat (Llei 1/1996, d'Assistència Jurídica Gratuïta). Demana-ho com abans millor, perquè el termini corre.", "Porta la demanda a la primera cita.", "Explica què t'ajuda en la comunicació. Per exemple: parlar a poc a poc, rebre les coses per escrit o fer pauses. No cal que portis informes mèdics.", "Si necessites mesures de suport per entendre i que t'entenguin en el judici, digues-ho al teu advocat o advocada. Les pot demanar a la seu judicial (art. 9 de la Llei orgànica 5/2024, del Dret de Defensa)."],
+            "gl": ["Neste tipo de xuízo necesitas avogado ou avogada e tamén procurador ou procuradora (arts. 23 e 31 da Lei de axuizamento civil). O procurador ou procuradora presenta os escritos na sede xudicial. Normalmente búscao o teu avogado.", "Se non o podes pagar, podes pedir xustiza gratuíta no colexio de avogados da túa cidade (Lei 1/1996, de Asistencia Xurídica Gratuíta). Pídeo canto antes, porque o prazo corre.", "Leva a demanda á primeira cita.", "Conta que che axuda na comunicación. Por exemplo: falar amodo, recibir as cousas por escrito ou facer pausas. Non fai falta que leves informes médicos.", "Se necesitas medidas de apoio para entender e que te entendan no xuízo, dillo ao teu avogado ou avogada. Pode pedilas á sede xudicial (art. 9 da Lei orgánica 5/2024, do Dereito de Defensa)."],
+            "eu": ["Judizio mota honetan abokatua eta prokuradorea behar dituzu (Prozedura Zibilaren Legearen 23 eta 31 art.). Prokuradoreak idazkiak aurkezten ditu epaitegi-egoitzan. Normalean zure abokatuak bilatzen du.", "Ordaindu ezin baduzu, doako justizia eska dezakezu zure hiriko abokatuen elkargoan (1/1996 Legea, Doako Laguntza Juridikoarena). Eskatu ahalik eta lasterren, epea korritzen ari baita.", "Eraman demanda lehen hitzordura.", "Esan zerk laguntzen dizun komunikazioan. Adibidez: poliki hitz egitea, gauzak idatziz jasotzea edo atsedenaldiak egitea. Ez duzu txosten medikorik eraman behar.", "Judizioan ulertzeko eta ulertua izateko laguntza-neurriak behar badituzu, esan zure abokatuari. Epaitegi-egoitzari eska diezazkioke (5/2024 Lege Organikoa, Defentsa Eskubidearena, 9. art.)."]
           },
           "legalNote": {
-            "es": "Las personas neurodivergentes tienen derecho a ajustes para entender y ser entendidas en el proceso (art. 7 bis de la Ley de Enjuiciamiento Civil). Esta herramienta no sustituye el asesoramiento legal.",
-            "ca": "Les persones neurodivergents tenen dret a ajustos per entendre i ser enteses en el procés (art. 7 bis de la Llei d'enjudiciament civil). Aquesta eina no substitueix l'assessorament legal.",
-            "gl": "As persoas neurodiverxentes teñen dereito a axustes para entender e seren entendidas no proceso (art. 7 bis da Lei de axuizamento civil). Esta ferramenta non substitúe o asesoramento legal.",
-            "eu": "Neurodibergentzia duten pertsonek egokitzapenak izateko eskubidea dute, prozesuan ulertzeko eta ulertuak izateko (Prozedura Zibilaren Legearen 7 bis art.). Tresna honek ez du aholkularitza juridikoa ordezkatzen."
+            "es": "Las personas que necesitan medidas de apoyo tienen derecho a recibirlas para entender y ser entendidas en el proceso (art. 9 de la Ley Orgánica 5/2024, del Derecho de Defensa). Esta herramienta no sustituye el asesoramiento legal.",
+            "ca": "Les persones que necessiten mesures de suport tenen dret a rebre-les per entendre i ser enteses en el procés (art. 9 de la Llei orgànica 5/2024, del Dret de Defensa). Aquesta eina no substitueix l'assessorament legal.",
+            "gl": "As persoas que necesitan medidas de apoio teñen dereito a recibilas para entender e ser entendidas no proceso (art. 9 da Lei orgánica 5/2024, do Dereito de Defensa). Esta ferramenta non substitúe o asesoramento legal.",
+            "eu": "Laguntza-neurriak behar dituzten pertsonek horiek jasotzeko eskubidea dute, prozesuan ulertzeko eta ulertuak izateko (5/2024 Lege Organikoa, Defentsa Eskubidearena, 9. art.). Tresna honek ez du aholkularitza juridikoa ordezkatzen."
           },
           "protocolPhrase": {
             "es": "Me han puesto una demanda por una casa heredada. Necesito ayuda y explicaciones por escrito.",
@@ -258,16 +258,16 @@
             "eu": "Berrikusi zure abokatuarekin epaitegi-egoitzari esango diona."
           },
           "instructions": {
-            "es": ["La contestación es el escrito donde dices a la sede judicial lo que piensas. Lo escribe tu abogado o abogada.", "Pide leerlo antes de que se presente. Pregunta lo que no entiendas.", "Tu abogado o abogada te dirá qué opciones hay: por ejemplo, llegar a un acuerdo con tu familiar o defender que no se divida ahora.", "Después, la sede judicial te avisará de la fecha de la audiencia previa. Guarda ese aviso."],
-            "ca": ["La contestació és l'escrit on dius a la seu judicial el que penses. L'escriu el teu advocat o advocada.", "Demana llegir-lo abans que es presenti. Pregunta el que no entenguis.", "El teu advocat o advocada et dirà quines opcions hi ha: per exemple, arribar a un acord amb el teu familiar o defensar que no es divideixi ara.", "Després, la seu judicial t'avisarà de la data de l'audiència prèvia. Guarda aquest avís."],
-            "gl": ["A contestación é o escrito onde lle dis á sede xudicial o que pensas. Escríbeo o teu avogado ou avogada.", "Pide lelo antes de que se presente. Pregunta o que non entendas.", "O teu avogado ou avogada dirache que opcións hai: por exemplo, chegar a un acordo co teu familiar ou defender que non se divida agora.", "Despois, a sede xudicial avisarache da data da audiencia previa. Garda ese aviso."],
-            "eu": ["Erantzuna epaitegi-egoitzari pentsatzen duzuna esaten diozun idazkia da. Zure abokatuak idazten du.", "Eskatu aurkeztu aurretik irakurtzea. Galdetu ulertzen ez duzuna.", "Zure abokatuak esango dizu zer aukera dauden: adibidez, zure senidearekin akordio batera iristea edo orain ez zatitzea defendatzea.", "Ondoren, epaitegi-egoitzak aurretiazko entzunaldiaren data jakinaraziko dizu. Gorde abisu hori."]
+            "es": ["La contestación es el escrito donde dices a la sede judicial lo que piensas. Lo escribe tu abogado o abogada.", "Pide leerlo antes de que se presente. Pregunta lo que no entiendas.", "Tu abogado o abogada te dirá qué opciones hay: por ejemplo, llegar a un acuerdo con tu familiar o defender que no se divida ahora.", "Después viene la fase de alegaciones. En ella solo participa tu abogado o abogada. Ahí se fijan las pruebas que se van a usar.", "Más tarde, si el juez o la jueza establece una vista, la sede judicial te avisará de la fecha. Guarda ese aviso."],
+            "ca": ["La contestació és l'escrit on dius a la seu judicial el que penses. L'escriu el teu advocat o advocada.", "Demana llegir-lo abans que es presenti. Pregunta el que no entenguis.", "El teu advocat o advocada et dirà quines opcions hi ha: per exemple, arribar a un acord amb el teu familiar o defensar que no es divideixi ara.", "Després ve la fase d'al·legacions. Hi participa només el teu advocat o advocada. Allà es fixen les proves que s'utilitzaran.", "Més tard, si el jutge o la jutgessa estableix una vista, la seu judicial t'avisarà de la data. Guarda aquest avís."],
+            "gl": ["A contestación é o escrito onde lle dis á sede xudicial o que pensas. Escríbeo o teu avogado ou avogada.", "Pide lelo antes de que se presente. Pregunta o que non entendas.", "O teu avogado ou avogada dirache que opcións hai: por exemplo, chegar a un acordo co teu familiar ou defender que non se divida agora.", "Despois vén a fase de alegacións. Nela só participa o teu avogado ou avogada. Alí fíxanse as probas que se van usar.", "Máis tarde, se o xuíz ou a xuíza establece unha vista, a sede xudicial avisarache da data. Garda ese aviso."],
+            "eu": ["Erantzuna epaitegi-egoitzari pentsatzen duzuna esaten diozun idazkia da. Zure abokatuak idazten du.", "Eskatu aurkeztu aurretik irakurtzea. Galdetu ulertzen ez duzuna.", "Zure abokatuak esango dizu zer aukera dauden: adibidez, zure senidearekin akordio batera iristea edo orain ez zatitzea defendatzea.", "Ondoren alegazio-fasea dator. Zure abokatua bakarrik aritzen da bertan. Hor erabiliko diren frogak finkatzen dira.", "Geroago, epaileak ikustaldi bat ezartzen badu, epaitegi-egoitzak data jakinaraziko dizu. Gorde abisu hori."]
           },
           "legalNote": {
-            "es": "La contestación se presenta dentro de los 20 días hábiles desde que recibes la demanda (art. 404 de la Ley de Enjuiciamiento Civil).",
-            "ca": "La contestació es presenta dins dels 20 dies hàbils des que reps la demanda (art. 404 de la Llei d'enjudiciament civil).",
-            "gl": "A contestación preséntase dentro dos 20 días hábiles desde que recibes a demanda (art. 404 da Lei de axuizamento civil).",
-            "eu": "Erantzuna demanda jasotzen duzunetik 20 egun baliodunen barruan aurkezten da (Prozedura Zibilaren Legearen 404. art.)."
+            "es": "La contestación se presenta dentro de los 10 días hábiles desde que recibes la demanda (art. 438 de la Ley de Enjuiciamiento Civil).",
+            "ca": "La contestació es presenta dins dels 10 dies hàbils des que reps la demanda (art. 438 de la Llei d'enjudiciament civil).",
+            "gl": "A contestación preséntase dentro dos 10 días hábiles desde que recibes a demanda (art. 438 da Lei de axuizamento civil).",
+            "eu": "Erantzuna demanda jasotzen duzunetik 10 egun baliodunen barruan aurkezten da (Prozedura Zibilaren Legearen 438. art.)."
           },
           "whoToAsk": {
             "es": "Tu abogado o abogada.",
@@ -280,10 +280,10 @@
               "id": "dc-4-d1",
               "kind": "receive",
               "name": {
-                "es": "Aviso con la fecha de la audiencia previa",
-                "ca": "Avís amb la data de l'audiència prèvia",
-                "gl": "Aviso coa data da audiencia previa",
-                "eu": "Aurretiazko entzunaldiaren datarekin abisua"
+                "es": "Aviso con la fecha de la vista, si el juez la establece",
+                "ca": "Avís amb la data de la vista, si el jutge l'estableix",
+                "gl": "Aviso coa data da vista, se o xuíz a establece",
+                "eu": "Ikustaldiaren datarekin abisua, epaileak ezartzen badu"
               },
               "notes": {
                 "es": "Es una citación. Dice el día, la hora y la sede judicial.",
@@ -301,10 +301,10 @@
           "showsEntrance": true,
           "durationMin": [5,10],
           "title": {
-            "es": "Llega a la sede judicial el día de la audiencia previa",
-            "ca": "Arriba a la seu judicial el dia de l'audiència prèvia",
-            "gl": "Chega á sede xudicial o día da audiencia previa",
-            "eu": "Iritsi epaitegi-egoitzara aurretiazko entzunaldiaren egunean"
+            "es": "Llega a la sede judicial el día de la vista",
+            "ca": "Arriba a la seu judicial el dia de la vista",
+            "gl": "Chega á sede xudicial o día da vista",
+            "eu": "Iritsi epaitegi-egoitzara ikustaldiaren egunean"
           },
           "expected": {
             "es": "Busca la puerta principal del edificio.",
@@ -313,10 +313,10 @@
             "eu": "Bilatu eraikinaren ate nagusia."
           },
           "instructions": {
-            "es": ["La audiencia previa es una reunión corta en la sala antes del juicio.", "Mira la foto de la fachada. Así sabes qué edificio es.", "Lee cómo es la entrada: la calle, la puerta y si hay escalones.", "Intenta llegar 30 minutos antes. Lleva tu DNI (Documento Nacional de Identidad), NIE (Número de Identidad de Extranjero) o pasaporte."],
-            "ca": ["L'audiència prèvia és una reunió curta a la sala abans del judici.", "Mira la foto de la façana. Així saps quin edifici és.", "Llegeix com és l'entrada: el carrer, la porta i si hi ha esglaons.", "Intenta arribar 30 minuts abans. Porta el teu DNI (Document Nacional d'Identitat), NIE (Número d'Identitat d'Estranger) o passaport."],
-            "gl": ["A audiencia previa é unha reunión curta na sala antes do xuízo.", "Mira a foto da fachada. Así sabes que edificio é.", "Le como é a entrada: a rúa, a porta e se hai chanzos.", "Tenta chegar 30 minutos antes. Leva o teu DNI (Documento Nacional de Identidade), NIE (Número de Identidade de Estranxeiro) ou pasaporte."],
-            "eu": ["Aurretiazko entzunaldia judizioaren aurretik aretoan egiten den bilera labur bat da.", "Begiratu fatxadaren argazkia. Horrela jakingo duzu zein eraikin den.", "Irakurri nolakoa den sarrera: kalea, atea eta eskailerarik dagoen.", "Saiatu 30 minutu lehenago iristen. Eraman zure NAN (Nortasun Agiri Nazionala), AIZ (Atzerritarren Identitate Zenbakia) edo pasaportea."]
+            "es": ["La vista es la reunión en la sala donde el juez o la jueza escucha a las dos partes. Solo se hace si el juez o la jueza la establece. Tu abogado o abogada te dice si habrá vista.", "Tu abogado o abogada normalmente está en la puerta exterior del tribunal esperando a su cliente para acompañarlo al interior. Consúltalo con él o ella.", "Mira la foto de la fachada. Así sabes qué edificio es.", "Lee cómo es la entrada: la calle, la puerta y si hay escalones.", "Intenta llegar 30 minutos antes. Lleva tu DNI (Documento Nacional de Identidad), NIE (Número de Identidad de Extranjero) o pasaporte."],
+            "ca": ["La vista és la reunió a la sala on el jutge o la jutgessa escolta les dues parts. Només es fa si el jutge o la jutgessa l'estableix. El teu advocat o advocada et diu si hi haurà vista.", "El teu advocat o advocada normalment és a la porta exterior del tribunal esperant el seu client per acompanyar-lo a l'interior. Consulta-ho amb ell o ella.", "Mira la foto de la façana. Així saps quin edifici és.", "Llegeix com és l'entrada: el carrer, la porta i si hi ha esglaons.", "Intenta arribar 30 minuts abans. Porta el teu DNI (Document Nacional d'Identitat), NIE (Número d'Identitat d'Estranger) o passaport."],
+            "gl": ["A vista é a reunión na sala onde o xuíz ou a xuíza escoita as dúas partes. Só se fai se o xuíz ou a xuíza a establece. O teu avogado ou avogada dirache se haberá vista.", "O teu avogado ou avogada normalmente está na porta exterior do tribunal agardando polo seu cliente para acompañalo ao interior. Consúltao con el ou ela.", "Mira a foto da fachada. Así sabes que edificio é.", "Le como é a entrada: a rúa, a porta e se hai chanzos.", "Tenta chegar 30 minutos antes. Leva o teu DNI (Documento Nacional de Identidade), NIE (Número de Identidade de Estranxeiro) ou pasaporte."],
+            "eu": ["Ikustaldia aretoan egiten den bilera da, non epaileak bi alderdiak entzuten dituen. Epaileak ezartzen badu bakarrik egiten da. Zure abokatuak esango dizu ikustaldirik egongo den.", "Zure abokatua normalean auzitegiaren kanpoko atean egoten da bere bezeroaren zain, barrura lagundu ahal izateko. Galdetu berari.", "Begiratu fatxadaren argazkia. Horrela jakingo duzu zein eraikin den.", "Irakurri nolakoa den sarrera: kalea, atea eta eskailerarik dagoen.", "Saiatu 30 minutu lehenago iristen. Eraman zure NAN (Nortasun Agiri Nazionala), AIZ (Atzerritarren Identitate Zenbakia) edo pasaportea."]
           },
           "sensory": {
             "es": "En la calle puede haber tráfico y gente esperando.",
@@ -388,10 +388,10 @@
             "eu": "Informazio-mahaiko edo segurtasuneko langileak."
           },
           "protocolPhrase": {
-            "es": "Tengo una audiencia previa en esta sede judicial. ¿Dónde está la sala?",
-            "ca": "Tinc una audiència prèvia en aquesta seu judicial. On és la sala?",
-            "gl": "Teño unha audiencia previa nesta sede xudicial. Onde está a sala?",
-            "eu": "Aurretiazko entzunaldi bat daukat epaitegi-egoitza honetan. Non dago aretoa?"
+            "es": "Tengo una vista en esta sede judicial. ¿Dónde está la sala?",
+            "ca": "Tinc una vista en aquesta seu judicial. On és la sala?",
+            "gl": "Teño unha vista nesta sede xudicial. Onde está a sala?",
+            "eu": "Ikustaldi bat daukat epaitegi-egoitza honetan. Non dago aretoa?"
           },
           "documents": []
         },
@@ -413,10 +413,10 @@
             "eu": "Itxaron aretoko atearen ondoan zure abokatuarekin."
           },
           "instructions": {
-            "es": ["Busca a tu abogado o abogada. Suele esperar cerca de la sala.", "Siéntate en el pasillo, cerca de la puerta.", "Te llamarán por tu nombre o por el número del caso.", "A veces las audiencias empiezan tarde. Es normal."],
-            "ca": ["Busca el teu advocat o advocada. Sol esperar prop de la sala.", "Seu al passadís, a prop de la porta.", "Et cridaran pel teu nom o pel número del cas.", "De vegades les audiències comencen tard. És normal."],
-            "gl": ["Busca o teu avogado ou avogada. Adoita agardar preto da sala.", "Séntate no corredor, preto da porta.", "Chamarante polo teu nome ou polo número do caso.", "Ás veces as audiencias empezan tarde. É normal."],
-            "eu": ["Bilatu zure abokatua. Aretotik gertu egon ohi da zain.", "Eseri korridorean, atetik gertu.", "Zure izenarekin edo kasuaren zenbakiarekin deituko dizute.", "Batzuetan entzunaldiak berandu hasten dira. Normala da."]
+            "es": ["Tu abogado o abogada normalmente está en la puerta exterior del tribunal esperando a su cliente para acompañarlo al interior. Si no sabes dónde está, consúltalo con él o ella.", "Siéntate en el pasillo, cerca de la puerta.", "Te llamarán por tu nombre o por el número del caso.", "A veces las vistas empiezan tarde. Es normal."],
+            "ca": ["El teu advocat o advocada normalment és a la porta exterior del tribunal esperant el seu client per acompanyar-lo a l'interior. Si no saps on és, consulta-ho amb ell o ella.", "Seu al passadís, a prop de la porta.", "Et cridaran pel teu nom o pel número del cas.", "De vegades les vistes comencen tard. És normal."],
+            "gl": ["O teu avogado ou avogada normalmente está na porta exterior do tribunal agardando polo seu cliente para acompañalo ao interior. Se non sabes onde está, consúltao con el ou ela.", "Séntate no corredor, preto da porta.", "Chamarante polo teu nome ou polo número do caso.", "Ás veces as vistas empezan tarde. É normal."],
+            "eu": ["Zure abokatua normalean auzitegiaren kanpoko atean egoten da bere bezeroaren zain, barrura lagundu ahal izateko. Non dagoen ez badakizu, galdetu berari.", "Eseri korridorean, atetik gertu.", "Zure izenarekin edo kasuaren zenbakiarekin deituko dizute.", "Batzuetan ikustaldiak berandu hasten dira. Normala da."]
           },
           "sensory": {
             "es": "En los pasillos hay gente hablando. Puede haber avisos por altavoz.",
@@ -444,10 +444,10 @@
           "kind": "procedure",
           "durationMin": [15,45],
           "title": {
-            "es": "La audiencia previa: escucha y decide con tu abogado",
-            "ca": "L'audiència prèvia: escolta i decideix amb el teu advocat",
-            "gl": "A audiencia previa: escoita e decide co teu avogado",
-            "eu": "Aurretiazko entzunaldia: entzun eta erabaki zure abokatuarekin"
+            "es": "La vista: escucha y decide con tu abogado",
+            "ca": "La vista: escolta i decideix amb el teu advocat",
+            "gl": "A vista: escoita e decide co teu avogado",
+            "eu": "Ikustaldia: entzun eta erabaki zure abokatuarekin"
           },
           "expected": {
             "es": "Escucha. Tu abogado o abogada habla por ti. Habla cuando te pregunten.",
@@ -456,16 +456,16 @@
             "eu": "Entzun. Zure abokatuak zuregatik hitz egiten du. Hitz egin galdetzen dizutenean."
           },
           "instructions": {
-            "es": ["Entra con tu abogado o abogada y siéntate donde te digan. Pon el móvil en silencio.", "En la sala está el juez o la jueza, que es la persona que decide. También está el letrado o letrada de la Administración de Justicia, tu familiar y su abogado o abogada.", "El juez o la jueza pregunta si queréis llegar a un acuerdo sobre la casa (art. 415 de la Ley de Enjuiciamiento Civil). Puedes decir que lo piensas. Puedes hablar antes con tu abogado o abogada.", "Si no hay acuerdo, se aclara sobre qué cosas no estáis de acuerdo y qué pruebas se van a usar en el juicio (arts. 426 y 429 de la Ley de Enjuiciamiento Civil).", "Si no entiendes algo, dilo. Puedes pedir una pausa si la necesitas.", "Al final, la sede judicial fija la fecha del juicio."],
-            "ca": ["Entra amb el teu advocat o advocada i seu on et diguin. Posa el mòbil en silenci.", "A la sala hi ha el jutge o la jutgessa, que és la persona que decideix. També hi ha el lletrat o lletrada de l'Administració de Justícia, el teu familiar i el seu advocat o advocada.", "El jutge o la jutgessa pregunta si voleu arribar a un acord sobre la casa (art. 415 de la Llei d'enjudiciament civil). Pots dir que ho penses. Pots parlar abans amb el teu advocat o advocada.", "Si no hi ha acord, s'aclareix en quines coses no esteu d'acord i quines proves s'utilitzaran en el judici (arts. 426 i 429 de la Llei d'enjudiciament civil).", "Si no entens alguna cosa, digues-ho. Pots demanar una pausa si la necessites.", "Al final, la seu judicial fixa la data del judici."],
-            "gl": ["Entra co teu avogado ou avogada e séntate onde che digan. Pon o móbil en silencio.", "Na sala están o xuíz ou a xuíza, que é a persoa que decide. Tamén están o letrado ou letrada da Administración de Xustiza, o teu familiar e o seu avogado ou avogada.", "O xuíz ou a xuíza pregunta se queredes chegar a un acordo sobre a casa (art. 415 da Lei de axuizamento civil). Podes dicir que o pensas. Podes falar antes co teu avogado ou avogada.", "Se non hai acordo, aclárase en que cousas non estades de acordo e que probas se van usar no xuízo (arts. 426 e 429 da Lei de axuizamento civil).", "Se non entendes algo, dío. Podes pedir unha pausa se a necesitas.", "Ao final, a sede xudicial fixa a data do xuízo."],
-            "eu": ["Sartu zure abokatuarekin eta eseri esaten dizuten lekuan. Jarri mugikorra isilean.", "Aretoan epailea dago, erabakitzen duen pertsona. Justizia Administrazioko letratua, zure senidea eta haren abokatua ere badaude.", "Epaileak galdetzen du etxeari buruzko akordio batera iritsi nahi duzuen (Prozedura Zibilaren Legearen 415. art.). Pentsatuko duzula esan dezakezu. Lehenago zure abokatuarekin hitz egin dezakezu.", "Akordiorik ez badago, zertan ez zaudeten ados eta zer froga erabiliko diren judizioan zehazten da (Prozedura Zibilaren Legearen 426 eta 429 art.).", "Zerbait ulertzen ez baduzu, esan. Atsedenaldi bat eska dezakezu behar baduzu.", "Amaieran, epaitegi-egoitzak judizioaren data finkatzen du."]
+            "es": ["Entra con tu abogado o abogada y siéntate donde te digan. Pon el móvil en silencio.", "En la sala está el juez o la jueza, que es la persona que decide. También está el letrado o letrada de la Administración de Justicia, tu familiar y su abogado o abogada.", "El juez o la jueza puede preguntar si queréis llegar a un acuerdo sobre la casa. Puedes decir que lo piensas. Puedes hablar antes con tu abogado o abogada.", "Las pruebas ya se fijaron antes, en la fase de alegaciones, en la que solo participó tu abogado o abogada. En la vista se practican esas pruebas (art. 443 de la Ley de Enjuiciamiento Civil).", "Si no entiendes algo, dilo. Puedes pedir una pausa si la necesitas.", "Al terminar, el juez o la jueza dictará la sentencia más tarde (art. 447 de la Ley de Enjuiciamiento Civil)."],
+            "ca": ["Entra amb el teu advocat o advocada i seu on et diguin. Posa el mòbil en silenci.", "A la sala hi ha el jutge o la jutgessa, que és la persona que decideix. També hi ha el lletrat o lletrada de l'Administració de Justícia, el teu familiar i el seu advocat o advocada.", "El jutge o la jutgessa pot preguntar si voleu arribar a un acord sobre la casa. Pots dir que ho penses. Pots parlar abans amb el teu advocat o advocada.", "Les proves ja es van fixar abans, a la fase d'al·legacions, en què només va participar el teu advocat o advocada. A la vista es practiquen aquestes proves (art. 443 de la Llei d'enjudiciament civil).", "Si no entens alguna cosa, digues-ho. Pots demanar una pausa si la necessites.", "En acabar, el jutge o la jutgessa dictarà la sentència més tard (art. 447 de la Llei d'enjudiciament civil)."],
+            "gl": ["Entra co teu avogado ou avogada e séntate onde che digan. Pon o móbil en silencio.", "Na sala están o xuíz ou a xuíza, que é a persoa que decide. Tamén están o letrado ou letrada da Administración de Xustiza, o teu familiar e o seu avogado ou avogada.", "O xuíz ou a xuíza pode preguntar se queredes chegar a un acordo sobre a casa. Podes dicir que o pensas. Podes falar antes co teu avogado ou avogada.", "As probas xa se fixaron antes, na fase de alegacións, na que só participou o teu avogado ou avogada. Na vista practícanse esas probas (art. 443 da Lei de axuizamento civil).", "Se non entendes algo, dío. Podes pedir unha pausa se a necesitas.", "Ao rematar, o xuíz ou a xuíza ditará a sentenza máis tarde (art. 447 da Lei de axuizamento civil)."],
+            "eu": ["Sartu zure abokatuarekin eta eseri esaten dizuten lekuan. Jarri mugikorra isilean.", "Aretoan epailea dago, erabakitzen duen pertsona. Justizia Administrazioko letratua, zure senidea eta haren abokatua ere badaude.", "Epaileak galdetu dezake etxeari buruzko akordio batera iritsi nahi duzuen. Pentsatuko duzula esan dezakezu. Lehenago zure abokatuarekin hitz egin dezakezu.", "Frogak lehenago finkatu ziren, alegazio-fasean, non zure abokatua bakarrik aritu zen. Ikustaldian froga horiek gauzatzen dira (Prozedura Zibilaren Legearen 443. art.).", "Zerbait ulertzen ez baduzu, esan. Atsedenaldi bat eska dezakezu behar baduzu.", "Amaitzean, epaileak epaia geroago emango du (Prozedura Zibilaren Legearen 447. art.)."]
           },
           "legalNote": {
-            "es": "Las personas neurodivergentes tienen derecho a ajustes para entender y ser entendidas en el proceso (art. 7 bis de la Ley de Enjuiciamiento Civil).",
-            "ca": "Les persones neurodivergents tenen dret a ajustos per entendre i ser enteses en el procés (art. 7 bis de la Llei d'enjudiciament civil).",
-            "gl": "As persoas neurodiverxentes teñen dereito a axustes para entender e ser entendidas no proceso (art. 7 bis da Lei de axuizamento civil).",
-            "eu": "Desgaitasuna duten pertsonek egokitzapenak izateko eskubidea dute, prozesuan ulertzeko eta ulertuak izateko (Prozedura Zibilaren Legearen 7 bis art.)."
+            "es": "Las personas que necesitan medidas de apoyo tienen derecho a recibirlas para entender y ser entendidas en el proceso (art. 9 de la Ley Orgánica 5/2024, del Derecho de Defensa).",
+            "ca": "Les persones que necessiten mesures de suport tenen dret a rebre-les per entendre i ser enteses en el procés (art. 9 de la Llei orgànica 5/2024, del Dret de Defensa).",
+            "gl": "As persoas que necesitan medidas de apoio teñen dereito a recibilas para entender e ser entendidas no proceso (art. 9 da Lei orgánica 5/2024, do Dereito de Defensa).",
+            "eu": "Laguntza-neurriak behar dituzten pertsonek horiek jasotzeko eskubidea dute, prozesuan ulertzeko eta ulertuak izateko (5/2024 Lege Organikoa, Defentsa Eskubidearena, 9. art.)."
           },
           "protocolPhrase": {
             "es": "No he entendido. ¿Puede explicarlo con otras palabras? Necesito una pausa.",
@@ -499,10 +499,10 @@
             "eu": "Galdetu zure abokatuari zer gertatuko den orain."
           },
           "instructions": {
-            "es": ["Pregunta cuándo es el juicio y qué tendrás que hacer ese día.", "Pregunta si hay que preparar más documentos o pruebas.", "Después del juicio, el juez o la jueza dicta la sentencia. La sentencia es el papel con la decisión: si se vende la casa, o si se la queda uno y paga al otro.", "Sal del edificio por la misma puerta."],
-            "ca": ["Pregunta quan és el judici i què hauràs de fer aquell dia.", "Pregunta si cal preparar més documents o proves.", "Després del judici, el jutge o la jutgessa dicta la sentència. La sentència és el paper amb la decisió: si es ven la casa, o si es queda un i paga a l'altre.", "Surt de l'edifici per la mateixa porta."],
-            "gl": ["Pregunta cando é o xuízo e que terás que facer ese día.", "Pregunta se hai que preparar máis documentos ou probas.", "Despois do xuízo, o xuíz ou a xuíza ditan a sentenza. A sentenza é o papel coa decisión: se se vende a casa, ou se queda un coa casa e lle paga ao outro.", "Sae do edificio pola mesma porta."],
-            "eu": ["Galdetu noiz den judizioa eta zer egin beharko duzun egun horretan.", "Galdetu agiri edo froga gehiago prestatu behar diren.", "Judizioaren ondoren, epaileak epaia ematen du. Epaia erabakia duen papera da: etxea saltzen den, edo batek gordetzen duen eta besteari ordaintzen dion.", "Irten eraikinetik ate beretik."]
+            "es": ["Pregunta cuándo llegará la sentencia y qué pasará después.", "Después de la vista, el juez o la jueza dicta la sentencia. La sentencia es el papel con la decisión: si se vende la casa, o si se la queda uno y paga al otro.", "Sal del edificio por la misma puerta."],
+            "ca": ["Pregunta quan arribarà la sentència i què passarà després.", "Després de la vista, el jutge o la jutgessa dicta la sentència. La sentència és el paper amb la decisió: si es ven la casa, o si es queda un i paga a l'altre.", "Surt de l'edifici per la mateixa porta."],
+            "gl": ["Pregunta cando chegará a sentenza e que pasará despois.", "Despois da vista, o xuíz ou a xuíza dita a sentenza. A sentenza é o papel coa decisión: se se vende a casa, ou se queda un coa casa e lle paga ao outro.", "Sae do edificio pola mesma porta."],
+            "eu": ["Galdetu noiz iritsiko den epaia eta zer gertatuko den ondoren.", "Ikustaldiaren ondoren, epaileak epaia ematen du. Epaia erabakia duen papera da: etxea saltzen den, edo batek gordetzen duen eta besteari ordaintzen dion.", "Irten eraikinetik ate beretik."]
           },
           "protocolPhrase": {
             "es": "¿Qué tengo que hacer ahora?",
@@ -515,32 +515,32 @@
               "id": "dc-10-d1",
               "kind": "receive",
               "name": {
-                "es": "Citación para el juicio",
-                "ca": "Citació per al judici",
-                "gl": "Citación para o xuízo",
-                "eu": "Judiziorako zitazioa"
+                "es": "Justificante de asistencia al juicio, si lo necesitas",
+                "ca": "Justificant d'assistència al judici, si el necessites",
+                "gl": "Xustificante de asistencia ao xuízo, se o necesitas",
+                "eu": "Judizioan egon izanaren agiria, behar baduzu"
               },
               "notes": {
-                "es": "Dice el día y la hora del juicio. Normalmente la recibe tu abogado o abogada.",
-                "ca": "Diu el dia i l'hora del judici. Normalment la rep el teu advocat o advocada.",
-                "gl": "Di o día e a hora do xuízo. Normalmente recíbea o teu avogado ou avogada.",
-                "eu": "Judizioaren eguna eta ordua esaten ditu. Normalean zure abokatuak jasotzen du."
+                "es": "Es un papel que dice que has ido a la sede judicial. Pídelo si lo necesitas, por ejemplo para tu trabajo o tus estudios.",
+                "ca": "És un paper que diu que has anat a la seu judicial. Demana'l si el necessites, per exemple per a la feina o els estudis.",
+                "gl": "É un papel que di que foches á sede xudicial. Pídeo se o necesitas, por exemplo para o traballo ou os estudos.",
+                "eu": "Epaitegi-egoitzara joan zarela dioen papera da. Eskatu behar baduzu, adibidez lanerako edo ikasketetarako."
               }
             },
             {
               "id": "dc-10-d2",
               "kind": "receive",
               "name": {
-                "es": "Sentencia (llega más tarde)",
-                "ca": "Sentència (arriba més tard)",
-                "gl": "Sentenza (chega máis tarde)",
-                "eu": "Epaia (geroago iristen da)"
+                "es": "Los documentos que has traído y no has tenido que entregar al juez",
+                "ca": "Els documents que has portat i no has hagut de lliurar al jutge",
+                "gl": "Os documentos que trouxeches e non tiveches que entregar ao xuíz",
+                "eu": "Ekarri dituzun eta epaileari entregatu behar izan ez dizkiozun agiriak"
               },
               "notes": {
-                "es": "Normalmente la recibe tu abogado o abogada. Puedes pedirle que te la explique con palabras sencillas.",
-                "ca": "Normalment la rep el teu advocat o advocada. Pots demanar-li que te l'expliqui amb paraules senzilles.",
-                "gl": "Normalmente recíbea o teu avogado ou avogada. Podes pedirlle que cha explique con palabras sinxelas.",
-                "eu": "Normalean zure abokatuak jasotzen du. Hitz errazekin azal diezazuen eska diezaiokezu."
+                "es": "Llévatelos de vuelta a casa. No dejes nada olvidado.",
+                "ca": "Torna-te'ls a endur a casa. No deixis res oblidat.",
+                "gl": "Leva os de volta á casa. Non deixes nada esquecido.",
+                "eu": "Eraman itzazu etxera berriro. Ez utzi ezer ahaztuta."
               }
             }
           ]
