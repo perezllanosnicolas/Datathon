@@ -11,19 +11,19 @@ export default function Choose() {
       <h1>{t.choose.title}</h1>
       <p>{t.choose.intro}</p>
       <ul className="result-list">
+        <li className="card card-attn">
+          <h2 style={{ marginTop: 0 }}>{t.choose.citation}</h2>
+          <p>{t.choose.citationDesc}</p>
+          <Link className="btn btn-attn btn-block" href="/citacion">
+            <Icon name="doc" />
+            {t.choose.citation}
+          </Link>
+        </li>
         <li className="card">
           <h2 style={{ marginTop: 0 }}>{t.choose.search}</h2>
           <p>{t.choose.searchDesc}</p>
           <Link className="btn btn-primary btn-block" href="/buscar">
             {t.choose.search}
-          </Link>
-        </li>
-        <li className="card">
-          <h2 style={{ marginTop: 0 }}>{t.choose.citation}</h2>
-          <p>{t.choose.citationDesc}</p>
-          <Link className="btn btn-block" href="/citacion">
-            <Icon name="doc" />
-            {t.choose.citation}
           </Link>
         </li>
       </ul>

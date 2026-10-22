@@ -66,7 +66,7 @@ function ConfirmInner() {
           {t.confirm.ok}
         </button>
       </div>
-      <FlowMap steps={procedure.steps} court={court} />
+      <FlowMap steps={procedure.steps} court={court} defaultOpen />
     </>
   );
 }
