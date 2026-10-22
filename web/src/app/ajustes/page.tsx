@@ -23,6 +23,9 @@ export default function Settings() {
         <NeedsField legend={t.quiz.needsQuestion} />
       </form>
       <div className="btn-stack">
+        <button type="button" className="btn btn-primary btn-block" onClick={() => router.push("/")}>
+          {t.settings.save}
+        </button>
         <button
           type="button"
           className="btn btn-danger btn-block"

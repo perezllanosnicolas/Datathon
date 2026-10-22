@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { LANGUAGES, normalize, type Lang } from "@/lib/catalog";
-import { NEEDS, type FontSize, type ImageMode, type Need, type Prefs } from "@/lib/storage";
+import { DEFAULT_PREFS, NEEDS, type FontSize, type ImageMode, type Need, type Prefs } from "@/lib/storage";
 import { usePrefs } from "./PrefsProvider";
 import { StepImage } from "./StepImage";
 import { TextField } from "./TextField";
@@ -106,8 +106,19 @@ export function NeedsField({ legend }: { legend: string }) {
   const shown = nq ? items.filter((i) => normalize(`${i.name} ${i.desc}`).includes(nq)) : items;
 
   function toggle(n: Need, on: boolean) {
-    const needs = on ? [...prefs.needs, n] : prefs.needs.filter((x) => x !== n);
-    setPrefs({ needs, ...(on ? NEED_DEFAULTS[n] : {}) });
+    if (on) {
+      setPrefs({ needs: [...prefs.needs, n], ...NEED_DEFAULTS[n] });
+      return;
+    }
+    // Switch off what this need had switched on, unless another chosen need still asks for it.
+    const needs = prefs.needs.filter((x) => x !== n);
+    const kept = needs.reduce<Partial<Prefs>>((acc, x) => ({ ...acc, ...NEED_DEFAULTS[x] }), {});
+    const undo: Partial<Prefs> = {};
+    for (const key of Object.keys(NEED_DEFAULTS[n]) as (keyof Prefs)[]) {
+      if (key in kept) continue;
+      Object.assign(undo, { [key]: DEFAULT_PREFS[key] });
+    }
+    setPrefs({ needs, ...undo });
   }
 
   return (
