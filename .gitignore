@@ -1,0 +1,26 @@
+# Notas locales de Obsidian (cambian en cada equipo)
+.obsidian/
+
+# Salidas de la skill taste-skill
+.taste-skill/
+
+# Secretos y claves
+.env
+.env.*
+*.pem
+*.key
+
+# Bases de datos locales y modelos de IA
+*.db
+*.sqlite
+*.gguf
+*.safetensors
+
+# Dependencias y compilación
+node_modules/
+.next/
+dist/
+
+# Sistema
+.DS_Store
+Thumbs.db
