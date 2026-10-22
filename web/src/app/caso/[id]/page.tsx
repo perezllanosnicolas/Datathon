@@ -184,10 +184,8 @@ function Flow({ id }: { id: string }) {
         <button
           type="button"
           className="btn btn-quiet"
-          onClick={() => {
-            window.scrollTo(0, 0);
-            heading.current?.focus();
-          }}
+          onClick={() => goTo(0)}
+          disabled={current === 0}
         >
           {t.flow.repeat}
         </button>

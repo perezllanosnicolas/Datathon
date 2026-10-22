@@ -45,8 +45,8 @@ export function LanguageField({ legend }: { legend: string }) {
 
 export function FontField({ legend }: { legend: string }) {
   const { prefs, setPrefs, t } = usePrefs();
-  const sizes: FontSize[] = ["m", "l", "xl"];
-  const labels = [t.quiz.fontNormal, t.quiz.fontLarge, t.quiz.fontXL];
+  const sizes: FontSize[] = ["s", "m", "l", "xl", "xxl", "xxxl"];
+  const labels = [t.quiz.fontSmall, t.quiz.fontNormal, t.quiz.fontLarge, t.quiz.fontXL, t.quiz.fontXXL, t.quiz.fontXXXL];
   const idx = sizes.indexOf(prefs.fontSize);
   return (
     <fieldset>
@@ -63,7 +63,7 @@ export function FontField({ legend }: { legend: string }) {
           aria-valuetext={labels[idx]}
           onChange={(e) => setPrefs({ fontSize: sizes[Number(e.target.value)] })}
         />
-        <span aria-hidden="true" style={{ fontSize: "30px" }}>A</span>
+        <span aria-hidden="true" style={{ fontSize: "40px" }}>A</span>
       </div>
       <p className="small" aria-live="polite">{labels[idx]}</p>
       <p className="card">{t.quiz.sample}</p>

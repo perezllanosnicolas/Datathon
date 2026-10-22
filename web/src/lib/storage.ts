@@ -2,7 +2,7 @@
 // progress never leave the browser. Every access is wrapped: storage can be blocked.
 import type { Lang } from "./catalog";
 
-export type FontSize = "m" | "l" | "xl";
+export type FontSize = "s" | "m" | "l" | "xl" | "xxl" | "xxxl";
 /** How each step is illustrated: ARASAAC pictograms, generated realistic images, or text only. */
 export type ImageMode = "picto" | "real" | "none";
 export type Need = "tea" | "tdah" | "dislexia" | "discalculia" | "disgrafia" | "vision" | "otras";

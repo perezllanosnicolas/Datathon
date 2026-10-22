@@ -43,6 +43,9 @@
 
 html[data-font="l"] { --font-size: 21px; }
 html[data-font="xl"] { --font-size: 25px; }
+html[data-font="s"] { --font-size: 16px; }
+html[data-font="xxl"] { --font-size: 30px; }
+html[data-font="xxxl"] { --font-size: 36px; }
 
 html[data-readable] {
   --font-base: var(--font-readable), Verdana, system-ui, sans-serif;

@@ -108,6 +108,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 
 - 2026-10-22 — **Pulido (rama `feat/ui-polish-official`), provisional:** barra fija «Guardar y volver al inicio» en Ajustes; buscador con filtro en «Palabras difíciles» (ordenadas, 39 términos; ca/gl/eu son borradores); opción «No quiero ninguna adaptación» en el cuestionario y Ajustes; pie de página reordenado (nombre de la app, logotipos del Gobierno de España y del Ministerio de Justicia en `web/public/images/official/`, tomados de Wikimedia Commons, y aviso de que **no es una web oficial**); tamaños de imagen unificados. **Pendiente de validar con el equipo/organización:** permiso de uso de los logotipos oficiales.
 - 2026-10-22 — Creada la skill de proyecto **`/actualizar-servidor-levantado`**: levanta o reinicia el servidor del prototipo (producción por defecto, `dev` opcional) para ver los últimos cambios.
+- 2026-10-22 — **Ajustes y flujo (rama `feat/font-range-first-step`), provisional:** el slider de tamaño de letra tiene 6 niveles (16–36 px, de «Pequeña» a «Máxima»); en el flujo, el botón «Volver al principio del paso» pasa a ser «Volver al primer paso» y lleva al paso 1.
 
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.
