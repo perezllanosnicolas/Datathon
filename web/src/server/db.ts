@@ -6,7 +6,8 @@ import { DatabaseSync } from "node:sqlite";
 import { mkdirSync } from "node:fs";
 import path from "node:path";
 
-const DB_PATH = process.env.DB_PATH ?? path.join(process.cwd(), "data", "app.db");
+// On Vercel the deployment is read-only and only /tmp is writable (and not shared between instances).
+const DB_PATH = process.env.DB_PATH ?? (process.env.VERCEL ? "/tmp/app.db" : path.join(process.cwd(), "data", "app.db"));
 
 const globalForDb = globalThis as unknown as { __bjDb?: DatabaseSync };
 

@@ -12,6 +12,25 @@ import { Icon, Note } from "@/components/ui";
 type State = { kind: "idle" } | { kind: "reading" } | { kind: "error"; message: string } | { kind: "result"; data: Extraction };
 
 const MAX_BYTES = 8 * 1024 * 1024;
+// Vercel rejects request bodies over 4.5 MB, so large phone photos are shrunk before upload.
+const SHRINK_OVER = 3.5 * 1024 * 1024;
+const SHRINK_SIDE = 2400;
+
+async function shrinkPhoto(file: File): Promise<File> {
+  if (file.size <= SHRINK_OVER || !file.type.startsWith("image/")) return file;
+  try {
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, SHRINK_SIDE / Math.max(bitmap.width, bitmap.height));
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.round(bitmap.width * scale);
+    canvas.height = Math.round(bitmap.height * scale);
+    canvas.getContext("2d")?.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.85));
+    return blob && blob.size < file.size ? new File([blob], "citacion.jpg", { type: "image/jpeg" }) : file;
+  } catch {
+    return file;
+  }
+}
 
 export default function CitationPage() {
   const { t, prefs } = usePrefs();
@@ -32,7 +51,7 @@ export default function CitationPage() {
     if (file.size > MAX_BYTES) return setState({ kind: "error", message: t.citation.errorSize });
     setState({ kind: "reading" });
     const form = new FormData();
-    form.append("file", file);
+    form.append("file", await shrinkPhoto(file));
     try {
       const res = await fetch("/api/citation", { method: "POST", body: form });
       const data = await res.json();

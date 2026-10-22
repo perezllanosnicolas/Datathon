@@ -7,7 +7,8 @@ import { createWorker, type Worker } from "tesseract.js";
 // Spanish, Catalan, Galician and Basque models (TRD §2d).
 const OCR_LANGS = "spa+cat+glg+eus";
 // Models are downloaded once into data/tessdata and reused offline afterwards.
-const CACHE = path.join(process.cwd(), "data", "tessdata");
+// On Vercel only /tmp is writable, so the models are downloaded again after a cold start.
+const CACHE = process.env.VERCEL ? "/tmp/tessdata" : path.join(process.cwd(), "data", "tessdata");
 
 const g = globalThis as unknown as { __bjOcr?: Promise<Worker> };
 
