@@ -26,6 +26,13 @@ npm run demo         # compila y sirve en 0.0.0.0:3000
 3. En el móvil, abre `http://<IP-del-portátil>:3000`.
 4. El "abogado" se simula con un segundo dispositivo en la misma red, que abre el enlace de invitación.
 
+### Desplegar en Vercel (demo en la presentación)
+1. En Vercel: **Add New → Project**, importa el repositorio y pon **Root Directory = `web`** (framework: Next.js; no hace falta ningún ajuste más ni variables de entorno).
+2. Despliega la rama que se vaya a presentar. El resto es automático: `npm run build` y Node 22 o superior.
+3. En Vercel el disco es de solo lectura salvo `/tmp`: la base de datos (casos y enlace del abogado) vive en `/tmp/app.db` y **no es permanente ni se comparte entre instancias**. Es suficiente para el demo, pero un caso creado puede desaparecer tras un rato sin uso. Antes de presentar, haz un recorrido completo y no reinicies el despliegue.
+4. El OCR descarga los modelos de idioma la primera vez que se sube una citación (la primera lectura tarda más). Las fotos de más de 3,5 MB se reducen en el navegador antes de subirlas (Vercel limita el cuerpo a 4,5 MB); un PDF de más de 4,5 MB no se podrá subir.
+5. Las funciones locales (`npm run share`, el QR) no se usan en Vercel.
+
 ### QR para abrirlo en el móvil
 ```bash
 cd web
