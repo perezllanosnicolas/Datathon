@@ -106,7 +106,7 @@ Acceso ─► Crear/editar juzgado (dirección, coordenadas Street View, descrip
 - Enlace caducado, revocado o ya usado: mensaje claro al abogado; la persona puede generar otro.
 - El abogado añade un documento que la persona no quiere: puede borrarlo.
 - Sin conexión o conexión lenta: texto primero, imágenes después.
-- Se borran los datos del navegador: se pierde el perfil y el progreso; la app ofrece volver a hacer el cuestionario y avisa antes (y permite exportar) [P].
+- Se borran los datos del navegador: se pierde el perfil y el progreso; la app ofrece volver a hacer el cuestionario y avisa antes [P].
 - Documentos nuevos del abogado: se detectan al abrir la app o la pantalla de documentos; no hay avisos por correo [D].
 
 ## 5. Mapa de pantallas

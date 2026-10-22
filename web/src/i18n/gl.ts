@@ -63,7 +63,7 @@ export const gl: Messages = {
     dictation: "Botón para ditar coa voz",
   },
   needs: {
-    tea: "TEA (autismo)",
+    tea: "TEA (Trastorno do Espectro Autista)",
     teaDesc: "Máis avisos do que vas oír e ver. Linguaxe literal. Poucas opcións á vez.",
     tdah: "TDAH",
     tdahDesc: "Pasos curtos. O importante primeiro. O resto, en «Ver máis».",

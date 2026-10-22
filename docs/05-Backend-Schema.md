@@ -8,7 +8,7 @@
 - **La herramienta se usa sin registro** [D]. No hay cuentas de usuario en el demo.
 - **El perfil de adaptaciones y el progreso se guardan en el propio dispositivo** (almacenamiento del navegador), no en el servidor [P]. Así el servidor no guarda nada sobre la neurodivergencia de la persona.
 - **Caso anónimo:** el caso (trámite + juzgado + documentos del abogado) se guarda en el servidor con un identificador aleatorio y un secreto de propietario que solo conoce el dispositivo de la persona (se guarda el hash). Sirve para que lleguen los documentos del abogado sin cuenta [P].
-- Si se borran los datos del navegador, la persona pierde su perfil y el acceso a ese caso. Avisarlo en la app y permitir "exportar mi configuración" [P].
+- Si se borran los datos del navegador, la persona pierde su perfil y el acceso a ese caso. Avisarlo en la app [P].
 - Un registro con cuenta, si se añade más adelante, sería **opcional** (por ejemplo, para usar varios dispositivos) [?]. Las tablas `users` y `user_profiles` quedan como previstas, no necesarias para el demo.
 - Roles: `editor` (contenido, con acceso protegido), usuario anónimo y abogado/a **sin cuenta**, con acceso solo mediante un enlace con token limitado a un caso. Cada rol ve solo lo necesario.
 - Endpoints del enlace: solo permiten leer trámite/juzgado y crear o editar `case_documents` de ese caso; validan caducidad y revocación en cada llamada; límite de peticiones [P].

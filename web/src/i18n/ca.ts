@@ -63,7 +63,7 @@ export const ca: Messages = {
     dictation: "Botó per dictar amb la veu",
   },
   needs: {
-    tea: "TEA (autisme)",
+    tea: "TEA (Trastorn de l'Espectre Autista)",
     teaDesc: "Més avisos del que sentiràs i veuràs. Llenguatge literal. Poques opcions alhora.",
     tdah: "TDAH",
     tdahDesc: "Passos curts. El més important primer. La resta, a «Veure'n més».",

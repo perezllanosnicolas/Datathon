@@ -63,7 +63,7 @@ export const eu: Messages = {
     dictation: "Ahotsez diktatzeko botoia",
   },
   needs: {
-    tea: "AEN (autismoa)",
+    tea: "AEN (Autismoaren Espektroaren Nahastea)",
     teaDesc: "Entzungo eta ikusiko duzunari buruzko abisu gehiago. Hizkera literala. Aukera gutxi aldi berean.",
     tdah: "AGNH",
     tdahDesc: "Urrats laburrak. Garrantzitsuena lehenik. Gainerakoa, «Gehiago ikusi» atalean.",

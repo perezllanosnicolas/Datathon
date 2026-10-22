@@ -157,7 +157,7 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 | Datos personales de la citación | OCR en nuestro servidor, sin terceros; borrar el archivo al terminar; sin logs con el texto; prototipo con citaciones sintéticas; RGPD aplazado |
 | El demo local falla (red, equipo, internet) | Red propia, semilla de datos, ensayo desde cero en otro equipo, plan B con foto y texto de la entrada, vídeo grabado del demo |
 | El abogado no puede abrir el enlace (servidor local) | Simularlo con un segundo dispositivo en la misma red |
-| Se pierden los datos del navegador (sin cuenta) | Avisar, permitir exportar el perfil y volver a hacer el cuestionario |
+| Se pierden los datos del navegador (sin cuenta) | Avisar y volver a hacer el cuestionario |
 | Servidor sobrecargado por el OCR | Límite de tamaño y de peticiones; cola de trabajos; probar con fotos reales de móvil |
 | Número de colegiado falso o inexistente | Dato declarado [D]: se muestra como "no comprobado"; la persona decide; enlace de solo 48 h y solo texto |
 | Enlace del abogado filtrado o usado por otra persona | Token aleatorio con caducidad y revocación; solo texto; sin acceso al perfil ni a otros casos |

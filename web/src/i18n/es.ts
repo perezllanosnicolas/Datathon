@@ -62,7 +62,7 @@ export const es = {
     dictation: "Botón para dictar con la voz",
   },
   needs: {
-    tea: "TEA (autismo)",
+    tea: "TEA (Trastorno del Espectro Autista)",
     teaDesc: "Más avisos de lo que vas a oír y ver. Lenguaje literal. Pocas opciones a la vez.",
     tdah: "TDAH",
     tdahDesc: "Pasos cortos. Lo importante primero. El resto, en «Ver más».",
