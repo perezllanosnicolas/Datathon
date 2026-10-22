@@ -87,7 +87,7 @@ En todas las pantallas de paso hay una **barra de progreso** que dice cuántos p
 
 ### 2.4 Pasos de llegada con la fachada [D]
 Los primeros pasos (llegar al edificio, encontrar la entrada) incluyen:
-- **Imagen de la fachada** (Street View, solo la fachada, imagen fija).
+- **Imagen de la fachada** (solo la fachada, foto fija; en el prototipo, de Wikimedia Commons. Street View queda como opción futura).
 - Texto con: sentido de la vía (doble sentido o no), dónde parar o aparcar, qué puerta usar, cómo es el acceso (escalón, rampa) [P].
 - Alternativa solo texto para quien no puede o no quiere ver la imagen [P].
 

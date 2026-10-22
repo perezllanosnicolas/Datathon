@@ -94,6 +94,8 @@ Prototipo de las Fases 2–7 construido en la rama `feat/demo-core` (ver `README
 - **Hecho cuando:** una persona recorre el flujo completo en móvil, y otra lo hace con lector de pantalla, en los cuatro idiomas.
 
 ## Fase 5 — Fachada con Street View
+> **Actualización 2026-10-22 [D]:** el prototipo ya no usa Street View. Cada sede judicial lleva una **foto fija** de la fachada (de Wikimedia Commons, en `web/public/images/facades/`, con autoría y licencia en `courts.json`). No hace falta clave ni internet. Street View queda como opción futura; lo que sigue describe esa opción.
+
 - Integrar la imagen fija de la fachada (Street View Static API) en los pasos de llegada, con alternativa de texto, atribución y fecha ([TRD §3](02-TRD.md)).
 - Comprobar cobertura con los metadatos; plan B con foto o solo texto.
 - Vista previa para elegir orientación en el panel del editor.

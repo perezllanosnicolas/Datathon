@@ -29,7 +29,7 @@ El producto se apoya en tres pilares:
    - **Buscador** que filtra entre los casos posibles (trámite, tipo de proceso, juzgado).
    - **Subir la citación** (documento o foto), si no se quiere buscar: el documento se **pasa a texto** y de ese texto se **extrae el tipo de trámite y el juzgado**. La persona confirma lo detectado.
 3. **Diagrama de flujo interactivo**, paso a paso, con: documentación y recursos necesarios al inicio; documentación y recursos que se obtienen al salir; pasos lo más granulares posible (ir a recepción, registrarse, esperar turno…).
-4. **Imagen de la fachada con Street View de Google Maps** [D: solo fachada] dentro de los pasos de llegada, junto a un texto que dice cómo es la entrada al edificio, si la vía es de doble sentido, etc. Es una imagen fija, no un recorrido.
+4. **Imagen de la fachada** (en el prototipo, foto fija de Wikimedia Commons; Street View queda como opción futura, ver TRD §3) — antes: **con Street View de Google Maps** [D: solo fachada] dentro de los pasos de llegada, junto a un texto que dice cómo es la entrada al edificio, si la vía es de doble sentido, etc. Es una imagen fija, no un recorrido.
    - **Barra de progreso** [D]: en cada paso indica cuántos pasos has hecho y cuántos te quedan ("Paso 3 de 12 · Te quedan 9").
 5. **Enlace de vinculación con el abogado:** la persona envía un enlace a su abogado/a, que indica qué **documentación hay que llevar**; esa lista aparece en la app dentro del trámite.
 6. **Formato:** web para dispositivos móviles (mobile-first).

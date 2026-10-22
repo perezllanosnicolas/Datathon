@@ -127,6 +127,8 @@ Persona crea enlace ─► lo comparte ella misma (la app abre el menú de compa
 - Fechas y horas en formato local de cada idioma.
 
 ## 3. Fachada con Street View de Google Maps [D: solo fachada]
+> **Actualización 2026-10-22 [D]:** el prototipo ya no usa Street View. Cada sede judicial lleva una **foto fija** de la fachada (de Wikimedia Commons, en `web/public/images/facades/`, con autoría y licencia en `courts.json`). No hace falta clave ni internet. Street View queda como opción futura; lo que sigue describe esa opción.
+
 **¿Se puede hacer con Google Maps? Sí.** Para una sola imagen de la fachada, Google ofrece la **Street View Static API**: se le pide una imagen indicando el lugar, el tamaño, la orientación (heading), la inclinación (pitch) y el ángulo de visión (fov). No hace falta un panorama interactivo.
 - **Recomendado [P]: Street View Static API** (una imagen fija por juzgado). Ventajas: encaja con "solo fachada", la persona no se pierde navegando por la calle, pesa poco y es más fácil de hacer accesible.
 - **Alternativa [P]:** Maps Embed API en modo Street View (iframe). Es interactiva (la persona puede girar y moverse), así que no queda limitada a la fachada.

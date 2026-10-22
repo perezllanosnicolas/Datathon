@@ -1,4 +1,4 @@
-# Paso a paso al juzgado — Datathon Brecha Judicial (Reto 3)
+# SimuLex (visita virtual accesible al juzgado) — Datathon Brecha Judicial (Reto 3)
 
 Web **mobile-first** que prepara a una persona neurodivergente antes de ir al juzgado. Muestra, paso a paso, qué va a pasar, cuánto dura cada parte, qué tiene que llevar y qué se espera de ella. Ámbito del demo: **civil**.
 
@@ -36,8 +36,8 @@ Escanea el QR con la cámara del móvil (misma Wi-Fi). Si hay varias redes, se r
 
 **Fuera de la Wi-Fi:** abre un túnel (p. ej. `cloudflared tunnel --url http://localhost:3000`) y ejecuta `PUBLIC_URL=<url del túnel> npm run share` para generar el QR de esa URL. Un túnel publica el prototipo en internet mientras esté abierto: solo con datos sintéticos.
 
-### Imagen de la fachada (opcional)
-Copia `web/.env.example` a `web/.env.local` y rellena `GOOGLE_MAPS_API_KEY` con una clave de la Street View Static API. Sin clave o sin internet, la app muestra la descripción en texto de la entrada.
+### Foto de la fachada
+Cada sede judicial lleva una foto fija de su fachada en `web/public/images/facades/` (de Wikimedia Commons; autoría y licencia en `web/data/catalog/courts.json`, campo `photo`). No hace falta clave ni internet.
 
 ### OCR de la citación
 El OCR (tesseract.js) se ejecuta **en el propio servidor**. La primera vez descarga los modelos de español, catalán, gallego y euskera en `web/data/tessdata/`, así que hace falta internet. Después funciona sin conexión. Conviene subir una citación de prueba antes del demo para que los modelos ya estén descargados.
@@ -61,7 +61,7 @@ npm run smoke                   # en otra: prueba la API de punta a punta (33 co
 | Buscador con filtros, tolerante a tildes, que busca en los cuatro idiomas | `/buscar` |
 | Subir citación: foto/PDF → texto (OCR en el servidor) → trámite y juzgado del catálogo → la persona lo confirma | `/citacion`, `/api/citation` |
 | Flujo paso a paso con barra de progreso ("Paso 3 de 9 · Has hecho 2 · Te quedan 7"), fases, lista de pasos, saltar y repetir | `/caso/[id]` |
-| Fachada (Street View Static, servida desde el servidor para no exponer la clave) con alternativa de texto | `/api/facade/[courtId]` |
+| Foto de la fachada de la sede judicial, con alternativa de texto | `/caso/[id]` (paso de llegada) |
 | Enlace del abogado: 48 h, revocable, nombre y número de colegiado obligatorios (sin comprobar), solo texto | `/caso/[id]/abogado`, `/abogado/[token]` |
 | Resumen con la lista de documentos e impresión | `/caso/[id]/resumen` |
 
