@@ -48,10 +48,10 @@
             "eu": "Irten aurretik, bildu zure agiriak."
           },
           "instructions": {
-            "es": ["Busca tu citación.", "Mira la fecha, la hora y la dirección.", "Coge tu DNI, NIE o pasaporte.", "Coge los papeles que te ha pedido tu abogado o abogada.", "Sal con tiempo. Intenta llegar 30 minutos antes."],
-            "ca": ["Busca la teva citació.", "Mira la data, l'hora i l'adreça.", "Agafa el DNI, el NIE o el passaport.", "Agafa els papers que t'ha demanat el teu advocat o advocada.", "Surt amb temps. Intenta arribar 30 minuts abans."],
-            "gl": ["Busca a túa citación.", "Mira a data, a hora e o enderezo.", "Colle o teu DNI, NIE ou pasaporte.", "Colle os papeis que che pediu o teu avogado ou avogada.", "Sae con tempo. Tenta chegar 30 minutos antes."],
-            "eu": ["Bilatu zure zitazioa.", "Begiratu data, ordua eta helbidea.", "Hartu NAN, AIZ edo pasaportea.", "Hartu zure abokatuak eskatu dizkizun paperak.", "Irten denborarekin. Saiatu 30 minutu lehenago iristen."]
+            "es": ["Busca tu citación.", "Mira la fecha, la hora y la dirección.", "Coge tu DNI (Documento Nacional de Identidad), NIE (Número de Identidad de Extranjero) o pasaporte.", "Coge los papeles que te ha pedido tu abogado o abogada.", "Sal con tiempo. Intenta llegar 30 minutos antes."],
+            "ca": ["Busca la teva citació.", "Mira la data, l'hora i l'adreça.", "Agafa el DNI (Document Nacional d'Identitat), el NIE (Número d'Identitat d'Estranger) o el passaport.", "Agafa els papers que t'ha demanat el teu advocat o advocada.", "Surt amb temps. Intenta arribar 30 minuts abans."],
+            "gl": ["Busca a túa citación.", "Mira a data, a hora e o enderezo.", "Colle o teu DNI (Documento Nacional de Identidade), NIE (Número de Identidade de Estranxeiro) ou pasaporte.", "Colle os papeis que che pediu o teu avogado ou avogada.", "Sae con tempo. Tenta chegar 30 minutos antes."],
+            "eu": ["Bilatu zure zitazioa.", "Begiratu data, ordua eta helbidea.", "Hartu NAN (Nortasun Agiri Nazionala), AIZ (Atzerritarren Identitate Zenbakia) edo pasaportea.", "Hartu zure abokatuak eskatu dizkizun paperak.", "Irten denborarekin. Saiatu 30 minutu lehenago iristen."]
           },
           "calmTip": {
             "es": "Puedes preparar la bolsa el día antes.",
@@ -61,7 +61,7 @@
           },
           "documents": [
             { "id": "jv-1-d1", "kind": "bring", "name": { "es": "Citación", "ca": "Citació", "gl": "Citación", "eu": "Zitazioa" }, "notes": { "es": "El aviso que dice cuándo y dónde tienes que ir.", "ca": "L'avís que diu quan i on has d'anar.", "gl": "O aviso que di cando e onde tes que ir.", "eu": "Noiz eta non joan behar duzun esaten duen abisua." } },
-            { "id": "jv-1-d2", "kind": "bring", "name": { "es": "DNI, NIE o pasaporte", "ca": "DNI, NIE o passaport", "gl": "DNI, NIE ou pasaporte", "eu": "NAN, AIZ edo pasaportea" }, "notes": { "es": "Tiene que estar en vigor.", "ca": "Ha d'estar vigent.", "gl": "Ten que estar en vigor.", "eu": "Indarrean egon behar du." } },
+            { "id": "jv-1-d2", "kind": "bring", "name": { "es": "DNI (Documento Nacional de Identidad), NIE (Número de Identidad de Extranjero) o pasaporte", "ca": "DNI (Document Nacional d'Identitat), NIE (Número d'Identitat d'Estranger) o passaport", "gl": "DNI (Documento Nacional de Identidade), NIE (Número de Identidade de Estranxeiro) ou pasaporte", "eu": "NAN (Nortasun Agiri Nazionala), AIZ (Atzerritarren Identitate Zenbakia) edo pasaportea" }, "notes": { "es": "Tiene que estar en vigor.", "ca": "Ha d'estar vigent.", "gl": "Ten que estar en vigor.", "eu": "Indarrean egon behar du." } },
             { "id": "jv-1-d3", "kind": "bring", "name": { "es": "Papeles del caso", "ca": "Papers del cas", "gl": "Papeis do caso", "eu": "Kasuaren paperak" }, "notes": { "es": "Tu abogado o abogada te dice cuáles.", "ca": "El teu advocat o advocada et diu quins.", "gl": "O teu avogado ou avogada dicirache cales.", "eu": "Zure abokatuak esango dizu zeintzuk." } },
             { "id": "jv-1-d4", "kind": "bring", "name": { "es": "Cosas que te ayudan a esperar", "ca": "Coses que t'ajuden a esperar", "gl": "Cousas que che axudan a agardar", "eu": "Itxaroten laguntzen dizuten gauzak" }, "notes": { "es": "Por ejemplo: agua, cascos o un libro.", "ca": "Per exemple: aigua, auriculars o un llibre.", "gl": "Por exemplo: auga, auriculares ou un libro.", "eu": "Adibidez: ura, entzungailuak edo liburu bat." } }
           ]
@@ -344,7 +344,7 @@
             "eu": "Zer egin behar dut orain?"
           },
           "documents": [
-            { "id": "jv-9-d1", "kind": "receive", "name": { "es": "Sentencia (llega más tarde)", "ca": "Sentència (arriba més tard)", "gl": "Sentenza (chega máis tarde)", "eu": "Epaia (geroago iristen da)" }, "notes": { "es": "Normalmente la recibe tu abogado o abogada. La ley da 10 días al juez para dictarla (art. 447 LEC); a veces tarda más.", "ca": "Normalment la rep el teu advocat o advocada. La llei dona 10 dies al jutge per dictar-la (art. 447 LEC); de vegades tarda més.", "gl": "Normalmente recíbea o teu avogado ou avogada. A lei dálle 10 días ao xuíz para ditala (art. 447 LAC); ás veces tarda máis.", "eu": "Normalean zure abokatuak jasotzen du. Legeak 10 egun ematen dizkio epaileari emateko (PZL 447. art.); batzuetan gehiago behar du." } }
+            { "id": "jv-9-d1", "kind": "receive", "name": { "es": "Sentencia (llega más tarde)", "ca": "Sentència (arriba més tard)", "gl": "Sentenza (chega máis tarde)", "eu": "Epaia (geroago iristen da)" }, "notes": { "es": "Normalmente la recibe tu abogado o abogada. La ley da 10 días al juez para dictarla (art. 447 de la Ley de Enjuiciamiento Civil); a veces tarda más.", "ca": "Normalment la rep el teu advocat o advocada. La llei dona 10 dies al jutge per dictar-la (art. 447 de la Ley de Enjuiciamiento Civil); de vegades tarda més.", "gl": "Normalmente recíbea o teu avogado ou avogada. A lei dálle 10 días ao xuíz para ditala (art. 447 LAC); ás veces tarda máis.", "eu": "Normalean zure abokatuak jasotzen du. Legeak 10 egun ematen dizkio epaileari emateko (PZL 447. art.); batzuetan gehiago behar du." } }
           ]
         }
       ]
@@ -375,11 +375,11 @@
           "kind": "prepare",
           "durationMin": [5, 15],
           "title": { "es": "Prepara lo que tienes que llevar" },
-          "expected": { "es": "Antes de salir, coge tu citación y tu DNI." },
-          "instructions": { "es": ["Busca tu citación de testigo.", "Mira la fecha, la hora y la dirección.", "Coge tu DNI, NIE o pasaporte.", "Si trabajas, avisa en tu trabajo de que tienes que ir."] },
+          "expected": { "es": "Antes de salir, coge tu citación y tu DNI (Documento Nacional de Identidad)." },
+          "instructions": { "es": ["Busca tu citación de testigo.", "Mira la fecha, la hora y la dirección.", "Coge tu DNI (Documento Nacional de Identidad), NIE (Número de Identidad de Extranjero) o pasaporte.", "Si trabajas, avisa en tu trabajo de que tienes que ir."] },
           "documents": [
             { "id": "tc-1-d1", "kind": "bring", "name": { "es": "Citación de testigo" }, "notes": { "es": "El aviso que dice cuándo y dónde tienes que ir." } },
-            { "id": "tc-1-d2", "kind": "bring", "name": { "es": "DNI, NIE o pasaporte" } }
+            { "id": "tc-1-d2", "kind": "bring", "name": { "es": "DNI (Documento Nacional de Identidad), NIE (Número de Identidad de Extranjero) o pasaporte" } }
           ]
         },
         {
@@ -436,7 +436,7 @@
           "title": { "es": "Declara" },
           "expected": { "es": "Responde a las preguntas y di la verdad." },
           "instructions": { "es": ["Primero te preguntan tu nombre y otros datos.", "Después juras o prometes decir la verdad.", "Los abogados te hacen preguntas. A veces también el juez.", "Si no sabes o no recuerdas algo, dilo.", "Si no entiendes una pregunta, pide que la repitan."] },
-          "legalNote": { "es": "El testigo jura o promete decir verdad (art. 365 LEC)." },
+          "legalNote": { "es": "El testigo jura o promete decir verdad (art. 365 de la Ley de Enjuiciamiento Civil)." },
           "protocolPhrase": { "es": "No lo recuerdo bien. ¿Puede repetir la pregunta?" },
           "calmTip": { "es": "Respira despacio: cuenta hasta 4 al coger aire y hasta 4 al soltarlo." },
           "documents": []
@@ -451,7 +451,7 @@
           "instructions": { "es": ["Cuando termines, puedes salir de la sala.", "Pide un justificante de asistencia en la oficina del juzgado.", "Sal del edificio por la misma puerta."] },
           "protocolPhrase": { "es": "¿Me pueden dar un justificante de que he venido?" },
           "documents": [
-            { "id": "tc-7-d1", "kind": "receive", "name": { "es": "Justificante de asistencia" }, "notes": { "es": "Sirve para tu trabajo. Puedes pedir que te paguen los gastos (art. 375 LEC)." } }
+            { "id": "tc-7-d1", "kind": "receive", "name": { "es": "Justificante de asistencia" }, "notes": { "es": "Sirve para tu trabajo. Puedes pedir que te paguen los gastos (art. 375 de la Ley de Enjuiciamiento Civil)." } }
           ]
         }
       ]

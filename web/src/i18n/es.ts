@@ -64,7 +64,7 @@ export const es = {
   needs: {
     tea: "TEA (Trastorno del Espectro Autista)",
     teaDesc: "Más avisos de lo que vas a oír y ver. Lenguaje literal. Pocas opciones a la vez.",
-    tdah: "TDAH",
+    tdah: "TDAH (Trastorno por Déficit de Atención e Hiperactividad)",
     tdahDesc: "Pasos cortos. Lo importante primero. El resto, en «Ver más».",
     dislexia: "Dislexia",
     dislexiaDesc: "Letra más fácil de leer. Más espacio entre líneas. Botón para escuchar.",

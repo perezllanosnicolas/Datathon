@@ -103,6 +103,7 @@ Nicolás (Ingeniería de Computadores), Marianela (IA), Cristina (Informática +
 - 2026-10-22 — **Ajustes y flujo:** el tamaño de letra es un slider (A pequeña → A grande) en vez de botones; en cada paso del flujo, «Volver al principio del paso» y «Saltar este paso» pasan a la parte superior, bajo la barra de progreso.
 - 2026-10-22 — **`/sincronizar` ahora mergea a `main`:** trabaja en una rama de funcionalidad, la sube y la mergea a `main` con fast-forward (sin commits directos en `main`); `nomerge` lo evita.
 - 2026-10-22 — **Color y jerarquía (rama `feat/colors-ui`), provisional:** verde = bueno/siguiente/hecho (botón principal, pasos hechos, seleccionado); azul = información y acción destacada; ámbar = aviso; el color nunca va solo (siempre hay texto o icono). El mapa de trámites es un desplegable cerrado por defecto, abierto solo la primera vez (pantalla de confirmar). En «elegir», subir la citación va primero y en un cuadro azul llamativo.
+- 2026-10-22 — **Siglas con significado (rama `feat/acronyms`), provisional:** cuando aparece una sigla (TDAH, DNI, NIE, art. de la LEC) se escribe su significado entre paréntesis, en los 4 idiomas. No se amplían PDF/JPG/PNG/MB ni la atribución de ARASAAC. Las expansiones ca/gl/eu son borradores.
 
 ## Estructura del repo
 - `.agents/skills/` — skills instaladas del proyecto; `skills-lock.json` — sus versiones.

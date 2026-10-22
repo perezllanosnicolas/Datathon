@@ -65,7 +65,7 @@ export const eu: Messages = {
   needs: {
     tea: "AEN (Autismoaren Espektroaren Nahastea)",
     teaDesc: "Entzungo eta ikusiko duzunari buruzko abisu gehiago. Hizkera literala. Aukera gutxi aldi berean.",
-    tdah: "AGNH",
+    tdah: "AGNH (Arreta Gabeziaren eta Hiperaktibitatearen Nahastea)",
     tdahDesc: "Urrats laburrak. Garrantzitsuena lehenik. Gainerakoa, «Gehiago ikusi» atalean.",
     dislexia: "Dislexia",
     dislexiaDesc: "Irakurtzeko letra errazagoa. Lerroen artean tarte handiagoa. Entzuteko botoia.",

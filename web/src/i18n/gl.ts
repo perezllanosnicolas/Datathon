@@ -65,7 +65,7 @@ export const gl: Messages = {
   needs: {
     tea: "TEA (Trastorno do Espectro Autista)",
     teaDesc: "Máis avisos do que vas oír e ver. Linguaxe literal. Poucas opcións á vez.",
-    tdah: "TDAH",
+    tdah: "TDAH (Trastorno por Déficit de Atención e Hiperactividade)",
     tdahDesc: "Pasos curtos. O importante primeiro. O resto, en «Ver máis».",
     dislexia: "Dislexia",
     dislexiaDesc: "Letra máis fácil de ler. Máis espazo entre liñas. Botón para escoitar.",
