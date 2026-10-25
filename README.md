@@ -12,7 +12,7 @@ Proyecto **finalista** del Datathon *Brecha Judicial* (DATAfórum JUSTICIA 2026)
 
 > Prototipo con **datos sintéticos**. No sustituye el asesoramiento legal. Las traducciones al catalán, gallego y euskera están pendientes de revisión por hablantes nativos.
 
-**Demo:** https://datathon-olive.vercel.app · **Documentación:** [`docs/`](docs/README.md) · **Resumen ejecutivo:** [`docs/00-Resumen-ejecutivo.md`](docs/00-Resumen-ejecutivo.md)
+**Demo:** https://datathon-olive.vercel.app · **Vídeo:** https://youtu.be/t4ye8JS2_Rg · **Documentación:** [`docs/`](docs/README.md) · **Resumen ejecutivo:** [`docs/00-Resumen-ejecutivo.md`](docs/00-Resumen-ejecutivo.md)
 
 ## Ejecutarlo
 
@@ -85,13 +85,3 @@ web/
   src/server/         SQLite, seguridad de tokens, OCR
   tests/              Tests unitarios (Vitest)
 ```
-
-## Equipo
-Nicolás Pérez Llanos (Ingeniería de Computadores), Marianela (IA), Cristina (Informática + Criminología), Dani (Informática + ADE), Leyre y Carlos (Derecho).
-
-## Licencia y créditos
-- **Código:** el repositorio aún no tiene licencia (pendiente de decisión del equipo). Mientras tanto, todos los derechos quedan reservados por sus autores.
-- **Pictogramas:** Sergio Palao, [ARASAAC](https://arasaac.org), Gobierno de Aragón. Licencia CC BY-NC-SA 4.0 (**uso no comercial**).
-- **Fotos de las fachadas:** Wikimedia Commons; autoría y licencia en `web/data/catalog/courts.json` y `web/data/realistic/credits.json`.
-- **OpenDyslexic:** SIL Open Font License 1.1.
-- Los logotipos oficiales y de las universidades son de sus titulares. **No es una web oficial.**

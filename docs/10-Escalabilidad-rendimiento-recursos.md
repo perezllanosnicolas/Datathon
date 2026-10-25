@@ -15,7 +15,7 @@
 | Equipo | Portátil AMD Ryzen 7 7840HS (8 núcleos / 16 hilos), 32 GB de RAM, Windows 11 |
 | Modos | (a) `next start` con Node 24.22 directamente en Windows; (b) imagen Docker de la rama `local` (Node 22, Debian *slim*) en Docker Desktop (WSL 2) |
 | Carga | Script propio: 500 peticiones por ruta con **20 en paralelo**, tras 20 de calentamiento. El cliente corre en la misma máquina, así que **resta CPU al servidor**: las cifras son una cota inferior |
-| OCR | Imagen de la citación sintética (`docs/capturas/citacion-sintetica.png`), tres veces seguidas |
+| OCR | Imagen de la citación sintética (`web/tests/fixtures/citacion-testigo-madrid.png`), tres veces seguidas |
 
 ## 3. Resultados
 

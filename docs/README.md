@@ -19,9 +19,8 @@
 | 10 | [Escalabilidad, rendimiento y recursos](10-Escalabilidad-rendimiento-recursos.md) | Mediciones reales, cuellos de botella y dimensionamiento | Futuro |
 | 11 | [Ramas y despliegue](11-Ramas-y-despliegue.md) | Versión local (Docker) y online (Vercel) | Operación |
 | A | [Anexo · Escaneo 3D](Anexo-3D-Escaneo.md) | Experiencia inmersiva con KIRI Engine (futuro) | Futuro |
-| — | [Capturas del prototipo](capturas/README.md) | 14 pantallas en un móvil emulado | Evidencia |
 
-Los documentos 01–06 son la **planificación inicial** del Datathon (21 de octubre), actualizada al estado del código. Los documentos 00 y 07–11 se añadieron después del Datathon para la evaluación técnica.
+Los documentos 01–06 son la **planificación inicial** del Datathon (21 de octubre), actualizada al estado del código. Los documentos 00 y 07–11 se añadieron después del Datathon. Vídeo del demo: https://youtu.be/t4ye8JS2_Rg.
 
 ## Leyenda
 | Marca | Significado |

@@ -1,6 +1,6 @@
 # 09 · Stack ideal para producción (si no fuera una demo)
 
-> **Propuesta [P]** para debatir con Ineco y el equipo. No es una decisión. Parte de lo que hay en el prototipo ([02 · TRD](02-TRD.md)) y explica qué cambiaría para un servicio público real, por qué y en qué orden. Las cifras de rendimiento están en [10 · Escalabilidad](10-Escalabilidad-rendimiento-recursos.md).
+> **Propuesta [P]** para debatir en el equipo. No es una decisión. Parte de lo que hay en el prototipo ([02 · TRD](02-TRD.md)) y explica qué cambiaría para un servicio público real, por qué y en qué orden. Las cifras de rendimiento están en [10 · Escalabilidad](10-Escalabilidad-rendimiento-recursos.md).
 
 ## 1. Qué cambia al pasar de demo a servicio
 El prototipo se diseñó para **una máquina, un día y datos sintéticos**. Un servicio para la Administración de Justicia tiene requisitos que el Datathon no pedía:
