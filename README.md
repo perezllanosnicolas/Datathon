@@ -1,94 +1,97 @@
-# SimuLex (visita virtual accesible al juzgado) — Datathon Brecha Judicial (Reto 3)
+# SimuLex — Visita virtual accesible a la sede judicial
 
-Web **mobile-first** que prepara a una persona neurodivergente antes de ir al juzgado. Muestra, paso a paso, qué va a pasar, cuánto dura cada parte, qué tiene que llevar y qué se espera de ella. Ámbito del demo: **civil**.
+[![CI](https://github.com/perezllanosnicolas/Datathon/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/perezllanosnicolas/Datathon/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/perezllanosnicolas/Datathon/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/perezllanosnicolas/Datathon/actions/workflows/codeql.yml)
+![Node](https://img.shields.io/badge/node-%E2%89%A522.13-339933)
+![Next.js](https://img.shields.io/badge/Next.js-16-000000)
+![Idiomas](https://img.shields.io/badge/idiomas-es%20%C2%B7%20ca%20%C2%B7%20gl%20%C2%B7%20eu-0f7d7c)
+
+Web **para móvil** que prepara a una persona neurodivergente (TEA, TDAH, dislexia, discalculia, disgrafía) **antes de ir a una sede judicial**. Le muestra, paso a paso y adaptado a ella, qué va a pasar, cuánto dura, qué tiene que llevar y qué se espera de ella. Ámbito del demo: **civil**.
+
+Proyecto **finalista** del Datathon *Brecha Judicial* (DATAfórum JUSTICIA 2026), Reto 3 «Justicia inteligente para la neurodiversidad» (Ineco).
 
 > Prototipo con **datos sintéticos**. No sustituye el asesoramiento legal. Las traducciones al catalán, gallego y euskera están pendientes de revisión por hablantes nativos.
 
-Documentación del proyecto: [`docs/`](docs/) (PRD, TRD, AppFlow, UI/UX, Backend, Plan de implementación).
+**Demo:** https://datathon-olive.vercel.app · **Documentación:** [`docs/`](docs/README.md) · **Resumen ejecutivo:** [`docs/00-Resumen-ejecutivo.md`](docs/00-Resumen-ejecutivo.md)
 
-## Arrancar el prototipo
+## Ejecutarlo
 
-Requisitos: **Node.js 22.13 o superior** (usa `node:sqlite`, sin instalar una base de datos).
+El repositorio tiene tres ramas ([detalle](docs/11-Ramas-y-despliegue.md)):
 
+| Rama | Para | Cómo |
+|---|---|---|
+| **`local`** | Ejecutarlo en tu equipo con un comando | `git clone -b local …` → `docker compose up -d --build` → http://localhost:3000 |
+| **`online`** | Publicarlo en internet | Vercel, Root Directory = `web` |
+| **`main`** | Revisar o desarrollar el código | Node.js ≥ 22.13 (ver abajo) |
+
+### Con Docker (rama `local`)
+```bash
+git clone -b local https://github.com/perezllanosnicolas/Datathon.git simulex
+cd simulex
+docker compose up -d --build
+```
+Desde el móvil, en la misma Wi-Fi: `http://<IP-del-ordenador>:3000`. Funciona sin internet después de construir la imagen.
+
+### Con Node (rama `main`)
 ```bash
 cd web
-npm install
-npm run dev          # desarrollo: http://localhost:3000
+npm ci
+npm run dev        # http://localhost:3000
+npm run share      # compila, arranca y muestra un QR para abrirlo en el móvil
 ```
-
-### Demo en el móvil (hosting local)
-```bash
-cd web
-npm run demo         # compila y sirve en 0.0.0.0:3000
-```
-1. El portátil y el móvil tienen que estar en la **misma red Wi-Fi**. Mejor una red propia (punto de acceso del móvil).
-2. En el portátil, busca su IP local (`ipconfig` en Windows; `ifconfig` en macOS o Linux).
-3. En el móvil, abre `http://<IP-del-portátil>:3000`.
-4. El "abogado" se simula con un segundo dispositivo en la misma red, que abre el enlace de invitación.
-
-### Desplegar en Vercel (demo en la presentación)
-1. En Vercel: **Add New → Project**, importa el repositorio y pon **Root Directory = `web`** (framework: Next.js; no hace falta ningún ajuste más ni variables de entorno).
-2. Despliega la rama que se vaya a presentar. El resto es automático: `npm run build` y Node 22 o superior.
-3. En Vercel el disco es de solo lectura salvo `/tmp`: la base de datos (casos y enlace del abogado) vive en `/tmp/app.db` y **no es permanente ni se comparte entre instancias**. Es suficiente para el demo, pero un caso creado puede desaparecer tras un rato sin uso. Antes de presentar, haz un recorrido completo y no reinicies el despliegue.
-4. El OCR descarga los modelos de idioma la primera vez que se sube una citación (la primera lectura tarda más). Las fotos de más de 3,5 MB se reducen en el navegador antes de subirlas (Vercel limita el cuerpo a 4,5 MB); un PDF de más de 4,5 MB no se podrá subir.
-5. Las funciones locales (`npm run share`, el QR) no se usan en Vercel.
-
-### QR para abrirlo en el móvil
-```bash
-cd web
-npm run share            # compila, arranca y muestra una URL + código QR en la terminal
-npm run share -- --dev   # igual, con el servidor de desarrollo
-```
-Escanea el QR con la cámara del móvil (misma Wi-Fi). Si hay varias redes, se recomienda la Wi-Fi y se listan las demás. Si no carga, permite Node.js en el cortafuegos de Windows (redes privadas).
-
-**Fuera de la Wi-Fi:** abre un túnel (p. ej. `cloudflared tunnel --url http://localhost:3000`) y ejecuta `PUBLIC_URL=<url del túnel> npm run share` para generar el QR de esa URL. Un túnel publica el prototipo en internet mientras esté abierto: solo con datos sintéticos.
-
-### Foto de la fachada
-Cada sede judicial lleva una foto fija de su fachada en `web/public/images/facades/` (de Wikimedia Commons; autoría y licencia en `web/data/catalog/courts.json`, campo `photo`). No hace falta clave ni internet.
-
-### OCR de la citación
-El OCR (tesseract.js) se ejecuta **en el propio servidor**. La primera vez descarga los modelos de español, catalán, gallego y euskera en `web/data/tessdata/`, así que hace falta internet. Después funciona sin conexión. Conviene subir una citación de prueba antes del demo para que los modelos ya estén descargados.
-
-Hay citaciones sintéticas en `web/data/citaciones-sinteticas/`. Se pueden subir tal cual (.txt) para probar la extracción, o como foto o PDF.
 
 ## Comprobaciones
 ```bash
 cd web
 npm run lint
 npm run typecheck
-npm run build && npm start      # en una terminal
-npm run smoke                   # en otra: prueba la API de punta a punta (33 comprobaciones)
+npm test                          # 49 tests unitarios (Vitest)
+npm run build && npm start        # en una terminal
+npm run smoke                     # en otra: 36 comprobaciones de la API, con OCR real
 ```
+GitHub Actions ejecuta todo esto en cada push, en Node 22 y 24. En la rama `local` también construye y prueba la imagen Docker.
 
-## Qué incluye (núcleo del demo, Fases 2–7 del plan)
+## Qué incluye
 | Función | Dónde |
 |---|---|
-| Cuestionario de adaptación sin registro: idioma, tamaño de letra (6 niveles), tipo de letra (Atkinson Hyperlegible u OpenDyslexic), movimiento, colores tranquilos, contraste, leer en voz alta, dictado, tipo de imagen por paso y filtros por neurodivergencia | `/cuestionario`, `/ajustes` |
-| Imagen por paso: pictogramas de ARASAAC o fotos | `web/public/pictos/`, `web/public/images/realistic/` |
-| Glosario «Palabras difíciles» con buscador (39 términos) | `/glosario` |
-| Cuatro idiomas (es, ca, gl, eu), con aviso si un texto aún no está traducido | `web/src/i18n/`, contenido en `web/data/catalog/` |
-| Buscador con filtros, tolerante a tildes, que busca en los cuatro idiomas | `/buscar` |
-| Subir citación: foto/PDF → texto (OCR en el servidor) → trámite y juzgado del catálogo → la persona lo confirma | `/citacion`, `/api/citation` |
-| Flujo paso a paso con barra de progreso ("Paso 3 de 9 · Has hecho 2 · Te quedan 7"), fases, lista de pasos, saltar y repetir | `/caso/[id]` |
-| Foto de la fachada de la sede judicial, con alternativa de texto | `/caso/[id]` (paso de llegada) |
-| Enlace del abogado: 48 h, revocable, nombre y número de colegiado obligatorios (sin comprobar), solo texto | `/caso/[id]/abogado`, `/abogado/[token]` |
+| Cuestionario de adaptación **sin registro**: idioma, tamaño (6 niveles) y tipo de letra (Atkinson Hyperlegible, OpenDyslexic), movimiento, colores tranquilos, contraste, leer en voz alta, dictado, pictogramas o fotos y filtros por neurodivergencia | `/cuestionario`, `/ajustes` |
+| Cuatro idiomas (es, ca, gl, eu), con aviso si un texto aún no está traducido | `web/src/i18n/`, `web/data/catalog/` |
+| Buscador tolerante a tildes, en los cuatro idiomas | `/buscar` |
+| **Subir la citación:** foto o PDF → texto (OCR en el propio servidor) → trámite y sede del catálogo → la persona confirma | `/citacion`, `/api/citation` |
+| Flujo paso a paso con **barra de progreso**, fases, saltar y repetir | `/caso/[id]` |
+| Foto de la fachada de la sede con alternativa en texto | pasos de llegada |
+| **Enlace del abogado/a:** 48 h, revocable, solo texto, sin ver el perfil | `/caso/[id]/abogado`, `/abogado/[token]` |
 | Resumen con la lista de documentos e impresión | `/caso/[id]/resumen` |
+| Glosario «Palabras difíciles» (39 términos) | `/glosario` |
 
-## Privacidad (diseño actual)
-- El perfil de adaptaciones y el progreso se guardan **solo en el navegador**. Al servidor solo llega el idioma, en una cookie, para el atributo `lang`.
-- El servidor guarda un caso anónimo: el trámite, el juzgado, un hash del secreto del dispositivo y los documentos del abogado. No guarda nombres ni la citación.
-- La citación se procesa en memoria y se descarta. No se escribe en disco y no se registra su texto.
+## Privacidad
+- El perfil de adaptaciones y el progreso se guardan **solo en el navegador**. Al servidor solo llega el idioma.
+- El servidor guarda un caso anónimo (trámite, sede, hash de un secreto y los documentos del abogado). Ni nombres ni la citación.
+- La citación se procesa **en memoria** y se descarta; su texto no se registra.
 
 ## Estructura
 ```
-docs/                 Documentación del proyecto
+.github/              CI (tests, smoke, Docker, CodeQL), Dependabot, plantillas
+docs/                 Documentación (empieza por docs/README.md)
 web/
-  data/catalog/       Trámites, juzgados y glosario (JSON editable por el equipo de Derecho)
+  data/catalog/       Trámites, sedes y glosario en 4 idiomas (JSON editable por Derecho)
   data/citaciones-sinteticas/   Citaciones de prueba
-  scripts/smoke-test.mjs        Prueba de la API
+  public/             Fachadas, fotos por paso, pictogramas ARASAAC, logotipos
+  scripts/            Smoke test, QR, descarga de pictogramas y de modelos OCR
   src/app/            Pantallas y API (Next.js App Router)
   src/components/     Componentes (barra de progreso, fachada, documentos…)
   src/i18n/           Textos de la interfaz en es, ca, gl, eu
   src/lib/            Catálogo, extracción de la citación, almacenamiento en el dispositivo
   src/server/         SQLite, seguridad de tokens, OCR
+  tests/              Tests unitarios (Vitest)
 ```
+
+## Equipo
+Nicolás Pérez Llanos (Ingeniería de Computadores), Marianela (IA), Cristina (Informática + Criminología), Dani (Informática + ADE), Leyre y Carlos (Derecho).
+
+## Licencia y créditos
+- **Código:** el repositorio aún no tiene licencia (pendiente de decisión del equipo). Mientras tanto, todos los derechos quedan reservados por sus autores.
+- **Pictogramas:** Sergio Palao, [ARASAAC](https://arasaac.org), Gobierno de Aragón. Licencia CC BY-NC-SA 4.0 (**uso no comercial**).
+- **Fotos de las fachadas:** Wikimedia Commons; autoría y licencia en `web/data/catalog/courts.json` y `web/data/realistic/credits.json`.
+- **OpenDyslexic:** SIL Open Font License 1.1.
+- Los logotipos oficiales y de las universidades son de sus titulares. **No es una web oficial.**

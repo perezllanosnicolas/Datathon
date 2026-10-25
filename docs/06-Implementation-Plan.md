@@ -4,8 +4,10 @@
 > Núcleo: adaptaciones y diagrama de flujo con barra de progreso, **sin registro**. El 3D es un anexo futuro.
 > Prioridad actual: **implementar**. El análisis RGPD queda aplazado [D]. Demo en **local** o en **Vercel** (provisional) [D].
 
-## Estado (2026-10-22)
-El prototipo **SimuLex** (Fases 2–7 y parte de la 9) está en `main` (ver `README.md`). Se ha probado con `npm run lint`, `npm run typecheck`, `npm run smoke` (33 comprobaciones: API, enlace del abogado y citaciones sintéticas en 4 idiomas) y con un recorrido en el navegador del móvil.
+## Estado (2026-10-25)
+**El Datathon ha terminado: SimuLex fue finalista** y, tras la presentación, se habló con Ineco de la posibilidad de implementarlo. El repositorio se ha preparado para su evaluación técnica (Fase 11).
+
+El prototipo (Fases 2–7 y parte de la 9) está en `main` (ver `README.md`). Se prueba con `npm run lint`, `npm run typecheck`, `npm test` (49 tests unitarios), `npm run smoke` (36 comprobaciones: API, enlace del abogado, citaciones sintéticas en 4 idiomas y OCR real de una imagen), en GitHub Actions, y con un recorrido en el navegador del móvil.
 
 | Fase | Estado |
 |---|---|
@@ -19,14 +21,16 @@ El prototipo **SimuLex** (Fases 2–7 y parte de la 9) está en `main` (ver `REA
 | 7 · Enlace del abogado | Hecha (frágil en Vercel: base de datos en `/tmp`) |
 | 8 · ALIA-40B | No empezada |
 | 9 · Apoyos | Hecha en parte: frases, calma, duración, pictogramas ARASAAC, fotos, glosario, voz |
-| 10 · Calidad y entrega | Pendiente: auditoría de accesibilidad, pruebas e2e, ensayo, vídeo y presentación |
+| 10 · Calidad y entrega | Hecha la entrega del Datathon (ensayo, vídeo con Recordly y presentación). Pendiente: auditoría de accesibilidad y pruebas e2e de la interfaz |
+| 11 · Evaluación técnica (post-Datathon) | Hecha: tests unitarios, CI, ramas `local` (Docker) y `online` (Vercel), documentación 00 y 07–11, dos fallos del OCR corregidos |
 
 **Pendiente:**
 - Fase 0: el equipo confirma el trámite y las sedes del demo.
 - Fase 1: revisión legal (artículos de la LEC citados; el trámite «testigo» y el juicio verbal de ejemplo aún citan el art. 7 bis LEC) y revisión de las traducciones ca/gl/eu.
 - Fase 6: probar con fotos reales de móvil y con PDF escaneados (hoy un PDF sin texto no se lee).
 - Permisos: logotipos oficiales y de las universidades, fotos de `Assets/`, foto de la sede de Madrid.
-- Fases 8 y 10.
+- Fase 8 y lo que queda de la 10.
+- Licencia del repositorio y uso de los pictogramas de ARASAAC (CC BY-NC-SA, no comercial) si el proyecto continúa con una empresa.
 
 ## 1. Visión general
 
@@ -154,7 +158,14 @@ El prototipo **SimuLex** (Fases 2–7 y parte de la 9) está en `main` (ver `REA
 - Presentación: un mensaje por diapositiva; problema → persona (un caso civil inventado, con datos sintéticos) → solución → demo → impacto → siguientes pasos (incluye el anexo 3D como visión).
 - **Hecho cuando:** demo estable y presentación ensayada.
 
-## 3. Siguientes pasos (2026-10-22)
+## Fase 11 — Evaluación técnica (post-Datathon, 2026-10-25)
+- Tests unitarios (Vitest) y CI (GitHub Actions, CodeQL, Dependabot).
+- Ramas `local` (Docker) y `online` (Vercel): [11 · Ramas y despliegue](11-Ramas-y-despliegue.md).
+- Documentación para evaluadores: [00](00-Resumen-ejecutivo.md), [07](07-Diagramas.md), [08](08-Herramientas-usadas-en-el-desarrollo.md), [09](09-Stack-ideal-produccion.md), [10](10-Escalabilidad-rendimiento-recursos.md).
+- La hoja de ruta propuesta hacia un piloto está en [07 §2](07-Diagramas.md#2-hoja-de-ruta-propuesta-tras-el-datathon-gantt-p).
+- **Hecho cuando:** la CI está en verde en las tres ramas y otra persona ejecuta la versión local con `docker compose up` sin ayuda.
+
+## 3. Siguientes pasos (2026-10-22, durante el Datathon)
 1. Equipo: confirmar el trámite y las sedes del demo (hoy, el caso de la casa heredada como principal).
 2. Leyre y Carlos: revisar los artículos citados en los tres trámites y corregir el trámite «testigo» y el juicio verbal de ejemplo.
 3. Decidir quién traduce y revisa el catalán, euskera y gallego.

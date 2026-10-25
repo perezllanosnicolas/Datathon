@@ -2,7 +2,7 @@
 
 > Leyenda: **[D]** decidido · **[P]** propuesta · **[?]** abierto.
 
-> **Estado (2026-10-22):** el prototipo **SimuLex** está construido en `web/` y mergeado en `main`. Este documento describe lo que hay en el código; lo que sigue siendo propuesta o futuro está marcado.
+> **Estado (2026-10-25):** el prototipo **SimuLex** está construido en `web/` y mergeado en `main`; fue finalista del Datathon. Este documento describe lo que hay en el código; lo que sigue siendo propuesta o futuro está marcado. La versión para producción se propone en [09 · Stack ideal](09-Stack-ideal-produccion.md) y el rendimiento medido está en [10 · Escalabilidad](10-Escalabilidad-rendimiento-recursos.md).
 
 ## 1. Decisiones técnicas tomadas
 - **[D]** Aplicación **web mobile-first**.
@@ -49,7 +49,7 @@ Futuro (no implementado): ALIA-40B · Street View · escaneo 3D (KIRI Engine)
 | Voz | Web Speech API del navegador: `speechSynthesis` (leer en voz alta) y `SpeechRecognition` (dictado) | `web/src/components/ui.tsx`, `Dictation.tsx` |
 | Pictogramas | **ARASAAC** (CC BY-NC-SA; atribución visible), descargados con `npm run pictos` | `web/public/pictos/` |
 | Seguridad | `node:crypto`: secretos aleatorios guardados como hash SHA-256, comparación en tiempo constante, límite de peticiones en memoria | `web/src/server/security.ts` |
-| Calidad | ESLint 9 (`eslint-config-next`), `tsc --noEmit`, prueba de la API `npm run smoke` (33 comprobaciones) | `web/scripts/smoke-test.mjs` |
+| Calidad | ESLint 9 (`eslint-config-next`), `tsc --noEmit`, **Vitest** (49 tests unitarios en `web/tests/`), GitHub Actions y CodeQL, prueba de la API `npm run smoke` (36 comprobaciones, con OCR real de una imagen) | `web/scripts/smoke-test.mjs` |
 
 - **Diagrama de flujo [D]:** componente propio accesible (lista ordenada de pasos con navegación), no un lienzo de arrastrar: funciona con teclado y lector de pantalla. Encima va un mapa de pasos desplegable (`FlowMap`) y la barra de progreso (`ProgressBar`).
 - **Contenido como datos [D]:** trámites, sedes y glosario viven en JSON, no en el código. No hay panel de editor: el equipo edita los JSON.
@@ -85,19 +85,21 @@ ALIA-40B tiene unos 40 000 millones de parámetros (las fuentes lo sitúan en la
 - Plan B de demo: respuestas pregrabadas y contenido ya escrito si la IA falla.
 
 ## 2e. Hosting del demo: local y Vercel
+> **Desde 2026-10-25:** cada forma de ejecutarlo tiene su rama: **`local`** (Docker Compose, SQLite en un volumen permanente y modelos del OCR dentro de la imagen) y **`online`** (Vercel). `main` tiene el código común. Guía en [11 · Ramas y despliegue](11-Ramas-y-despliegue.md).
+
 ### Local [D]
 - **Una sola máquina** con la web, la API, la base de datos y el OCR. Sin semilla en la base de datos: el catálogo se lee de los JSON y las tablas se crean solas al arrancar.
 - Comandos (en `web/`): `npm run dev` (desarrollo), `npm run demo` (compila y sirve en `0.0.0.0:3000`), `npm run share` (arranca y muestra una URL y un **QR** de la red local; con `PUBLIC_URL` genera el QR de un túnel). Ver `README.md`.
 - **Acceso desde el móvil:** el móvil y el equipo van en la **misma red Wi-Fi**. Mejor una red propia (punto de acceso del móvil). `next.config.ts` permite abrir el servidor de desarrollo desde IP locales (`allowedDevOrigins`).
 - **Enlace del abogado:** con servidor local, el enlace solo funciona dentro de esa red. El "abogado" se simula con un segundo dispositivo en la misma red, o con un túnel temporal.
 - **HTTPS:** en red local se usa HTTP. No hay PWA ni funciones que exijan HTTPS (la cámara se usa con el selector de archivos del móvil). El botón de copiar el enlace tiene alternativa si el portapapeles no está disponible por HTTP.
-- **Sin internet:** todo funciona salvo la primera descarga de los modelos del OCR. Conviene subir una citación de prueba antes del demo.
+- **Sin internet:** todo funciona salvo la primera descarga de los modelos del OCR (`npm run ocr:models` los descarga por adelantado; la imagen Docker ya los incluye). Hasta el 2026-10-25 la caché de los modelos no se escribía por un fallo (faltaba la carpeta) y se descargaban en cada arranque; ya está corregido.
 
 ### Vercel [D, provisional]
 - Root Directory = `web`; sin variables de entorno.
 - El disco solo es escribible en `/tmp`: la base de datos va en `/tmp/app.db` y los modelos del OCR en `/tmp/tessdata` (detectado con la variable `VERCEL`). La base de datos **no es permanente ni se comparte entre instancias**: un caso o un enlace del abogado puede desaparecer tras un rato sin uso.
 - Vercel limita el cuerpo de la petición a 4,5 MB: las fotos de más de 3,5 MB se reducen en el navegador antes de subirlas. Un PDF de más de 4,5 MB no se puede subir.
-- `next.config.ts` incluye los archivos de `tesseract.js` en la traza (`outputFileTracingIncludes`) porque los carga en tiempo de ejecución.
+- `next.config.ts` incluye en la traza (`outputFileTracingIncludes`) `tesseract.js` **y todas sus dependencias**, calculadas a partir de los `package.json`, porque los carga en tiempo de ejecución. Antes del 2026-10-25 faltaban las dependencias (`bmp-js`…) y el OCR de imágenes fallaba en las compilaciones *standalone*.
 - Si el enlace del abogado tiene que ser fiable entre dispositivos, habría que pasar a una base de datos externa [?].
 
 ### Otros
@@ -192,8 +194,9 @@ Persona crea enlace ─► lo comparte ella misma (la app abre el menú de compa
 - Asistente con ALIA-40B (opcional, ver §2f): solo con contenido revisado del catálogo, sin datos personales ni la citación [P].
 
 ## 6. Calidad
-- Hecho: `npm run lint` y `npm run typecheck` sin errores; `npm run smoke` prueba la API de punta a punta (citaciones sintéticas, casos y enlace del abogado).
-- Pendiente: auditoría con `web-design-guidelines`; pruebas end-to-end con `playwright-cli`; WCAG AA mínimo.
+- Hecho: `npm run lint` y `npm run typecheck` sin errores; `npm test` (Vitest, 49 tests: extracción, catálogo, traducciones y seguridad de los tokens); `npm run smoke` prueba la API de punta a punta (citaciones sintéticas, OCR real de una imagen, casos y enlace del abogado).
+- **CI** (GitHub Actions) en las ramas `main`, `local` y `online`: todo lo anterior en Node 22 y 24, la imagen Docker en `local`, CodeQL y Dependabot. Ver [07 §10](07-Diagramas.md#10-integración-continua).
+- Pendiente: auditoría con `web-design-guidelines`; pruebas end-to-end de la interfaz con Playwright y axe-core; WCAG AA mínimo.
 
 ## 7. Preguntas abiertas
 - [x] Motor del OCR: tesseract.js + unpdf en el servidor (implementado).

@@ -38,7 +38,8 @@ check("case with secret", (await call(`/api/cases/${id}`, { secret })).status ==
 const link = await call(`/api/cases/${id}/links`, { secret, body: { language: "ca" } });
 check("create link", link.status === 201);
 const hours = (Date.parse(link.data.expiresAt) - Date.now()) / 36e5;
-check("link valid ~48h", hours > 47.9 && hours <= 48, hours.toFixed(2));
+// Tolerance both ways: server and client clocks may differ slightly (e.g. a container).
+check("link valid ~48h", Math.abs(hours - 48) < 0.1, hours.toFixed(2));
 const tok = link.data.token;
 const lv = await call(`/api/lawyer/${tok}`);
 check("lawyer view", lv.status === 200 && lv.data.language === "ca" && !("secret" in lv.data));
@@ -81,6 +82,12 @@ await new Promise((r) => setTimeout(r, 61_000));
 const bad = new FormData();
 bad.append("file", new Blob([new Uint8Array([1, 2, 3, 4])], { type: "application/octet-stream" }), "x.bin");
 check("citation rejects unknown type", (await fetch(BASE + "/api/citation", { method: "POST", body: bad })).status === 415);
+
+// Real OCR on an image (tesseract.js): catches missing runtime files in standalone or serverless builds.
+const photo = new FormData();
+photo.append("file", new Blob([await readFile(path.join(import.meta.dirname, "..", "tests", "fixtures", "citacion-testigo-madrid.png"))], { type: "image/png" }), "c.png");
+const ocr = await (await fetch(BASE + "/api/citation", { method: "POST", body: photo })).json();
+check("citation OCR from a PNG", ocr.procedures?.[0]?.id === "testigo-juicio-civil" && ocr.courts?.[0]?.id === "madrid-primera-instancia" && ocr.time === "10:30", JSON.stringify([ocr.procedures?.[0]?.id, ocr.courts?.[0]?.id, ocr.time, ocr.error]));
 
 // Facade photos are static files
 for (const f of ["madrid-primera-instancia", "bcn-ciutat-justicia"]) {

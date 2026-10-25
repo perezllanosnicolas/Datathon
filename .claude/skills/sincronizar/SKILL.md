@@ -40,13 +40,14 @@ Lee los cambios (`git diff`, archivos nuevos) y revisa si la documentación los 
    - "Estructura del repo": añade las carpetas o archivos nuevos importantes, y quita los que ya no existan.
    - "Skills": si se instaló o creó una skill, anótala.
    - "Fase actual": ajusta si el proyecto ha cambiado de fase.
-2. **`docs/`** (01-PRD, 02-TRD, 03-AppFlow, 04-UI-UX-Design, 05-Backend-Schema, 06-Implementation-Plan, Anexo-3D-Escaneo)
+2. **`docs/`** (índice `README.md`, 00-Resumen-ejecutivo, 01-PRD, 02-TRD, 03-AppFlow, 04-UI-UX-Design, 05-Backend-Schema, 06-Implementation-Plan, 07-Diagramas, 08-Herramientas, 09-Stack-ideal, 10-Escalabilidad, 11-Ramas-y-despliegue, Anexo-3D-Escaneo) y `CHANGELOG.md`
    - Si el código cambia el comportamiento descrito, actualiza el documento correspondiente.
    - Mueve de [P]/[?] a [D] solo lo que el equipo haya decidido.
    - Marca como hechas las fases del plan que cumplan su criterio de "Hecho cuando", sin exagerar.
    - Mantén coherencia entre documentos (si cambia el stack, cambia en PRD, TRD y plan).
-3. **`README.md`**: si hay código ejecutable, comprueba que "cómo ejecutar el prototipo" sigue siendo cierto. Si no existe y ya hay código, créalo.
-4. Reglas de escritura de la documentación: lenguaje simple, frases cortas, sin afirmar contenido legal sin citar la norma.
+3. **Ramas `local` y `online`** (desde 2026-10-25): después del merge a `main`, avisa de que hay que llevar `main` a `local` y `online` (ver `docs/11-Ramas-y-despliegue.md`); no lo hagas sin que se pida.
+4. **`README.md`**: si hay código ejecutable, comprueba que "cómo ejecutar el prototipo" sigue siendo cierto. Si no existe y ya hay código, créalo.
+5. Reglas de escritura de la documentación: lenguaje simple, frases cortas, sin afirmar contenido legal sin citar la norma.
 Si no hace falta cambiar nada, no toques los archivos.
 
 ### 4. Comprobaciones antes del commit

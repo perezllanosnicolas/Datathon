@@ -2,7 +2,7 @@
 
 > Leyenda: **[D]** decidido por el equipo · **[P]** propuesta (pendiente de acuerdo) · **[?]** pregunta abierta.
 > Fuentes: descripción del equipo (2026-10-21, actualizada) y Google Doc de ideas.
-> **Estado (2026-10-22):** el núcleo está construido en el prototipo **SimuLex** («Visita virtual accesible al juzgado»; nombre provisional) en `web/`. Cómo arrancarlo: `README.md`. Detalle técnico: [TRD](02-TRD.md).
+> **Estado (2026-10-25):** proyecto **finalista** del Datathon. El núcleo está construido en el prototipo **SimuLex** («Visita virtual accesible al juzgado»; nombre provisional) en `web/`. Cómo arrancarlo: `README.md`. Detalle técnico: [TRD](02-TRD.md).
 
 ## 1. Problema
 Las personas neurodivergentes (TEA, TDAH, dislexia, discalculia, disgrafía) encuentran barreras al acudir a un juzgado: entorno desconocido, estímulos sensoriales, pasos poco claros, lenguaje difícil. La brecha se reduce preparando a la persona y capacitando al personal. Enfoque **no capacitista**: la adaptación es una responsabilidad de la institución, no de la persona. [D]
