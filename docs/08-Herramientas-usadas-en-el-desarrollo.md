@@ -1,6 +1,6 @@
 # 08 · Herramientas usadas en el desarrollo
 
-> Qué herramientas, configuraciones y pasos se usaron para construir SimuLex durante el Datathon (21–23 de octubre de 2026) y en la preparación posterior para la evaluación técnica. Para cada una se indica **qué es**, **dónde se usó** y **para qué**.
+> Qué herramientas, configuraciones y pasos se usaron para construir SimuLex durante el Datathon (21–23 de octubre de 2026) y en la estandarización posterior del repositorio. Para cada una se indica **qué es**, **dónde se usó** y **para qué**.
 >
 > El prototipo lo construyó un equipo de seis personas en menos de tres días. Gran parte del código y de la documentación se escribió con un **asistente de programación con IA (Claude Code)** dirigido por Nicolás. Este documento explica cómo se configuró ese entorno para que el resultado fuera revisable y reproducible.
 
@@ -8,7 +8,7 @@
 
 | Bloque | Herramientas |
 |---|---|
-| [1. Gestión del conocimiento](#1-gestión-del-conocimiento) | Bóveda de Obsidian «Vegapunk», Google Doc del equipo, `CLAUDE.md` del proyecto |
+| [1. Gestión del conocimiento](#1-gestión-del-conocimiento) | Segundo cerebro en Obsidian, Google Doc del equipo, `CLAUDE.md` del proyecto |
 | [2. Planificación](#2-planificación-los-seis-documentos) | Seis documentos (PRD, TRD, AppFlow, UI/UX, Backend, Plan) con leyenda [D]/[P]/[?]/[V] |
 | [3. Asistente de programación](#3-asistente-de-programación-claude-code) | Claude Code en VS Code, repositorio `claude-config`, protocolo de pre-vuelo |
 | [4. Skills](#4-skills-habilidades-del-asistente) | Skills globales, de la bóveda, instaladas en el proyecto y propias del proyecto |
@@ -21,7 +21,7 @@
 
 ## 1. Gestión del conocimiento
 
-### Bóveda de Obsidian «Vegapunk» (personal de Nicolás)
+### Segundo cerebro en Obsidian (personal de Nicolás)
 - **Qué es:** un «segundo cerebro» en [Obsidian](https://obsidian.md/) (notas Markdown enlazadas), fuera de este repositorio. Tiene su propio `CLAUDE.md` con convenciones: enlaces `[[doble corchete]]`, etiquetas (`#proyecto`, `#estado/activo`…), nombres en minúsculas con guiones, fechas `YYYY-MM-DD` y una sección «🔗 Relacionado» en cada nota.
 - **Estructura:** `proyectos/`, `personas/`, `research/`, `resources/`, `ideas/`, `inbox/`, `daily-notes/`, `templates/` (plantillas de proyecto, persona, research…) y `bases/` (vistas de tabla de proyectos y personas con Obsidian Bases).
 - **Dónde se usó:**
@@ -57,7 +57,7 @@ Antes de escribir código (21 de octubre, de 18:00 a 21:00) se redactaron seis d
 - **Leyenda común:** **[D]** decidido · **[P]** propuesta · **[?]** abierto · **[V]** a validar por Derecho. Evita que una propuesta del asistente se tome por una decisión del equipo.
 - **Plan por fases con corte mínimo:** el plan definía qué se recortaba primero si faltaba tiempo (apoyos → IA → enlace del abogado → citación). El buscador, el flujo y la barra de progreso no se recortaban.
 - **Para qué:** construir el núcleo en una sola tarde (Fases 2–7 en ~50 minutos de implementación) porque las decisiones ya estaban escritas, y poder revisar después si el código cumple lo acordado.
-- Tras el Datathon se añadieron los documentos [00](00-Resumen-ejecutivo.md) y [07–11](README.md) para la evaluación técnica.
+- Tras el Datathon se añadieron los documentos [00](00-Resumen-ejecutivo.md) y [07–11](README.md) para documentar la calidad, el futuro y el despliegue.
 
 ## 3. Asistente de programación: Claude Code
 - **Qué es:** [Claude Code](https://claude.com/claude-code), el asistente de programación de Anthropic, usado como extensión de **VS Code** en Windows 11. Lee y edita archivos, ejecuta comandos y trabaja con Git bajo supervisión.
@@ -77,7 +77,7 @@ Una *skill* es un paquete de instrucciones (un `SKILL.md` y, a veces, scripts) q
 | `preparar-tarea` | Pre-vuelo: prompt optimizado, modelo/esfuerzo y skills (ver §3) |
 | `find-skills` | Buscar skills públicas con `npx skills find` y proponer instalarlas (solo con confirmación) |
 
-### 4.2 De la bóveda «Vegapunk» (`Vegapunk/.claude/skills/`)
+### 4.2 Del segundo cerebro en Obsidian (`.claude/skills/` de la bóveda)
 | Skill | Para qué |
 |---|---|
 | `obsidian-markdown`, `obsidian-bases`, `json-canvas` | Escribir con la sintaxis de Obsidian (wikilinks, propiedades, vistas `.base`, lienzos) |
@@ -90,7 +90,7 @@ Instaladas con la CLI `npx skills add` el 21 de octubre. Cada una se fijó con u
 
 | Skill | Origen | Dónde se usó | Para qué |
 |---|---|---|---|
-| `playwright-cli` (+ `dev`) | `microsoft/playwright-cli` | Capturas de [`docs/capturas/`](capturas/README.md), recorridos en vista de móvil, vídeo de respaldo del demo | Controlar el navegador para probar la web |
+| `playwright-cli` (+ `dev`) | `microsoft/playwright-cli` | Recorridos en vista de móvil, vídeo de respaldo del demo | Controlar el navegador para probar la web |
 | `web-design-guidelines` | `vercel-labs/agent-skills` | Revisión de interfaz y accesibilidad | Comprobar la UI con buenas prácticas web |
 | `design-taste-frontend` | `Leonxlnx/taste-skill` | Criterio visual (jerarquía, color, espaciado) | Evitar una estética genérica. El análisis de seguridad de la CLI la marcó con riesgo medio: se revisó antes de usarla |
 | `baoyu-image-gen` | `jimliu/baoyu-skills` | `npm run images:real` (`web/data/realistic/`) | Generar imágenes realistas por paso con APIs de imagen. Necesita claves propias, que nunca se suben. Después se sustituyeron casi todas por fotos (ver §6) |
@@ -116,7 +116,7 @@ Instaladas con la CLI `npx skills add` el 21 de octubre. Cada una se fijó con u
 | **ESLint 9** y `tsc --noEmit` | `npm run lint`, `npm run typecheck` | Estilo y tipos |
 | **Vitest 3** | `web/tests/`, `npm test` | 49 tests unitarios: extracción de la citación, integridad del catálogo, traducciones completas y seguridad de los enlaces |
 | **Smoke test propio** | `web/scripts/smoke-test.mjs`, `npm run smoke` | 36 comprobaciones de la API de punta a punta contra un servidor arrancado, incluido el OCR real de una imagen |
-| **playwright-cli** | `docs/capturas/` | Pruebas visuales en un Pixel 7 emulado |
+| **playwright-cli** | Recorridos del prototipo | Pruebas visuales en un Pixel 7 emulado |
 
 ## 6. Contenido y recursos visuales
 | Recurso | Dónde | Para qué | Licencia / nota |
@@ -150,7 +150,7 @@ Para las pruebas manuales en vista de móvil se usó la extensión de Edge *Simu
   3. **Escenario de móvil:** una página a pantalla completa en Edge con un **marco de iPhone** y la app dentro de un iframe de 390 × 844, el logotipo de SimuLex, un panel lateral grande con el título de cada sección para proyectar y un recuadro con el QR.
   4. **Ajustes de Recordly:** se graba solo la ventana de Edge (sin barra de tareas ni panel) y se quitó el relleno del fondo.
   5. **Guion del recorrido** de ~4 minutos por todas las funciones, con capturas de control durante la grabación.
-- **Resultado:** grabaciones de ~4 minutos a 1920 × 1080 con unos 50 clics registrados, que Recordly usa para los zooms. Además, un vídeo de respaldo grabado con Playwright.
+- **Resultado:** grabaciones de ~4 minutos a 1920 × 1080 con unos 50 clics registrados, que Recordly usa para los zooms. Además, un vídeo de respaldo grabado con Playwright. **Vídeo publicado:** https://youtu.be/t4ye8JS2_Rg
 - **Para qué:** tener un demo en vídeo estable para la presentación por si fallaba la red, sin grabarlo a mano.
 
 ## 8. Repositorio y entrega

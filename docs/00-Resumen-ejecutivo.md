@@ -1,6 +1,6 @@
 # 00 · Resumen ejecutivo
 
-> Para quien evalúa el proyecto: qué es, en qué estado está y dónde mirar. Lectura de 5 minutos.
+> Qué es SimuLex, en qué estado está y dónde mirar. Lectura de 5 minutos.
 
 ## Qué es
 **SimuLex** («Visita virtual accesible a la sede judicial») es una web para móvil que **prepara a una persona neurodivergente** (TEA, TDAH, dislexia, discalculia, disgrafía) **antes de ir a una sede judicial** por un procedimiento civil. Le enseña, paso a paso y adaptado a ella, qué va a pasar, cuánto dura cada parte, qué tiene que llevar, cómo es la entrada del edificio y qué se espera de ella.
@@ -23,7 +23,7 @@ Glosario de 39 «palabras difíciles», lenguaje simple en toda la app y siglas 
 | | |
 |---|---|
 | **Funciona** | Núcleo completo (Fases 2–7 del [plan](06-Implementation-Plan.md)) y parte de los apoyos (Fase 9) |
-| **Demo** | https://datathon-olive.vercel.app · vídeo de ~4 min · [capturas](capturas/README.md) |
+| **Demo** | https://datathon-olive.vercel.app · [vídeo del demo (~4 min)](https://youtu.be/t4ye8JS2_Rg) |
 | **Ejecutar** | `docker compose up` (rama `local`) o Vercel (rama `online`): [11 · Ramas y despliegue](11-Ramas-y-despliegue.md) |
 | **Calidad** | 49 tests unitarios, smoke test de 36 comprobaciones (con OCR real), CI en Node 22 y 24, imagen Docker probada en CI, CodeQL |
 | **Datos** | Solo sintéticos. Sin documentación clínica ni diagnósticos |
@@ -46,7 +46,6 @@ Resumen de [09 · Stack ideal](09-Stack-ideal-produccion.md) y [10 · Escalabili
 **Rendimiento:** un solo proceso del prototipo sirve 145–296 páginas por segundo; la demanda nacional estimada en hora punta es de ~13 por segundo. El reto para escalar es la fiabilidad y el contenido, no la potencia.
 
 ## Puntos abiertos que hay que resolver antes de reutilizarlo
-- **Licencia del repositorio:** aún no tiene. Hasta que se publique una, el código no se puede reutilizar legalmente.
 - **Pictogramas de ARASAAC:** licencia CC BY-NC-SA (**no comercial**). Un uso por o para una empresa necesita permiso del Gobierno de Aragón o sustituirlos.
 - **Fotos y logotipos:** confirmar la autoría y los derechos de las fotos de los pasos, la foto de la sede de Madrid y el permiso para usar los logotipos oficiales y de las universidades.
 - **Revisión jurídica** de los artículos marcados [V] y **revisión nativa** de las traducciones.
@@ -57,5 +56,5 @@ Resumen de [09 · Stack ideal](09-Stack-ideal-produccion.md) y [10 · Escalabili
 | Entender el producto | [01 · PRD](01-PRD.md), [03 · AppFlow](03-AppFlow.md), [04 · UI/UX](04-UI-UX-Design.md) |
 | Revisar la técnica | [02 · TRD](02-TRD.md), [05 · Backend](05-Backend-Schema.md), [07 · Diagramas](07-Diagramas.md) |
 | Ver cómo se hizo | [06 · Plan](06-Implementation-Plan.md), [08 · Herramientas](08-Herramientas-usadas-en-el-desarrollo.md) |
-| Evaluar el futuro | [09 · Stack ideal](09-Stack-ideal-produccion.md), [10 · Escalabilidad](10-Escalabilidad-rendimiento-recursos.md) |
+| Ver el futuro | [09 · Stack ideal](09-Stack-ideal-produccion.md), [10 · Escalabilidad](10-Escalabilidad-rendimiento-recursos.md) |
 | Ejecutarlo | [11 · Ramas y despliegue](11-Ramas-y-despliegue.md) |

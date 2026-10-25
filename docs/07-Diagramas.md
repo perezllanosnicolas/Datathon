@@ -37,7 +37,7 @@ gantt
 
     section Núcleo (Fases 2–7)
     Esqueleto Next.js, adaptaciones, buscador, flujo, OCR, abogado :done, core, 2026-10-21 20:55, 50m
-    Capturas de prueba (playwright-cli)          :done, shots, 2026-10-21 21:45, 5m
+    Pruebas en vista de móvil (playwright-cli)   :done, shots, 2026-10-21 21:45, 5m
 
     section Apoyos (Fase 9)
     Pictogramas ARASAAC, mapa del flujo, imágenes, dictado :done, sup, 2026-10-21 22:00, 6h
@@ -61,7 +61,7 @@ gantt
 > Las horas de inicio de «Lectura del reto», «Apoyos» y «Grabación» son aproximadas: solo se conoce la hora del commit en que terminaron.
 
 ## 2. Hoja de ruta propuesta tras el Datathon (Gantt) [P]
-Propuesta para estudiar con Ineco. **Las fechas son orientativas** (se cuentan desde que se acuerde empezar) y dependen del equipo y de los permisos. Detalle de cada bloque en [09 · Stack ideal](09-Stack-ideal-produccion.md) y [10 · Escalabilidad](10-Escalabilidad-rendimiento-recursos.md).
+Propuesta para debatir en el equipo. **Las fechas son orientativas** (se cuentan desde que se acuerde empezar) y dependen del equipo y de los permisos. Detalle de cada bloque en [09 · Stack ideal](09-Stack-ideal-produccion.md) y [10 · Escalabilidad](10-Escalabilidad-rendimiento-recursos.md).
 
 ```mermaid
 gantt
@@ -70,9 +70,9 @@ gantt
     axisFormat S%W
     todayMarker off
 
-    section 0 · Evaluación
-    Evaluación técnica y documental (este repositorio) :a0, 2026-11-02, 2w
-    Acuerdo de alcance, licencia y permisos            :milestone, a1, after a0, 0d
+    section 0 · Acuerdos
+    Revisión del prototipo y del alcance               :a0, 2026-11-02, 2w
+    Acuerdo de alcance y permisos                      :milestone, a1, after a0, 0d
 
     section 1 · Contenido
     Revisión jurídica de trámites (Derecho)            :c1, after a1, 4w
