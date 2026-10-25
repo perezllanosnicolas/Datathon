@@ -1,6 +1,7 @@
 // Document → text, on our own server (decision 2026-10-21: no third parties).
 // Everything happens in memory: the file is never written to disk and the text is not logged.
 import "server-only";
+import { mkdirSync } from "node:fs";
 import path from "node:path";
 import { createWorker, type Worker } from "tesseract.js";
 
@@ -13,6 +14,8 @@ const CACHE = process.env.VERCEL ? "/tmp/tessdata" : path.join(process.cwd(), "d
 const g = globalThis as unknown as { __bjOcr?: Promise<Worker> };
 
 function worker(): Promise<Worker> {
+  // tesseract.js does not create the folder and silently skips the cache if it is missing.
+  mkdirSync(CACHE, { recursive: true });
   g.__bjOcr ??= createWorker(OCR_LANGS, 1, { cachePath: CACHE }).catch((e) => {
     g.__bjOcr = undefined;
     throw e;

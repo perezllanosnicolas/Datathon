@@ -1,0 +1,33 @@
+name: Error
+description: Algo no funciona como debería
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Qué pasa
+      description: Qué esperabas y qué ha pasado.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Cómo reproducirlo
+      placeholder: "1. Abrir /cuestionario\n2. ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: variant
+    attributes:
+      label: Versión
+      options: [local (Docker), online (Vercel), desarrollo (npm run dev)]
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Dispositivo y navegador
+      placeholder: "Android 15, Chrome 140, TalkBack activado"
+  - type: markdown
+    attributes:
+      value: "No adjuntes citaciones reales ni datos personales: usa las de `web/data/citaciones-sinteticas/`."

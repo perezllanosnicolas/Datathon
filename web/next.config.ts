@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Self-contained server for the Docker image (branch `local`); Vercel builds without it.
+  output: process.env.NEXT_OUTPUT === "standalone" ? "standalone" : undefined,
   // OCR runs on our own server (TRD §2b); keep tesseract.js out of the bundle.
   serverExternalPackages: ["tesseract.js"],
   // tesseract.js loads its worker and WASM core at run time, so the file tracer (Vercel) cannot see them.

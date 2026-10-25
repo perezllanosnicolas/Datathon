@@ -1,5 +1,5 @@
 {
-  "name": "paso-a-paso-juzgado",
+  "name": "simulex",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -13,10 +13,13 @@
     "demo": "next build && next start -H 0.0.0.0 -p 3000",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "smoke": "node scripts/smoke-test.mjs",
     "pictos": "node scripts/fetch-pictograms.mjs",
     "images:real": "npx -y bun ../.claude/skills/baoyu-image-gen/scripts/main.ts --batchfile data/realistic/batch.json && node scripts/list-realistic.mjs",
-    "share": "node scripts/share.mjs"
+    "share": "node scripts/share.mjs",
+    "ocr:models": "node scripts/fetch-ocr-models.mjs"
   },
   "dependencies": {
     "@fontsource/opendyslexic": "^5.3.0",
@@ -34,6 +37,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "qrcode-terminal": "^0.12.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.7"
   }
 }

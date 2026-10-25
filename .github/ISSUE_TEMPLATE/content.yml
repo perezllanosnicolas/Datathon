@@ -1,0 +1,25 @@
+name: Contenido o accesibilidad
+description: Un trámite, una traducción, un texto difícil o una barrera de accesibilidad
+labels: [contenido]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Tipo
+      options: [Contenido legal, Traducción (ca/gl/eu), Lenguaje simple, Accesibilidad, Nueva sede o trámite]
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Dónde
+      description: Pantalla, trámite y paso, o archivo de web/data/catalog/.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Qué propones
+      description: Si es contenido legal, cita la norma (artículo y ley).
+    validations:
+      required: true

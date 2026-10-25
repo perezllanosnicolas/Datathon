@@ -28,3 +28,13 @@ Thumbs.db
 # Registros locales del servidor
 .share.log
 .dev.log
+
+# Originales de las fotos (ya convertidas a WebP en web/public/images/realistic/)
+Assets/
+
+# Tests
+web/.vitest/
+coverage/
+
+# Modelos del OCR (se descargan con npm run ocr:models)
+web/data/tessdata/
