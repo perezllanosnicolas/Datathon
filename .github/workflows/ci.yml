@@ -61,24 +61,30 @@ jobs:
         run: cat server.log
 
   docker:
-    name: Docker image (local branch)
+    name: Docker image (branch local)
     runs-on: ubuntu-latest
     needs: quality
-    # Only the `local` branch carries the Dockerfile.
-    if: ${{ hashFiles('web/Dockerfile') != '' }}
     steps:
       - uses: actions/checkout@v4
+      # Only the `local` branch carries the Dockerfile; elsewhere the remaining steps are skipped.
+      - name: Is there a Dockerfile?
+        id: image
+        working-directory: .
+        run: echo "present=$([ -f web/Dockerfile ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
       - name: Build and start with Docker Compose
+        if: steps.image.outputs.present == 'true'
         working-directory: .
         run: |
           docker compose up -d --build --wait
           docker compose ps
       - uses: actions/setup-node@v4
+        if: steps.image.outputs.present == 'true'
         with:
           node-version: "22"
       - name: Smoke test against the container
+        if: steps.image.outputs.present == 'true'
         run: node scripts/smoke-test.mjs http://localhost:3000
       - name: Container log
-        if: always()
+        if: always() && steps.image.outputs.present == 'true'
         working-directory: .
         run: docker compose logs
