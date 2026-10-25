@@ -1,0 +1,13 @@
+node_modules
+.next
+.vitest
+coverage
+data/*.db
+data/*.db-*
+data/tessdata
+tsconfig.tsbuildinfo
+npm-debug.log*
+.env
+.env.*
+Dockerfile
+.dockerignore

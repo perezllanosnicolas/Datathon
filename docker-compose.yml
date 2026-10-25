@@ -1,0 +1,17 @@
+# SimuLex · local version. Run from the repository root:
+#   docker compose up -d --build
+# Then open http://localhost:3000 (or http://<this computer's IP>:3000 from a phone on the same Wi-Fi).
+services:
+  simulex:
+    build: ./web
+    image: simulex:local
+    container_name: simulex
+    ports:
+      - "${SIMULEX_PORT:-3000}:3000"
+    volumes:
+      # Anonymous cases and lawyer links survive restarts. `docker compose down -v` deletes them.
+      - simulex-data:/app/storage
+    restart: unless-stopped
+
+volumes:
+  simulex-data:
